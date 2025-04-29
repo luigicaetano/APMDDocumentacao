@@ -1,5 +1,5 @@
 ---
-title: Goldydocs
+title: APMD Docs
 ---
 
 {{< blocks/cover title="Bem-vindos a Documentação dos Aplicativos da APMD!" image_anchor="top" height="full" >}}
