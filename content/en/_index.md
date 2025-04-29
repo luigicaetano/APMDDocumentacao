@@ -35,8 +35,8 @@ We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributi
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="fa-regular fa-message" title="Mande uma mensagem para os criadores!" url="" %}}
+Dúvidas, sugestões, ou só para bater papo.
 {{% /blocks/feature %}}
 
 
