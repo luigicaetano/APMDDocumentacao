@@ -46,7 +46,7 @@ imaging:
 languages:
   en:
     languageName: English
-    title: Goldydocs
+    title: APMD Docs
     params:
       description: A Docsy example site
   # cSpell:enable
