@@ -5,7 +5,7 @@ title: APMDDocs
 {{< blocks/cover title="Bem-vindos a Documentação dos Aplicativos da APMD!" image_anchor="top" height="full" >}}
 
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://apmddoc.netlify.app/docs/">
-  Documentações <i class="fab fa-file ms-2 "></i>
+  Documentações <i class="fa-solid fa-file-invoice"></i>
 </a>
 <p class="lead mt-5">Site em construção, para suporte de todos os aplicativos desenvolvidos pela APMD/SEDESE</p>
 {{< blocks/link-down color="info" >}}
