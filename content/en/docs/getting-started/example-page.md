@@ -159,20 +159,81 @@ bar := "foo";
 
 Code can also use syntax highlighting.
 
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
+```python
+If(
+    _varPerfil = "DLA";
+    Search(
+        Search(
+            Filter(
+                BaseDemandasOrcamentarias2025;
+                Acompanhamento = "Despesas Continuadas" || "Processos de Compra";
+                Classificação = "Tarifas, Encargos e Tributos" || "Pronto Pagamento";
+                IsBlank(scGrupo_8.Selected.Value) || IsEmpty(scGrupo_8.SelectedItems) || G in scGrupo_8.SelectedItems;
+                IsBlank(scEI_7.Selected.Value) || IsEmpty(scEI_7.SelectedItems) || 'E.I.' in scEI_7.SelectedItems;
+                IsBlank(scFonte_6.Selected.Value) || IsEmpty(scFonte_6.SelectedItems) || F in scFonte_6.SelectedItems;
+                IsBlank(scProcedencia_6.Selected.Value) || IsEmpty(scProcedencia_6.SelectedItems) || P in scProcedencia_6.SelectedItems;
+                IsBlank(scGrupo_6.Selected.Value) || IsEmpty(scGrupo_6.SelectedItems) || Left(
+                    Ação;
+                    4
+                ) in scGrupo_6.SelectedItems;
+                Not('Previsão de execução do recurso' = "Não haverá execução")
+            );
+            scObjeto_8.Value;
+            Objeto
+        );
+        scSiafiEntrada_7.Value;
+        'SIAFI entrada'
+    );
+    If(
+        _varPerfil = "TIC";
+        Search(
+            Search(
+                Filter(
+                    BaseDemandasOrcamentarias2025;
+                    Acompanhamento = "Contrato Vigente" || "Processo de Compras";
+                    Classificação = "TIC e Gestão Documental";
+                    IsBlank(scGrupo_8.Selected.Value) || IsEmpty(scGrupo_8.SelectedItems) || G in scGrupo_8.SelectedItems;
+                    IsBlank(scEI_7.Selected.Value) || IsEmpty(scEI_7.SelectedItems) || 'E.I.' in scEI_7.SelectedItems;
+                    IsBlank(scFonte_6.Selected.Value) || IsEmpty(scFonte_6.SelectedItems) || F in scFonte_6.SelectedItems;
+                    IsBlank(scProcedencia_6.Selected.Value) || IsEmpty(scProcedencia_6.SelectedItems) || P in scProcedencia_6.SelectedItems;
+                    IsBlank(scGrupo_6.Selected.Value) || IsEmpty(scGrupo_6.SelectedItems) || Left(
+                        Ação;
+                        4
+                    ) in scGrupo_6.SelectedItems;
+                    Not('Previsão de execução do recurso' = "Não haverá execução")
+                );
+                scObjeto_8.Value;
+                Objeto
+            );
+            scSiafiEntrada_7.Value;
+            'SIAFI entrada'
+        );
+        If(
+            _varPerfil = "SUBAS";
+            Search(
+                Search(
+                    Filter(
+                        BaseDemandasOrcamentarias2025;
+                        Acompanhamento = "Contrato Vigente";
+                        IsBlank(scGrupo_8.Selected.Value) || IsEmpty(scGrupo_8.SelectedItems) || G in scGrupo_8.SelectedItems;
+                        IsBlank(scEI_7.Selected.Value) || IsEmpty(scEI_7.SelectedItems) || 'E.I.' in scEI_7.SelectedItems;
+                        IsBlank(scFonte_6.Selected.Value) || IsEmpty(scFonte_6.SelectedItems) || F in scFonte_6.SelectedItems;
+                        IsBlank(scProcedencia_6.Selected.Value) || IsEmpty(scProcedencia_6.SelectedItems) || P in scProcedencia_6.SelectedItems;
+                        IsBlank(scGrupo_6.Selected.Value) || IsEmpty(scGrupo_6.SelectedItems) || Left(
+                            Ação;
+                            4
+                        ) in scGrupo_6.SelectedItems;
+                        Not('Previsão de execução do recurso' = "Não haverá execução")
+                    );
+                    scObjeto_8.Value;
+                    Objeto
+                );
+                scSiafiEntrada_7.Value;
+                'SIAFI entrada'
+            )
+        )
+    )
+)
 ```
 
 ```

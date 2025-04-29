@@ -48,7 +48,7 @@ languages:
     languageName: English
     title: APMD Docs
     params:
-      description: A Docsy example site
+      description: Documentações da APMD/SEDESE
   # cSpell:enable
 
 markup:
