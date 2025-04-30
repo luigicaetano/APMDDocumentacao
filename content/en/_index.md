@@ -15,8 +15,7 @@ title: APMDDocs
 {{% blocks/lead color="primary" %}}
 Teste
 
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+teste
 {{% /blocks/lead %}}
 
 
