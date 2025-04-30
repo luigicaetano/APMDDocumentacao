@@ -1,11 +1,11 @@
-baseURL: https://example.docsy.dev
+baseURL: https://apmddoc.netlify.app
 title: APMD Docs
 
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu
 
 # Language settings
 contentDir: content/en
-defaultContentLanguage: en
+defaultContentLanguage: pt-BR
 defaultContentLanguageInSubdir: false
 # Useful when translating.
 enableMissingTranslationPlaceholders: true
@@ -44,8 +44,8 @@ imaging:
 
 # Language configuration
 languages:
-  en:
-    languageName: English
+  pt-BR:
+    languageName: Português Brasileiro
     title: APMD Docs
     params:
       description: Documentações da APMD/SEDESE
