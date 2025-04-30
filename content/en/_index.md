@@ -13,9 +13,7 @@ title: APMDDocs
 
 
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
+Teste
 
 (Sadly, Goldydocs isn't a real project, but you can use this site as an example
 to create your own real websites with [Docsy](https://docsy.dev))
