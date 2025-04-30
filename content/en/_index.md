@@ -28,7 +28,7 @@ Siga para acompanhar nossas atualizações!
 
 
 {{% blocks/feature icon="fab fa-github" title="Contribuições são Bem-Vindas!" url="https://github.com/luigicaetano/APMDDocumentacaodocsy-example" %}}
-Utilizamos um repositório no **GitHub**, [Pull Requests](https://github.com/luigicaetano/APMDDocumentacao) estão abertos. Novos membros são bem-vindos!
+Utilizamos um repositório no **GitHub**, [Pull Requests](https://github.com/luigicaetano/APMDDocumentacao/pulls) estão abertos. Novos membros são bem-vindos!
 {{% /blocks/feature %}}
 
 
