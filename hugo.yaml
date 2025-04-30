@@ -128,7 +128,7 @@ params:
 
   copyright:
     authors: Docsy Authors | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
-    from_year: 2018
+    from_year: 2025
 
   # User interface configuration
   ui:
@@ -168,10 +168,6 @@ params:
         url: https://example.org/mail
         icon: fa fa-envelope
         desc: Discussion and help from your fellow users
-      - name: Twitter
-        url: https://example.org/twitter
-        icon: fab fa-twitter
-        desc: Follow us on Twitter to get the latest news!
       - name: Stack Overflow
         url: https://example.org/stack
         icon: fab fa-stack-overflow

@@ -20,15 +20,15 @@ teste
 
 
 {{% blocks/section color="dark" type="row" %}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
+{{% blocks/feature icon="fa-lightbulb" title="Nova ferramenta!" %}}
+Nova ferramenta de modelo padrão para a criação de documentações.
 
-Please follow this space for updates!
+Siga para acompanhar nossas atualizações!
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contribuições são Bem-Vindas!" url="https://github.com/luigicaetano/APMDDocumentacaodocsy-example" %}}
+Utilizamos um repositório no **GitHub**, [Pull Requests](https://github.com/luigicaetano/APMDDocumentacao) estão abertos. Novos membros são bem-vindos!
 {{% /blocks/feature %}}
 
 
