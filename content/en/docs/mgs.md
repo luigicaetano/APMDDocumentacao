@@ -87,7 +87,7 @@ graph TD
 
    <div class="image-container">
    
-   ![Tela de Login](../assets/images/Login_2.png)
+   ![Tela de Login](../assets/images/Login_Corrigido.png)
    
    </div>
 
