@@ -26,5 +26,11 @@ Este fluxo cobre desde o acesso ao portal da MGS até o tratamento de dados no E
   1.1 Acessar o Portal Cliente MGS
 
 ![](assets/images/Chrome.png)
+
   1.2 Preencher as informações de login e entrar 
-3. This is an ordered list following a header.
+
+  1.3 Acessar a página dos Relatórios de Faturamento; selecionar Tipo de Contrato (00502021) e Tipo de Acesso (Gestor) e Carregar Unidades
+  1.4 Criação de uma tabela de dados (DataTable) com as informações dos 24 Centros de Custo 
+  1.5 Filtrar na barra de pesquisa cada item que está no DataTable e aguardar o carregamento das informações  
+  1.6 Selecionar Detalhamento de Custo e Exportar para Excel  
+  1.7 Renomear arquivos 
