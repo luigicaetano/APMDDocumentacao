@@ -233,10 +233,47 @@ graph TD
    - Identificação da primeira linha livre na coluna A para inserção de novos dados
    - Gravação dos valores específicos nas colunas A e B
 
-</div>
+#### Etapa 6: Organização
+6. Organização e Estruturação dos Dados
 
-</div>
-</div>
+<div class="image-container">
+   
+   ![Processamento da Coluna P](../assets/images/Organização.png)
+   
+   </div>
+
+#### Etapa 7: ValorGratificação
+7. Repetir o processo para a variável "ValorGraticifcação":
+
+<div class="image-container">
+   
+   ![Processamento da Coluna P](../assets/images/Gratificação.png)
+   
+   </div>
+<div class="image-container">
+   
+   ![Processamento da Coluna P](../assets/images/GratificaçãoFinal.png)
+   
+   </div>
+
+#### Etapa 8: ValorAlimentação
+8. Repetir o processo para a variável "ValorAlimentação":
+
+![Processamento da Coluna P](../assets/images/Alimentação.png)
+   
+   </div>
+
+#### Etapa 9: Viagem 
+9. Repetir o mesmo processo dos demais para a variável "ValorViagem"
+
+![Processamento da Coluna P](../assets/images/Viagem.png)
+   
+   </div>
+
+![Processamento da Coluna P](../assets/images/Viagem2.png)
+   
+   </div>
+
 
 ### 2.3 Processamento de Outras Categorias
 
