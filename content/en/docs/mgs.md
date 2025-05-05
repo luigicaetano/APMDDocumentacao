@@ -1,74 +1,147 @@
 ---
-title: Fluxo MGS
-date: 2017-01-05
+title: Fluxo de Execução Orçamentária MGS
+date: 2025-05-05
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
-categories: [Examples]
-tags: [test, sample, docs]
+  Documentação detalhada do processo de execução orçamentária mensal das despesas da MGS, incluindo procedimentos manuais e automatizados.
+categories: [Processos, Automação]
+tags: [MGS, Power Automate, Excel, Orçamento]
 ---
 
-{{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
-{{% /pageinfo %}}
+# Fluxo de Execução Orçamentária MGS
 
-| Desenvolvedor     | Luigi Caetano da Silva         |
-|-----------|-----------------|
-| E-mail   | luigi.silva@social.mg.gov.br    |
-| Ferramenta   | Power Automate Desktop   |
-| Versão Excel  |    2016 ou superior|
-  ----------------
-* Objetivo: 
-Descrever o processo de execução orçamentária mensal referente às despesas da MGS, detalhando as etapas operacionais e de automação envolvidas. 
-* Escopo:
-Este fluxo cobre desde o acesso ao portal da MGS até o tratamento de dados no Excel com foco em centros de custo e categorias de despesa. 
+## Informações do Projeto
 
-1. Etapas do Processo Fluxo Site MGS  
-  1.1 Acessar o Portal Cliente MGS
+| **Informação** | **Detalhes** |
+|:---------------|:-------------|
+| **Desenvolvedor** | Luigi Caetano da Silva |
+| **E-mail** | luigi.silva@social.mg.gov.br |
+| **Ferramenta** | Power Automate Desktop |
+| **Requisito Excel** | 2016 ou superior |
+| **Última atualização** | 05/05/2025 |
 
-![](../assets/images/Chrome.png)
+## 1. Visão Geral
 
-  1.2 Preencher as informações de login e entrar 
-  
-  ![](../assets/images/Login.png)
+### 1.1 Objetivo
+Automatizar e documentar o processo de execução orçamentária mensal referente às despesas da MGS, detalhando as etapas operacionais e procedimentos de automação envolvidos.
 
-  1.3 Acessar a página dos Relatórios de Faturamento; selecionar Tipo de Contrato (00502021) e Tipo de Acesso (Gestor) e Carregar Unidades
-  
-  ![](../assets/images/Pag_Relatorio.png)
+### 1.2 Escopo
+Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração de dados de 24 centros de custo, até o tratamento de dados no Excel com foco em categorias específicas de despesa (Postos de Serviço, Gratificação de Função e Vale Alimentação).
 
-  1.4 Criação de uma tabela de dados (DataTable) com as informações dos 24 Centros de Custo 
+## 2. Processo: Portal MGS
 
-![](../assets/images/Data_Table.png)
+### 2.1 Acesso ao Portal Cliente
 
-  1.5 Filtrar na barra de pesquisa cada item que está no DataTable e aguardar o carregamento das informações  
-  ![](../assets/images/Preencher_Campo.png)
+1. Abra o navegador Chrome e acesse o Portal Cliente MGS
 
-  1.6 Selecionar Detalhamento de Custo e Exportar para Excel  
-  
-  ![](../assets/images/Detalhamento_Custos.png)
+   ![Acesso ao Chrome](../assets/images/Chrome.png)
 
-  1.7 Renomear arquivos 
-  ![](../assets/images/Renomear.png)
+2. Na tela de login, insira suas credenciais de acesso
 
-2. Fluxo Excel 
-  2.1 Esses comandos são usados para iniciar e manipular documentos no Excel utilizando a mesma instância (ExcelInstance3) para todas as operações, desse modo ele inicia duas páginas do Excel em branco e anexa o documento (03.2025_Detalhamento_SUBBPG) a uma instancia já em execução 
+   ![Tela de Login](../assets/images/Login.png)
 
-![](../assets/images/Excel.png)
+### 2.2 Navegação até Relatórios de Faturamento
 
-  2.2 Atribuir a variável ”ValorPosto” o valor 0, isso garante que a variável tenha um valor definido antes de ser usada nas próximas operaçõ
+1. Após autenticação, navegue até a página de Relatórios de Faturamento
+2. Configure os parâmetros iniciais:
+   - Selecione o Tipo de Contrato: `00502021`
+   - Selecione o Tipo de Acesso: `Gestor`
+   - Clique em "Carregar Unidades"
 
-  ![](../assets/images/Variavel.png)
+   ![Página de Relatório](../assets/images/Pag_Relatorio.png)
 
-  2.3 Filtrar a planilha na coluna B os ’Eq 134 POSTOS DE SERVIÇOS’
+### 2.3 Extração de Dados dos Centros de Custo
 
-  ![](../assets/images/Filtrar.png)
+1. A automação cria uma tabela de dados (DataTable) contendo informações dos 24 Centros de Custo
 
-  2.4 Selecionar na coluna ‘F’ todas as informações a partir da linha 2 e usamos o ‘FirstFreeRowOnColumn - 1 para excluir uma linha da tabela, já que nossa primeira linha da planilha são as descrições 
+   ![Tabela de Dados](../assets/images/Data_Table.png)
 
-  ![](../assets/images/Selecionar.png)
+2. Para cada Centro de Custo na tabela:
+   - O sistema filtra automaticamente o item na barra de pesquisa
+   - Aguarda o carregamento das informações correspondentes
 
-  2.5 Para filtrar as linhas da coluna P (Valor), selecionamos as variáveis da coluna ’P’ a partir da linha 2 e retiramos a primeira coluna da tabela usando o FirstFreeRowOnColum –1; copiar as variáveis selecionadas e colar no Excel aberto  
-  
-  2.6 Ler os valores das variáveis da coluna ’A’ e armazenar em ExcelData2, desse modo, cada variável vai aumentar o valor em ’ValorPosto’
-  2.7 Identifica a primeira linha livre na coluna ’A‘ da planilha, garantindo que novos dados sejam inseridos corretamente; grava os valores específicos das colunas ’A’ e ‘B’, organizando e registrando dados de forma estruturada. Defini e inicializa a variável (ValorPosto), que pode ser usada em operações futuras dentro do fluxo. 
-  2.8 O fluxo se repete para a variável (Valor gratificação), mudando apenas a coluna, que agora vai ser a coluna ‘B’ com o filtro (Eq 140 GRATIFICACAO DE FUNCAO).  
-  2.9 O mesmo se repete para a variável Alimentação, também será a coluna ‘B’ mas aplicando o filtro (Eq 23 VALE ALIMENTAÇÃO) 
+   ![Preenchimento do Campo de Pesquisa](../assets/images/Preencher_Campo.png)
+
+3. Para cada resultado filtrado:
+   - Selecione "Detalhamento de Custo"
+   - Clique em "Exportar para Excel"
+
+   ![Detalhamento de Custos](../assets/images/Detalhamento_Custos.png)
+
+4. Os arquivos exportados são renomeados automaticamente para facilitar a identificação
+
+   ![Renomeação de Arquivos](../assets/images/Renomear.png)
+
+## 3. Processo: Tratamento de Dados no Excel
+
+### 3.1 Inicialização do Excel
+
+1. A automação inicia duas instâncias do Excel:
+   - Uma planilha em branco para processamento
+   - Outra para anexar o documento de detalhamento (ex: "03.2025_Detalhamento_SUBBPG")
+
+   ![Inicialização do Excel](../assets/images/Excel.png)
+
+### 3.2 Processamento dos Postos de Serviço
+
+1. Inicialização da variável "ValorPosto" com valor 0
+
+   ![Inicialização da Variável](../assets/images/Variavel.png)
+
+2. Filtragem dos dados na coluna B utilizando o critério "Eq 134 POSTOS DE SERVIÇOS"
+
+   ![Filtragem dos Dados](../assets/images/Filtrar.png)
+
+3. Seleção dos dados relevantes na coluna F (a partir da linha 2)
+   - Utiliza-se `FirstFreeRowOnColumn - 1` para excluir o cabeçalho da tabela
+
+   ![Seleção de Dados](../assets/images/Selecionar.png)
+
+4. Processamento dos valores financeiros:
+   - Seleção da coluna P (Valor) a partir da linha 2
+   - Cópia dos valores para a planilha de processamento
+
+   ![Processamento da Coluna P](../assets/images/ColunaP.png)
+
+5. Agregação dos valores:
+   - Leitura dos valores da coluna A
+   - Incremento da variável "ValorPosto" com cada valor lido
+   - Identificação da primeira linha livre na coluna A para inserção de novos dados
+   - Gravação dos valores específicos nas colunas A e B
+
+### 3.3 Processamento de Gratificações
+
+1. O fluxo se repete para a variável "ValorGratificacao"
+2. Filtro aplicado na coluna B: "Eq 140 GRATIFICACAO DE FUNCAO"
+3. Mesmo processo de extração e agregação de valores
+
+### 3.4 Processamento de Vale Alimentação
+
+1. O fluxo se repete para a variável "ValorAlimentacao"
+2. Filtro aplicado na coluna B: "Eq 23 VALE ALIMENTAÇÃO"
+3. Mesmo processo de extração e agregação de valores
+
+## 4. Resultados e Saídas
+
+Ao final do processamento, a planilha Excel conterá:
+
+1. Valores consolidados para cada categoria:
+   - Total de Postos de Serviço
+   - Total de Gratificações de Função
+   - Total de Vale Alimentação
+
+2. Os dados são organizados de forma estruturada para análise orçamentária mensal
+
+## 5. Solução de Problemas Comuns
+
+| **Problema** | **Possível Causa** | **Solução** |
+|:-------------|:-------------------|:------------|
+| Falha no login do Portal | Credenciais inválidas ou expiradas | Verificar credenciais ou solicitar renovação |
+| Erro na extração dos dados | Mudança na estrutura do portal | Atualizar os seletores de elementos na automação |
+| Erro no Excel | Versão incompatível | Verificar se está usando Excel 2016 ou superior |
+
+## 6. Contato para Suporte
+
+Em caso de dúvidas ou problemas com a automação, entre em contato com:
+
+- **Desenvolvedor**: Luigi Caetano da Silva
+- **E-mail**: luigi.silva@social.mg.gov.br
