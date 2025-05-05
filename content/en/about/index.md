@@ -1,6 +1,6 @@
 ---
-title: About Goldydocs
-linkTitle: About
+title: Sobre o Site
+linkTitle: Sobre
 menu: {main: {weight: 10}}
 ---
 
