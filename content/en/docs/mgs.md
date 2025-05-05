@@ -1,5 +1,5 @@
 ---
-title: Fluxo de Execução Orçamentária MGS
+title: 📊 Fluxo de Execução Orçamentária MGS
 date: 2025-05-05
 description: >
   Documentação detalhada do processo de execução orçamentária mensal das despesas da MGS, incluindo procedimentos manuais e automatizados.
@@ -7,9 +7,6 @@ categories: [Processos, Automação]
 tags: [MGS, Power Automate, Excel, Orçamento]
 ---
 
-# 📊 Fluxo de Execução Orçamentária MGS
-
-![Banner MGS](../assets/images/Chrome.png)
 
 ## 📋 Informações do Projeto
 
