@@ -25,7 +25,7 @@ Este fluxo cobre desde o acesso ao portal da MGS até o tratamento de dados no E
 1. Etapas do Processo Fluxo Site MGS  
   1.1 Acessar o Portal Cliente MGS
 
-![](assets/images/Chrome.png)
+![](..assets/images/Chrome.png)
 
   1.2 Preencher as informações de login e entrar 
 
