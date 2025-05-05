@@ -1,0 +1,75 @@
+Excel.LaunchExcel.LaunchUnderExistingProcess Visible: True Instance=> ExcelInstance2
+Excel.LaunchExcel.LaunchUnderExistingProcess Visible: True Instance=> ExcelInstance3
+Excel.Attach DocumentName: $'''03.2025_Detalhamento_SUBBPG BHTE 1.1 1.xlsx''' Instance=> ExcelInstance
+DISABLE Excel.DeleteRow Instance: ExcelInstance Index: 1
+DISABLE Excel.DeleteRow Instance: ExcelInstance Index: 1
+**REGION Postos
+SET ValorPosto TO 0
+Excel.FilterCellsFromExcel.FilterSimpleWorksheet Instance: ExcelInstance Column: $'''B''' SimpleFilterValues: [$'''134 POSTOS DE SERVIÇOS''']
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: $'''F''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn
+Excel.SelectCellsFromExcel.SelectCells Instance: ExcelInstance StartColumn: $'''F''' StartRow: 2 EndColumn: $'''F''' EndRow: FirstFreeRowOnColumn - 1
+Excel.CopyCellsFromExcel.Copy Instance: ExcelInstance
+Excel.PasteCellsToExcel.PasteAt Instance: ExcelInstance2 Column: $'''A''' Row: 1
+Excel.ReadFromExcel.ReadAllCells Instance: ExcelInstance2 ReadAsText: False FirstLineIsHeader: False RangeValue=> ExcelData
+Excel.ClearCellsFromExcel.ClearCells Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: 1 EndColumn: $'''BZ''' EndRow: 1000000
+Variables.RetrieveDataTableColumnIntoList DataTable: ExcelData ColumnNameOrIndex: $'''Column1''' ColumnAsList=> Postos
+Variables.RemoveDuplicateItemsFromList List: Postos IgnoreCase: True
+LOOP FOREACH CurrentItem2 IN Postos
+    Excel.FilterCellsFromExcel.FilterSimpleWorksheet Instance: ExcelInstance Column: $'''F''' SimpleFilterValues: [CurrentItem2]
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: $'''F''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn
+    Excel.SelectCellsFromExcel.SelectCells Instance: ExcelInstance StartColumn: $'''P''' StartRow: 2 EndColumn: $'''P''' EndRow: FirstFreeRowOnColumn - 1
+    Excel.CopyCellsFromExcel.Copy Instance: ExcelInstance
+    Excel.PasteCellsToExcel.PasteAt Instance: ExcelInstance2 Column: $'''A''' Row: 1
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance2 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn2
+    LOOP LoopIndex FROM 1 TO FirstFreeRowOnColumn2 - 1 STEP 1
+        Excel.ReadFromExcel.ReadCell Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: LoopIndex ReadAsText: False CellValue=> ExcelData2
+        Variables.IncreaseVariable Value: ValorPosto IncrementValue: ExcelData2
+    END
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance3 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn3
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: ValorPosto Column: $'''C''' Row: FirstFreeRowOnColumn3
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: 300901001 Column: $'''A''' Row: FirstFreeRowOnColumn3
+    Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: CurrentItem2 Column: $'''B''' Row: FirstFreeRowOnColumn3
+    SET ValorPosto TO 0
+END
+**ENDREGION
+**REGION Gratificação
+SET ValorGratificacao TO 0
+Excel.ClearFilterFromExcel.ClearFilterWorksheet Instance: ExcelInstance
+Excel.FilterCellsFromExcel.FilterSimpleWorksheet Instance: ExcelInstance Column: $'''B''' SimpleFilterValues: [$'''140 GRATIFICACAO DE FUNCAO''']
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: $'''F''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn
+Excel.SelectCellsFromExcel.SelectCells Instance: ExcelInstance StartColumn: $'''P''' StartRow: 2 EndColumn: $'''P''' EndRow: FirstFreeRowOnColumn - 1
+Excel.CopyCellsFromExcel.Copy Instance: ExcelInstance
+Excel.PasteCellsToExcel.PasteAt Instance: ExcelInstance2 Column: $'''A''' Row: 1
+Excel.ReadFromExcel.ReadAllCells Instance: ExcelInstance2 ReadAsText: False FirstLineIsHeader: False RangeValue=> ExcelData
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance2 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn2
+LOOP LoopIndex FROM 1 TO FirstFreeRowOnColumn2 - 1 STEP 1
+    Excel.ReadFromExcel.ReadCell Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: LoopIndex ReadAsText: False CellValue=> ExcelData2
+    Variables.IncreaseVariable Value: ValorGratificacao IncrementValue: ExcelData2
+END
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance3 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: ValorGratificacao Column: $'''C''' Row: FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: 300901001 Column: $'''A''' Row: FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: $'''Gratificação''' Column: $'''B''' Row: FirstFreeRowOnColumn3
+Excel.ClearCellsFromExcel.ClearCells Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: 1 EndColumn: $'''BZ''' EndRow: 1000000
+**ENDREGION
+**REGION Gratificação
+SET ValorAlimentacao TO 0
+Excel.ClearFilterFromExcel.ClearFilterWorksheet Instance: ExcelInstance
+Excel.FilterCellsFromExcel.FilterSimpleWorksheet Instance: ExcelInstance Column: $'''B''' SimpleFilterValues: [$'''23 VALE ALIMENTAÇÃO''']
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: $'''F''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn
+Excel.SelectCellsFromExcel.SelectCells Instance: ExcelInstance StartColumn: $'''P''' StartRow: 2 EndColumn: $'''P''' EndRow: FirstFreeRowOnColumn - 1
+Excel.CopyCellsFromExcel.Copy Instance: ExcelInstance
+Excel.PasteCellsToExcel.PasteAt Instance: ExcelInstance2 Column: $'''A''' Row: 1
+Excel.ReadFromExcel.ReadAllCells Instance: ExcelInstance2 ReadAsText: False FirstLineIsHeader: False RangeValue=> ExcelData
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance2 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn2
+LOOP LoopIndex FROM 1 TO FirstFreeRowOnColumn2 - 1 STEP 1
+    Excel.ReadFromExcel.ReadCell Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: LoopIndex ReadAsText: False CellValue=> ExcelData2
+    Variables.IncreaseVariable Value: ValorAlimentacao IncrementValue: ExcelData2
+END
+Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance3 Column: $'''A''' FirstFreeRowOnColumn=> FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: ValorAlimentacao Column: $'''C''' Row: FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: 300901001 Column: $'''A''' Row: FirstFreeRowOnColumn3
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance3 Value: $'''Vale Alimentação''' Column: $'''B''' Row: FirstFreeRowOnColumn3
+Excel.ClearCellsFromExcel.ClearCells Instance: ExcelInstance2 StartColumn: $'''A''' StartRow: 1 EndColumn: $'''BZ''' EndRow: 1000000
+**ENDREGION
+Excel.CloseExcel.Close Instance: ExcelInstance2
