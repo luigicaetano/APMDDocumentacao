@@ -22,10 +22,9 @@ Descrever o processo de execução orçamentária mensal referente às despesas 
 * Escopo:
 Este fluxo cobre desde o acesso ao portal da MGS até o tratamento de dados no Excel com foco em centros de custo e categorias de despesa. 
 
-* Etapas do Processo Fluxo Site MGS  
-  1. Acessar o Portal Cliente MGS
+1. Etapas do Processo Fluxo Site MGS  
+  1.1 Acessar o Portal Cliente MGS
 
-![](https://cecad365.sharepoint.com/sites/AssessoriadePlanejamentoModernizaoeDados-SEDESE/_layouts/15/embed.aspx?UniqueId=6b857bfc-25fa-4b37-86e9-cd1986d6f6c1)
-
-2. This is an ordered list following a header.
+![](assets/images/Chrome.png)
+  1.2 Preencher as informações de login e entrar 
 3. This is an ordered list following a header.
