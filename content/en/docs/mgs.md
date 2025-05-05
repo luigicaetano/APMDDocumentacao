@@ -235,7 +235,7 @@ graph TD
 
      ![Processamento da Coluna A](../assets/images/Etapa5.png)
    
-   </div>
+   
 
 
 #### Etapa 6: Organização
@@ -279,6 +279,7 @@ graph TD
    
    </div>
 
+  </div>
 
 ### 2.3 Processamento de Outras Categorias
 
