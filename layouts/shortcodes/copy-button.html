@@ -1,0 +1,28 @@
+<div class="copy-container">
+    <button id="copyButton" class="copy-button">Clique aqui para copiar o código</button>
+    <div class="file-path">{{ .Get "filepath" }}</div>
+    <p id="successMessage" class="success-message">Código copiado com sucesso!</p>
+</div>
+
+<script>
+(function() {
+    document.getElementById('copyButton').addEventListener('click', function() {
+        // Aqui você pode colocar o conteúdo real do arquivo
+        const codeContent = `{{ .Inner }}`;
+        
+        navigator.clipboard.writeText(codeContent)
+            .then(() => {
+                const successMessage = document.getElementById('successMessage');
+                successMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            })
+            .catch(err => {
+                console.error('Erro ao copiar o código: ', err);
+                alert('Não foi possível copiar o código. Por favor, tente novamente.');
+            });
+    });
+})();
+</script>

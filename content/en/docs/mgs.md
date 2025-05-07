@@ -42,6 +42,41 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 
 ---
 
+## 💾 Download do Código
+
+{{</* copy-button filepath="assets/cods/cod_mgs.txt" */>}}
+// Código de automação MGS
+// Versão: 1.0
+// Data: 05/05/2025
+
+// Este é um código de exemplo para o processo MGS
+function iniciarProcessoMGS() {
+    // Código de inicialização
+    console.log("Iniciando processo MGS");
+    
+    // Configuração dos parâmetros
+    const parametros = {
+        contrato: "00502021",
+        acesso: "Gestor",
+        centrosCusto: 24
+    };
+    
+    // Execução do processo
+    extrairDados(parametros);
+}
+
+// Função para extrair dados
+function extrairDados(params) {
+    // Lógica de extração de dados
+    console.log("Extraindo dados para " + params.centrosCusto + " centros de custo");
+}
+
+// Iniciar o processo
+iniciarProcessoMGS();
+{{</* /copy-button */>}}
+
+---
+
 ## 🔄 Fluxo do Processo
 
 ```mermaid
@@ -601,5 +636,55 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin: 1.5em 0;
   text-align: center;
+}
+
+.copy-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.copy-button {
+    display: inline-block;
+    background-color: #3182ce;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #2c5282;
+}
+
+.copy-button:active {
+    background-color: #2a4365;
+}
+
+.file-path {
+    font-family: monospace;
+    background-color: #edf2f7;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.success-message {
+    color: #2f855a;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
 }
 </style>
