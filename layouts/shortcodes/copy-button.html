@@ -1,6 +1,4 @@
 <div class="copy-container">
-    <a href="/{{ .Get "filepath" }}" download>
-      <button class="copy-button">📥 Baixar Código</button>
-    </a>
+    <button class="copy-button" onclick="copyToClipboard()">📋 Copiar Código</button>
     <div class="file-path">/{{ .Get "filepath" }}</div>
-  </div>
+  </div>  
