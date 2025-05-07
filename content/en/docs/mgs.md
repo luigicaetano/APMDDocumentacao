@@ -45,7 +45,7 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 ## 🔄 Fluxo do Processo
 
 <div class="process-flow">
-<pre class="mermaid">
+{{</* mermaid */>}}
 graph TD
     A[Acesso ao Portal MGS] --> B[Login no Sistema]
     B --> C[Configuração dos Parâmetros]
@@ -63,7 +63,7 @@ graph TD
     style F fill:#fff7e6,stroke:#ffa940
     style G fill:#fff7e6,stroke:#ffa940
     style H fill:#f6ffed,stroke:#52c41a
-</pre>
+{{</* /mermaid */>}}
 </div>
 
 ---
