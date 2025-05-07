@@ -53,6 +53,8 @@ languages:
 
 markup:
   goldmark:
+    extensions:
+      mermaid: true
     parser:
       attribute:
         block: true
@@ -63,8 +65,7 @@ markup:
     style: tango
     # Uncomment if you want your chosen highlight style used for code blocks without a specified language
     # guessSyntax: true
-  extensions:
-    mermaid: true
+  
 # Everything below this are Site Params
 
 # Comment out if you don't want the "print entire section" link enabled.
