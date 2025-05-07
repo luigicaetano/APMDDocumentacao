@@ -45,25 +45,16 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 ## 🔄 Fluxo do Processo
 
 <div class="process-flow">
-  <div class="mermaid">
-  graph TD
-      A[Acesso ao Portal MGS] --> B[Login no Sistema]
-      B --> C[Configuração dos Parâmetros]
-      C --> D[Extração de Dados]
-      D --> E[Exportação para Excel]
-      E --> F[Processamento dos Dados]
-      F --> G[Cálculo dos Valores]
-      G --> H[Resultados Finais]
-      
-      style A fill:#e6f7ff,stroke:#1890ff
-      style B fill:#e6f7ff,stroke:#1890ff
-      style C fill:#e6f7ff,stroke:#1890ff
-      style D fill:#e6f7ff,stroke:#1890ff
-      style E fill:#e6f7ff,stroke:#1890ff
-      style F fill:#fff7e6,stroke:#ffa940
-      style G fill:#fff7e6,stroke:#ffa940
-      style H fill:#f6ffed,stroke:#52c41a
-  </div>
+```mermaid
+graph TD
+    A[Acesso ao Portal MGS] --> B[Login no Sistema]
+    B --> C[Configuração dos Parâmetros]
+    C --> D[Extração de Dados]
+    D --> E[Exportação para Excel]
+    E --> F[Processamento dos Dados]
+    F --> G[Cálculo dos Valores]
+    G --> H[Resultados Finais]
+```
 </div>
 
 <script type="module">
