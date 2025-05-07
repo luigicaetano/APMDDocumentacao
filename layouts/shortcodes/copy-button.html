@@ -1,47 +1,82 @@
-<div class="copy-container">
-  <button class="copy-button" onclick="copiarCodigo('{{ .Get "filepath" }}')">📋 Copiar Código</button>
-  <div id="success-message" class="success-message">Código copiado!</div>
+{{/* Shortcode para botão de copiar conteúdo de arquivo */}}
+{{ $filepath := .Get "filepath" }}
+{{ $buttonId := printf "copy-button-%s" (md5 $filepath) }}
+{{ $messageId := printf "success-message-%s" (md5 $filepath) }}
+
+<div class="docsy-copy-container">
+  <button id="{{ $buttonId }}" class="docsy-copy-button" data-filepath="{{ $filepath }}">
+    📋 Copiar Código
+  </button>
+  <div id="{{ $messageId }}" class="docsy-success-message">Código copiado!</div>
 </div>
 
+{{ with resources.GetMatch "js/copy-code.js" }}
+{{ else }}
 <script>
-  async function copiarCodigo(filepath) {
-    try {
-      const response = await fetch(filepath);
-      const code = await response.text();
-      await navigator.clipboard.writeText(code);
+  (function() {
+    if (window.docsyCopyCodeInitialized) return;
+    window.docsyCopyCodeInitialized = true;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('docsy-copy-button')) {
+          copiarCodigoDocsy(e.target);
+        }
+      });
+    });
+    
+    async function copiarCodigoDocsy(button) {
+      const filepath = button.getAttribute('data-filepath');
+      const buttonId = button.id;
+      const messageId = buttonId.replace('copy-button', 'success-message');
       
-      const message = document.getElementById('success-message');
-      message.style.display = 'block';
-      setTimeout(() => message.style.display = 'none', 2000);
-    } catch (err) {
-      alert('Erro ao copiar o código.');
+      try {
+        const response = await fetch(filepath);
+        if (!response.ok) {
+          throw new Error('Arquivo não encontrado');
+        }
+        const code = await response.text();
+        await navigator.clipboard.writeText(code);
+        
+        const message = document.getElementById(messageId);
+        message.style.display = 'block';
+        setTimeout(() => message.style.display = 'none', 2000);
+      } catch (err) {
+        console.error('Erro ao copiar código:', err);
+        alert('Erro ao copiar o código: ' + err.message);
+      }
     }
-  }
+  })();
 </script>
 
 <style>
-  .copy-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 10px;
+  .docsy-copy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  .copy-button {
-      background-color: #3182ce;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 5px;
-      font-size: 14px;
+  .docsy-copy-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 14px;
+    transition: background-color 0.2s;
   }
-  .copy-button:hover {
-      background-color: #2b6cb0;
+  .docsy-copy-button:hover {
+    background-color: var(--primary-dark, #2b6cb0);
+    filter: brightness(0.9);
   }
-  .success-message {
-      color: #2f855a;
-      font-weight: bold;
-      display: none;
+  .docsy-success-message {
+    color: #2f855a;
+    font-weight: bold;
+    display: none;
+    font-size: 14px;
   }
 </style>
+{{ end }}
