@@ -44,7 +44,7 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 
 ## 💾 Download do Código
 
-{{</* copy-button filepath="assets/cods/cod_mgs.txt" */>}}
+{{<* copy-button filepath="assets/cods/cod_mgs.txt" *>}}
 // Código de automação MGS
 // Versão: 1.0
 // Data: 05/05/2025
@@ -73,7 +73,7 @@ function extrairDados(params) {
 
 // Iniciar o processo
 iniciarProcessoMGS();
-{{</* /copy-button */>}}
+{{<* /copy-button *>}}
 
 ---
 
