@@ -44,36 +44,7 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 
 ## 💾 Download do Código
 
-{{<* copy-button filepath="assets/cods/cod_mgs.txt" *>}}
-// Código de automação MGS
-// Versão: 1.0
-// Data: 05/05/2025
-
-// Este é um código de exemplo para o processo MGS
-function iniciarProcessoMGS() {
-    // Código de inicialização
-    console.log("Iniciando processo MGS");
-    
-    // Configuração dos parâmetros
-    const parametros = {
-        contrato: "00502021",
-        acesso: "Gestor",
-        centrosCusto: 24
-    };
-    
-    // Execução do processo
-    extrairDados(parametros);
-}
-
-// Função para extrair dados
-function extrairDados(params) {
-    // Lógica de extração de dados
-    console.log("Extraindo dados para " + params.centrosCusto + " centros de custo");
-}
-
-// Iniciar o processo
-iniciarProcessoMGS();
-{{<* /copy-button *>}}
+{{< copy-button filepath="assets/cods/cod_mgs.txt" >}}
 
 ---
 
