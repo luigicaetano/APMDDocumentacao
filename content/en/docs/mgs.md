@@ -44,28 +44,14 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 
 ## 🔄 Fluxo do Processo
 
-<div class="process-flow">
+<div class="mermaid">
 ```mermaid
 graph TD
-    A[Acesso ao Portal MGS] --> B[Login no Sistema]
-    B --> C[Configuração dos Parâmetros]
-    C --> D[Extração de Dados]
-    D --> E[Exportação para Excel]
-    E --> F[Processamento dos Dados]
-    F --> G[Cálculo dos Valores]
-    G --> H[Resultados Finais]
+    A[Início] --> B[Etapa 1]
+    B --> C[Etapa 2]
+    C --> D[Fim]
 ```
 </div>
-
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default',
-    securityLevel: 'loose'
-  });
-</script>
-
 ---
 
 ## 💻 1. Processo: Portal MGS
