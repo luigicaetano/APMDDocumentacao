@@ -44,7 +44,7 @@ Este fluxo abrange todo o processo desde o acesso ao portal da MGS, extração d
 
 ## 💾 Copiar Código para a Área de Transferência
 
-{{< copy-button filepath="../assets/cods/cod_mgs.txt" >}}
+{{</* copy-button filepath="../assets/cods/cod_mgs.txt" */>}}
 
 ---
 
