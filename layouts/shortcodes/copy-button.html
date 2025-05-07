@@ -1,4 +1,47 @@
 <div class="copy-container">
-    <button class="copy-button" onclick="copyToClipboard()">📋 Copiar Código</button>
-    <div class="file-path">/{{ .Get "filepath" }}</div>
-  </div>  
+  <button class="copy-button" onclick="copiarCodigo('{{ .Get "filepath" }}')">📋 Copiar Código</button>
+  <div id="success-message" class="success-message">Código copiado!</div>
+</div>
+
+<script>
+  async function copiarCodigo(filepath) {
+    try {
+      const response = await fetch(filepath);
+      const code = await response.text();
+      await navigator.clipboard.writeText(code);
+      
+      const message = document.getElementById('success-message');
+      message.style.display = 'block';
+      setTimeout(() => message.style.display = 'none', 2000);
+    } catch (err) {
+      alert('Erro ao copiar o código.');
+    }
+  }
+</script>
+
+<style>
+  .copy-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+  }
+  .copy-button {
+      background-color: #3182ce;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 5px;
+      font-size: 14px;
+  }
+  .copy-button:hover {
+      background-color: #2b6cb0;
+  }
+  .success-message {
+      color: #2f855a;
+      font-weight: bold;
+      display: none;
+  }
+</style>
