@@ -1,6 +1,6 @@
 ---
 title: Planejamento Integrado 2026
-date: 2025-05-08
+date: 2025-05-09
 description: >
   Documentação detalhada do processo do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e procedimentos operacionais básicos.
 
@@ -18,7 +18,7 @@ tags: [Planejamento Integrado, Indicadores, Monitoramento, Gestão Pública]
 | **👨‍💻 Desenvolvedor** | Luigi Caetano da Silva |
 | **📧 E-mail** | luigi.silva@social.mg.gov.br |
 | **🤖 Ferramenta** | PowerApps |
-| **🔄 Última atualização** | 05/05/2025 |
+| **🔄 Última atualização** | 09/05/2025 |
 
 </div>
 
