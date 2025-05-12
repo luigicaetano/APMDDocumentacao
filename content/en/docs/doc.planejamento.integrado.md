@@ -42,6 +42,36 @@ Adicionar novas iniciativas vinculadas a ações e responsáveis;
 
 As informações são integradas a bases como BaseProgramasAcoes, BaseFormularioOBZ e BaseProgramas, com suporte à navegação por meio de Comboboxes e botões interativos.
 
+
+```csharp
+UpdateContext({visLoading:true});;
+
+Set(varLink;Gerar_Relatorio_OBZ_Relatorio.Run(
+    """" & Concat(
+        Filter(
+            BaseProgramasAcoes;
+            userMail in Responsavel
+        );
+        Left(
+            Acao;
+            4
+        );
+        ""","""
+    ) & """";
+    userMail
+));;
+
+Launch(varLink.filelink);;
+
+UpdateContext({visLoading:false});;
+
+Notify(
+    "O seu relatório também foi enviado no seu Teams!";
+    NotificationType.Success;5000
+)
+
+```
+
 </div>
 
 </div>
