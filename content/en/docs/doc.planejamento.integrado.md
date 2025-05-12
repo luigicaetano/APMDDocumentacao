@@ -1,66 +1,33 @@
----
-title: Planejamento Integrado 2026
-date: 2025-05-09
-description: >
-  Documentação detalhada do processo do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e procedimentos operacionais básicos.
+# 📱 Documentação Planejamento Integrado 2026 — SEDESE
 
-
-categories: [Gestão, Planejamento Estratégico]  
-tags: [Planejamento Integrado, Indicadores, Monitoramento, Gestão Pública]
-
----
-## 📋 Informações do Projeto
-
-<div class="project-info-card">
-
-| **Informação** | **Detalhes** |
-|:---------------|:-------------|
-| **👨‍💻 Desenvolvedor** | Luigi Caetano da Silva |
-| **📧 E-mail** | luigi.silva@social.mg.gov.br |
-| **🤖 Ferramenta** | PowerApps |
-| **🔄 Última atualização** | 09/05/2025 |
-
+<div align="center">
+  <img src="./assets/logo-sedese.png" alt="Logo SEDESE" width="200"/>
+  <p><em>Sistema de Planejamento Orçamentário e Gestão de Iniciativas</em></p>
+  <hr/>
 </div>
 
----
-## 🎯 Visão Geral
-
-<div class="overview-section">
-
-### Objetivo
-> Facilitar o registro, organização e análise das iniciativas vinculadas ao planejamento orçamentário da SEDESE, promovendo mais controle, rastreabilidade e integração entre programas, ações e cenários financeiros.
-
-### Escopo
-Este aplicativo abrange todo o processo de estruturação das iniciativas de planejamento, desde a seleção de programas e ações governamentais até a definição de objetivos, status, valor total e detalhamento financeiro. O sistema também permite:
-
-Adicionar novas iniciativas vinculadas a ações e responsáveis;
-
-- **Salvar alterações e gerar relatórios personalizados, com envio automático via Teams**
-- **Visualizar cenários e custos associados às iniciativas cadastradas**
-- **Consultar o fluxo de registro de informações, garantindo conformidade e padronização**
-- **Filtrar dados com base no usuário responsável (controle por e-mail institucional)**
-
-As informações são integradas a bases como BaseProgramasAcoes, BaseFormularioOBZ e BaseProgramas, com suporte à navegação por meio de Comboboxes e botões interativos.
-
-<<<<<<< HEAD
-
-## Tela Inicial
+## 🏠 Tela Inicial
 
 ![Tela Inicial do Aplicativo](imagem-tela-inicial.png)
 
 ### Principais Elementos
-- **Tutorial Interativo**: Guia dinâmico que ensina o usuário a utilizar o aplicativo
-- **Fluxo de Registro de Informação**: Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto
-- **Iniciar Preenchimento**: Direciona o usuário para a tela de iniciativas
 
-## Tela de Iniciativas
+| Elemento | Descrição |
+|---------|-----------|
+| ✨ **Tutorial Interativo** | Guia dinâmico que ensina o usuário a utilizar o aplicativo passo a passo |
+| 📋 **Fluxo de Registro de Informação** | Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto |
+| ▶️ **Iniciar Preenchimento** | Direciona o usuário para a tela de iniciativas |
 
-![Tela de Iniciativas](imagem-tela-iniciativas.png)
+## 📋 Tela de Iniciativas
+
+<div align="center">
+  <img src="imagem-tela-iniciativas.png" alt="Tela de Iniciativas" width="650"/>
+</div>
 
 ### Elementos de Interface
 
-#### Botão Programa
-```
+#### 🔄 Botão Programa
+```powerapps
 If(
     varGestor;
     Distinct(
@@ -76,10 +43,11 @@ If(
     )
 )
 ```
-Este código gera uma lista única de programas, eliminando duplicatas que possam existir na tabela BaseProgramasAcoes.
 
-#### Botão Ação
-```
+> Este código gera uma lista única de programas, eliminando duplicatas que possam existir na tabela BaseProgramasAcoes.
+
+#### 🔄 Botão Ação
+```powerapps
 If(
     varGestor;
     Distinct(
@@ -100,10 +68,10 @@ If(
 )
 ```
 
-Retorna uma lista filtrada de ações sem repetições, relacionadas ao programa selecionado.
+> Retorna uma lista filtrada de ações sem repetições, relacionadas ao programa selecionado.
 
-#### Adicionar Nova Iniciativa
-```
+#### ➕ Adicionar Nova Iniciativa
+```powerapps
 Patch(
     PlanejamentoIntegrado_Iniciativas,
     Defaults(PlanejamentoIntegrado_Iniciativas),
@@ -116,10 +84,10 @@ Patch(
 Refresh(PlanejamentoIntegrado_Iniciativas)
 ```
 
-Cria um novo registro de iniciativa no sistema, com os valores selecionados para Programa e Ação.
+> Cria um novo registro de iniciativa no sistema, com os valores selecionados para Programa e Ação.
 
-#### Salvar Alterações
-```
+#### 💾 Salvar Alterações
+```powerapps
 Gerar_Relatorio_OBZ_PowerApps.Run(
     """" & Concat(
         Filter(
@@ -140,10 +108,10 @@ Notify(
 )
 ```
 
-Salva as modificações e gera um relatório que será enviado posteriormente para o usuário via Teams.
+> Salva as modificações e gera um relatório que será enviado posteriormente para o usuário via Teams.
 
-#### Botão Visão Geral Cenários
-```
+#### 📊 Botão Visão Geral Cenários
+```powerapps
 Clear(colVisaoGeral);;
 ForAll(
     SortByColumns(
@@ -175,10 +143,10 @@ ForAll(
 UpdateContext({visVisaoGeral: true})
 ```
 
-Exibe todos os cenários relacionados à ação selecionada de forma organizada. Limpa dados anteriores, busca cenários vinculados à ação, organiza por título e armazena na coleção para apresentação.
+> Exibe todos os cenários relacionados à ação selecionada de forma organizada. Limpa dados anteriores, busca cenários vinculados à ação, organiza por título e armazena na coleção para apresentação.
 
-#### Botão Detalhar Resultado
-```
+#### 🔍 Botão Detalhar Resultado
+```powerapps
 Select(Parent);;
 Patch(BaseFormularioOBZ;ThisItem;{
     Projeto: TextInputCanvas1.Value,
@@ -188,10 +156,10 @@ Patch(BaseFormularioOBZ;ThisItem;{
 UpdateContext({visDetalhar:true})
 ```
 
-Permite selecionar e atualizar informações de um item específico, salvando as edições e exibindo uma visão detalhada.
+> Permite selecionar e atualizar informações de um item específico, salvando as edições e exibindo uma visão detalhada.
 
-#### Botão Itens de Custo
-```
+#### 💰 Botão Itens de Custo
+```powerapps
 Select(Parent);;
 Set(currIniciativa;ThisItem);;
 Patch(
@@ -209,10 +177,10 @@ Navigate(
 )
 ```
 
-Seleciona uma iniciativa e navega para a tela de detalhamento de custos, atualizando os dados do item selecionado.
+> Seleciona uma iniciativa e navega para a tela de detalhamento de custos, atualizando os dados do item selecionado.
 
-#### Botão Definir Cenários
-```
+#### 🔄 Botão Definir Cenários
+```powerapps
 Set(
     currIniciativa,
     ThisItem
@@ -224,30 +192,32 @@ Navigate(
 )
 ```
 
-Seleciona uma iniciativa para configurar seus cenários e navega para a tela específica.
+> Seleciona uma iniciativa para configurar seus cenários e navega para a tela específica.
 
-#### Excluir Iniciativa
-```
+#### 🗑️ Excluir Iniciativa
+```powerapps
 Set(visConfirmacao;true);;
 Set(varNotificacao;"ExcluirIniciativa")
 ```
 
-Prepara a exclusão de uma iniciativa, exibindo uma mensagem de confirmação antes de proceder com a exclusão.
+> Prepara a exclusão de uma iniciativa, exibindo uma mensagem de confirmação antes de proceder com a exclusão.
 
-## Tela Itens de Custo
+## 💰 Tela Itens de Custo
 
-![Tela de Itens de Custo](imagem-tela-custo.png)
+<div align="center">
+  <img src="imagem-tela-custo.png" alt="Tela de Itens de Custo" width="650"/>
+</div>
 
 ### Elementos de Interface
 
-#### Adicionar Novo Item de Custo
-Permite incluir um novo item de custo associado à iniciativa selecionada.
+#### ➕ Adicionar Novo Item de Custo
+> Permite incluir um novo item de custo associado à iniciativa selecionada.
 
-#### Salvar Alterações
-Grava todas as modificações realizadas nas iniciativas e dados relacionados.
+#### 💾 Salvar Alterações
+> Grava todas as modificações realizadas nas iniciativas e dados relacionados.
 
-#### Botão Programa
-```
+#### 🔄 Botão Programa
+```powerapps
 If(
     varGestor,
     Distinct(
@@ -264,10 +234,10 @@ If(
 )
 ```
 
-Exibe uma lista única de programas disponíveis.
+> Exibe uma lista única de programas disponíveis.
 
-#### Botão Ação
-```
+#### 🔄 Botão Ação
+```powerapps
 If(
     varGestor,
     Distinct(
@@ -288,16 +258,18 @@ If(
 )
 ```
 
-Exibe uma lista filtrada de ações relacionadas ao programa selecionado.
+> Exibe uma lista filtrada de ações relacionadas ao programa selecionado.
 
-## Tela de Cenários
+## 📊 Tela de Cenários
 
-![Tela de Cenários](imagem-tela-cenarios.png)
+<div align="center">
+  <img src="imagem-tela-cenarios.png" alt="Tela de Cenários" width="650"/>
+</div>
 
 ### Elementos de Interface
 
-#### Ver Itens de Custo
-```
+#### 👁️ Ver Itens de Custo
+```powerapps
 UpdateContext({visLoading:true});;
 Clear(colVisaoGeral);;
 ForAll(
@@ -331,10 +303,10 @@ UpdateContext({visVisaoGeral: true});;
 UpdateContext({visLoading:false})
 ```
 
-Exibe os itens de custo relacionados ao cenário selecionado, organizando os dados para visualização.
+> Exibe os itens de custo relacionados ao cenário selecionado, organizando os dados para visualização.
 
-#### Adicionar Cenário
-```
+#### ➕ Adicionar Cenário
+```powerapps
 Patch(
     PlanejamentoIntegrado_Cenarios,
     Defaults(PlanejamentoIntegrado_Cenarios),
@@ -343,65 +315,102 @@ Patch(
 Refresh(PlanejamentoIntegrado_Cenarios)
 ```
 
-Cria um novo cenário vinculado à iniciativa atual.
+> Cria um novo cenário vinculado à iniciativa atual.
 
-## Fluxo Power Automate
+## 🔄 Fluxo Power Automate
+
+<div align="center">
+  <img src="imagem-fluxo.png" alt="Diagrama do fluxo Power Automate" width="750"/>
+</div>
 
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
-1. Chamada do fluxo pelo PowerApps com as variáveis de Ações e Usuários
-2. Execução de query no banco de dados
-3. Parse JSON para estruturação dos dados para o relatório
-
-![Diagrama do fluxo Power Automate](imagem-fluxo.png)
-
-### Etapas do Fluxo:
-- **Início**: Chamada via PowerApps com parâmetros de Ações e Usuários
-- **Consulta de Dados**: Execução de query para obtenção das informações necessárias
-- **Processamento**: Estruturação dos dados via Parse JSON 
-- **Geração de Relatório**: Criação do relatório OBZ
-- **Entrega**: Envio do relatório para o usuário via Teams
-
-## Considerações de Uso
-
-- O aplicativo foi desenvolvido para simplificar o processo de planejamento integrado
-- As permissões são controladas por perfil de usuário (gestor/não gestor)
-- Os dados são integrados com SharePoint para persistência
-- O sistema oferece funcionalidades de relatórios automatizados
-=======
-
-```csharp
-UpdateContext({visLoading:true});;
-
-Set(varLink;Gerar_Relatorio_OBZ_Relatorio.Run(
-    """" & Concat(
-        Filter(
-            BaseProgramasAcoes;
-            userMail in Responsavel
-        );
-        Left(
-            Acao;
-            4
-        );
-        ""","""
-    ) & """";
-    userMail
-));;
-
-Launch(varLink.filelink);;
-
-UpdateContext({visLoading:false});;
-
-Notify(
-    "O seu relatório também foi enviado no seu Teams!";
-    NotificationType.Success;5000
-)
-
-```
-
->>>>>>> 5743fa6dfb87ecfa8a3f3648cc8d9f112cc657e2
+<div class="flow-steps">
+  <div class="step">
+    <h3>📥 Início</h3>
+    <p>Chamada via PowerApps com parâmetros de Ações e Usuários</p>
+  </div>
+  <div class="step">
+    <h3>🔍 Consulta de Dados</h3>
+    <p>Execução de query para obtenção das informações necessárias</p>
+  </div>
+  <div class="step">
+    <h3>⚙️ Processamento</h3>
+    <p>Estruturação dos dados via Parse JSON</p>
+  </div>
+  <div class="step">
+    <h3>📄 Geração de Relatório</h3>
+    <p>Criação do relatório OBZ</p>
+  </div>
+  <div class="step">
+    <h3>📤 Entrega</h3>
+    <p>Envio do relatório para o usuário via Teams</p>
+  </div>
 </div>
 
+## 📝 Considerações de Uso
+
+<div class="tips">
+  <div class="tip">
+    <h3>🎯 Objetivo</h3>
+    <p>O aplicativo foi desenvolvido para simplificar o processo de planejamento integrado</p>
+  </div>
+  <div class="tip">
+    <h3>👤 Perfis</h3>
+    <p>As permissões são controladas por perfil de usuário (gestor/não gestor)</p>
+  </div>
+  <div class="tip">
+    <h3>💾 Armazenamento</h3>
+    <p>Os dados são integrados com SharePoint para persistência</p>
+  </div>
+  <div class="tip">
+    <h3>📊 Relatórios</h3>
+    <p>O sistema oferece funcionalidades de relatórios automatizados</p>
+  </div>
 </div>
 
----
+<style>
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.step {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0078d4;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+}
+
+.step h3 {
+  margin-top: 0;
+  color: #0078d4;
+}
+
+.tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.tip {
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tip h3 {
+  margin-top: 0;
+  color: #0078d4;
+}
+
+@media (max-width: 768px) {
+  .tips {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
