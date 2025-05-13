@@ -344,11 +344,11 @@ O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
     
     1️⃣ Acionamento do Fluxo
 O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
+
 Configuração do Gatilho:
-
 Origem: Botão PowerApps
-Parâmetros de Entrada:
 
+Parâmetros de Entrada:
 Ações: Código(s) das ações selecionadas para o relatório
 Usuário: E-mail do usuário solicitante
 
@@ -356,14 +356,14 @@ Usuário: E-mail do usuário solicitante
 
     2️⃣ Consulta ao Power BI
 O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
-Detalhes da Configuração:
 
+    Detalhes da Configuração:
 Dataset: TesteOBZ
 Tipo de Consulta: DAX (Direct Query)
 Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
 
 <div align="center">
- (../assets/images/dataset.png)
+![Dataset PowerBI](assets/images/datasetpoPowerBI.png) 
 </div>
     
     3️⃣ Extração e Processamento dos Dados
