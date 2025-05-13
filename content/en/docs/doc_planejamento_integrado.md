@@ -88,116 +88,75 @@ Refresh(PlanejamentoIntegrado_Iniciativas)
 > Cria um novo registro de iniciativa no sistema, com os valores selecionados para Programa e Ação.
 
 #### 💾 Salvar Alterações
-```powerapps
-Gerar_Relatorio_OBZ_PowerApps.Run(
-    """" & Concat(
-        Filter(
-            BaseProgramasAcoes,
-            userMail in Responsavel
-        ),
-        Left(
-            Acao,
-            4
-        ),
-        ""","""
-    ) & """",
-    userMail
-);;
-Notify(
-    "O seu relatório será enviado em alguns minutos no Teams!",
-    NotificationType.Success
-)
-```
 
 > Salva as modificações e gera um relatório que será enviado posteriormente para o usuário via Teams.
 
 #### 📊 Botão Visão Geral Cenários
 ```powerapps
+UpdateContext({visLoading:true});;
 Clear(colVisaoGeral);;
 ForAll(
     SortByColumns(
         Filter(
-            BaseFormularioOBZ_Cenarios,
-            Título in Filter(
-                BaseFormularioOBZ,
-                Acao = varAcao
-            ).ProdutoID
-        ),
+            PlanejamentoIntegrado_Cenarios;
+            ID_Iniciativa in Filter(
+                PlanejamentoIntegrado_Iniciativas;
+                Acao = ComboboxCanvas1_3.Selected.Value
+            ).ID
+        );
         "Title"
-    ),
+    );
     Collect(
-        colVisaoGeral,
+        colVisaoGeral;
         {
             ID1: Max(
-                colVisaoGeral,
+                colVisaoGeral;
                 ID1
-            ) + 1,
-            ProdutoID: ThisRecord.Título,
-            Descricao: ThisRecord.Descricao,
-            TipoCenario: ThisRecord.TipoCenario,
-            ObjetosDeGasto: ThisRecord.ObjetosDeGasto,
-            Cenario: ThisRecord.Cenario,
+            ) + 1;
+            ID_Iniciativa: ThisRecord.ID_Iniciativa;
+            Descricao: ThisRecord.Descricao;
+            TipoCenario: ThisRecord.Título;
+            Cenario: ThisRecord.NumeroCenario;
             ID: ThisRecord.ID
         }
     )
 );;
-UpdateContext({visVisaoGeral: true})
+UpdateContext({visVisaoGeral: true});;
+UpdateContext({visLoading:false})
 ```
 
 > Exibe todos os cenários relacionados à ação selecionada de forma organizada. Limpa dados anteriores, busca cenários vinculados à ação, organiza por título e armazena na coleção para apresentação.
 
-#### 🔍 Botão Detalhar Resultado
-```powerapps
-Select(Parent);;
-Patch(BaseFormularioOBZ;ThisItem;{
-    Projeto: TextInputCanvas1.Value,
-    Status: Dropdown1.Selected.Value,
-    Produto: TextInputCanvas1_1.Value
-});;
-UpdateContext({visDetalhar:true})
-```
 
-> Permite selecionar e atualizar informações de um item específico, salvando as edições e exibindo uma visão detalhada.
-
-#### 💰 Botão Itens de Custo
+#### 💰 Botão Editar Itens de Custo
 ```powerapps
-Select(Parent);;
 Set(currIniciativa;ThisItem);;
-Patch(
-    BaseFormularioOBZ,
-    ThisItem,
-    {
-        Projeto: TextInputCanvas1.Value,
-        Status: Dropdown1.Selected.Value,
-        Produto: TextInputCanvas1_1.Value
-    }
-);;
 Navigate(
-    Screen_ItensDeCusto,
+    Screen_ItensDeCusto;
     ScreenTransition.UnCover
 )
 ```
 
-> Seleciona uma iniciativa e navega para a tela de detalhamento de custos, atualizando os dados do item selecionado.
+> Esse botão leva para a tela de Itens de Custo
 
-#### 🔄 Botão Definir Cenários
+#### 🔄 Botão Editar Cenários
 ```powerapps
 Set(
-    currIniciativa,
+    currIniciativa;
     ThisItem
 );;
-Select(Parent);;
 Navigate(
-    Screen_Cenarios,
+    Screen_Cenarios;
     ScreenTransition.UnCover
 )
 ```
 
-> Seleciona uma iniciativa para configurar seus cenários e navega para a tela específica.
+> Esse botão te leva para a tela de Cenários
 
 #### 🗑️ Excluir Iniciativa
 ```powerapps
 Set(visConfirmacao;true);;
+Set(currIniciativa;ThisItem);;
 Set(varNotificacao;"ExcluirIniciativa")
 ```
 
@@ -210,54 +169,37 @@ Set(varNotificacao;"ExcluirIniciativa")
 ### Elementos de Interface
 
 #### ➕ Adicionar Novo Item de Custo
+```powerapps
+Patch(
+    PlanejamentoIntegrado_ItensDeCusto;
+    Defaults(PlanejamentoIntegrado_ItensDeCusto);
+    {ID_Iniciativa: currIniciativa.ID}
+);;
+Refresh(PlanejamentoIntegrado_ItensDeCusto)
+```
 > Permite incluir um novo item de custo associado à iniciativa selecionada.
 
 #### 💾 Salvar Alterações
 > Grava todas as modificações realizadas nas iniciativas e dados relacionados.
 
-#### 🔄 Botão Programa
+#### 🔄 Editar
 ```powerapps
-If(
-    varGestor,
-    Distinct(
-        BaseProgramasAcoes,
-        Programa
-    ),
-    Distinct(
-        Filter(
-            BaseProgramasAcoes,
-            Programa in programasPermitidos
-        ),
-        Programa
-    )
-)
+UpdateContext({visSalvando: true});;
+IfError(Patch(
+    PlanejamentoIntegrado_ItensDeCusto;
+    ThisItem;
+    {Título: TextInputCanvas1_2.Value}
+);"");;
+UpdateContext({visSalvando: false});;
+Set(
+    currItemDeCusto;
+    ThisItem
+);;
+UpdateContext({visDetalhar: true})
 ```
 
-> Exibe uma lista única de programas disponíveis.
+> Edita o item de custo selecionado.
 
-#### 🔄 Botão Ação
-```powerapps
-If(
-    varGestor,
-    Distinct(
-        Filter(
-            BaseProgramasAcoes,
-            Programa = ComboboxCanvas1.Selected.Value
-        ),
-        Acao
-    ),
-    Distinct(
-        Filter(
-            BaseProgramasAcoes,
-            Programa = ComboboxCanvas1.Selected.Value,
-            Acao in acoesPermitidas
-        ),
-        Acao
-    )
-)
-```
-
-> Exibe uma lista filtrada de ações relacionadas ao programa selecionado.
 
 ## 📊 Tela Cenarios
 
@@ -272,26 +214,26 @@ Clear(colVisaoGeral);;
 ForAll(
     SortByColumns(
         Filter(
-            BaseFormularioOBZ_Cenarios,
+            BaseFormularioOBZ_Cenarios;
             Título in Filter(
-                BaseFormularioOBZ,
+                BaseFormularioOBZ;
                 Acao = ComboboxCanvas1_1.Selected.Value
             ).ProdutoID
-        ),
+        );
         "Title"
-    ),
+    );
     Collect(
-        colVisaoGeral,
+        colVisaoGeral;
         {
             ID1: Max(
-                colVisaoGeral,
+                colVisaoGeral;
                 ID1
-            ) + 1,
-            ProdutoID: ThisRecord.Título,
-            Descricao: ThisRecord.Descricao,
-            TipoCenario: ThisRecord.TipoCenario,
-            ObjetosDeGasto: ThisRecord.ObjetosDeGasto,
-            Cenario: ThisRecord.Cenario,
+            ) + 1;
+            ProdutoID: ThisRecord.Título;
+            Descricao: ThisRecord.Descricao;
+            TipoCenario: ThisRecord.TipoCenario;
+            ObjetosDeGasto: ThisRecord.ObjetosDeGasto;
+            Cenario: ThisRecord.Cenario;
             ID: ThisRecord.ID
         }
     )
@@ -305,9 +247,18 @@ UpdateContext({visLoading:false})
 #### ➕ Adicionar Cenário
 ```powerapps
 Patch(
-    PlanejamentoIntegrado_Cenarios,
-    Defaults(PlanejamentoIntegrado_Cenarios),
-    {ID_Iniciativa: currIniciativa.ID}
+    PlanejamentoIntegrado_Cenarios;
+    Defaults(PlanejamentoIntegrado_Cenarios);
+    {
+        ID_Iniciativa: currIniciativa.ID;
+        NumeroCenario: Max(
+            Filter(
+                PlanejamentoIntegrado_Cenarios;
+                ID_Iniciativa = currIniciativa.ID
+            );
+            NumeroCenario
+        ) + 1
+    }
 );;
 Refresh(PlanejamentoIntegrado_Cenarios)
 ```
