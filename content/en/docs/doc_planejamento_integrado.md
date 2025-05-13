@@ -261,7 +261,7 @@ If(
 
 ## 📊 Tela de Cenários
 
-![Telade de Cenários](..assets/images/TelaCenarios.png) 
+![Telade de Cenários](..assets/images/TelaCenários.png) 
 
 ### Elementos de Interface
 
