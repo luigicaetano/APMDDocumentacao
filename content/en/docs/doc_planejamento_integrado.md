@@ -344,7 +344,7 @@ graph TD
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
 📋 Detalhamento das Etapas
-1️⃣ Acionamento do Fluxo
+    1️⃣ Acionamento do Fluxo
 O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
 Configuração do Gatilho:
 
@@ -353,8 +353,9 @@ Parâmetros de Entrada:
 
 Ações: Código(s) das ações selecionadas para o relatório
 Usuário: E-mail do usuário solicitante
+(../assets/images/1.png)
 
-2️⃣ Consulta ao Power BI
+    2️⃣ Consulta ao Power BI
 O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
 Detalhes da Configuração:
 
@@ -363,15 +364,16 @@ Tipo de Consulta: DAX (Direct Query)
 Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
 
 <div align="center">
-  <img src="/api/placeholder/550/300" alt="Consulta Power BI" />
+  (../assets/images/2.png)
   <p><em>Configuração da consulta DAX no Power BI</em></p>
 </div>
-3️⃣ Extração e Processamento dos Dados
+    
+    3️⃣ Extração e Processamento dos Dados
 Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
 Configuração:
 Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
 Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
-4️⃣ Estruturação via Parse JSON
+    4️⃣ Estruturação via Parse JSON
 Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
 Configuração do Parse JSON:
 
@@ -382,7 +384,7 @@ Esquema: Definição estruturada dos campos esperados
   <img src="/api/placeholder/550/300" alt="Parse JSON" />
   <p><em>Estruturação dos dados via Parse JSON</em></p>
 </div>
-5️⃣ Personalização dos Dados
+    5️⃣ Personalização dos Dados
 Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final.
 Campos Mapeados:
 
@@ -392,7 +394,7 @@ Valores orçamentários
 Métricas de desempenho
 Informações temporais
 
-6️⃣ Criação do Arquivo Excel
+    6️⃣ Criação do Arquivo Excel
 O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
 Configuração:
 
@@ -404,7 +406,7 @@ Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
   <img src="/api/placeholder/550/300" alt="Criação do Excel" />
   <p><em>Configuração da criação do arquivo Excel</em></p>
 </div>
-7️⃣ Recuperação de Metadados
+    7️⃣ Recuperação de Metadados
 O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
 Informações Coletadas:
 
@@ -413,7 +415,7 @@ URI do arquivo
 Permissões
 Última modificação
 
-8️⃣ Criação da Tabela Excel
+    8️⃣ Criação da Tabela Excel
 Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos.
 Configuração:
 
@@ -424,7 +426,7 @@ Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
   <img src="/api/placeholder/550/300" alt="Criação da Tabela" />
   <p><em>Configuração da tabela no Excel</em></p>
 </div>
-9️⃣ Inserção de Dados
+    9️⃣ Inserção de Dados
 O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP.
 Configuração da Requisição:
 
