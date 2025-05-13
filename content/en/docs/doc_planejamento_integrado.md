@@ -361,10 +361,8 @@ Detalhes da Configuração:
 Dataset: TesteOBZ
 Tipo de Consulta: DAX (Direct Query)
 Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
-
-<div align="center">
-![Dataset PowerBI](assets/images/datasetPowerBI.png) 
-</div>
+ 
+ ![Dataset PowerBI](../assets/images/datasetPowerBI.png)
     
 3️⃣ Extração e Processamento dos Dados
 Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
@@ -372,7 +370,9 @@ Após a execução da consulta, o fluxo extrai as linhas de resultado e as proce
 Configuração:
 Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
 Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
-    
+
+  ![Processamento](../assets/images/Processamento.png)   
+
 4️⃣ Estruturação via Parse JSON
 Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
 
@@ -380,10 +380,7 @@ Configuração do Parse JSON:
 Conteúdo: Resultado da etapa anterior
 Esquema: Definição estruturada dos campos esperados
 
-<div align="center">
-  <img src="/api/placeholder/550/300" alt="Parse JSON" />
-  <p><em>Estruturação dos dados via Parse JSON</em></p>
-</div>
+ ![Estruturação](../assets/images/Estruturação.png)
 
 5️⃣ Personalização dos Dados
 Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final.
@@ -395,6 +392,8 @@ Valores orçamentários
 Métricas de desempenho
 Informações temporais
 
+ ![Personalizar](../assets/images/Personalizar.png)
+
 6️⃣ Criação do Arquivo Excel
 O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
 Configuração:
@@ -403,10 +402,7 @@ Localização: /SEDESE
 Nome do Arquivo: Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx
 Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
 
-<div align="center">
-  <img src="/api/placeholder/550/300" alt="Criação do Excel" />
-  <p><em>Configuração da criação do arquivo Excel</em></p>
-</div>
+ ![SharePoint](../assets/images/SharePoint.png)
 
 7️⃣ Recuperação de Metadados
 O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
