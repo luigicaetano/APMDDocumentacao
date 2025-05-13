@@ -1,4 +1,12 @@
-# 📱 Documentação Planejamento Integrado 2026 — SEDESE
+---
+title: 📱 Documentação Planejamento Integrado 2026 — SEDESE
+date: 2025-05-13
+description: >
+  Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
+categories: [Gestão, Planejamneto]
+tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
+---
+
 
 <div align="center">
   <img src="./assets/logo-sedese.png" alt="Logo SEDESE" width="200"/>
