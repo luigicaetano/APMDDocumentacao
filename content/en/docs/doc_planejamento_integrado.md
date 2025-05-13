@@ -318,10 +318,7 @@ Refresh(PlanejamentoIntegrado_Cenarios)
 
 🌟 Visão Geral do Fluxo
 O fluxo de automação do Planejamento Integrado 2026 foi desenvolvido para automatizar a geração de relatórios analíticos a partir dos dados cadastrados no aplicativo PowerApps. Este fluxo integra múltiplas tecnologias Microsoft (PowerApps, Power BI, SharePoint e Teams) para entregar relatórios personalizados com base nas ações selecionadas pelo usuário.
-<div align="center">
-  <img src="/api/placeholder/700/350" alt="Visão Geral do Fluxo" />
-  <p><em>Fluxo completo do Power Automate para geração de relatórios</em></p>
-</div>
+
 
 💡 Objetivo Principal: Automatizar a extração, processamento e distribuição de relatórios analíticos com dados atualizados das iniciativas de planejamento.
 
@@ -343,7 +340,7 @@ graph TD
 
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
-📋 Detalhamento das Etapas
+## 📋 Detalhamento das Etapas
     1️⃣ Acionamento do Fluxo
 O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
 Configuração do Gatilho:
@@ -353,6 +350,7 @@ Parâmetros de Entrada:
 
 Ações: Código(s) das ações selecionadas para o relatório
 Usuário: E-mail do usuário solicitante
+
 (../assets/images/1.png)
 
     2️⃣ Consulta ao Power BI
