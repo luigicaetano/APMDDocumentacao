@@ -352,7 +352,7 @@ Parâmetros de Entrada:
 Ações: Código(s) das ações selecionadas para o relatório
 Usuário: E-mail do usuário solicitante
 
-(../assets/images/acionamentoFluxo.png)
+ ![Fluxo PowerApps](../assets/images/acionamentoFluxo.png)
 
     2️⃣ Consulta ao Power BI
 O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
@@ -363,7 +363,7 @@ Tipo de Consulta: DAX (Direct Query)
 Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
 
 <div align="center">
-  (../assets/images/dataset.png)
+ (../assets/images/dataset.png)
 </div>
     
     3️⃣ Extração e Processamento dos Dados
