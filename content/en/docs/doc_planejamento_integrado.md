@@ -395,6 +395,7 @@ Informações temporais
  ![Personalizar](../assets/images/Personalizar.png)
 
 6️⃣ Criação do Arquivo Excel
+
 O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
 Configuração:
 
@@ -402,7 +403,7 @@ Localização: /SEDESE
 Nome do Arquivo: Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx
 Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
 
- ![SharePoint](../assets/images/SharePoint.png)
+ ![Arquivo](../assets/images/7.png)
 
 7️⃣ Recuperação de Metadados
 O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
