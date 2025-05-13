@@ -259,9 +259,9 @@ If(
 
 > Exibe uma lista filtrada de ações relacionadas ao programa selecionado.
 
-## 📊 Tela de Cenarios
+## 📊 Tela Cenarios
 
-![Tela de Cenarios](..assets/images/TeladeCenarios.png) 
+![Tela Cenarios](..assets/images/TeladeCenarios.png) 
 
 ### Elementos de Interface
 
