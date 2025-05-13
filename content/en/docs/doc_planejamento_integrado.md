@@ -23,9 +23,7 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 ## 📋 Tela de Iniciativas
 
-<div align="center">
-![Tela de Iniciativas] (../assets/images/TelaIniciativas.png)
-</div>
+![Tela Iniciativas](../assets/images/TelaIniciativas.png)
 
 ### Elementos de Interface
 
@@ -207,9 +205,7 @@ Set(varNotificacao;"ExcluirIniciativa")
 
 ## 💰 Tela Itens de Custo
 
-<div align="center">
-  (../assets/images/TelaItensdCusto.png) alt="Tela de Itens de Custo" width="650"/>
-</div>
+![TelaItensdeCusto] (../assets/images/TelaItensdCusto.png)
 
 ### Elementos de Interface
 
@@ -265,9 +261,7 @@ If(
 
 ## 📊 Tela de Cenários
 
-<div align="center">
-  (..assets/images/TelaCenarios.png) alt="Tela de Cenários" width="650"/>
-</div>
+[TeladeCenários](..assets/images/TelaCenarios.png) 
 
 ### Elementos de Interface
 
