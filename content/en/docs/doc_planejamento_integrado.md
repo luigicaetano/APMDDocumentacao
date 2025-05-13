@@ -397,8 +397,8 @@ Informações temporais
 6️⃣ Criação do Arquivo Excel
 
 O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
-Configuração:
 
+Configuração:
 Localização: /SEDESE
 Nome do Arquivo: Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx
 Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
@@ -406,6 +406,7 @@ Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
  ![Arquivo](../assets/images/7.png)
 
 7️⃣ Recuperação de Metadados
+
 O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
 
 Informações Coletadas:
@@ -414,25 +415,28 @@ URI do arquivo
 Permissões
 Última modificação
 
+![Informações](../assets/images/Informações.png)
+
 8️⃣ Criação da Tabela Excel
+
 Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos.
 
 Configuração:
 Nome da Tabela: "Relatorio"
 Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
 
-<div align="center">
-  <img src="/api/placeholder/550/300" alt="Criação da Tabela" />
-  <p><em>Configuração da tabela no Excel</em></p>
-</div>
+![Excel](../assets/images/Excel_Tabela.png)
 
 9️⃣ Inserção de Dados
+
 O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP.
 
 Configuração da Requisição:
 Método: POST
 URI: Construída com base no ID extraído do arquivo
 Corpo da Requisição: Dados estruturados no formato esperado pela API do Excel
+
+![HTTP](../assets/images/HTTP.png)
 
 🔗 Criação de Link de Compartilhamento
 O fluxo cria um link de compartilhamento para o arquivo Excel criado.
@@ -442,6 +446,8 @@ Tipo de Link: Visualização
 Escopo: Organização
 Expiração: Não definida
 
+![Link](../assets/images/Link.png)
+
 📱 Envio de Notificação no Teams
 A última etapa envia uma notificação ao usuário no Microsoft Teams, incluindo o link para o relatório.
 
@@ -450,10 +456,7 @@ Destinatário: Usuário que solicitou o relatório (parâmetro Usuário)
 Conteúdo: Mensagem informativa + Link do relatório
 Formatação: Cartão adaptativo com botão de acesso
 
-<div align="center">
-  <img src="/api/placeholder/550/300" alt="Notificação Teams" />
-  <p><em>Exemplo de notificação enviada ao Teams</em></p>
-</div>
+![Mensagem](../assets/images/Mensagem.png)
 
 ## 📝 Considerações de Uso
 
