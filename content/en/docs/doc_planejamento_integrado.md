@@ -1,5 +1,5 @@
 ---
-title: 📱 Documentação Planejamento Integrado 2026 — SEDESE
+title: 📱 Planejamento Integrado 2026 — SEDESE
 date: 2025-05-13
 description: >
   Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
@@ -8,15 +8,10 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 ---
 
 
-<div align="center">
-  <img src="./assets/logo-sedese.png" alt="Logo SEDESE" width="200"/>
-  <p><em>Sistema de Planejamento Orçamentário e Gestão de Iniciativas</em></p>
-  <hr/>
-</div>
 
 ## 🏠 Tela Inicial
 
-![Tela Inicial do Aplicativo](imagem-tela-inicial.png)
+![Tela Inicial do Aplicativo](../assets/images/TelaInicial.png)
 
 ### Principais Elementos
 
@@ -29,7 +24,7 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 ## 📋 Tela de Iniciativas
 
 <div align="center">
-  <img src="imagem-tela-iniciativas.png" alt="Tela de Iniciativas" width="650"/>
+ (../assets/images/TelaIniciativas.png) alt="Tela de Iniciativas" width="650"/>
 </div>
 
 ### Elementos de Interface
@@ -213,7 +208,7 @@ Set(varNotificacao;"ExcluirIniciativa")
 ## 💰 Tela Itens de Custo
 
 <div align="center">
-  <img src="imagem-tela-custo.png" alt="Tela de Itens de Custo" width="650"/>
+  (../assets/images/TelaItensdCusto.png) alt="Tela de Itens de Custo" width="650"/>
 </div>
 
 ### Elementos de Interface
@@ -271,7 +266,7 @@ If(
 ## 📊 Tela de Cenários
 
 <div align="center">
-  <img src="imagem-tela-cenarios.png" alt="Tela de Cenários" width="650"/>
+  (..assets/images/TelaCenarios.png) alt="Tela de Cenários" width="650"/>
 </div>
 
 ### Elementos de Interface
