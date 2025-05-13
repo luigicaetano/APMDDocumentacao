@@ -205,7 +205,7 @@ Set(varNotificacao;"ExcluirIniciativa")
 
 ## 💰 Tela Itens de Custo
 
-![Tela Itens de Custo](../assets/images/TelaItensdCusto.png)
+![Tela Itens de Custo](../assets/images/TelaItensdeCusto.png)
 
 ### Elementos de Interface
 
