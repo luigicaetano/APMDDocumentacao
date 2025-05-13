@@ -368,14 +368,15 @@ Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
     
 3️⃣ Extração e Processamento dos Dados
 Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
+
 Configuração:
-``` Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
+Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
 Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
     
 4️⃣ Estruturação via Parse JSON
 Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
-Configuração do Parse JSON:
 
+Configuração do Parse JSON:
 Conteúdo: Resultado da etapa anterior
 Esquema: Definição estruturada dos campos esperados
 
@@ -383,10 +384,11 @@ Esquema: Definição estruturada dos campos esperados
   <img src="/api/placeholder/550/300" alt="Parse JSON" />
   <p><em>Estruturação dos dados via Parse JSON</em></p>
 </div>
+
 5️⃣ Personalização dos Dados
 Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final.
-Campos Mapeados:
 
+Campos Mapeados:
 Identificadores de ações
 Descrições
 Valores orçamentários
@@ -405,10 +407,11 @@ Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
   <img src="/api/placeholder/550/300" alt="Criação do Excel" />
   <p><em>Configuração da criação do arquivo Excel</em></p>
 </div>
+
 7️⃣ Recuperação de Metadados
 O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
-Informações Coletadas:
 
+Informações Coletadas:
 ID do arquivo
 URI do arquivo
 Permissões
@@ -416,8 +419,8 @@ Permissões
 
 8️⃣ Criação da Tabela Excel
 Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos.
-Configuração:
 
+Configuração:
 Nome da Tabela: "Relatorio"
 Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
 
@@ -425,26 +428,27 @@ Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
   <img src="/api/placeholder/550/300" alt="Criação da Tabela" />
   <p><em>Configuração da tabela no Excel</em></p>
 </div>
+
 9️⃣ Inserção de Dados
 O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP.
-Configuração da Requisição:
 
+Configuração da Requisição:
 Método: POST
 URI: Construída com base no ID extraído do arquivo
 Corpo da Requisição: Dados estruturados no formato esperado pela API do Excel
 
 🔗 Criação de Link de Compartilhamento
 O fluxo cria um link de compartilhamento para o arquivo Excel criado.
-Parâmetros de Configuração:
 
+Parâmetros de Configuração:
 Tipo de Link: Visualização
 Escopo: Organização
 Expiração: Não definida
 
 📱 Envio de Notificação no Teams
 A última etapa envia uma notificação ao usuário no Microsoft Teams, incluindo o link para o relatório.
-Configuração:
 
+Configuração:
 Destinatário: Usuário que solicitou o relatório (parâmetro Usuário)
 Conteúdo: Mensagem informativa + Link do relatório
 Formatação: Cartão adaptativo com botão de acesso
