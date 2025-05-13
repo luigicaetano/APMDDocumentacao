@@ -288,6 +288,7 @@ graph TD
     K --> L[Mensagem]
 ```
 
+---
 
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
