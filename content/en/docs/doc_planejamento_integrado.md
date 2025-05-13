@@ -363,7 +363,7 @@ Tipo de Consulta: DAX (Direct Query)
 Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
 
 <div align="center">
-![Dataset PowerBI](assets/images/datasetpoPowerBI.png) 
+![Dataset PowerBI](assets/images/datasetPowerBI.png) 
 </div>
     
     3️⃣ Extração e Processamento dos Dados
