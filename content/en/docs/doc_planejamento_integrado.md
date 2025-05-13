@@ -316,9 +316,21 @@ Refresh(PlanejamentoIntegrado_Cenarios)
 
 ## 🔄 Fluxo Power Automate
 
-<div align="center">
-  <img src="imagem-fluxo.png" alt="Diagrama do fluxo Power Automate" width="750"/>
-</div>
+```mermaid
+graph TD
+    A[Chamar o fluxo no PowerApps] --> B[Gerar uma consulta no dataset do PowerBI]
+    B --> C[Armazenar os dados]
+    C --> D[Estruturação dos dados via Parse JSON]
+    D --> E[Personalizar os dados]
+    E --> F[Extrair dados do SharePoint]
+    F --> G[Criar um arquivo de Excel na pasta]
+    G --> H[Recuperar informações]
+    H --> I[Criar uma tabela]
+    I --> J[Send an HTTP request]
+    J --> K[Link de compartilhamento]
+    K --> L[Mensagem]
+```
+
 
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
