@@ -24,7 +24,7 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 ## 📋 Tela de Iniciativas
 
 <div align="center">
- (../assets/images/TelaIniciativas.png) alt="Tela de Iniciativas" width="650"/>
+![Tela de Iniciativas] (../assets/images/TelaIniciativas.png)
 </div>
 
 ### Elementos de Interface
