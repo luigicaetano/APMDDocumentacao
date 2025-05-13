@@ -61,7 +61,7 @@ graph TD
     G --> H[Resultados Finais]
 ```
 
----
+
 
 ## 💻 1. Processo: Portal MGS
 

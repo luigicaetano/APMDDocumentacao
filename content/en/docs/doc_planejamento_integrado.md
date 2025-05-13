@@ -470,6 +470,16 @@ Formatação: Cartão adaptativo com botão de acesso
   color: #0078d4;
 }
 
+/* Mermaid diagrams */
+.mermaid {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 1.5em 0;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .tips {
     grid-template-columns: 1fr;
