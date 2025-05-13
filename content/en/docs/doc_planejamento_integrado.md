@@ -341,6 +341,7 @@ graph TD
 O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
 
 ## 📋 Detalhamento das Etapas
+    
     1️⃣ Acionamento do Fluxo
 O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
 Configuração do Gatilho:
@@ -351,7 +352,7 @@ Parâmetros de Entrada:
 Ações: Código(s) das ações selecionadas para o relatório
 Usuário: E-mail do usuário solicitante
 
-(../assets/images/1.png)
+(../assets/images/acionamentoFluxo.png)
 
     2️⃣ Consulta ao Power BI
 O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
@@ -363,14 +364,14 @@ Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
 
 <div align="center">
   (../assets/images/2.png)
-  <p><em>Configuração da consulta DAX no Power BI</em></p>
 </div>
     
     3️⃣ Extração e Processamento dos Dados
 Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
 Configuração:
-Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
+``` Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
 Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
+    
     4️⃣ Estruturação via Parse JSON
 Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
 Configuração do Parse JSON:
