@@ -261,7 +261,7 @@ If(
 
 ## 📊 Tela de Cenarios
 
-![Tela de Cenarios](..assets/images/TelaCenarios.png) 
+![Tela de Cenarios](..assets/images/TeladeCenarios.png) 
 
 ### Elementos de Interface
 
