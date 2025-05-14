@@ -1,6 +1,5 @@
-
 ---
-title: Fluxo do Power Automate
+title: 3. Fluxo do Power Automate
 date: 2025-05-05
 description: >
   Essa etapa demonostra como fazemos o fluxo para os relorios chegarem no chat do Teams 
