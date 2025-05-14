@@ -1,5 +1,5 @@
 ---
-title: 📱 Planejamento Integrado 2026 — SEDESE
+title: 4. Tutorial completo
 date: 2025-05-13
 description: >
   Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
