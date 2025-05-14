@@ -21,10 +21,10 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 O aplicativo de Planejamento Integrado 2026 é uma ferramenta desenvolvida pela SEDESE, que permite aos usuários cadastrar e gerenciar iniciativas vinculadas a programas e ações institucionais, preenchendo informações relevantes para planejamento e orçamento.
 
 ### Principais Funcionalidades: 
-  **Cadastro de Iniciativas: Permite criar e gerenciar iniciativas vinculadas a programas e ações
-  **Gestão de Itens de Custo: Possibilita detalhar os custos associados a cada iniciativa
-  **Definição de Cenários: Permite configurar diferentes cenários para análise e planejamento
-  **Geração de Relatórios: Oferece a possibilidade de gerar relatórios de planejamento OBZ
+1️⃣ Cadastro de Iniciativas: Permite criar e gerenciar iniciativas vinculadas a programas e ações
+2️⃣ Gestão de Itens de Custo: Possibilita detalhar os custos associados a cada iniciativa
+3️⃣ Definição de Cenários: Permite configurar diferentes cenários para análise e planejamento
+4️⃣ Geração de Relatórios: Oferece a possibilidade de gerar relatórios de planejamento OBZ
 
 ### Etapas para o aplicativo:
   Se interessou pelo aplicativo e quer saber mais? Abaixo estão todas as etapas de como o aplicativo foi produzido:
