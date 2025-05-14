@@ -5,7 +5,8 @@ description: >
   Essa etapa demonostra como vinculamos a base de dados ao aplicativo, via PowerApps
 weight: 6
 ---
-Essa etapa demonostra como vinculamos a base de dados ao aplicativo, via PowerApps
+
+
 
 
 <style>
