@@ -1,10 +1,11 @@
+---
+title: Vinculando os dados ao Aplicativo
+date: 2025-05-05
+description: >
+  Essa etapa demonostra como vinculamos a base de dados ao aplicativo, via PowerApps
+weight: 6
+---
 Essa etapa demonostra como vinculamos a base de dados ao aplicativo, via PowerApps
-
-
-
-
-
-
 
 
 <style>
