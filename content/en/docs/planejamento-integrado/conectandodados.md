@@ -1,9 +1,9 @@
 ---
-title: 1. Conectando Dados ao Seu Aplicativo
+title: Conectando Dados ao Seu Aplicativo
 date: 2025-05-14 
 description: >
   Guia passo a passo para conectar sua base de dados ao aplicativo usando o PowerApps
-weight: 6
+weight: 1
 ---
 
 # 🔄 Conectando Seus Dados ao PowerApps
@@ -23,31 +23,31 @@ Neste guia, você aprenderá como conectar facilmente suas listas do SharePoint 
   <div class="step">
     <h3>📌 Passo 1: Iniciando a conexão</h3>
     <p>Na parte superior da tela do PowerApps, clique no botão <strong>"Adicionar Dados"</strong>. Uma lista de opções vai aparecer - escolha <strong>"SharePoint"</strong> para começar.</p>
-    <img src="../assets/images/AddDados.png" alt="Botão Adicionar Dados no PowerApps" class="screenshot">
+    {{< figure src="/assets/images/AddDados.png" alt="Botão Adicionar Dados no PowerApps" >}}
   </div>
 
   <div class="step">
     <h3>📌 Passo 2: Conectando sua conta</h3>
     <p>O sistema pedirá para você conectar sua conta do SharePoint. Clique em <strong>"Adicionar uma conexão"</strong> e entre com as mesmas credenciais que você usa para acessar o SharePoint normalmente.</p>
-    <img src="../assets/images/AddNovaConexão.png" alt="Tela de conexão de conta" class="screenshot">
+    {{< figure src="/assets/images/AddNovaConexão.png" alt="Tela de conexão de conta" >}}
   </div>
 
   <div class="step">
     <h3>📌 Passo 3: Informando o endereço do site</h3>
     <p>Digite o endereço completo (URL) do site do SharePoint onde estão armazenadas suas listas. Este é o mesmo endereço que você usa para acessar o site no navegador.</p>
-    <img src="../assets/images/URL.png" alt="Campo para inserir URL do site" class="screenshot">
+    {{< figure src="/assets/images/URL.png" alt="Campo para inserir URL do site" >}}
   </div>
 
   <div class="step">
     <h3>📌 Passo 4: Selecionando as listas</h3>
     <p>Aparecerá uma lista com todas as listas disponíveis no site. Marque as caixas ao lado das listas que você deseja usar no seu aplicativo e clique em <strong>"Conectar"</strong>.</p>
-    <img src="../assets/images/Listas.png" alt="Seleção de listas disponíveis" class="screenshot">
+    {{< figure src="/assets/images/Listas.png" alt="Seleção de listas disponíveis" >}}
   </div>
 
   <div class="step">
     <h3>📌 Passo 5: Confirmando a conexão</h3>
     <p>Pronto! Suas listas agora estão conectadas. Você pode vê-las no painel lateral esquerdo, na seção "Fontes de dados". A partir de agora, você pode usar essas informações no seu aplicativo.</p>
-    <img src="../assets/images/DadosApp.png" alt="Listas conectadas no painel lateral" class="screenshot">
+    {{< figure src="/assets/images/DadosApp.png" alt="Listas conectadas no painel lateral" >}}
   </div>
 </div>
 
@@ -75,8 +75,8 @@ Neste guia, você aprenderá como conectar facilmente suas listas do SharePoint 
 Agora que você conectou com sucesso seus dados, está pronto para começar a usá-los no seu aplicativo! No próximo tutorial, você aprenderá como exibir essas informações em formulários e telas.
 
 <div class="navigation-links">
-  <a href="../criando-app/" class="prev-link">← Tutorial Anterior: Criando seu Aplicativo</a>
-  <a href="../usando-dados/" class="next-link">Próximo Tutorial: Usando os Dados →</a>
+  <a href="../../planejamento-integrado/" class="prev-link">← Passo anterior: Introdução</a>
+  <a href="../fluxopowerautomate/" class="next-link">Próximo passo: Criando os fluxos necessários no Power Automate →</a>
 </div>
 
 <style>
@@ -89,7 +89,7 @@ body {
 
 h1, h2, h3 {
   font-weight: 600;
-  color: #0078d4;
+  color:rgb(0, 0, 0);
   margin-top: 1.5em;
 }
 
@@ -127,8 +127,8 @@ h1 {
   font-size: 1.3em;
 }
 
-/* Estilo das capturas de tela */
-.screenshot {
+/* Estilo das imagens */
+img {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 100%;
@@ -137,7 +137,7 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-.screenshot:hover {
+img:hover {
   transform: scale(1.02);
 }
 
