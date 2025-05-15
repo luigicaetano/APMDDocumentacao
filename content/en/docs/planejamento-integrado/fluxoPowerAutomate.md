@@ -1,18 +1,25 @@
 ---
-title: Fluxo do Power Automate
-date: 2025-05-05
+title: Criando Fluxos no Power Automate
+date: 2025-05-14
 description: >
-  Essa etapa demonostra como fazemos o fluxo para os relorios chegarem no chat do Teams 
+  Guia detalhado sobre como configurar o fluxo de automação para enviar relatórios para o Teams
 weight: 2
 ---
 
-## 🔄 Fluxo Power Automate
+# 🔄 Criando Fluxos no Power Automate
 
-🌟 Visão Geral do Fluxo
-O fluxo de automação do Planejamento Integrado 2026 foi desenvolvido para automatizar a geração de relatórios analíticos a partir dos dados cadastrados no aplicativo PowerApps. Este fluxo integra múltiplas tecnologias Microsoft (PowerApps, Power BI, SharePoint e Teams) para entregar relatórios personalizados com base nas ações selecionadas pelo usuário.
+Neste guia, você aprenderá como configurar um fluxo de automação no Power Automate que conecta seu aplicativo PowerApps com relatórios do Power BI e envia os resultados diretamente para o Microsoft Teams. Este processo automatizado economiza tempo e garante que todos recebam informações atualizadas.
 
+## O Que Você Vai Aprender
 
-💡 Objetivo Principal: Automatizar a extração, processamento e distribuição de relatórios analíticos com dados atualizados das iniciativas de planejamento.
+- Como criar um fluxo acionado pelo PowerApps
+- Como consultar dados do Power BI através do fluxo
+- Como processar dados e criar relatórios em Excel
+- Como compartilhar automaticamente os resultados no Teams
+
+## Visão Geral do Fluxo
+
+O fluxo de automação do Planejamento Integrado 2026 foi desenvolvido para gerar relatórios analíticos a partir dos dados cadastrados no PowerApps. Este fluxo integra múltiplas tecnologias Microsoft para entregar relatórios personalizados com base nas ações selecionadas pelo usuário.
 
 ```mermaid
 graph TD
@@ -26,189 +33,248 @@ graph TD
     H --> I[Criar uma tabela]
     I --> J[Requisição em HTTP]
     J --> K[Link de compartilhamento]
-    K --> L[Mensagem]
+    K --> L[Mensagem no Teams]
 ```
 
----
+## Passo a Passo
 
-O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
-
-## 📋 Detalhamento das Etapas
-    
-1️⃣ Acionamento do Fluxo
-O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
-
-Configuração do Gatilho:
-Origem: Botão PowerApps
-
-Parâmetros de Entrada:
-Ações: Código(s) das ações selecionadas para o relatório
-Usuário: E-mail do usuário solicitante
-
- ![Fluxo PowerApps](../assets/images/acionamentoFluxo.png)
-
-2️⃣ Consulta ao Power BI
-O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
-
-Detalhes da Configuração:
-Dataset: TesteOBZ
-Tipo de Consulta: DAX (Direct Query)
-Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
- 
- ![Dataset PowerBI](../assets/images/datasetPowerBI.png)
-    
-3️⃣ Extração e Processamento dos Dados
-Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
-
-Configuração:
-Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
-Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
-
-  ![Processamento](../assets/images/Processamento.png)   
-
-4️⃣ Estruturação via Parse JSON
-Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
-
-Configuração do Parse JSON:
-Conteúdo: Resultado da etapa anterior
-Esquema: Definição estruturada dos campos esperados
-
- ![Estruturação](../assets/images/Estruturação.png)
-
-5️⃣ Personalização dos Dados
-Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final.
-
-Campos Mapeados:
-Identificadores de ações
-Descrições
-Valores orçamentários
-Métricas de desempenho
-Informações temporais
-
- ![Personalizar](../assets/images/Personalizar.png)
-
-6️⃣ Criação do Arquivo Excel
-
-O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
-
-Configuração:
-Localização: /SEDESE
-Nome do Arquivo: Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx
-Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
-
- ![Arquivo](../assets/images/7.png)
-
-7️⃣ Recuperação de Metadados
-
-O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
-
-Informações Coletadas:
-ID do arquivo
-URI do arquivo
-Permissões
-Última modificação
-
-![Informações](../assets/images/Informações.png)
-
-8️⃣ Criação da Tabela Excel
-
-Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos.
-
-Configuração:
-Nome da Tabela: "Relatorio"
-Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
-
-![Excel](../assets/images/Excel_Tabela.png)
-
-9️⃣ Inserção de Dados
-
-O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP.
-
-Configuração da Requisição:
-Método: POST
-URI: Construída com base no ID extraído do arquivo
-Corpo da Requisição: Dados estruturados no formato esperado pela API do Excel
-
-![HTTP](../assets/images/HTTP.png)
-
-🔗 Criação de Link de Compartilhamento
-O fluxo cria um link de compartilhamento para o arquivo Excel criado.
-
-Parâmetros de Configuração:
-Tipo de Link: Visualização
-Escopo: Organização
-Expiração: Não definida
-
-![Link](../assets/images/Link.png)
-
-📱 Envio de Notificação no Teams
-A última etapa envia uma notificação ao usuário no Microsoft Teams, incluindo o link para o relatório.
-
-Configuração:
-Destinatário: Usuário que solicitou o relatório (parâmetro Usuário)
-Conteúdo: Mensagem informativa + Link do relatório
-Formatação: Cartão adaptativo com botão de acesso
-
-![Mensagem](../assets/images/Mensagem.png)
-
-## 📝 Considerações de Uso
-
-<div class="tips">
-  <div class="tip">
-    <h3>🎯 Objetivo</h3>
-    <p>O aplicativo foi desenvolvido para simplificar o processo de planejamento integrado</p>
+<div class="flow-steps">
+  <div class="step">
+    <h3>📌 Passo 1: Acionando o fluxo pelo PowerApps</h3>
+    <p>O fluxo é iniciado quando o usuário clica no botão "Gerar Relatório OBZ" no aplicativo PowerApps. Este botão envia dois parâmetros importantes: os códigos das ações selecionadas e o e-mail do usuário solicitante.</p>
+    {{< figure src="../assets/images/acionamentoFluxo.png" alt="Configuração do gatilho no PowerApps" >}}
   </div>
-  <div class="tip">
-    <h3>👤 Perfis</h3>
-    <p>As permissões são controladas por perfil de usuário (gestor/não gestor)</p>
+
+  <div class="step">
+    <h3>📌 Passo 2: Consultando dados no Power BI</h3>
+    <p>O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI. Esta consulta filtra as informações com base nas ações selecionadas pelo usuário no PowerApps. Para personalizar o relatório, veja a sessão <a href="../conectandodados/" class="prev-link">Extraindo dados do Power BI para o Power Automate</a>.</p>
+    {{< figure src="../assets/images/datasetPowerBI.png" alt="Consulta ao dataset do Power BI" >}}
   </div>
-  <div class="tip">
-    <h3>💾 Armazenamento</h3>
-    <p>Os dados são integrados com SharePoint para persistência</p>
+
+  <div class="step">
+    <h3>📌 Passo 3: Extraindo e processando dados</h3>
+    <p>Após a consulta, o sistema extrai apenas as linhas de resultado relevantes e as processa para uso nas próximas etapas. Esta etapa transforma dados brutos em informações utilizáveis.</p>
+    <div class="code-sample">
+      {{< highlight csharp >}}
+        // Código utilizado no "Inputs" da ação:
+        outputs('Gerar_uma_consulta_no_dataset_do_PowerBI')?['body']?['results']?[0]?['tables']?[0]?['rows']
+      {{< /highlight >}}
+    </div>
+    {{< figure src="../assets/images/Processamento.png" alt="Processamento dos dados extraídos" >}}
   </div>
-  <div class="tip">
-    <h3>📊 Relatórios</h3>
-    <p>O sistema oferece funcionalidades de relatórios automatizados</p>
+
+  <div class="step">
+    <h3>📌 Passo 4: Estruturando dados com Parse JSON</h3>
+    <p>Os dados são organizados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados bem definida e fácil de manipular nas etapas seguintes.</p>
+    <p>É importante lembrar que o esquema JSON configurado no nosso arquivo é para a forma como nós estruturamos o nosso relatório. Caso queiram personalizar, terão que alterar os nomes de cada campo no "Schema".
+    {{< figure src="../assets/images/Estruturação.png" alt="Estruturação via Parse JSON" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 5: Personalizando o formato dos dados</h3>
+    <p>Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final, mapeando campos como identificadores de ações, descrições, valores orçamentários e métricas de desempenho.</p>
+    {{< figure src="../assets/images/Personalizar.png" alt="Personalização do formato de dados" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 6: Criando o arquivo Excel</h3>
+    <p>O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora atual, facilitando a organização e busca dos relatórios gerados.</p>
+    <div class="code-sample">
+      {{< highlight csharp >}}
+        // Código utilizado no "File Name" da ação, para garantir um nome único para cada arquivo:
+        formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
+      {{< /highlight >}}
+    </div>
+    {{< figure src="../assets/images/7.png" alt="Criação do arquivo Excel" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 7: Recuperando metadados do arquivo</h3>
+    <p>O sistema obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.</p>
+    {{< figure src="../assets/images/Informações.png" alt="Recuperação de metadados do arquivo" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 8: Criando a tabela no Excel</h3>
+    <p>Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos que facilitam a leitura e análise dos dados do relatório.</p>
+    <div class="code-sample">
+      {{< highlight csharp >}}
+        // Para acessarmos a biblioteca de cada usuário, é necessário passar o identificador obtido na etapa anterior:
+        split(outputs('Recuperar_informações')?['body/Id'],'.')?[0]
+      {{< /highlight >}}
+    </div>
+    {{< figure src="../assets/images/Excel_Tabela.png" alt="Criação da tabela no Excel" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 9: Inserindo dados na tabela</h3>
+    <p>O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP, utilizando o ID extraído do arquivo para garantir que os dados sejam inseridos no local correto.</p>
+    <div class="code-sample">
+      {{< highlight csharp >}}
+        // Fique atento as "/", a função está entre duas:
+        split(outputs('Recuperar_informações')?['body/Id'],'.')?[1]
+      {{< /highlight >}}
+    </div>
+    {{< figure src="../assets/images/HTTP.png" alt="Inserção de dados via HTTP" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 10: Gerando link de compartilhamento</h3>
+    <p>O sistema cria um link de compartilhamento para o arquivo Excel, permitindo que o usuário acesse o relatório diretamente sem precisar navegar pelo SharePoint.</p>
+    {{< figure src="../assets/images/Link.png" alt="Criação do link de compartilhamento" >}}
+  </div>
+
+  <div class="step">
+    <h3>📌 Passo 11: Enviando notificação no Teams</h3>
+    <p>A etapa final envia uma notificação ao usuário no Microsoft Teams, incluindo uma mensagem informativa e o link para acessar o relatório com apenas um clique.</p>
+    {{< figure src="../assets/images/Mensagem.png" alt="Envio de notificação no Teams" >}}
   </div>
 </div>
 
+## 💡 Dicas Úteis
+
+<div class="tips">
+  <div class="tip">
+    <h3>🎯 Objetivo do fluxo</h3>
+    <p>Lembre-se que o principal objetivo é automatizar a geração e distribuição de relatórios, economizando tempo e garantindo consistência nas informações.</p>
+  </div>
+  
+  <div class="tip">
+    <h3>🔄 Testando seu fluxo</h3>
+    <p>Antes de implementar em produção, teste o fluxo com um conjunto pequeno de dados para verificar se todas as etapas estão funcionando corretamente.</p>
+  </div>
+  
+  <div class="tip">
+    <h3>👤 Permissões necessárias</h3>
+    <p>Certifique-se que os usuários têm as permissões corretas no SharePoint, Power BI e Teams para que o fluxo funcione sem interrupções.</p>
+  </div>
+  
+  <div class="tip">
+    <h3>📊 Personalização de relatórios</h3>
+    <p>Você pode personalizar os campos e formato do relatório Excel modificando as etapas de estruturação e criação da tabela conforme suas necessidades específicas.</p>
+  </div>
+</div>
+
+## O Que Vem a Seguir?
+
+Agora que você configurou com sucesso o fluxo de automação no Power Automate, está pronto para implementar soluções completas de relatórios automatizados! No próximo tutorial, você aprenderá como personalizar ainda mais os relatórios e adicionar visualizações avançadas.
+
+<div class="navigation-links">
+  <a href="../conectandodados/" class="prev-link">← Passo anterior: Conectando Dados ao Seu Aplicativo</a>
+  <a href="../configuracaopowerapps/" class="next-link">Próximo passo: Configurando o PowerApps →</a>
+</div>
+
 <style>
+/* Estilo geral da página */
+body {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color:rgb(0, 0, 0);
+  margin-top: 1.5em;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.8em;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.3em;
+}
+
+/* Estilo dos passos */
 .flow-steps {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 20px;
+  margin: 30px 0;
 }
 
 .step {
   background-color: #f8f9fa;
-  border-left: 4px solid #0078d4;
-  padding: 10px 15px;
-  border-radius: 0 5px 5px 0;
+  border-left: 5px solid #0078d4;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.step:hover {
+  transform: translateX(5px);
 }
 
 .step h3 {
   margin-top: 0;
   color: #0078d4;
+  font-size: 1.3em;
 }
 
+/* Estilo das imagens */
+img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 15px 0;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Estilo das dicas */
 .tips {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
 }
 
 .tip {
   background-color: #f0f7ff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e6f0ff;
+  transition: all 0.3s ease;
+}
+
+.tip:hover {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
 }
 
 .tip h3 {
   margin-top: 0;
   color: #0078d4;
+  font-size: 1.2em;
+}
+
+/* Links de navegação */
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: #0078d4;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  transition: all 0.2s ease;
+}
+
+.navigation-links a:hover {
+  background-color: #0078d4;
+  color: white;
 }
 
 /* Mermaid diagrams */
@@ -221,9 +287,36 @@ Formatação: Cartão adaptativo com botão de acesso
   text-align: center;
 }
 
+/* Estilo para blocos de código */
+.code-sample {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.code-sample pre {
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0078d4;
+  margin: 0;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   .tips {
     grid-template-columns: 1fr;
+  }
+  
+  .navigation-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  .step {
+    padding: 15px;
   }
 }
 </style>

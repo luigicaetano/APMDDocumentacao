@@ -1,5 +1,5 @@
 ---
-title: 📱 Planejamento Integrado 2026 — SEDESE
+title: Planejamento Integrado 2026 — SEDESE
 date: 2025-05-14
 description: >
   Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
@@ -35,9 +35,9 @@ tags: [Planejamento Integrado, Monitoramento, Gestão Pública]
   </div>
 </div>
 
-## 🔍 O Que é o Planejamento Integrado?
+## 🔍 O Que é o Aplicativo de Planejamento Integrado?
 
-O Planejamento Integrado 2026 é uma solução digital que permite à SEDESE transformar o processo tradicional de planejamento em uma experiência mais colaborativa, transparente e eficiente. Com ele, você pode:
+O Aplicativo de Planejamento Integrado 2026 é uma solução digital que permite à SEDESE transformar o processo tradicional de planejamento em uma experiência mais colaborativa, transparente e eficiente. Com ele, você pode:
 
 * **Alinhar iniciativas estratégicas** com programas e ações institucionais
 * **Planejar e controlar orçamentos** de forma detalhada e estruturada
@@ -106,15 +106,28 @@ O Planejamento Integrado 2026 é uma solução digital que permite à SEDESE tra
   </div>
 </div>
 
-## 🧩 Como o Aplicativo Foi Construído
+## 🧩 Como Construir este Aplicativo
 
-Interessado em saber como desenvolvemos esta solução? Esta documentação detalha todas as etapas do processo de criação do aplicativo:
+Interessado em saber como desenvolvemos esta solução, ou quer desenvolver para o seu órgão? Esta documentação detalha todas as etapas do processo de criação do aplicativo.
 
+<div class="download-resources">
+  <h3>📥 Recursos para download</h3>
+  <p>Para facilitar o seu trabalho, disponibilizamos todos os arquivos necessários para seguir este tutorial:</p>
+  <a href="../assets/downloads/planejamento-integrado-recursos.zip" class="download-button">
+    <span class="download-icon">📦</span>
+    <span class="download-text">
+      <span class="download-title">Baixar Arquivos do Tutorial</span>
+      <span class="download-desc">Arquivos para importação do powerapps, bases de dados, e modeo de relatório</span>
+    </span>
+  </a>
+</div>
+
+Caso queira somente os arquivos, você está pronto! Mas se precisar do passo a passo, siga por este tutorial!
 
 <div class="start-section">
   <h2>Pronto para começar?</h2>
   <p>Navegue pelo menu lateral ou pelas etapas abaixo para explorar todos os aspectos do aplicativo de Planejamento Integrado 2026, ou comece pela primeira etapa:</p>
-  <a href="../conectandodados/" class="start-button">Iniciar: Vinculando os Dados →</a>
+  <a href="../planejamento-integrado/conectandodados/" class="start-button">Iniciar: Vinculando os Dados →</a>
 </div>
 
 <style>
@@ -127,7 +140,7 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: 600;
-  color: #0078d4;
+  color:rgb(0, 0, 0);
 }
 
 h1 {
@@ -355,6 +368,63 @@ h1 {
   transform: scale(1.05);
 }
 
+/* Estilo para o botão de download */
+.download-resources {
+  background-color: #f0f7ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  border: 1px dashed #0078d4;
+  text-align: center;
+}
+
+.download-resources h3 {
+  margin-top: 0;
+  color: #0078d4;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  background-color: #0078d4;
+  color: white;
+  border-radius: 8px;
+  padding: 15px 25px;
+  text-decoration: none;
+  margin: 20px auto 0;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.2);
+}
+
+.download-button:hover {
+  background-color: #005a9e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 120, 212, 0.3);
+}
+
+.download-icon {
+  font-size: 2em;
+  margin-right: 15px;
+}
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.download-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.download-desc {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .app-intro {
@@ -381,6 +451,18 @@ h1 {
     width: 35px;
     height: 35px;
     margin-right: 15px;
+  }
+  .download-button {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .download-icon {
+    margin: 0 0 10px 0;
+  }
+  
+  .download-text {
+    text-align: center;
   }
 }
 </style>
