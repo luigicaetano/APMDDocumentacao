@@ -3,7 +3,7 @@ title: Tutorial completo
 date: 2025-05-13
 description: >
   Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
-weight: 2
+weight: 4
 categories: [Gestão, Planejamneto]
 tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 ---
