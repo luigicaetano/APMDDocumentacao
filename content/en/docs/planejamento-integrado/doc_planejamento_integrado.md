@@ -342,7 +342,7 @@ Reset(DropdownCanvas1_6);;
 ```
 > 💡 **Como funciona:** Esse código salva a edição de um item de custo, atualiza a interface e limpa os campos. Ele ativa o indicador de salvamento, tenta atualizar o campo "Título" do item atual com o valor digitado, desativa o indicador, armazena o item em uma variável, exibe a tela de detalhamento e reseta os campos de seleção para deixá-los em branco.
 
-![DetalharResultado](../assets/image/DetItensdeCusto.png)
+![DetalharResultado](../assets/images/DetItensdeCusto.png)
 
 ```powerapps
 Patch(
