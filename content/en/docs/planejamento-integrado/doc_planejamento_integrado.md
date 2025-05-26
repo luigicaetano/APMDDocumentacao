@@ -30,23 +30,33 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 #### 🔄 Botão Programa
 ```powerapps
-If(
-    varGestor;
-    Distinct(
-        BaseProgramasAcoes;
-        Programa
-    );
-    Distinct(
-        Filter(
-            BaseProgramasAcoes;
-            Programa in programasPermitidos
-        );
-        Programa
-    )
-)
-```
+If( 
 
-> Este código gera uma lista única de programas, eliminando duplicatas que possam existir na tabela BaseProgramasAcoes.
+    varGestor; 
+
+    Distinct( 
+
+        PlanejamentoIntegrado_ProgramasAcoes; 
+
+        Programa 
+
+    ); 
+
+    Distinct( 
+
+        Filter( 
+
+            PlanejamentoIntegrado_ProgramasAcoes; 
+
+            Programa in programasPermitidos 
+
+        ); 
+
+        Programa 
+
+    ) 
+```
+> Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
 
 #### 🔄 Botão Ação
 ```powerapps
@@ -70,27 +80,26 @@ If(
 )
 ```
 
-> Retorna uma lista filtrada de ações sem repetições, relacionadas ao programa selecionado.
+> Essa função é igual a anterior, porém filtra as Ações
 
 #### ➕ Adicionar Nova Iniciativa
 ```powerapps
 Patch(
-    PlanejamentoIntegrado_Iniciativas,
-    Defaults(PlanejamentoIntegrado_Iniciativas),
+    PlanejamentoIntegrado_Iniciativas;
+    Defaults(PlanejamentoIntegrado_Iniciativas);
     {
-        Título: UsuáriosdoOffice365.MyProfileV2().mail,
-        Programa: ComboboxCanvas1_2.Selected.Value,
+        Título: UsuáriosdoOffice365.MyProfileV2().mail;
+        Programa: ComboboxCanvas1_2.Selected.Value;
         Acao: ComboboxCanvas1_3.Selected.Value
     }
 );;
 Refresh(PlanejamentoIntegrado_Iniciativas)
 ```
 
-> Cria um novo registro de iniciativa no sistema, com os valores selecionados para Programa e Ação.
+> Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
+No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
+Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
-#### 💾 Salvar Alterações
-
-> Salva as modificações e gera um relatório que será enviado posteriormente para o usuário via Teams.
 
 #### 📊 Botão Visão Geral Cenários
 ```powerapps
@@ -129,30 +138,39 @@ UpdateContext({visLoading:false})
 > Exibe todos os cenários relacionados à ação selecionada de forma organizada. Limpa dados anteriores, busca cenários vinculados à ação, organiza por título e armazena na coleção para apresentação.
 
 
-#### 💰 Botão Editar Itens de Custo
+#### 💰 Botão Itens de Custo
 ```powerapps
-Set(currIniciativa;ThisItem);;
-Navigate(
-    Screen_ItensDeCusto;
-    ScreenTransition.UnCover
-)
+Set(currIniciativa;ThisItem);; 
+Navigate( 
+
+    Screen_ItensDeCusto; 
+
+    ScreenTransition.UnCover 
+
+) 
+UpdateContext({visVisaoGeral: true});; 
+UpdateContext({visLoading:false}) 
 ```
 
-> Esse botão leva para a tela de Itens de Custo
+> Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
 
-#### 🔄 Botão Editar Cenários
+#### 🔄 Botão Cenários
 ```powerapps
-Set(
-    currIniciativa;
-    ThisItem
-);;
-Navigate(
-    Screen_Cenarios;
-    ScreenTransition.UnCover
-)
+Set( 
+
+    currIniciativa; 
+
+    ThisItem 
+);; 
+Navigate( 
+
+    Screen_Cenarios; 
+
+    ScreenTransition.UnCover 
+) 
 ```
 
-> Esse botão te leva para a tela de Cenários
+> Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
 
 #### 🗑️ Excluir Iniciativa
 ```powerapps
@@ -161,7 +179,7 @@ Set(currIniciativa;ThisItem);;
 Set(varNotificacao;"ExcluirIniciativa")
 ```
 
-> Prepara a exclusão de uma iniciativa, exibindo uma mensagem de confirmação antes de proceder com a exclusão.
+> Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
 
 ## 💰 Tela Itens de Custo
 
@@ -178,12 +196,9 @@ Patch(
 );;
 Refresh(PlanejamentoIntegrado_ItensDeCusto)
 ```
-> Permite incluir um novo item de custo associado à iniciativa selecionada.
+> Essa função cria um novo registro na fonte de dados chamada “PlanejamentoIntegrado_ItensDeCusto”, usando os valores padrão dessa fonte, e atribui ao campo “ID_Iniciativa” o valor contido em “currIniciativa.ID”, que provavelmente representa o identificador de uma iniciativa atual selecionada ou em contexto. Após criar esse novo registro, a função executa um comando para atualizar “(refresh)” a fonte de dados, garantindo que a aplicação tenha a versão mais recente dos dados, refletindo imediatamente a inclusão do novo item. Dessa forma, a função adiciona um novo item vinculado a uma iniciativa específica e mantém os dados sincronizados no aplicativo para que qualquer controle ou galeria que utilize essa fonte mostre as informações atualizadas. 
 
-#### 💾 Salvar Alterações
-> Grava todas as modificações realizadas nas iniciativas e dados relacionados.
-
-#### 🔄 Editar
+#### 🔄 Detalhar Resultados (Itens de Custo)
 ```powerapps
 UpdateContext({visSalvando: true});;
 IfError(Patch(
@@ -196,11 +211,15 @@ Set(
     currItemDeCusto;
     ThisItem
 );;
-UpdateContext({visDetalhar: true})
+UpdateContext({visDetalhar: true});;
+Reset(DropdownCanvas1);;
+Reset(DropdownCanvas1_1);;
+Reset(DropdownCanvas1_3);;
+Reset(ComboboxCanvas1);;
+Reset(DropdownCanvas1_6);;
 ```
 
-> Edita o item de custo selecionado.
-
+> Esse código atualiza o campo "Título" do item atual na fonte de dados, mostrando um indicador de salvamento enquanto isso. Após salvar (ou tentar salvar), ele atualiza variáveis para controlar a exibição de detalhes do item e reseta vários controles de seleção na interface, deixando-os prontos para uma nova interação.
 
 ## 📊 Tela Cenarios
 
@@ -210,40 +229,13 @@ UpdateContext({visDetalhar: true})
 
 #### 👁️ Ver Itens de Custo
 ```powerapps
-UpdateContext({visLoading:true});;
-Clear(colVisaoGeral);;
-ForAll(
-    SortByColumns(
-        Filter(
-            BaseFormularioOBZ_Cenarios;
-            Título in Filter(
-                BaseFormularioOBZ;
-                Acao = ComboboxCanvas1_1.Selected.Value
-            ).ProdutoID
-        );
-        "Title"
-    );
-    Collect(
-        colVisaoGeral;
-        {
-            ID1: Max(
-                colVisaoGeral;
-                ID1
-            ) + 1;
-            ProdutoID: ThisRecord.Título;
-            Descricao: ThisRecord.Descricao;
-            TipoCenario: ThisRecord.TipoCenario;
-            ObjetosDeGasto: ThisRecord.ObjetosDeGasto;
-            Cenario: ThisRecord.Cenario;
-            ID: ThisRecord.ID
-        }
-    )
-);;
-UpdateContext({visVisaoGeral: true});;
-UpdateContext({visLoading:false})
+Navigate(
+    Screen_ItensDeCusto;
+    ScreenTransition.UnCover
+)
 ```
 
-> Exibe os itens de custo relacionados ao cenário selecionado, organizando os dados para visualização.
+> .
 
 #### ➕ Adicionar Cenário
 ```powerapps
@@ -264,7 +256,7 @@ Patch(
 Refresh(PlanejamentoIntegrado_Cenarios)
 ```
 
-> Cria um novo cenário vinculado à iniciativa atual.
+> Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
 
 ## 🔄 Fluxo Power Automate
 
