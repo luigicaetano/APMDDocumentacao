@@ -100,11 +100,26 @@ Patch(
 );;
 Refresh(PlanejamentoIntegrado_Iniciativas)
 ```
-
 > Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
 No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
+#### Botão Detalhar Resultados
+
+![DetalharResultados](../assets/images/DetalharResultado.png)
+
+```powerapps
+Set( 
+
+    currIniciativa; 
+
+    ThisItem 
+);; 
+UpdateContext({visDetalhar: true}) 
+```
+> Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
+
+ 
 
 #### 📊 Botão Visão Geral Cenários
 ```powerapps
@@ -144,6 +159,9 @@ UpdateContext({visLoading:false})
 
 
 #### 💰 Botão Itens de Custo
+
+![ItensdeCusto](../assets/images/ItensdeCusto.png)
+
 ```powerapps
 Set(currIniciativa;ThisItem);; 
 Navigate( 
@@ -160,6 +178,9 @@ UpdateContext({visLoading:false})
 > Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
 
 #### 🔄 Botão Cenários
+
+![Cenarios](../assets/images/Cenarios.png)
+
 ```powerapps
 Set( 
 
