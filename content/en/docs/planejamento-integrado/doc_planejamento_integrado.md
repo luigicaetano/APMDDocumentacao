@@ -112,6 +112,129 @@ Refresh(PlanejamentoIntegrado_Iniciativas)
 No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
+#### Botão Propor Programa
+![Propor](../assets/image/Propor.png)
+
+```powerapps
+ Patch( 
+
+PlanejamentoIntegrado_ProgramasAcoes; 
+
+    Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
+
+    { 
+
+        Título: LookUp( 
+
+            PlanejamentoIntegrado_ProgramasAcoes; 
+
+            Acao = Left( 
+
+                acoesPermitidas; 
+
+                4 
+
+            ); 
+
+            Título 
+
+        ); 
+
+        Programa: TextInputCanvas1.Value 
+
+    } 
+);; 
+UpdateContext({visPropor1: false}) 
+```
+> Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
+
+#### Botão Propor Ação
+
+```powerapps
+If( 
+
+    Toggle1.Checked; 
+
+    Patch( 
+
+        PlanejamentoIntegrado_ProgramasAcoes; 
+
+        Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
+
+        { 
+
+            Título: LookUp( 
+
+                PlanejamentoIntegrado_ProgramasAcoes; 
+
+                Acao = Left( 
+
+                    acoesPermitidas; 
+
+                    4 
+
+                ); 
+
+                Título 
+
+            ); 
+
+            Programa: ComboboxCanvas1_10.Selected.Value; 
+
+            Acao: TextInputCanvas1_6.Value 
+
+        } 
+
+    ); 
+
+    Patch( 
+
+        PlanejamentoIntegrado_ProgramasAcoes; 
+
+        Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
+
+        { 
+
+            Título: LookUp( 
+
+                PlanejamentoIntegrado_ProgramasAcoes; 
+
+                Acao = Left( 
+
+                    acoesPermitidas; 
+
+                    4 
+
+                ); 
+
+                Título 
+
+            ); 
+
+            Programa: "Proposta " & CountRows( 
+
+                Filter( 
+
+                    PlanejamentoIntegrado_ProgramasAcoes; 
+
+                    "Proposta" in Programa 
+
+                ) 
+
+            ) + 1; 
+
+            Acao: TextInputCanvas1_6.Value 
+
+        } 
+
+    ) 
+);; 
+UpdateContext({visPropor2:false}) 
+```
+> Esse código verifica se o controle “Toggle1” está marcado (Checked). Se estiver, ele cria um novo registro na fonte “PlanejamentoIntegrado_ProgramasAcoes” usando “Patch” com os seguintes dados: o campo Título é preenchido com o valor encontrado ao buscar (LookUp) um registro onde o campo Ação é igual aos primeiros 4 caracteres da variável “acoesPermitidas”; o campo Programa recebe o valor selecionado pelo usuário no componente “ComboboxCanvas1_10”; e o campo Ação é definido com o valor do componente de texto “TextInputCanvas1_6" 
+Se o toggle não estiver marcado, ele também cria um novo registro similar, mas define o campo Programa como uma string que começa com "Proposta " seguida do número de registros existentes em “PlanejamentoIntegrado_ProgramasAcoes “que já tenham a palavra "Proposta" no campo Programa, somado de 1 (ou seja, criando uma numeração sequencial para propostas). O campo Ação é definido da mesma forma, com o valor do texto do componente “TextInputCanvas1_6”. 
+
+
 #### 📊 Botão Detalhar Resultados
 
 ![DetalharResultados](../assets/images/DetalharResultado.png)
@@ -128,44 +251,6 @@ UpdateContext({visDetalhar: true})
 > Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
 
  
-
-#### 📊 Botão Visão Geral Cenários
-```powerapps
-UpdateContext({visLoading:true});;
-Clear(colVisaoGeral);;
-ForAll(
-    SortByColumns(
-        Filter(
-            PlanejamentoIntegrado_Cenarios;
-            ID_Iniciativa in Filter(
-                PlanejamentoIntegrado_Iniciativas;
-                Acao = ComboboxCanvas1_3.Selected.Value
-            ).ID
-        );
-        "Title"
-    );
-    Collect(
-        colVisaoGeral;
-        {
-            ID1: Max(
-                colVisaoGeral;
-                ID1
-            ) + 1;
-            ID_Iniciativa: ThisRecord.ID_Iniciativa;
-            Descricao: ThisRecord.Descricao;
-            TipoCenario: ThisRecord.Título;
-            Cenario: ThisRecord.NumeroCenario;
-            ID: ThisRecord.ID
-        }
-    )
-);;
-UpdateContext({visVisaoGeral: true});;
-UpdateContext({visLoading:false})
-```
-
-> Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
-
-
 #### 💰 Botão Itens de Custo
 
 ![ItensdeCusto](../assets/images/ItensdeCusto.png)
@@ -253,7 +338,71 @@ Reset(ComboboxCanvas1);;
 Reset(DropdownCanvas1_6);;
 ```
 
-> Esse código atualiza o campo "Título" do item atual na fonte de dados, mostrando um indicador de salvamento enquanto isso. Após salvar (ou tentar salvar), ele atualiza variáveis para controlar a exibição de detalhes do item e reseta vários controles de seleção na interface, deixando-os prontos para uma nova interação.
+#### Gerar Relatório
+```powerapps
+UpdateContext({visLoading: true});;
+Set(
+    varLink;
+    Gerar_Relatorio_OBZ_Relatorio.Run(
+        """" & Concat(
+            Filter(
+                PlanejamentoIntegrado_ProgramasAcoes;
+                Left(Acao;4) in acoesPermitidas
+            );
+            Left(
+                Acao;
+                4
+            );
+            ""","""
+        ) & """";
+        userMail
+    )
+);;
+Launch(varLink.filelink);;
+UpdateContext({visLoading: false});;
+Notify(
+    "O seu relatório também foi enviado no seu Teams!";
+    NotificationType.Success;
+    5000
+)
+```
+> 
+
+#### 📊 Botão Visão Geral Cenários
+```powerapps
+UpdateContext({visLoading:true});;
+Clear(colVisaoGeral);;
+ForAll(
+    SortByColumns(
+        Filter(
+            PlanejamentoIntegrado_Cenarios;
+            ID_Iniciativa in Filter(
+                PlanejamentoIntegrado_Iniciativas;
+                Acao = ComboboxCanvas1_3.Selected.Value
+            ).ID
+        );
+        "Title"
+    );
+    Collect(
+        colVisaoGeral;
+        {
+            ID1: Max(
+                colVisaoGeral;
+                ID1
+            ) + 1;
+            ID_Iniciativa: ThisRecord.ID_Iniciativa;
+            Descricao: ThisRecord.Descricao;
+            TipoCenario: ThisRecord.Título;
+            Cenario: ThisRecord.NumeroCenario;
+            ID: ThisRecord.ID
+        }
+    )
+);;
+UpdateContext({visVisaoGeral: true});;
+UpdateContext({visLoading:false})
+```
+
+> Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
 
 ## 📊 Tela Cenarios
 
@@ -269,7 +418,7 @@ Navigate(
 )
 ```
 
-> .
+> Volta para a tela de Itens de Custo
 
 #### ➕ Adicionar Cenário
 ```powerapps
