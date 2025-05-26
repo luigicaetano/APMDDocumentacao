@@ -223,7 +223,7 @@ Reset(DropdownCanvas1_6);;
 
 ## 📊 Tela Cenarios
 
-![Tela Cenarios](..assets/images/TeladeCenarios.png) 
+![Tela Cenarios](..assets/images/TelaCenarios.png) 
 
 ### Elementos de Interface
 
