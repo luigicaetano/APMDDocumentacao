@@ -110,7 +110,7 @@ No novo registro criado, são atribuídos três campos: Título, Programa e Aç�
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
 #### Botão Propor Programa
-![ProporPrograma](../assets/image/ProporPrograma.png)
+![ProporPrograma](../assets/images/ProporPrograma.png)
 
 ```powerapps
  Patch( 
@@ -147,7 +147,7 @@ UpdateContext({visPropor1: false})
 
 #### Botão Propor Ação
 
-![ProporAcao](../assets/image/ProporAcao.png)
+![ProporAcao](../assets/images/ProporAcao.png)
 
 
 ```powerapps
