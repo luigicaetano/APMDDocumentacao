@@ -28,7 +28,7 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 ### Elementos de Interface
 
-![Botão Programa e Ação] (../assets/images/ProgramaeAcao.png)
+![Botão Programa e Ação](../assets/images/ProgramaeAcao.png)
 
 #### 🔄 Botão Programa
 ```powerapps
@@ -86,7 +86,7 @@ If(
 
 #### ➕ Adicionar Nova Iniciativa
 
-(../assets/images/AddNovaIniciativa.png)
+![AdicionarNovaInciativa](../assets/images/AddNovaIniciativa.png)
 
 ```powerapps
 Patch(
