@@ -113,7 +113,7 @@ No novo registro criado, são atribuídos três campos: Título, Programa e Aç�
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
 #### Botão Propor Programa
-![ProporPrograma](../assets/image/ProporPrograma.png)
+![ProporPrograma](../assets/images/ProporPrograma.png)
 
 ```powerapps
  Patch( 
@@ -150,7 +150,7 @@ UpdateContext({visPropor1: false})
 
 #### Botão Propor Ação
 
-![ProporAcao](../assets/image/ProporAcao.png)
+![ProporAcao](../assets/images/ProporAcao.png)
 
 
 ```powerapps
@@ -374,7 +374,7 @@ Notify(
     4000
 )
 ```
->💡 **Como funciona:** Esse código atualiza os dados do item de custo atual (currItemDeCusto) na fonte "PlanejamentoIntegrado_ItensDeCusto" com os valores preenchidos em vários campos da interface. Ele salva informações como forma, quantitativo, valor unitário, frequência, código do item, valor total (calculado e arredondado), título, unidade, premissas, grupo, elemento, fonte e instrumento. Após salvar, exibe uma notificação de sucesso informando que as alterações foram salvas com sucesso, por 4 segundos.
+>💡 **Como funciona:** Esse código atualiza os dados do item de custo atual (currItemDeCusto) na fonte "PlanejamentoIntegrado_ItensDeCusto" com os valores preenchidos em vários campos da interface. Ele salva informações como forma, quantitativo, valor unitário, frequência, código do item, valor total (calculado e arredondado), título, unidade, premissas, grupo, elemento, fonte e instrumento. Após salvar, exibe uma notificação de sucesso informando que as alterações foram salvas com sucesso.
 
 ## 📊 Tela Cenarios
 
