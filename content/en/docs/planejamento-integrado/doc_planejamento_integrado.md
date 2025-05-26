@@ -113,7 +113,7 @@ No novo registro criado, são atribuídos três campos: Título, Programa e Aç�
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
 #### Botão Propor Programa
-![Propor](../assets/image/Propor.png)
+![Propor](../assets/image/ProporPrograma.png)
 
 ```powerapps
  Patch( 
@@ -149,6 +149,9 @@ UpdateContext({visPropor1: false})
 > Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
 
 #### Botão Propor Ação
+
+![Acao](../assets/image/ProporAcao.png)
+
 
 ```powerapps
 If( 
