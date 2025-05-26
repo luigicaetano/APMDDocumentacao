@@ -26,11 +26,14 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 ![Tela Iniciativas](../assets/images/TelaIniciativas.png)
 
-### Elementos de Interface
+### 🎛️ Controles de Seleção
 
 ![Botão Programa e Ação](../assets/images/ProgramaeAcao.png)
 
-#### 🔄 Botão Programa
+#### 🔄Seletor de Programa
+
+Funcionalidade: Filtro baseado no perfil do usuário
+
 ```powerapps
 If( 
 
@@ -60,7 +63,10 @@ If(
 ```
 > Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
 
-#### 🔄 Botão Ação
+#### 🔄 Seletor de Ação
+
+Funcionalidade: Filtragem de ações baseada no programa selecionado
+
 ```powerapps
 If(
     varGestor;
@@ -88,6 +94,8 @@ If(
 
 ![AdicionarNovaInciativa](../assets/images/AddNovaIniciativa.png)
 
+Funcionalidade: Criação de nova iniciativa com dados básicos
+
 ```powerapps
 Patch(
     PlanejamentoIntegrado_Iniciativas;
@@ -104,7 +112,7 @@ Refresh(PlanejamentoIntegrado_Iniciativas)
 No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
-#### Botão Detalhar Resultados
+#### 📊 Botão Detalhar Resultados
 
 ![DetalharResultados](../assets/images/DetalharResultado.png)
 
