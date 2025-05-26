@@ -28,6 +28,8 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 ### Elementos de Interface
 
+![Botão Programa e Ação] (../assets/images/ProgramaeAcao.png)
+
 #### 🔄 Botão Programa
 ```powerapps
 If( 
@@ -83,6 +85,9 @@ If(
 > Essa função é igual a anterior, porém filtra as Ações
 
 #### ➕ Adicionar Nova Iniciativa
+
+(../assets/images/AddNovaIniciativa.png)
+
 ```powerapps
 Patch(
     PlanejamentoIntegrado_Iniciativas;
@@ -135,7 +140,7 @@ UpdateContext({visVisaoGeral: true});;
 UpdateContext({visLoading:false})
 ```
 
-> Exibe todos os cenários relacionados à ação selecionada de forma organizada. Limpa dados anteriores, busca cenários vinculados à ação, organiza por título e armazena na coleção para apresentação.
+> Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
 
 
 #### 💰 Botão Itens de Custo
