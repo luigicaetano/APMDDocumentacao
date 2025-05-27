@@ -58,7 +58,7 @@ If(
 
     ) 
 ```
-> Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
+> 💡 **Como funciona:** Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
 
 #### 🔄 Seletor de Ação
 
@@ -85,7 +85,7 @@ If(
 )
 ```
 
-> Essa função é igual a anterior, porém filtra as Ações
+> 💡 **Como funciona:** Essa função é igual a anterior, porém filtra as Ações
 
 #### ➕ Adicionar Nova Iniciativa
 
@@ -105,7 +105,7 @@ Patch(
 );;
 Refresh(PlanejamentoIntegrado_Iniciativas)
 ```
-> Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
+> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
 No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
 Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
 
@@ -143,7 +143,7 @@ PlanejamentoIntegrado_ProgramasAcoes;
 );; 
 UpdateContext({visPropor1: false}) 
 ```
-> Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
+> 💡 **Como funciona:** Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
 
 #### Botão Propor Ação
 
@@ -231,13 +231,16 @@ If(
 );; 
 UpdateContext({visPropor2:false}) 
 ```
-> Esse código verifica se o controle “Toggle1” está marcado (Checked). Se estiver, ele cria um novo registro na fonte “PlanejamentoIntegrado_ProgramasAcoes” usando “Patch” com os seguintes dados: o campo Título é preenchido com o valor encontrado ao buscar (LookUp) um registro onde o campo Ação é igual aos primeiros 4 caracteres da variável “acoesPermitidas”; o campo Programa recebe o valor selecionado pelo usuário no componente “ComboboxCanvas1_10”; e o campo Ação é definido com o valor do componente de texto “TextInputCanvas1_6" 
+> 💡 **Como funciona:** Esse código verifica se o controle “Toggle1” está marcado (Checked). Se estiver, ele cria um novo registro na fonte “PlanejamentoIntegrado_ProgramasAcoes” usando “Patch” com os seguintes dados: o campo Título é preenchido com o valor encontrado ao buscar (LookUp) um registro onde o campo Ação é igual aos primeiros 4 caracteres da variável “acoesPermitidas”; o campo Programa recebe o valor selecionado pelo usuário no componente “ComboboxCanvas1_10”; e o campo Ação é definido com o valor do componente de texto “TextInputCanvas1_6" 
 Se o toggle não estiver marcado, ele também cria um novo registro similar, mas define o campo Programa como uma string que começa com "Proposta " seguida do número de registros existentes em “PlanejamentoIntegrado_ProgramasAcoes “que já tenham a palavra "Proposta" no campo Programa, somado de 1 (ou seja, criando uma numeração sequencial para propostas). O campo Ação é definido da mesma forma, com o valor do texto do componente “TextInputCanvas1_6”. 
 
 
-#### 📊 Botão Detalhar Resultados
+#### Botões laterais
 
-![DetalharResultados](../assets/images/DetalharResultado.png)
+![BotoesIniciativa](../assets/images/BotoesIniciativa.png)
+
+
+#### 📊 Botão Detalhar Resultados (1)
 
 ```powerapps
 Set( 
@@ -248,12 +251,27 @@ Set(
 );; 
 UpdateContext({visDetalhar: true}) 
 ```
-> Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
+> 💡 **Como funciona:** Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
 
- 
-#### 💰 Botão Itens de Custo
+ ## Detalhar Iniciativa: 
 
-![ItensdeCusto](../assets/images/ItensdeCusto.png)
+ ![DetalhesIniciativa](../assets/images/DetalharIniciativa.png)
+
+ > Essa tela serve para detalhar mais sobre a iniciativa selecionada.
+
+```powerapps
+Patch(
+    PlanejamentoIntegrado_Iniciativas;
+    currIniciativa;
+    {
+        Escopo: TextInputCanvas5_4.Value;
+        AtividadesNaoOrcamentarias: TextInputCanvas5_5.Value
+    }
+)
+```
+> 💡 **Como funciona:** Atualiza um registro específico (representado por currIniciativa) na fonte de dados "PlanejamentoIntegrado_Iniciativas", atribuindo novos valores aos campos "Escopo" e "AtividadesNaoOrcamentarias", com base nos textos digitados nos campos de entrada "TextInputCanvas5_4" e "TextInputCanvas5_5".
+
+#### 💰 Botão Itens de Custo (2)
 
 ```powerapps
 Set(currIniciativa;ThisItem);; 
@@ -268,11 +286,9 @@ UpdateContext({visVisaoGeral: true});;
 UpdateContext({visLoading:false}) 
 ```
 
-> Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
+> 💡 **Como funciona:** Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
 
-#### 🔄 Botão Cenários
-
-![Cenarios](../assets/images/Cenarios.png)
+#### 🔄 Botão Cenários (3)
 
 ```powerapps
 Set( 
@@ -289,16 +305,17 @@ Navigate(
 ) 
 ```
 
-> Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
+> 💡 **Como funciona:** Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
 
-#### 🗑️ Excluir Iniciativa
+#### 🗑️ Excluir Iniciativa (4)
+
 ```powerapps
 Set(visConfirmacao;true);;
 Set(currIniciativa;ThisItem);;
 Set(varNotificacao;"ExcluirIniciativa")
 ```
 
-> Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
+> 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
 
 ## 💰 Tela Itens de Custo
 
@@ -315,7 +332,7 @@ Patch(
 );;
 Refresh(PlanejamentoIntegrado_ItensDeCusto)
 ```
-> Essa função cria um novo registro na fonte de dados chamada “PlanejamentoIntegrado_ItensDeCusto”, usando os valores padrão dessa fonte, e atribui ao campo “ID_Iniciativa” o valor contido em “currIniciativa.ID”, que provavelmente representa o identificador de uma iniciativa atual selecionada ou em contexto. Após criar esse novo registro, a função executa um comando para atualizar “(refresh)” a fonte de dados, garantindo que a aplicação tenha a versão mais recente dos dados, refletindo imediatamente a inclusão do novo item. Dessa forma, a função adiciona um novo item vinculado a uma iniciativa específica e mantém os dados sincronizados no aplicativo para que qualquer controle ou galeria que utilize essa fonte mostre as informações atualizadas. 
+> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada “PlanejamentoIntegrado_ItensDeCusto”, usando os valores padrão dessa fonte, e atribui ao campo “ID_Iniciativa” o valor contido em “currIniciativa.ID”, que provavelmente representa o identificador de uma iniciativa atual selecionada ou em contexto. Após criar esse novo registro, a função executa um comando para atualizar “(refresh)” a fonte de dados, garantindo que a aplicação tenha a versão mais recente dos dados, refletindo imediatamente a inclusão do novo item. Dessa forma, a função adiciona um novo item vinculado a uma iniciativa específica e mantém os dados sincronizados no aplicativo para que qualquer controle ou galeria que utilize essa fonte mostre as informações atualizadas. 
 
 #### 🔄 Detalhar Resultados (Itens de Custo)
 ```powerapps
@@ -338,7 +355,12 @@ Reset(ComboboxCanvas1);;
 Reset(DropdownCanvas1_6);;
 ```
 
-#### Gerar Relatório
+#### Botões Laterais 
+
+![BotoesLaterais](../assets/images/BotoesLaterais.png)
+
+> 💡 **Como funciona:**
+#### Gerar Relatório (1)
 ```powerapps
 UpdateContext({visLoading: true});;
 Set(
@@ -366,9 +388,9 @@ Notify(
     5000
 )
 ```
-> 
+> 💡 **Como funciona:**
 
-#### 📊 Botão Visão Geral Cenários
+#### 📊 Botão Visão Geral Cenários (2)
 ```powerapps
 UpdateContext({visLoading:true});;
 Clear(colVisaoGeral);;
@@ -402,7 +424,8 @@ UpdateContext({visVisaoGeral: true});;
 UpdateContext({visLoading:false})
 ```
 
-> Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
+> 💡 **Como funciona:** Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
+
 
 ## 📊 Tela Cenarios
 
@@ -418,7 +441,7 @@ Navigate(
 )
 ```
 
-> Volta para a tela de Itens de Custo
+> 💡 **Como funciona:** Volta para a tela de Itens de Custo
 
 #### ➕ Adicionar Cenário
 ```powerapps
@@ -439,7 +462,7 @@ Patch(
 Refresh(PlanejamentoIntegrado_Cenarios)
 ```
 
-> Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
+> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
 
 
 
