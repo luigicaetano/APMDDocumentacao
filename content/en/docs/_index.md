@@ -1,12 +1,61 @@
 ---
 title: Documentações APMD
+description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
 ---
-# Bem-vindo à Documentação da APMD
 
-> Nesse site, você encontrara as Documentações de todos nossos processos de Automações e os processos de criação de aplicativos
+# 🚀 Bem-vindo à Documentação da APMD
 
-## 📚 Explore a Documentação
-[Grid com seções principais:]
-- <a href="../planejamento-integrado/_index.do/">
-- <a href="../docs/mgs.md/"> 
+> **Seu hub central de conhecimento técnico**  
+> Aqui você encontrará documentações completas de todos os nossos processos de automação, guias de desenvolvimento de aplicativos e melhores práticas da nossa equipe.
 
+---
+
+## 📚 Navegue pela Documentação
+
+### 🎯 **Áreas Principais**
+
+#### 📋 [Planejamento Integrado](../planejamento-integrado/_index.do/)
+Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
+
+#### 🔧 [Guias MGS](../docs/mgs.md/)
+Documentação técnica específica, tutoriais e referências para implementação de soluções.
+
+---
+
+## 🔍 **O que você encontrará aqui?**
+
+- **📖 Documentações Técnicas** - Guias detalhados para implementação
+- **🔄 Processos de Automação** - Fluxos e metodologias testadas
+- **📱 Desenvolvimento de Apps** - Do conceito à publicação
+- **💡 Melhores Práticas** - Padrões e convenções da equipe
+- **🛠️ Ferramentas e Recursos** - Stack tecnológico e utilitários
+
+---
+
+## 🎯 **Começar Rapidamente**
+
+### Para Desenvolvedores
+- Consulte nossos [padrões de código](../padroes-codigo/)
+- Revise os [fluxos de desenvolvimento](../fluxos-dev/)
+- Acesse as [APIs documentadas](../apis/)
+
+### Para Gestores de Projeto
+- Explore o [planejamento integrado](../planejamento-integrado/_index.do/)
+- Confira [métricas e KPIs](../metricas/)
+- Veja [templates de projeto](../templates/)
+
+### Para Usuários Finais
+- Consulte os [manuais de uso](../manuais/)
+- Acesse o [FAQ](../faq/)
+- Entre em contato via [suporte](../suporte/)
+
+---
+
+## 📈 **Atualizações Recentes**
+
+> **💡 Dica:** Esta documentação é mantida atualizada pela nossa equipe. Para sugestões ou correções, [abra uma issue](../contribuir/).
+
+---
+
+*Última atualização: {{28/05/2025}}*  
+*Mantido por: Equipe APMD*
