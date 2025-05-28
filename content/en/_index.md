@@ -13,9 +13,9 @@ title: APMDDocs
 
 
 {{% blocks/lead color="primary" %}}
-Teste
+Código Aberto & Colaborativo
 
-teste
+Canais disponíveis:
 {{% /blocks/lead %}}
 
 

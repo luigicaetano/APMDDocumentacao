@@ -22,6 +22,14 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 | 📋 **Fluxo de Registro de Informação** | Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto |
 | ▶️ **Iniciar Preenchimento** | Direciona o usuário para a tela de iniciativas |
 
+<div class="flow-steps">
+  <div class="step">
+    <h3> ## 📋 Tela de Iniciativas</h3>
+    <p>Na parte superior da tela do PowerApps, clique no botão <strong>"Adicionar Dados"</strong>. Uma lista de opções vai aparecer - escolha <strong>"SharePoint"</strong> para começar.</p>
+    {{< figure src="/../assets/images/TelaIniciativas.png" >}}
+  </div>
+
+
 ## 📋 Tela de Iniciativas
 
 ![Tela Iniciativas](../assets/images/TelaIniciativas.png)
