@@ -32,30 +32,11 @@ Documentação técnica específica, tutoriais e referências para implementaç�
 
 ---
 
-## 🎯 **Começar Rapidamente**
-
-### Para Desenvolvedores
-- Consulte nossos [padrões de código](../padroes-codigo/)
-- Revise os [fluxos de desenvolvimento](../fluxos-dev/)
-- Acesse as [APIs documentadas](../apis/)
-
-### Para Gestores de Projeto
-- Explore o [planejamento integrado](../planejamento-integrado/_index.do/)
-- Confira [métricas e KPIs](../metricas/)
-- Veja [templates de projeto](../templates/)
-
-### Para Usuários Finais
-- Consulte os [manuais de uso](../manuais/)
-- Acesse o [FAQ](../faq/)
-- Entre em contato via [suporte](../suporte/)
-
----
-
 ## 📈 **Atualizações Recentes**
 
 > **💡 Dica:** Esta documentação é mantida atualizada pela nossa equipe. Para sugestões ou correções, [abra uma issue](../contribuir/).
 
 ---
 
-*Última atualização: {{28/05/2025}}*  
+*Última atualização: 28/05/2025*  
 *Mantido por: Equipe APMD*
