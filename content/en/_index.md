@@ -2,7 +2,7 @@
 title: APMDDocs
 ---
 
-{{< blocks/cover title="Bem-vindos a Documentação dos Aplicativos da APMD!" image_anchor="top" height="full" >}}
+{{< blocks/cover title="Bem-vindos a Documentação de Aplicativos e Automações da APMD!" image_anchor="top" height="full" >}}
 
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://apmddoc.netlify.app/docs/">
   Documentações <i class="fa-solid fa-file-invoice"></i>
