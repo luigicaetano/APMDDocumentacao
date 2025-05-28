@@ -17,7 +17,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
 #### 📋 [Planejamento Integrado](../planejamento-integrado/_index.do/)
 Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
 
-#### 🔧 [Guias MGS](../docs/mgs.md/)
+#### 🔧 [Automação MGS](../docs/mgs.md/)
 Documentação técnica específica, tutoriais e referências para implementação de soluções.
 
 ---
@@ -38,5 +38,4 @@ Documentação técnica específica, tutoriais e referências para implementaç�
 
 ---
 
-*Última atualização: 28/05/2025*  
 *Mantido por: Equipe APMD*
