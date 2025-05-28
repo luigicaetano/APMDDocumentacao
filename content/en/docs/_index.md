@@ -30,10 +30,11 @@ Documentação técnica específica, tutoriais e referências para implementaç�
 - **💡 Melhores Práticas** - Padrões e convenções da equipe
 - **🛠️ Ferramentas e Recursos** - Stack tecnológico e utilitários
 
-👥 Colaboração Ativa
+## 👥 Colaboração Ativa
+
 Nossa equipe trabalha colaborativamente para manter a documentação sempre atualizada e útil.
 
-👥 Benefícios:
+## 👥 Benefícios:
 
 - Conhecimento compartilhado
 - Atualizações constantes
