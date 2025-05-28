@@ -29,6 +29,7 @@ Documentação técnica específica, tutoriais e referências para implementaç�
 - **📱 Desenvolvimento de Apps** - Do conceito à publicação
 - **💡 Melhores Práticas** - Padrões e convenções da equipe
 - **🛠️ Ferramentas e Recursos** - Stack tecnológico e utilitários
+---
 
 ## 👥 Colaboração Ativa
 
