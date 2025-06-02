@@ -5,7 +5,7 @@ description: >
 categories: 
 tags: 
 ---
-![PagInicial](../assets/images_PlanejamentoOrç/Pag_Detalhamento.png)
+![PagInicial](../assets/images_PlanejamentoOrç/Pag_Detal.png)
 
 ## 1. 📊 Listagem de Unidades Administrativas
 
