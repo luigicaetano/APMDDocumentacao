@@ -1,10 +1,40 @@
 ---
 title: 📋 Página Detalhamento
 date: 2025-06-02
-description: > 
+description: 
 categories: 
 tags: 
+
+
+<div class="app-intro">
+  <div class="app-card">
+    <div class="card-header">Informações Técnicas</div>
+    <div class="card-content">
+      <div class="info-item">
+        <div class="info-icon">👨‍💻</div>
+        <div class="info-label">Desenvolvedor:</div>
+        <div class="info-value">Luigi Caetano da Silva</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📧</div>
+        <div class="info-label">E-mail:</div>
+        <div class="info-value">luigi.silva@social.mg.gov.br</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🤖</div>
+        <div class="info-label">Ferramentas:</div>
+        <div class="info-value">PowerApps, Power Automate, SharePoint</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🔄</div>
+        <div class="info-label">Atualização:</div>
+        <div class="info-value">14/05/2025</div>
+      </div>
+    </div>
+  </div>
+</div>
 ---
+
 ![PagInicial](../assets/images_PlanejamentoOrç/Pag_Detal.png)
 
 ## 1. 📊 Listagem de Unidades Administrativas
