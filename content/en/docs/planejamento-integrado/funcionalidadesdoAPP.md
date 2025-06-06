@@ -32,7 +32,7 @@ weight: 3
 Funcionalidade: Filtro baseado no perfil do usuário
 
 ```powerapps
-If( 
+If(
 
     varGestor; 
 
@@ -57,6 +57,7 @@ If(
         Programa 
 
     ) 
+)
 ```
 > 💡 **Como funciona:** Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
 
