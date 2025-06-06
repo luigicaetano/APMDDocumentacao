@@ -1,644 +1,722 @@
----
-title: Tutorial completo
-date: 2025-05-13
-description: >
-  Documentação do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos.
-weight: 4
-categories: [Gestão, Planejamneto]
-tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
----
+# 🚀 Tutorial Completo - Aplicativo de Planejamento Integrado
 
+Este guia completo apresenta todas as funcionalidades do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos. Siga este tutorial para dominar completamente o sistema.
 
+## O Que Você Vai Aprender
+
+- Como navegar pela tela inicial e suas funcionalidades
+- Como gerenciar iniciativas e seus componentes
+- Como trabalhar com itens de custo e cenários
+- Como utilizar os relatórios automatizados
+- Como funciona a integração com Power Automate
+
+---
 
 ## 🏠 Tela Inicial
 
-![Tela Inicial do Aplicativo](../assets/images/TelaInicial.png)
+<div class="screen-section">
+  <h3>📱 Visão Geral da Interface Principal</h3>
+  <p>A tela inicial é o ponto de partida do seu trabalho. Aqui você encontra todos os recursos necessários para começar.</p>
+</div>
 
-### Principais Elementos
+### Principais Elementos da Tela Inicial
 
-| Elemento | Descrição |
-|---------|-----------|
-| ✨ **Tutorial Interativo** | Guia dinâmico que ensina o usuário a utilizar o aplicativo passo a passo |
-| 📋 **Fluxo de Registro de Informação** | Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto |
-| ▶️ **Iniciar Preenchimento** | Direciona o usuário para a tela de iniciativas |
-
-<div class="flow-steps">
-  <div class="step">
-    <h3> ## 📋 Tela de Iniciativas</h3>
-    <p>Na parte superior da tela do PowerApps, clique no botão <strong>"Adicionar Dados"</strong>. Uma lista de opções vai aparecer - escolha <strong>"SharePoint"</strong> para começar.</p>
-    {{< figure src="/../assets/images/TelaIniciativas.png" >}}
+<div class="element-grid">
+  <div class="element-card">
+    <h4>✨ Tutorial Interativo</h4>
+    <p>Guia dinâmico que ensina você a utilizar o aplicativo passo a passo, ideal para novos usuários</p>
   </div>
-
-
-## 📋 Tela de Iniciativas
-
-![Tela Iniciativas](../assets/images/Iniciativas.png)
-
-### 🎛️ Controles de Seleção
-
-![Botão Programa e Ação](../assets/images/ProgramaeAcao.png)
-
-#### 🔄Seletor de Programa
-
-Funcionalidade: Filtro baseado no perfil do usuário
-
-```powerapps
-If( 
-
-    varGestor; 
-
-    Distinct( 
-
-        PlanejamentoIntegrado_ProgramasAcoes; 
-
-        Programa 
-
-    ); 
-
-    Distinct( 
-
-        Filter( 
-
-            PlanejamentoIntegrado_ProgramasAcoes; 
-
-            Programa in programasPermitidos 
-
-        ); 
-
-        Programa 
-
-    ) 
-```
-> 💡 **Como funciona:** Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
-
-#### 🔄 Seletor de Ação
-
-Funcionalidade: Filtragem de ações baseada no programa selecionado
-
-```powerapps
-If(
-    varGestor;
-    Distinct(
-        Filter(
-            BaseProgramasAcoes;
-            Programa = ComboboxCanvas1.Selected.Value
-        );
-        Acao
-    );
-    Distinct(
-        Filter(
-            BaseProgramasAcoes;
-            Programa = ComboboxCanvas1.Selected.Value;
-            Acao in acoesPermitidas
-        );
-        Acao
-    )
-)
-```
-
-> 💡 **Como funciona:** Essa função é igual a anterior, porém filtra as Ações
-
-#### ➕ Adicionar Nova Iniciativa
-
-![AdicionarNovaInciativa](../assets/images/AddNovaIniciativa.png)
-
-Funcionalidade: Criação de nova iniciativa com dados básicos
-
-```powerapps
-Patch(
-    PlanejamentoIntegrado_Iniciativas;
-    Defaults(PlanejamentoIntegrado_Iniciativas);
-    {
-        Título: UsuáriosdoOffice365.MyProfileV2().mail;
-        Programa: ComboboxCanvas1_2.Selected.Value;
-        Acao: ComboboxCanvas1_3.Selected.Value
-    }
-);;
-Refresh(PlanejamentoIntegrado_Iniciativas)
-```
-> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
-No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
-Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
-
-#### Botão Propor Programa
-![ProporPrograma](../assets/images/ProporPrograma.png)
-
-```powerapps
- Patch( 
-
-PlanejamentoIntegrado_ProgramasAcoes; 
-
-    Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
-    { 
-
-        Título: LookUp( 
-
-            PlanejamentoIntegrado_ProgramasAcoes; 
-
-            Acao = Left( 
-
-                acoesPermitidas; 
-
-                4 
-
-            ); 
-
-            Título 
-
-        ); 
-
-        Programa: TextInputCanvas1.Value 
-
-    } 
-);; 
-UpdateContext({visPropor1: false}) 
-```
-> 💡 **Como funciona:** Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
-
-#### Botão Propor Ação
-
-![ProporAcao](../assets/images/ProporAcao.png)
-
-
-```powerapps
-If( 
-
-    Toggle1.Checked; 
-
-    Patch( 
-
-        PlanejamentoIntegrado_ProgramasAcoes; 
-
-        Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
-        { 
-
-            Título: LookUp( 
-
-                PlanejamentoIntegrado_ProgramasAcoes; 
-
-                Acao = Left( 
-
-                    acoesPermitidas; 
-
-                    4 
-
-                ); 
-
-                Título 
-
-            ); 
-
-            Programa: ComboboxCanvas1_10.Selected.Value; 
-
-            Acao: TextInputCanvas1_6.Value 
-
-        } 
-
-    ); 
-
-    Patch( 
-
-        PlanejamentoIntegrado_ProgramasAcoes; 
-
-        Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
-        { 
-
-            Título: LookUp( 
-
-                PlanejamentoIntegrado_ProgramasAcoes; 
-
-                Acao = Left( 
-
-                    acoesPermitidas; 
-
-                    4 
-
-                ); 
-
-                Título 
-
-            ); 
-
-            Programa: "Proposta " & CountRows( 
-
-                Filter( 
-
-                    PlanejamentoIntegrado_ProgramasAcoes; 
-
-                    "Proposta" in Programa 
-
-                ) 
-
-            ) + 1; 
-
-            Acao: TextInputCanvas1_6.Value 
-
-        } 
-
-    ) 
-);; 
-UpdateContext({visPropor2:false}) 
-```
-> 💡 **Como funciona:** Esse código verifica se o controle “Toggle1” está marcado (Checked). Se estiver, ele cria um novo registro na fonte “PlanejamentoIntegrado_ProgramasAcoes” usando “Patch” com os seguintes dados: o campo Título é preenchido com o valor encontrado ao buscar (LookUp) um registro onde o campo Ação é igual aos primeiros 4 caracteres da variável “acoesPermitidas”; o campo Programa recebe o valor selecionado pelo usuário no componente “ComboboxCanvas1_10”; e o campo Ação é definido com o valor do componente de texto “TextInputCanvas1_6" 
-Se o toggle não estiver marcado, ele também cria um novo registro similar, mas define o campo Programa como uma string que começa com "Proposta " seguida do número de registros existentes em “PlanejamentoIntegrado_ProgramasAcoes “que já tenham a palavra "Proposta" no campo Programa, somado de 1 (ou seja, criando uma numeração sequencial para propostas). O campo Ação é definido da mesma forma, com o valor do texto do componente “TextInputCanvas1_6”. 
-
-
-#### 📊 Botão Detalhar Resultados
-
-![DetalharResultados](../assets/images/DetalharResultado.png)
-
-```powerapps
-Set( 
-
-    currIniciativa; 
-
-    ThisItem 
-);; 
-UpdateContext({visDetalhar: true}) 
-```
-> 💡 **Como funciona:** Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
-
- 
-#### 💰 Botão Itens de Custo
-
-![ItensdeCusto](../assets/images/ItensdeCusto.png)
-
-```powerapps
-Set(currIniciativa;ThisItem);; 
-Navigate( 
-
-    Screen_ItensDeCusto; 
-
-    ScreenTransition.UnCover 
-
-) 
-UpdateContext({visVisaoGeral: true});; 
-UpdateContext({visLoading:false}) 
-```
-
-> 💡 **Como funciona:** Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
-
-#### 🔄 Botão Cenários
-
-![Cenarios](../assets/images/Cenarios.png)
-
-```powerapps
-Set( 
-
-    currIniciativa; 
-
-    ThisItem 
-);; 
-Navigate( 
-
-    Screen_Cenarios; 
-
-    ScreenTransition.UnCover 
-) 
-```
-
-> 💡 **Como funciona:** Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
-
-#### 🗑️ Excluir Iniciativa
-```powerapps
-Set(visConfirmacao;true);;
-Set(currIniciativa;ThisItem);;
-Set(varNotificacao;"ExcluirIniciativa")
-```
-
-> 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
-
-## 💰 Tela Itens de Custo
-
-![Tela Itens de Custo](../assets/images/TelaItensdeCusto.png)
-
-### Elementos de Interface
-
-#### ➕ Adicionar Novo Item de Custo
-```powerapps
-Patch(
-    PlanejamentoIntegrado_ItensDeCusto;
-    Defaults(PlanejamentoIntegrado_ItensDeCusto);
-    {ID_Iniciativa: currIniciativa.ID}
-);;
-Refresh(PlanejamentoIntegrado_ItensDeCusto)
-```
-> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada “PlanejamentoIntegrado_ItensDeCusto”, usando os valores padrão dessa fonte, e atribui ao campo “ID_Iniciativa” o valor contido em “currIniciativa.ID”, que provavelmente representa o identificador de uma iniciativa atual selecionada ou em contexto. Após criar esse novo registro, a função executa um comando para atualizar “(refresh)” a fonte de dados, garantindo que a aplicação tenha a versão mais recente dos dados, refletindo imediatamente a inclusão do novo item. Dessa forma, a função adiciona um novo item vinculado a uma iniciativa específica e mantém os dados sincronizados no aplicativo para que qualquer controle ou galeria que utilize essa fonte mostre as informações atualizadas. 
-
-#### 🔄 Detalhar Resultados (Itens de Custo)
-```powerapps
-UpdateContext({visSalvando: true});;
-IfError(Patch(
-    PlanejamentoIntegrado_ItensDeCusto;
-    ThisItem;
-    {Título: TextInputCanvas1_2.Value}
-);"");;
-UpdateContext({visSalvando: false});;
-Set(
-    currItemDeCusto;
-    ThisItem
-);;
-UpdateContext({visDetalhar: true});;
-Reset(DropdownCanvas1);;
-Reset(DropdownCanvas1_1);;
-Reset(DropdownCanvas1_3);;
-Reset(ComboboxCanvas1);;
-Reset(DropdownCanvas1_6);;
-```
-> 💡 **Como funciona:** Esse código salva a edição de um item de custo, atualiza a interface e limpa os campos. Ele ativa o indicador de salvamento, tenta atualizar o campo "Título" do item atual com o valor digitado, desativa o indicador, armazena o item em uma variável, exibe a tela de detalhamento e reseta os campos de seleção para deixá-los em branco.
-
-![DetalharResultado](../assets/images/DetItensdeCusto.png)
-
-```powerapps
-Patch(
-    PlanejamentoIntegrado_ItensDeCusto;
-    currItemDeCusto;
-    {
-        Forma: DropdownCanvas1.Selected.Value;
-        Quantitativo: Value(TextInputCanvas2_3.Value);
-        ValorUnitario: Value(TextInputCanvas2_4.Value);
-        Frequencia: TextInputCanvas2_5.Value;
-        ElementoItemCodigo: ComboboxCanvas1.Selected.Value;
-        ValorTotal: Round(
-            TextInputCanvas2_4.Value * TextInputCanvas2_3.Value * TextInputCanvas2_5.Value;
-            2
-        );
-        Título: TextInputCanvas2_1.Value;
-        Unidade: DropdownCanvas1_3.Selected.Value;
-        PremissaVolume: TextInputCanvas2_10.Value;
-        PremissaPreco: TextInputCanvas2_11.Value;
-        Grupo: DropdownCanvas1_1.Selected.Value;
-        ElementoItem: TextInputCanvas2_13.Value;
-        Fonte: DropdownCanvas1_6.Selected.Value;
-        Instrumento: DropdownCanvas1_5.Selected.Value
-    }
-);;
-Notify(
-    "Alterações salvas com sucesso!";
-    NotificationType.Success;
-    4000
-)
-```
->💡 **Como funciona:** Esse código atualiza os dados do item de custo atual (currItemDeCusto) na fonte "PlanejamentoIntegrado_ItensDeCusto" com os valores preenchidos em vários campos da interface. Ele salva informações como forma, quantitativo, valor unitário, frequência, código do item, valor total (calculado e arredondado), título, unidade, premissas, grupo, elemento, fonte e instrumento. Após salvar, exibe uma notificação de sucesso informando que as alterações foram salvas com sucesso.
-
-## 📊 Tela Cenarios
-
-![Tela Cenarios](../assets/images/TelaCenarios.png) 
-
-### Elementos de Interface
-
-#### 👁️ Ver Itens de Custo
-```powerapps
-Navigate(
-    Screen_ItensDeCusto;
-    ScreenTransition.UnCover
-)
-```
-
-> Volta para a tela de Itens de Custo
-
-#### ➕ Adicionar Cenário
-```powerapps
-Patch(
-    PlanejamentoIntegrado_Cenarios;
-    Defaults(PlanejamentoIntegrado_Cenarios);
-    {
-        ID_Iniciativa: currIniciativa.ID;
-        NumeroCenario: Max(
-            Filter(
-                PlanejamentoIntegrado_Cenarios;
-                ID_Iniciativa = currIniciativa.ID
-            );
-            NumeroCenario
-        ) + 1
-    }
-);;
-Refresh(PlanejamentoIntegrado_Cenarios)
-```
-
-> Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
-
-## 🔄 Fluxo Power Automate
-
-🌟 Visão Geral do Fluxo
-O fluxo de automação do Planejamento Integrado 2026 foi desenvolvido para automatizar a geração de relatórios analíticos a partir dos dados cadastrados no aplicativo PowerApps. Este fluxo integra múltiplas tecnologias Microsoft (PowerApps, Power BI, SharePoint e Teams) para entregar relatórios personalizados com base nas ações selecionadas pelo usuário.
-
-
-💡 Objetivo Principal: Automatizar a extração, processamento e distribuição de relatórios analíticos com dados atualizados das iniciativas de planejamento.
-
-```mermaid
-graph TD
-    A[Chamar o fluxo no PowerApps] --> B[Gerar uma consulta no dataset do PowerBI]
-    B --> C[Armazenar os dados]
-    C --> D[Estruturação dos dados em JSON]
-    D --> E[Personalizar os dados]
-    E --> F[Extrair dados do SharePoint]
-    F --> G[Criar um Excel em branco]
-    G --> H[Recuperar informações]
-    H --> I[Criar uma tabela]
-    I --> J[Requisição em HTTP]
-    J --> K[Link de compartilhamento]
-    K --> L[Mensagem]
-```
-
----
-
-O fluxo Power Automate integrado ao aplicativo segue as seguintes etapas:
-
-## 📋 Detalhamento das Etapas
-    
-1️⃣ Acionamento do Fluxo
-O fluxo é acionado a partir do PowerApps quando o usuário clica no botão "Gerar Relatório OBZ".
-
-Configuração do Gatilho:
-Origem: Botão PowerApps
-
-Parâmetros de Entrada:
-Ações: Código(s) das ações selecionadas para o relatório
-Usuário: E-mail do usuário solicitante
-
- ![Fluxo PowerApps](../assets/images/acionamentoFluxo.png)
-
-2️⃣ Consulta ao Power BI
-O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI para extrair as informações filtradas.
-
-Detalhes da Configuração:
-Dataset: TesteOBZ
-Tipo de Consulta: DAX (Direct Query)
-Filtros Aplicados: Com base no parâmetro Ações recebido do PowerApps
- 
- ![Dataset PowerBI](../assets/images/datasetPowerBI.png)
-    
-3️⃣ Extração e Processamento dos Dados
-Após a execução da consulta, o fluxo extrai as linhas de resultado e as processa para uso posterior.
-
-Configuração:
-Run_a_query_against_a_dataset')['body']['results'][0]['tables'][0]['rows']
-Esta etapa é fundamental para extrair apenas os dados relevantes do resultado da consulta, preparando-os para o próximo passo.
-
-  ![Processamento](../assets/images/Processamento.png)   
-
-4️⃣ Estruturação via Parse JSON
-Os dados são estruturados através da ação Parse JSON, que converte o formato bruto em uma estrutura de dados organizada.
-
-Configuração do Parse JSON:
-Conteúdo: Resultado da etapa anterior
-Esquema: Definição estruturada dos campos esperados
-
- ![Estruturação](../assets/images/Estruturação.png)
-
-5️⃣ Personalização dos Dados
-Esta etapa reformata os dados extraídos para uma estrutura mais adequada ao relatório final.
-
-Campos Mapeados:
-Identificadores de ações
-Descrições
-Valores orçamentários
-Métricas de desempenho
-Informações temporais
-
- ![Personalizar](../assets/images/Personalizar.png)
-
-6️⃣ Criação do Arquivo Excel
-
-O fluxo cria um novo arquivo Excel no SharePoint com um nome padronizado que inclui data e hora.
-
-Configuração:
-Localização: /SEDESE
-Nome do Arquivo: Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx
-Formato de Data: formatDateTime(utcNow(), 'dd-MM-yyyy HH:mm:ss')
-
- ![Arquivo](../assets/images/7.png)
-
-7️⃣ Recuperação de Metadados
-
-O fluxo obtém os metadados do arquivo recém-criado para uso nas etapas seguintes.
-
-Informações Coletadas:
-ID do arquivo
-URI do arquivo
-Permissões
-Última modificação
-
-![Informações](../assets/images/Informações.png)
-
-8️⃣ Criação da Tabela Excel
-
-Esta etapa cria uma tabela estruturada no arquivo Excel, com cabeçalhos predefinidos.
-
-Configuração:
-Nome da Tabela: "Relatorio"
-Extração do ID: split(outputs('Get_file_metadata')?['body/Id'],'.')?[0]
-
-![Excel](../assets/images/Excel_Tabela.png)
-
-9️⃣ Inserção de Dados
-
-O fluxo insere os dados processados na tabela Excel através de uma requisição HTTP.
-
-Configuração da Requisição:
-Método: POST
-URI: Construída com base no ID extraído do arquivo
-Corpo da Requisição: Dados estruturados no formato esperado pela API do Excel
-
-![HTTP](../assets/images/HTTP.png)
-
-🔗 Criação de Link de Compartilhamento
-O fluxo cria um link de compartilhamento para o arquivo Excel criado.
-
-Parâmetros de Configuração:
-Tipo de Link: Visualização
-Escopo: Organização
-Expiração: Não definida
-
-![Link](../assets/images/Link.png)
-
-📱 Envio de Notificação no Teams
-A última etapa envia uma notificação ao usuário no Microsoft Teams, incluindo o link para o relatório.
-
-Configuração:
-Destinatário: Usuário que solicitou o relatório (parâmetro Usuário)
-Conteúdo: Mensagem informativa + Link do relatório
-Formatação: Cartão adaptativo com botão de acesso
-
-![Mensagem](../assets/images/Mensagem.png)
-
-## 📝 Considerações de Uso
-
-<div class="tips">
-  <div class="tip">
-    <h3>🎯 Objetivo</h3>
-    <p>O aplicativo foi desenvolvido para simplificar o processo de planejamento integrado</p>
+  
+  <div class="element-card">
+    <h4>📋 Fluxo de Registro de Informação</h4>
+    <p>Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto para consulta</p>
   </div>
-  <div class="tip">
-    <h3>👤 Perfis</h3>
-    <p>As permissões são controladas por perfil de usuário (gestor/não gestor)</p>
-  </div>
-  <div class="tip">
-    <h3>💾 Armazenamento</h3>
-    <p>Os dados são integrados com SharePoint para persistência</p>
-  </div>
-  <div class="tip">
-    <h3>📊 Relatórios</h3>
-    <p>O sistema oferece funcionalidades de relatórios automatizados</p>
+  
+  <div class="element-card">
+    <h4>▶️ Iniciar Preenchimento</h4>
+    <p>Direciona você diretamente para a tela de iniciativas onde o trabalho efetivo começa</p>
   </div>
 </div>
 
+---
+
+## 📋 Tela de Iniciativas
+
+<div class="screen-section">
+  <h3>🎯 Centro de Controle das Suas Iniciativas</h3>
+  <p>Esta é a tela mais importante do sistema, onde você gerencia todas as suas iniciativas de planejamento.</p>
+</div>
+
+### 🎛️ Controles de Seleção Inteligentes
+
+<div class="control-section">
+  <div class="control-item">
+    <h4>🔄 Seletor de Programa</h4>
+    <p><strong>Funcionalidade:</strong> Filtro baseado no perfil do usuário</p>
+    
+    <div class="code-explanation">
+      <h5>💡 Como funciona:</h5>
+      <p>O sistema verifica automaticamente se você é um gestor. Se for, você vê todos os programas disponíveis. Caso contrário, apenas os programas autorizados para seu perfil são exibidos, garantindo segurança e organização.</p>
+    </div>
+  </div>
+
+  <div class="control-item">
+    <h4>🔄 Seletor de Ação</h4>
+    <p><strong>Funcionalidade:</strong> Filtragem de ações baseada no programa selecionado</p>
+    
+    <div class="code-explanation">
+      <h5>💡 Como funciona:</h5>
+      <p>Após selecionar um programa, o sistema filtra automaticamente as ações disponíveis, mostrando apenas aquelas relacionadas ao programa escolhido. Isso mantém a interface limpa e focada.</p>
+    </div>
+  </div>
+</div>
+
+### ⚡ Ações Principais
+
+<div class="action-grid">
+  <div class="action-card">
+    <h4>➕ Adicionar Nova Iniciativa</h4>
+    <p><strong>O que faz:</strong> Cria uma nova iniciativa vinculada ao programa e ação selecionados</p>
+    
+    <div class="action-details">
+      <h5>🔧 Processo:</h5>
+      <ul>
+        <li>Registra automaticamente seu e-mail como responsável</li>
+        <li>Vincula ao programa e ação selecionados</li>
+        <li>Atualiza a lista de iniciativas instantaneamente</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <h4>📊 Propor Programa</h4>
+    <p><strong>O que faz:</strong> Permite sugerir novos programas quando não encontra o que precisa</p>
+    
+    <div class="action-details">
+      <h5>🔧 Processo:</h5>
+      <ul>
+        <li>Cria uma proposta baseada em suas permissões</li>
+        <li>Registra a sugestão para análise posterior</li>
+        <li>Mantém histórico de propostas</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <h4>📝 Propor Ação</h4>
+    <p><strong>O que faz:</strong> Sugere novas ações para programas existentes ou cria propostas completas</p>
+    
+    <div class="action-details">
+      <h5>🔧 Processo:</h5>
+      <ul>
+        <li>Verifica se deve vincular a programa existente ou criar proposta</li>
+        <li>Numera automaticamente as propostas</li>
+        <li>Organiza sugestões para aprovação</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+### 🛠️ Ferramentas de Gestão por Iniciativa
+
+<div class="tool-grid">
+  <div class="tool-card">
+    <h4>📊 Detalhar Resultados</h4>
+    <p>Abre uma visão detalhada da iniciativa selecionada com todas as informações relevantes</p>
+  </div>
+
+  <div class="tool-card">
+    <h4>💰 Itens de Custo</h4>
+    <p>Navega para a tela especializada em gerenciamento de custos da iniciativa</p>
+  </div>
+
+  <div class="tool-card">
+    <h4>🔄 Cenários</h4>
+    <p>Acessa o módulo de criação e comparação de diferentes cenários</p>
+  </div>
+
+  <div class="tool-card">
+    <h4>🗑️ Excluir Iniciativa</h4>
+    <p>Remove a iniciativa após confirmação, com sistema de segurança integrado</p>
+  </div>
+</div>
+
+---
+
+## 💰 Tela Itens de Custo
+
+<div class="screen-section">
+  <h3>💼 Gestão Financeira Detalhada</h3>
+  <p>Aqui você controla todos os aspectos financeiros da sua iniciativa, desde custos unitários até premissas de cálculo.</p>
+</div>
+
+### 🎯 Funcionalidades Principais
+
+<div class="functionality-section">
+  <div class="function-item">
+    <h4>➕ Adicionar Novo Item de Custo</h4>
+    <div class="function-details">
+      <p><strong>Processo automático:</strong></p>
+      <ul>
+        <li>Cria novo item vinculado à iniciativa atual</li>
+        <li>Atualiza dados em tempo real</li>
+        <li>Mantém histórico de alterações</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="function-item">
+    <h4>📝 Detalhamento Completo</h4>
+    <div class="function-details">
+      <p><strong>Campos gerenciados:</strong></p>
+      <ul>
+        <li>Forma de contratação e quantitativo</li>
+        <li>Valores unitários e frequência</li>
+        <li>Códigos de elementos e grupos</li>
+        <li>Premissas de volume e preço</li>
+        <li>Fontes de financiamento e instrumentos</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+### 🧮 Sistema de Cálculo Automático
+
+<div class="calculation-info">
+  <h4>📊 Cálculo do Valor Total</h4>
+  <p>O sistema calcula automaticamente o valor total usando a fórmula:</p>
+  <div class="formula">
+    <strong>Valor Total = Valor Unitário × Quantitativo × Frequência</strong>
+  </div>
+  <p>O resultado é arredondado para 2 casas decimais e salvo automaticamente.</p>
+</div>
+
+---
+
+## 📊 Tela Cenários
+
+<div class="screen-section">
+  <h3>🎭 Planejamento com Múltiplas Perspectivas</h3>
+  <p>Esta tela permite criar e comparar diferentes cenários para sua iniciativa, facilitando a tomada de decisões estratégicas.</p>
+</div>
+
+### 🔧 Ferramentas de Cenário
+
+<div class="scenario-tools">
+  <div class="tool-item">
+    <h4>👁️ Ver Itens de Custo</h4>
+    <p>Retorna rapidamente à tela de custos para consultas ou ajustes</p>
+  </div>
+
+  <div class="tool-item">
+    <h4>➕ Adicionar Cenário</h4>
+    <div class="tool-details">
+      <p><strong>Sistema inteligente de numeração:</strong></p>
+      <ul>
+        <li>Identifica o maior número de cenário existente</li>
+        <li>Adiciona automaticamente o próximo número na sequência</li>
+        <li>Vincula o cenário à iniciativa atual</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
+## 🔄 Fluxo Power Automate
+
+<div class="automation-section">
+  <h3>🌟 Automação Inteligente de Relatórios</h3>
+  <p>O sistema inclui um fluxo automatizado que gera relatórios personalizados integrando PowerApps, Power BI, SharePoint e Teams.</p>
+</div>
+
+### 🎯 Objetivo Principal
+
+<div class="objective-box">
+  <p>Automatizar completamente o processo de extração, processamento e distribuição de relatórios analíticos com dados sempre atualizados das iniciativas de planejamento.</p>
+</div>
+
+### 📋 Fluxo Detalhado de Automação
+
+<div class="flow-steps">
+  <div class="step">
+    <h4>1️⃣ Acionamento do Fluxo</h4>
+    <p>O processo inicia quando você clica no botão "Gerar Relatório OBZ" no PowerApps. O sistema captura automaticamente suas ações selecionadas e seu e-mail para personalização.</p>
+  </div>
+
+  <div class="step">
+    <h4>2️⃣ Consulta ao Power BI</h4>
+    <p>Uma consulta DAX é executada no dataset "TesteOBZ" do Power BI, filtrando os dados conforme suas seleções e extraindo apenas informações relevantes.</p>
+  </div>
+
+  <div class="step">
+    <h4>3️⃣ Processamento Inteligente</h4>
+    <p>Os dados brutos são extraídos e processados, convertendo-os em formato estruturado através de Parse JSON para garantir organização e consistência.</p>
+  </div>
+
+  <div class="step">
+    <h4>4️⃣ Personalização dos Dados</h4>
+    <p>As informações são reformatadas especificamente para seu relatório, incluindo identificadores, descrições, valores orçamentários e métricas de desempenho.</p>
+  </div>
+
+  <div class="step">
+    <h4>5️⃣ Criação do Excel</h4>
+    <p>Um arquivo Excel é criado automaticamente no SharePoint com nome padronizado incluindo data e hora: "Relatorio_Planejamento_Integrado_[DATA]_[HORA].xlsx"</p>
+  </div>
+
+  <div class="step">
+    <h4>6️⃣ Estruturação da Tabela</h4>
+    <p>Uma tabela estruturada é criada no Excel com cabeçalhos predefinidos e os dados processados são inseridos através de requisição HTTP otimizada.</p>
+  </div>
+
+  <div class="step">
+    <h4>7️⃣ Compartilhamento Automático</h4>
+    <p>O sistema cria um link de compartilhamento do arquivo e envia uma notificação personalizada via Teams diretamente para você, incluindo acesso direto ao relatório.</p>
+  </div>
+</div>
+
+---
+
+## 📝 Guia de Boas Práticas
+
+<div class="best-practices">
+  <div class="practice-card">
+    <h4>🎯 Planejamento Eficiente</h4>
+    <ul>
+      <li>Sempre defina claramente programa e ação antes de criar iniciativas</li>
+      <li>Use nomes descritivos para suas iniciativas</li>
+      <li>Mantenha informações atualizadas regularmente</li>
+    </ul>
+  </div>
+
+  <div class="practice-card">
+    <h4>💰 Gestão de Custos</h4>
+    <ul>
+      <li>Preencha todas as premissas de cálculo</li>
+      <li>Verifique regularmente os valores totais calculados</li>
+      <li>Documente fontes de informação para auditoria</li>
+    </ul>
+  </div>
+
+  <div class="practice-card">
+    <h4>📊 Cenários Estratégicos</h4>
+    <ul>
+      <li>Crie cenários realistas e fundamentados</li>
+      <li>Compare regularmente diferentes alternativas</li>
+      <li>Documente premissas de cada cenário</li>
+    </ul>
+  </div>
+
+  <div class="practice-card">
+    <h4>🔄 Automação e Relatórios</h4>
+    <ul>
+      <li>Gere relatórios periodicamente para acompanhamento</li>
+      <li>Verifique dados antes de gerar relatórios finais</li>
+      <li>Mantenha histórico de versões importantes</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## ⚙️ Considerações Técnicas
+
+<div class="technical-notes">
+  <div class="note-card">
+    <h4>👤 Sistema de Permissões</h4>
+    <p>O aplicativo controla automaticamente o acesso baseado no seu perfil (gestor/não gestor), garantindo que você veja apenas as informações apropriadas ao seu nível de acesso.</p>
+  </div>
+
+  <div class="note-card">
+    <h4>💾 Integração de Dados</h4>
+    <p>Todos os dados são integrados com SharePoint para garantir persistência, backup automático e acesso controlado às informações do seu planejamento.</p>
+  </div>
+
+  <div class="note-card">
+    <h4>📈 Relatórios Dinâmicos</h4>
+    <p>O sistema de relatórios se conecta ao Power BI em tempo real, garantindo que você sempre trabalhe com as informações mais atualizadas disponíveis.</p>
+  </div>
+
+  <div class="note-card">
+    <h4>🔔 Notificações Inteligentes</h4>
+    <p>As notificações via Teams são enviadas automaticamente, mantendo você informado sobre o status dos seus relatórios e processos em andamento.</p>
+  </div>
+</div>
+
+---
+
+## 🚀 Próximos Passos
+
+Agora que você domina todas as funcionalidades do aplicativo, está pronto para:
+
+1. **Criar suas primeiras iniciativas** usando os controles inteligentes
+2. **Gerenciar custos detalhadamente** com cálculos automáticos
+3. **Desenvolver cenários estratégicos** para melhor tomada de decisão
+4. **Gerar relatórios automatizados** para acompanhamento e análise
+
+<div class="success-message">
+  <h3>🎉 Parabéns!</h3>
+  <p>Você agora possui conhecimento completo para utilizar eficientemente o Aplicativo de Planejamento Integrado. Use este tutorial como referência sempre que precisar relembrar alguma funcionalidade.</p>
+</div>
+
 <style>
-.flow-steps {
+/* Estilos Gerais */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #2d3748;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #1a202c;
+  border-bottom: 3px solid #0078d4;
+  padding-bottom: 10px;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #0078d4;
+  margin-top: 2em;
+  font-size: 1.8em;
+}
+
+h3 {
+  color: #2d3748;
+  font-size: 1.4em;
+}
+
+/* Seções de Tela */
+.screen-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.screen-section h3 {
+  color: white;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+/* Grid de Elementos */
+.element-grid, .action-grid, .tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.element-card, .action-card, .tool-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.element-card:hover, .action-card:hover, .tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.element-card h4, .action-card h4, .tool-card h4 {
+  color: #0078d4;
+  margin-top: 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* Controles */
+.control-section {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 5px solid #48bb78;
+}
+
+.control-item {
+  margin-bottom: 25px;
+}
+
+.control-item h4 {
+  color: #48bb78;
+  margin-bottom: 10px;
+}
+
+.code-explanation {
+  background: #edf2f7;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border-left: 3px solid #4299e1;
+}
+
+.code-explanation h5 {
+  color: #4299e1;
+  margin: 0 0 8px 0;
+}
+
+/* Detalhes de Ação */
+.action-details, .function-details, .tool-details {
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.action-details h5, .function-details h5, .tool-details h5 {
+  color: #0078d4;
+  margin: 0 0 10px 0;
+}
+
+.action-details ul, .function-details ul, .tool-details ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.action-details li, .function-details li, .tool-details li {
+  margin-bottom: 5px;
+}
+
+/* Funcionalidades */
+.functionality-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.step {
-  background-color: #f8f9fa;
-  border-left: 4px solid #0078d4;
-  padding: 10px 15px;
-  border-radius: 0 5px 5px 0;
-}
-
-.step h3 {
-  margin-top: 0;
-  color: #0078d4;
-}
-
-.tips {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin: 20px 0;
+  margin: 25px 0;
 }
 
-.tip {
-  background-color: #f0f7ff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.function-item {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.tip h3 {
+.function-item h4 {
+  color: #e53e3e;
   margin-top: 0;
-  color: #0078d4;
+  margin-bottom: 15px;
+  font-size: 1.3em;
 }
 
-/* Mermaid diagrams */
-.mermaid {
-  background-color: white;
-  padding: 1em;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin: 1.5em 0;
+/* Informações de Cálculo */
+.calculation-info {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
   text-align: center;
 }
 
+.formula {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Ferramentas de Cenário */
+.scenario-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.tool-item {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.tool-item h4 {
+  color: #805ad5;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* Seção de Automação */
+.automation-section {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.automation-section h3 {
+  margin-top: 0;
+  font-size: 1.6em;
+  color: #2d3748;
+}
+
+.objective-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #2d3748;
+}
+
+/* Passos do Fluxo */
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.step {
+  background: white;
+  border-left: 5px solid #38b2ac;
+  padding: 20px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.step:hover {
+  transform: translateX(10px);
+}
+
+.step h4 {
+  color: #38b2ac;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+/* Boas Práticas */
+.best-practices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.practice-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.practice-card h4 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.practice-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.practice-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Notas Técnicas */
+.technical-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.note-card {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid #4299e1;
+}
+
+.note-card h4 {
+  color: #4299e1;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+/* Mensagem de Sucesso */
+.success-message {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.success-message h3 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 1.5em;
+}
+
+.success-message p {
+  font-size: 1.1em;
+  color: #4a5568;
+  margin-bottom: 0;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-  .tips {
+  .element-grid, .action-grid, .tool-grid, .best-practices, .technical-notes {
     grid-template-columns: 1fr;
+  }
+  
+  .scenario-tools {
+    grid-template-columns: 1fr;
+  }
+  
+  .screen-section, .automation-section {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  .step, .control-section {
+    padding: 15px;
+  }
+  
+  .element-card, .action-card, .tool-card {
+    padding: 15px;
   }
 }
 </style>
