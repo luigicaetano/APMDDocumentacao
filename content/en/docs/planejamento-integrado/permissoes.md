@@ -1,3 +1,11 @@
+---
+title: Configurando e Gerenciando Permissões de Usuários
+date: 2025-06-06
+description: >
+Guia completo para configurar e gerenciar permissões de usuários no sistema de Planejamento Integrado
+weight: 3
+---
+
 # 🔐 Gerenciamento de Permissões de Usuários
 
 Neste guia, você aprenderá como configurar e gerenciar as permissões de usuários no seu sistema de Planejamento Integrado. Com essas funcionalidades, você poderá controlar quem tem acesso a cada parte do sistema e definir diferentes níveis de permissão.
