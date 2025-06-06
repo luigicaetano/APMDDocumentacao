@@ -311,7 +311,7 @@ UpdateContext({visLoading:false})
 ![BotoesIniciativa](../assets/images/BotoesIniciativa2.png)
 
 
-#### 📊 Botão Detalhar Resultados (1)
+#### 📊 Botão Detalhar Iniciativa (1)
 
 ```powerapps
 Set( 
@@ -397,7 +397,6 @@ Reset(ComboboxCanvas1);;
 Reset(DropdownCanvas1_6);;
 ```
 
-
 #### 🔄 Botão Cenários (3)
 
 ```powerapps
@@ -454,6 +453,12 @@ Refresh(PlanejamentoIntegrado_Cenarios)
 
 > 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
 
+#### 🔄 Detalhar Resultados (Cenários)
+```powerapps
+Set(currCenarioTutorial;ThisItem);;
+```
+
+> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
 
 #### 🗑️ Excluir Iniciativa (4)
 
@@ -466,42 +471,6 @@ Set(varNotificacao;"ExcluirIniciativa")
 > 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
 
 
-## 📊 Tela Cenarios
-
-![Tela Cenarios](../assets/images/TelaCenarios.png) 
-
-### Elementos de Interface
-
-#### 👁️ Ver Itens de Custo
-```powerapps
-Navigate(
-    Screen_ItensDeCusto;
-    ScreenTransition.UnCover
-)
-```
-
-> 💡 **Como funciona:** Volta para a tela de Itens de Custo
-
-#### ➕ Adicionar Cenário
-```powerapps
-Patch(
-    PlanejamentoIntegrado_Cenarios;
-    Defaults(PlanejamentoIntegrado_Cenarios);
-    {
-        ID_Iniciativa: currIniciativa.ID;
-        NumeroCenario: Max(
-            Filter(
-                PlanejamentoIntegrado_Cenarios;
-                ID_Iniciativa = currIniciativa.ID
-            );
-            NumeroCenario
-        ) + 1
-    }
-);;
-Refresh(PlanejamentoIntegrado_Cenarios)
-```
-
-> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
 
 
 
