@@ -32,7 +32,7 @@ tags: [Planejamnto Integrado, Monitoramento, Gestão Pública]
 
 ## 📋 Tela de Iniciativas
 
-![Tela Iniciativas](../assets/images/TelaIniciativas.png)
+![Tela Iniciativas](../assets/images/Iniciativas.png)
 
 ### 🎛️ Controles de Seleção
 

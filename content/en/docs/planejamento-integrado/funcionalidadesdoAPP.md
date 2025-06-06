@@ -19,7 +19,7 @@ weight: 3
 
 ## 📋 Tela de Iniciativas
 
-![Tela Iniciativas](../assets/images/TelaIniciativas.png)
+![Tela Iniciativas](../assets/images/Iniciativas.png)
 
 ### Elementos de Interface
 
@@ -359,38 +359,9 @@ UpdateContext({visLoading:false})
 
 > 💡 **Como funciona:** Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
 
-#### 🔄 Botão Cenários (3)
-
-```powerapps
-Set( 
-
-    currIniciativa; 
-
-    ThisItem 
-);; 
-Navigate( 
-
-    Screen_Cenarios; 
-
-    ScreenTransition.UnCover 
-) 
-```
-
-> 💡 **Como funciona:** Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
-
-#### 🗑️ Excluir Iniciativa (4)
-
-```powerapps
-Set(visConfirmacao;true);;
-Set(currIniciativa;ThisItem);;
-Set(varNotificacao;"ExcluirIniciativa")
-```
-
-> 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
-
 ## 💰 Tela Itens de Custo
 
-![Tela Itens de Custo](../assets/images/TelaItensdeCusto.png)
+![Tela Itens de Custo](../assets/images/itensdecusto.png)
 
 ### Elementos de Interface
 
@@ -425,6 +396,74 @@ Reset(DropdownCanvas1_3);;
 Reset(ComboboxCanvas1);;
 Reset(DropdownCanvas1_6);;
 ```
+
+
+#### 🔄 Botão Cenários (3)
+
+```powerapps
+Set( 
+
+    currIniciativa; 
+
+    ThisItem 
+);; 
+Navigate( 
+
+    Screen_Cenarios; 
+
+    ScreenTransition.UnCover 
+) 
+```
+
+> 💡 **Como funciona:** Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
+
+## 📊 Tela Cenarios
+
+![Tela Cenarios](../assets/images/TelaCenarios.png) 
+
+### Elementos de Interface
+
+#### 👁️ Ver Itens de Custo
+```powerapps
+Navigate(
+    Screen_ItensDeCusto;
+    ScreenTransition.UnCover
+)
+```
+
+> 💡 **Como funciona:** Volta para a tela de Itens de Custo
+
+#### ➕ Adicionar Cenário
+```powerapps
+Patch(
+    PlanejamentoIntegrado_Cenarios;
+    Defaults(PlanejamentoIntegrado_Cenarios);
+    {
+        ID_Iniciativa: currIniciativa.ID;
+        NumeroCenario: Max(
+            Filter(
+                PlanejamentoIntegrado_Cenarios;
+                ID_Iniciativa = currIniciativa.ID
+            );
+            NumeroCenario
+        ) + 1
+    }
+);;
+Refresh(PlanejamentoIntegrado_Cenarios)
+```
+
+> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
+
+
+#### 🗑️ Excluir Iniciativa (4)
+
+```powerapps
+Set(visConfirmacao;true);;
+Set(currIniciativa;ThisItem);;
+Set(varNotificacao;"ExcluirIniciativa")
+```
+
+> 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
 
 
 ## 📊 Tela Cenarios
