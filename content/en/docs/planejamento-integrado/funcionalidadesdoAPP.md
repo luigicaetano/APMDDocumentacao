@@ -319,17 +319,9 @@ Reset(ComboboxCanvas1_11);;
 Reset(ComboboxCanvas1_12);;
 Navigate('Tutorial 1')
 ```
-> 💡 **Como funciona:** Primeiro, o comando ClearCollect(colTutorialBaseProgramas; {...}; {...}) cria (ou recria) a coleção chamada colTutorialBaseProgramas. Essa coleção funciona como uma tabela temporária com duas linhas. Cada linha tem os campos Acao e Programa. A primeira linha tem Acao: "01" e Programa: "001", e a segunda linha tem Acao: "02" e também Programa: "001". Isso simula a relação entre ações e programas num formato de teste.
+> 💡 **Como funciona:** Esse código cria quatro coleções (colTutorialBaseProgramas, colTutorialBase, colTutorialItensDeCusto e ColTutorialCenarios) com dados fictícios de teste usando ClearCollect, e reseta dois campos de seleção (ComboboxCanvas1_11 e ComboboxCanvas1_12). Ele prepara um ambiente simulado para testes ou tutoriais no app, com dados controlados e limpos, antes de prosseguir para outra tela.
 
-Logo depois, ClearCollect(colTutorialBase; {...}) cria a coleção colTutorialBase, com uma única linha que contém vários campos, todos preenchidos com o valor de texto "testecontroladocollection". Os campos incluem Programa, Acao, Iniciativa, Status, Resultado, AtividadesNaoOrcamentarias, Escopo e ID_Iniciativa. Isso serve como base para simular um registro completo de uma iniciativa no tutorial, mas com valores genéricos para teste.
 
-A terceira parte, ClearCollect(colTutorialItensDeCusto; {...}), cria a coleção colTutorialItensDeCusto, também com uma única linha e vários campos. Essa coleção simula os itens de custo associados a uma iniciativa, com campos como ID_Iniciativa, Titulo, ValorTotal, Forma, Volume, Fonte, Grupo, Unidade, entre outros, todos com o valor "testecontroladocollection". Isso permite testar funcionalidades como somatórios, exibição de dados e vínculos entre coleções sem depender de dados reais.
-
-Depois, ClearCollect(ColTutorialCenarios; {...}) cria a coleção ColTutorialCenarios, com uma única linha contendo os campos NumeroCenario, ID_Iniciativa, Descricao, Risco e Beneficio, todos preenchidos com o mesmo valor fictício. Essa coleção simula os diferentes cenários de uma iniciativa, como diferentes possibilidades de execução ou planejamento orçamentário.
-
-Em seguida, Reset(ComboboxCanvas1_11);; Reset(ComboboxCanvas1_12) reinicia (limpa) dois controles do tipo ComboBox. Isso garante que eles estejam vazios e prontos para uma nova seleção, útil especialmente quando o usuário está começando uma nova simulação.
-
-Por fim, o comando Navigate('Tutorial 1') leva o usuário para a tela chamada 'Tutorial 1', provavelmente o início do passo a passo do tutorial, onde essas coleções serão usadas para alimentar formulários, galerias ou visualizações de dados.
 
 ##### Painel Resumido
 ```powerapps
