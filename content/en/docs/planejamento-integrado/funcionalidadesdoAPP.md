@@ -518,8 +518,8 @@ tr:hover {
 
 /* Estilo dos blocos de código */
 pre {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
+  background-color:rgb(4, 4, 4);
+  color:rgb(0, 0, 0);
   padding: 20px;
   border-radius: 8px;
   overflow-x: auto;
