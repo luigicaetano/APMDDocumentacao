@@ -1,5 +1,5 @@
 ---
-title: 📊 Fluxo de Execução Orçamentária MGS
+
 date: 2025-05-05
 description: >
   Documentação detalhada do processo de execução orçamentária mensal das despesas da MGS, incluindo procedimentos manuais e automatizados.
