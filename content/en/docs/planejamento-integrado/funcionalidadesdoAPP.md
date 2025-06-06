@@ -180,7 +180,7 @@ UpdateContext({visPropor2:false})
 
 #### 🔧 Botões Laterais
 
-![BotoesLaterais](../assets/images/BotoesLaterais.png)
+![BotoesLaterais](../assets/images/botoesLateraisAtual.png)
 
 ##### 📊 Gerar Relatório (1)
 
@@ -188,16 +188,20 @@ UpdateContext({visPropor2:false})
 UpdateContext({visLoading: true});;
 Set(
     varLink;
-    Gerar_Relatorio_OBZ_Relatorio.Run(
+    Gerar_Relatorio_Planejamento_Integrado_2026.Run(
         """" & Concat(
-            Filter(
+            If(
+                varGestor;
                 PlanejamentoIntegrado_ProgramasAcoes;
-                Left(Acao;4) in acoesPermitidas
+                Filter(
+                    PlanejamentoIntegrado_ProgramasAcoes;
+                    Left(
+                        Acao;
+                        4
+                    ) in acoesPermitidas
+                )
             );
-            Left(
-                Acao;
-                4
-            );
+            Acao;
             ""","""
         ) & """";
         userMail
@@ -245,11 +249,97 @@ ForAll(
         }
     )
 );;
-UpdateContext({visVisaoGeral: true});;
+Set(visVisaoGeral;true);;
 UpdateContext({visLoading:false})
 ```
 
 > 💡 **Como funciona:** Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa.
+
+##### Botão Tutorial do Sistems
+
+```powerapps
+ClearCollect(
+    colTutorialBaseProgramas;
+    {
+        Acao: "01";
+        Programa: "001"
+    };
+    {
+        Acao: "02";
+        Programa: "001"
+    }
+);;
+ClearCollect(
+    colTutorialBase;
+    {
+        Programa: "testecontroladocollection";
+        Acao: "testecontroladocollection";
+        Iniciativa: "testecontroladocollection";
+        Status: "testecontroladocollection";
+        Resultado: "testecontroladocollection";
+        AtividadesNaoOrcamentarias: "testecontroladocollection";
+        Escopo: "testecontroladocollection";
+        ID_Iniciativa:"testecontroladocollection"
+    
+    }
+);;
+ClearCollect(
+    colTutorialItensDeCusto;
+    {
+        ID_Iniciativa: "testecontroladocollection";
+        Titulo: "testecontroladocollection";
+        ValorTotal: "testecontroladocollection";
+        ID_Cenario: "testecontroladocollection";
+        Forma: "testecontroladocollection";
+        Volume: "testecontroladocollection";
+        PremissaVolume: "testecontroladocollection";
+        ValorUnitario: "testecontroladocollection";
+        PremissadePreco: "testecontroladocollection";
+        ElementoItem: "testecontroladocollection";
+        ElementoItemCodigo: "testecontroladocollection";
+        Fonte: "testecontroladocollection";
+        Grupo: "testecontroladocollection";
+        Unidade: "testecontroladocollection";
+        Instrumento: "testecontroladocollection";
+        Frequencia: "testecontroladocollection"
+
+    }
+);;
+ClearCollect(
+    ColTutorialCenarios;
+    {
+        NumeroCenario: "testecontroladocollection";
+        ID_Iniciativa: "testecontroladocollection";
+        Descricao: "testecontroladocollection";
+        Risco: "testecontroladocollection";
+        Beneficio: "testecontroladocollection"
+    }
+);;
+Reset(ComboboxCanvas1_11);;
+Reset(ComboboxCanvas1_12);;
+Navigate('Tutorial 1')
+```
+> 💡 **Como funciona:** Primeiro, o comando ClearCollect(colTutorialBaseProgramas; {...}; {...}) cria (ou recria) a coleção chamada colTutorialBaseProgramas. Essa coleção funciona como uma tabela temporária com duas linhas. Cada linha tem os campos Acao e Programa. A primeira linha tem Acao: "01" e Programa: "001", e a segunda linha tem Acao: "02" e também Programa: "001". Isso simula a relação entre ações e programas num formato de teste.
+
+Logo depois, ClearCollect(colTutorialBase; {...}) cria a coleção colTutorialBase, com uma única linha que contém vários campos, todos preenchidos com o valor de texto "testecontroladocollection". Os campos incluem Programa, Acao, Iniciativa, Status, Resultado, AtividadesNaoOrcamentarias, Escopo e ID_Iniciativa. Isso serve como base para simular um registro completo de uma iniciativa no tutorial, mas com valores genéricos para teste.
+
+A terceira parte, ClearCollect(colTutorialItensDeCusto; {...}), cria a coleção colTutorialItensDeCusto, também com uma única linha e vários campos. Essa coleção simula os itens de custo associados a uma iniciativa, com campos como ID_Iniciativa, Titulo, ValorTotal, Forma, Volume, Fonte, Grupo, Unidade, entre outros, todos com o valor "testecontroladocollection". Isso permite testar funcionalidades como somatórios, exibição de dados e vínculos entre coleções sem depender de dados reais.
+
+Depois, ClearCollect(ColTutorialCenarios; {...}) cria a coleção ColTutorialCenarios, com uma única linha contendo os campos NumeroCenario, ID_Iniciativa, Descricao, Risco e Beneficio, todos preenchidos com o mesmo valor fictício. Essa coleção simula os diferentes cenários de uma iniciativa, como diferentes possibilidades de execução ou planejamento orçamentário.
+
+Em seguida, Reset(ComboboxCanvas1_11);; Reset(ComboboxCanvas1_12) reinicia (limpa) dois controles do tipo ComboBox. Isso garante que eles estejam vazios e prontos para uma nova seleção, útil especialmente quando o usuário está começando uma nova simulação.
+
+Por fim, o comando Navigate('Tutorial 1') leva o usuário para a tela chamada 'Tutorial 1', provavelmente o início do passo a passo do tutorial, onde essas coleções serão usadas para alimentar formulários, galerias ou visualizações de dados.
+
+##### Painel Resumido
+```powerapps
+Navigate(
+    Screen_PainelResumido;
+    ScreenTransition.UnCover
+)
+``` 
+> 💡 **Como funciona:** Esse comando faz uma navegação entre telas no Power Apps, direcionando o usuário para a tela chamada Screen_PainelResumido.
+
 
 #### 🎯 Botões de Ação por Iniciativa
 
