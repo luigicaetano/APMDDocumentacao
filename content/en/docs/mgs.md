@@ -5,6 +5,8 @@ description: >
   Documentação detalhada do processo de execução orçamentária mensal das despesas da MGS, incluindo procedimentos manuais e automatizados.
 categories: [Processos, Automação]
 tags: [MGS, Power Automate, Excel, Orçamento]
+menu: false
+
 ---
 
 

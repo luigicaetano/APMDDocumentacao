@@ -5,67 +5,293 @@ description: >
   Nessa etapa, demonstramos como fizemos todas a interface do aplicativo e como o mesmo funciona.
 weight: 3
 ---
-## 🏠 Tela Inicial
 
-![Tela Inicial do Aplicativo](../assets/images/TelaInicial.png)
 
-### Principais Elementos
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionalidades do Aplicativo</title>
+    <style>
+        /* Estilo geral da página */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-| Elemento | Descrição |
-|---------|-----------|
-| ✨ **Tutorial Interativo** | Guia dinâmico que ensina o usuário a utilizar o aplicativo passo a passo |
-| 📋 **Fluxo de Registro de Informação** | Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto |
-| ▶️ **Iniciar Preenchimento** | Direciona o usuário para a tela de iniciativas |
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+            padding: 20px;
+        }
 
-## 📋 Tela de Iniciativas
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
 
-![Tela Iniciativas](../assets/images/Iniciativas.png)
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            color: #000;
+            margin-top: 1.5em;
+        }
 
-### Elementos de Interface
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.3em;
+            margin-top: 0;
+        }
 
-### 🎛️ Controles de Seleção
+        h2 {
+            font-size: 1.8em;
+            color: #0078d4;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
 
-![Botão Programa e Ação](../assets/images/ProgramaeAcao.png)
+        h3 {
+            font-size: 1.4em;
+            color: #0078d4;
+            margin-bottom: 0.8em;
+        }
 
-#### 🔄Seletor de Programa
+        h4 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 0.6em;
+        }
 
-Funcionalidade: Filtro baseado no perfil do usuário
+        /* Estilo das seções de tela */
+        .screen-section {
+            background-color: #f8f9fa;
+            border-left: 5px solid #0078d4;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin: 30px 0;
+            transition: transform 0.2s ease;
+        }
 
-```powerapps
+        .screen-section:hover {
+            transform: translateX(5px);
+        }
+
+        /* Estilo das imagens */
+        img {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Tabela de elementos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #0078d4;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Estilo dos controles */
+        .control-section {
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e6f0ff;
+        }
+
+        /* Estilo do código */
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            border-left: 4px solid #0078d4;
+        }
+
+        /* Explicações de como funciona */
+        .explanation {
+            background-color: #f0f7ff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explanation::before {
+            content: "💡 Como funciona: ";
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* Botões de funcionalidade */
+        .function-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .function-button {
+            background-color: #f8f9fa;
+            border: 2px solid #0078d4;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .function-button:hover {
+            background-color: #0078d4;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3);
+        }
+
+        .function-button h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .screen-section {
+                padding: 15px;
+            }
+            
+            .function-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Funcionalidades do Aplicativo</h1>
+        <p><em>Nessa seção, demonstramos como fizemos toda a interface do aplicativo e como o mesmo funciona.</em></p>
+
+        <div class="screen-section">
+            <h2>🏠 Tela Inicial</h2>
+            <img src="../assets/images/TelaInicial.png" alt="Tela Inicial do Aplicativo">
+            
+            <h3>Principais Elementos</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>✨ <strong>Tutorial Interativo</strong></td>
+                        <td>Guia dinâmico que ensina o usuário a utilizar o aplicativo passo a passo</td>
+                    </tr>
+                    <tr>
+                        <td>📋 <strong>Fluxo de Registro de Informação</strong></td>
+                        <td>Redireciona para documento no SharePoint em nova aba, mantendo o aplicativo aberto</td>
+                    </tr>
+                    <tr>
+                        <td>▶️ <strong>Iniciar Preenchimento</strong></td>
+                        <td>Direciona o usuário para a tela de iniciativas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="screen-section">
+            <h2>📋 Tela de Iniciativas</h2>
+            <img src="../assets/images/Iniciativas.png" alt="Tela Iniciativas">
+            
+            <div class="control-section">
+                <h3>🎛️ Controles de Seleção</h3>
+                <img src="../assets/images/ProgramaeAcao.png" alt="Botão Programa e Ação">
+                
+                <h4>🔄 Seletor de Programa</h4>
+                <p><strong>Funcionalidade:</strong> Filtro baseado no perfil do usuário</p>
+                
+                <div class="code-block">
 If(
-
     varGestor; 
-
     Distinct( 
-
         PlanejamentoIntegrado_ProgramasAcoes; 
-
         Programa 
-
     ); 
-
     Distinct( 
-
         Filter( 
-
             PlanejamentoIntegrado_ProgramasAcoes; 
-
             Programa in programasPermitidos 
-
         ); 
-
         Programa 
-
     ) 
 )
-```
-> 💡 **Como funciona:** Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção. Assim, dependendo do valor de varGestor, o usuário verá ou todos os programas disponíveis ou apenas um subconjunto filtrado de programas autorizados, garantindo controle de acesso ou visibilidade conforme o perfil do usuário. 
+                </div>
+                
+                <div class="explanation">
+                    Essa função verifica se a variável varGestor está ativada. Se estiver, ela retorna todos os programas distintos registrados na fonte de dados PlanejamentoIntegrado_ProgramasAcoes, sem nenhuma restrição. Caso contrário, ela filtra essa fonte para retornar apenas os programas que estão na lista de programasPermitidos e, então, retorna os programas distintos dessa seleção.
+                </div>
 
-#### 🔄 Seletor de Ação
-
-Funcionalidade: Filtragem de ações baseada no programa selecionado
-
-```powerapps
+                <h4>🔄 Seletor de Ação</h4>
+                <p><strong>Funcionalidade:</strong> Filtragem de ações baseada no programa selecionado</p>
+                
+                <div class="code-block">
 If(
     varGestor;
     Distinct(
@@ -84,17 +310,32 @@ If(
         Acao
     )
 )
-```
+                </div>
+                
+                <div class="explanation">
+                    Essa função é igual à anterior, porém filtra as Ações baseadas no programa selecionado e nas permissões do usuário.
+                </div>
+            </div>
 
-> 💡 **Como funciona:** Essa função é igual a anterior, porém filtra as Ações
+            <div class="function-buttons">
+                <div class="function-button">
+                    <h4>➕ Adicionar Nova Iniciativa</h4>
+                    <p>Criação de nova iniciativa com dados básicos</p>
+                </div>
+                <div class="function-button">
+                    <h4>📝 Propor Programa</h4>
+                    <p>Permite ao usuário propor novos programas</p>
+                </div>
+                <div class="function-button">
+                    <h4>⚡ Propor Ação</h4>
+                    <p>Permite ao usuário propor novas ações</p>
+                </div>
+            </div>
 
-#### ➕ Adicionar Nova Iniciativa
-
-![AdicionarNovaInciativa](../assets/images/AddNovaIniciativa.png)
-
-Funcionalidade: Criação de nova iniciativa com dados básicos
-
-```powerapps
+            <h4>➕ Código - Adicionar Nova Iniciativa</h4>
+            <img src="../assets/images/AddNovaIniciativa.png" alt="Adicionar Nova Iniciativa">
+            
+            <div class="code-block">
 Patch(
     PlanejamentoIntegrado_Iniciativas;
     Defaults(PlanejamentoIntegrado_Iniciativas);
@@ -105,233 +346,105 @@ Patch(
     }
 );;
 Refresh(PlanejamentoIntegrado_Iniciativas)
-```
-> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults(PlanejamentoIntegrado_Iniciativas), que indica que será criado um novo registro com valores padrão.  
-No novo registro criado, são atribuídos três campos: Título, Programa e Ação. 
-Depois de criar esse novo registro, a função executa um Refresh na fonte de dados PlanejamentoIntegrado_Iniciativas para garantir que os dados locais no aplicativo estejam atualizados e sincronizados com o banco ou serviço externo onde a fonte está armazenada. 
+            </div>
+            
+            <div class="explanation">
+                Essa função cria um novo registro na fonte de dados chamada PlanejamentoIntegrado_Iniciativas. Para isso, ela usa a função Patch com o parâmetro Defaults, que indica que será criado um novo registro com valores padrão. No novo registro criado, são atribuídos três campos: Título, Programa e Ação.
+            </div>
 
-#### Botão Propor Programa
-![ProporPrograma](../assets/images/ProporPrograma.png)
-
-```powerapps
- Patch( 
-
-PlanejamentoIntegrado_ProgramasAcoes; 
-
+            <h4>📝 Botão Propor Programa</h4>
+            <img src="../assets/images/ProporPrograma.png" alt="Propor Programa">
+            
+            <div class="code-block">
+Patch( 
+    PlanejamentoIntegrado_ProgramasAcoes; 
     Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
     { 
-
         Título: LookUp( 
-
             PlanejamentoIntegrado_ProgramasAcoes; 
-
             Acao = Left( 
-
                 acoesPermitidas; 
-
                 4 
-
             ); 
-
             Título 
-
         ); 
-
         Programa: TextInputCanvas1.Value 
-
     } 
 );; 
-UpdateContext({visPropor1: false}) 
-```
-> 💡 **Como funciona:** Esse código faz o seguinte: ele cria um novo registro na fonte de dados “PlanejamentoIntegrado_ProgramasAcoes” usando a função Patch com Defaults, ou seja, um registro em branco para preenchimento. Nesse novo registro, ele define o campo Título buscando “(LookUp)” um registro existente na mesma fonte onde o campo Ação é igual aos primeiros 4 caracteres da variável ou texto “acoesPermitidas”. O valor do campo Título desse registro encontrado é usado para preencher o novo registro. Além disso, ele define o campo Programa com o valor que o usuário digitou no componente de texto “TextInputCanvas1”. Por fim, ele atualiza o contexto para definir “visPropor1” como falso, provavelmente para ocultar alguma parte da interface após a operação. 
+UpdateContext({visPropor1: false})
+            </div>
 
-#### Botão Propor Ação
-
-![ProporAcao](../assets/images/ProporAcao.png)
-
-
-```powerapps
+            <h4>⚡ Botão Propor Ação</h4>
+            <img src="../assets/images/ProporAcao.png" alt="Propor Ação">
+            
+            <div class="code-block">
 If( 
-
     Toggle1.Checked; 
-
     Patch( 
-
         PlanejamentoIntegrado_ProgramasAcoes; 
-
         Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
         { 
-
-            Título: LookUp( 
-
-                PlanejamentoIntegrado_ProgramasAcoes; 
-
-                Acao = Left( 
-
-                    acoesPermitidas; 
-
-                    4 
-
-                ); 
-
-                Título 
-
-            ); 
-
+            Título: LookUp(...); 
             Programa: ComboboxCanvas1_10.Selected.Value; 
-
             Acao: TextInputCanvas1_6.Value 
-
         } 
-
     ); 
-
     Patch( 
-
         PlanejamentoIntegrado_ProgramasAcoes; 
-
         Defaults(PlanejamentoIntegrado_ProgramasAcoes); 
-
         { 
-
-            Título: LookUp( 
-
-                PlanejamentoIntegrado_ProgramasAcoes; 
-
-                Acao = Left( 
-
-                    acoesPermitidas; 
-
-                    4 
-
-                ); 
-
-                Título 
-
-            ); 
-
-            Programa: "Proposta " & CountRows( 
-
-                Filter( 
-
-                    PlanejamentoIntegrado_ProgramasAcoes; 
-
-                    "Proposta" in Programa 
-
-                ) 
-
-            ) + 1; 
-
+            Título: LookUp(...); 
+            Programa: "Proposta " & CountRows(...) + 1; 
             Acao: TextInputCanvas1_6.Value 
-
         } 
-
     ) 
-);; 
-UpdateContext({visPropor2:false}) 
-```
-> 💡 **Como funciona:** Esse código verifica se o controle “Toggle1” está marcado (Checked). Se estiver, ele cria um novo registro na fonte “PlanejamentoIntegrado_ProgramasAcoes” usando “Patch” com os seguintes dados: o campo Título é preenchido com o valor encontrado ao buscar (LookUp) um registro onde o campo Ação é igual aos primeiros 4 caracteres da variável “acoesPermitidas”; o campo Programa recebe o valor selecionado pelo usuário no componente “ComboboxCanvas1_10”; e o campo Ação é definido com o valor do componente de texto “TextInputCanvas1_6" 
-Se o toggle não estiver marcado, ele também cria um novo registro similar, mas define o campo Programa como uma string que começa com "Proposta " seguida do número de registros existentes em “PlanejamentoIntegrado_ProgramasAcoes “que já tenham a palavra "Proposta" no campo Programa, somado de 1 (ou seja, criando uma numeração sequencial para propostas). O campo Ação é definido da mesma forma, com o valor do texto do componente “TextInputCanvas1_6”. 
-
-#### Botões Laterais 
-
-![BotoesLaterais](../assets/images/BotoesLaterais.png)
-
-> 💡 **Como funciona:**
-#### Gerar Relatório (1)
-```powerapps
-UpdateContext({visLoading: true});;
-Set(
-    varLink;
-    Gerar_Relatorio_OBZ_Relatorio.Run(
-        """" & Concat(
-            Filter(
-                PlanejamentoIntegrado_ProgramasAcoes;
-                Left(Acao;4) in acoesPermitidas
-            );
-            Left(
-                Acao;
-                4
-            );
-            ""","""
-        ) & """";
-        userMail
-    )
-);;
-Launch(varLink.filelink);;
-UpdateContext({visLoading: false});;
-Notify(
-    "O seu relatório também foi enviado no seu Teams!";
-    NotificationType.Success;
-    5000
 )
-```
-> 💡 **Como funciona:**
+            </div>
 
-#### 📊 Botão Visão Geral Cenários (2)
-```powerapps
-UpdateContext({visLoading:true});;
-Clear(colVisaoGeral);;
-ForAll(
-    SortByColumns(
-        Filter(
-            PlanejamentoIntegrado_Cenarios;
-            ID_Iniciativa in Filter(
-                PlanejamentoIntegrado_Iniciativas;
-                Acao = ComboboxCanvas1_3.Selected.Value
-            ).ID
-        );
-        "Title"
-    );
-    Collect(
-        colVisaoGeral;
-        {
-            ID1: Max(
-                colVisaoGeral;
-                ID1
-            ) + 1;
-            ID_Iniciativa: ThisRecord.ID_Iniciativa;
-            Descricao: ThisRecord.Descricao;
-            TipoCenario: ThisRecord.Título;
-            Cenario: ThisRecord.NumeroCenario;
-            ID: ThisRecord.ID
-        }
-    )
-);;
-UpdateContext({visVisaoGeral: true});;
-UpdateContext({visLoading:false})
-```
+            <h4>🔧 Botões Laterais</h4>
+            <img src="../assets/images/BotoesLaterais.png" alt="Botões Laterais">
+            
+            <div class="function-buttons">
+                <div class="function-button">
+                    <h4>📊 Gerar Relatório</h4>
+                    <p>Gera relatório automático baseado nos dados</p>
+                </div>
+                <div class="function-button">
+                    <h4>🔍 Visão Geral Cenários</h4>
+                    <p>Exibe uma visão consolidada dos cenários</p>
+                </div>
+            </div>
 
-> 💡 **Como funciona:** Esse trecho de código do PowerApps realiza uma sequência de ações para carregar e exibir dados relacionados a cenários de planejamento integrados. Primeiramente, ele ativa um indicador visual de carregamento, atualizando o contexto com visLoading: true. Em seguida, limpa a coleção local colVisaoGeral, removendo qualquer dado anterior. Depois disso, ele percorre todos os registros da fonte de dados PlanejamentoIntegrado_Cenarios que estejam relacionados à iniciativa selecionada pelo usuário (por meio do valor escolhido no componente ComboboxCanvas1_3). Esses registros são filtrados para incluir apenas aqueles cujo ID_Iniciativa corresponde ao de iniciativas com a ação selecionada, e são ordenados pelo campo "Title". Para cada item resultante, é adicionada uma nova entrada à coleção colVisaoGeral, com um identificador incremental (ID1), além de outros campos como Descricao, TipoCenario, Cenario e o próprio ID_Iniciativa. Após esse processamento, a função torna visível a seção ou componente de "Visão Geral" (visVisaoGeral: true) e, por fim, desativa o indicador de carregamento (visLoading: false), sinalizando o fim da operação.
+            <h4>🎯 Botões de Ação por Iniciativa</h4>
+            <img src="../assets/images/BotoesIniciativa2.png" alt="Botões Iniciativa">
+            
+            <div class="function-buttons">
+                <div class="function-button">
+                    <h4>📊 Detalhar Iniciativa</h4>
+                    <p>Abre detalhes completos da iniciativa</p>
+                </div>
+                <div class="function-button">
+                    <h4>💰 Itens de Custo</h4>
+                    <p>Gerencia custos da iniciativa</p>
+                </div>
+                <div class="function-button">
+                    <h4>📈 Cenários</h4>
+                    <p>Gerencia cenários da iniciativa</p>
+                </div>
+                <div class="function-button">
+                    <h4>🗑️ Excluir Iniciativa</h4>
+                    <p>Remove a iniciativa do sistema</p>
+                </div>
+            </div>
+        </div>
 
-
-#### Botões
-
-![BotoesIniciativa](../assets/images/BotoesIniciativa2.png)
-
-
-#### 📊 Botão Detalhar Iniciativa (1)
-
-```powerapps
-Set( 
-
-    currIniciativa; 
-
-    ThisItem 
-);; 
-UpdateContext({visDetalhar: true}) 
-```
-> 💡 **Como funciona:** Essa função realiza duas ações consecutivas: primeiro, ela define a variável global “currIniciativa” para o registro atual representado por “ThisItem”,ou seja, ela armazena o item selecionado ou em foco para uso posterior no aplicativo. Em seguida, ela atualiza uma variável de contexto local chamada “visDetalhar”, definindo seu valor como “true”, o que provavelmente serve para controlar a visibilidade de uma tela, painel ou componente que exibe detalhes dessa iniciativa selecionada.  
-
- ## Detalhar Iniciativa: 
-
- ![DetalhesIniciativa](../assets/images/DetalharIniciativa.png)
-
- > Essa tela serve para detalhar mais sobre a iniciativa selecionada.
-
-```powerapps
+        <div class="screen-section">
+            <h2>📝 Detalhar Iniciativa</h2>
+            <img src="../assets/images/DetalharIniciativa.png" alt="Detalhes Iniciativa">
+            
+            <p>Essa tela serve para detalhar mais sobre a iniciativa selecionada.</p>
+            
+            <div class="code-block">
 Patch(
     PlanejamentoIntegrado_Iniciativas;
     currIniciativa;
@@ -340,101 +453,57 @@ Patch(
         AtividadesNaoOrcamentarias: TextInputCanvas5_5.Value
     }
 )
-```
-> 💡 **Como funciona:** Atualiza um registro específico (representado por currIniciativa) na fonte de dados "PlanejamentoIntegrado_Iniciativas", atribuindo novos valores aos campos "Escopo" e "AtividadesNaoOrcamentarias", com base nos textos digitados nos campos de entrada "TextInputCanvas5_4" e "TextInputCanvas5_5".
+            </div>
+            
+            <div class="explanation">
+                Atualiza um registro específico (representado por currIniciativa) na fonte de dados "PlanejamentoIntegrado_Iniciativas", atribuindo novos valores aos campos "Escopo" e "AtividadesNaoOrcamentarias".
+            </div>
+        </div>
 
-#### 💰 Botão Itens de Custo (2)
-
-```powerapps
-Set(currIniciativa;ThisItem);; 
-Navigate( 
-
-    Screen_ItensDeCusto; 
-
-    ScreenTransition.UnCover 
-
-) 
-UpdateContext({visVisaoGeral: true});; 
-UpdateContext({visLoading:false}) 
-```
-
-> 💡 **Como funciona:** Esse código executa duas ações principais: primeiro, define a variável global “currIniciativa” com o registro atual representado por “ThisItem”, armazenando assim o item selecionado para ser usado em outras partes do aplicativo. Em seguida, a função “Navigate” é chamada para direcionar o usuário para a tela chamada “Screen_ItensDeCusto”, utilizando a transição visual do tipo “UnCover”, que faz a nova tela deslizar para cima ou aparecer cobrindo a anterior.  
-
-## 💰 Tela Itens de Custo
-
-![Tela Itens de Custo](../assets/images/itensdecusto.png)
-
-### Elementos de Interface
-
-#### ➕ Adicionar Novo Item de Custo
-```powerapps
+        <div class="screen-section">
+            <h2>💰 Tela Itens de Custo</h2>
+            <img src="../assets/images/itensdecusto.png" alt="Tela Itens de Custo">
+            
+            <h3>Principais Funcionalidades</h3>
+            
+            <h4>➕ Adicionar Novo Item de Custo</h4>
+            <div class="code-block">
 Patch(
     PlanejamentoIntegrado_ItensDeCusto;
     Defaults(PlanejamentoIntegrado_ItensDeCusto);
     {ID_Iniciativa: currIniciativa.ID}
 );;
 Refresh(PlanejamentoIntegrado_ItensDeCusto)
-```
-> 💡 **Como funciona:** Essa função cria um novo registro na fonte de dados chamada “PlanejamentoIntegrado_ItensDeCusto”, usando os valores padrão dessa fonte, e atribui ao campo “ID_Iniciativa” o valor contido em “currIniciativa.ID”, que provavelmente representa o identificador de uma iniciativa atual selecionada ou em contexto. Após criar esse novo registro, a função executa um comando para atualizar “(refresh)” a fonte de dados, garantindo que a aplicação tenha a versão mais recente dos dados, refletindo imediatamente a inclusão do novo item. Dessa forma, a função adiciona um novo item vinculado a uma iniciativa específica e mantém os dados sincronizados no aplicativo para que qualquer controle ou galeria que utilize essa fonte mostre as informações atualizadas. 
+            </div>
+            
+            <div class="explanation">
+                Essa função cria um novo registro na fonte de dados "PlanejamentoIntegrado_ItensDeCusto", vinculando-o automaticamente à iniciativa atual através do ID_Iniciativa.
+            </div>
+        </div>
 
-#### 🔄 Detalhar Resultados (Itens de Custo)
-```powerapps
-UpdateContext({visSalvando: true});;
-IfError(Patch(
-    PlanejamentoIntegrado_ItensDeCusto;
-    ThisItem;
-    {Título: TextInputCanvas1_2.Value}
-);"");;
-UpdateContext({visSalvando: false});;
-Set(
-    currItemDeCusto;
-    ThisItem
-);;
-UpdateContext({visDetalhar: true});;
-Reset(DropdownCanvas1);;
-Reset(DropdownCanvas1_1);;
-Reset(DropdownCanvas1_3);;
-Reset(ComboboxCanvas1);;
-Reset(DropdownCanvas1_6);;
-```
+        <div class="screen-section">
+            <h2>📊 Tela Cenários</h2>
+            <img src="../assets/images/TelaCenarios.png" alt="Tela Cenários">
+            
+            <h3>Principais Funcionalidades</h3>
+            
+            <div class="function-buttons">
+                <div class="function-button">
+                    <h4>👁️ Ver Itens de Custo</h4>
+                    <p>Navega de volta para a tela de custos</p>
+                </div>
+                <div class="function-button">
+                    <h4>➕ Adicionar Cenário</h4>
+                    <p>Cria um novo cenário numerado sequencialmente</p>
+                </div>
+                <div class="function-button">
+                    <h4>🔍 Detalhar Cenário</h4>
+                    <p>Abre detalhes específicos do cenário</p>
+                </div>
+            </div>
 
-#### 🔄 Botão Cenários (3)
-
-```powerapps
-Set( 
-
-    currIniciativa; 
-
-    ThisItem 
-);; 
-Navigate( 
-
-    Screen_Cenarios; 
-
-    ScreenTransition.UnCover 
-) 
-```
-
-> 💡 **Como funciona:** Esse código faz duas coisas: primeiro, ele define a variável global “currIniciativa” com o registro atual selecionado (ThisItem), armazenando essa informação para uso posterior no app. Em seguida, ele navega para a tela chamada “Screen_Cenarios” usando a transição visual “UnCover”, que faz a nova tela aparecer deslizando ou cobrindo a tela anterior. Ou seja, ele salva o item selecionado e direciona o usuário para a tela de cenários com uma animação suave. 
-
-## 📊 Tela Cenarios
-
-![Tela Cenarios](../assets/images/TelaCenarios.png) 
-
-### Elementos de Interface
-
-#### 👁️ Ver Itens de Custo
-```powerapps
-Navigate(
-    Screen_ItensDeCusto;
-    ScreenTransition.UnCover
-)
-```
-
-> 💡 **Como funciona:** Volta para a tela de Itens de Custo
-
-#### ➕ Adicionar Cenário
-```powerapps
+            <h4>➕ Código - Adicionar Cenário</h4>
+            <div class="code-block">
 Patch(
     PlanejamentoIntegrado_Cenarios;
     Defaults(PlanejamentoIntegrado_Cenarios);
@@ -450,83 +519,16 @@ Patch(
     }
 );;
 Refresh(PlanejamentoIntegrado_Cenarios)
-```
+            </div>
+            
+            <div class="explanation">
+                Esse código cria um novo registro vinculado à iniciativa atual e calcula automaticamente o próximo número sequencial para o cenário, garantindo numeração única por iniciativa.
+            </div>
+        </div>
 
-> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
-
-#### 🔄 Detalhar Resultados (Cenários)
-```powerapps
-Set(currCenarioTutorial;ThisItem);;
-```
-
-> 💡 **Como funciona:** Esse código cria um novo registro na fonte de dados "PlanejamentoIntegrado_Cenarios" vinculando-o à iniciativa atualmente selecionada "(currIniciativa.ID)". Para o campo "NumeroCenario", ele calcula o maior número de cenário já existente para essa mesma iniciativa e adiciona 1, garantindo que o novo cenário tenha um número sequencial único. Depois de criar esse registro, ele atualiza a fonte de dados para que as mudanças sejam refletidas imediatamente no aplicativo.
-
-#### 🗑️ Excluir Iniciativa (4)
-
-```powerapps
-Set(visConfirmacao;true);;
-Set(currIniciativa;ThisItem);;
-Set(varNotificacao;"ExcluirIniciativa")
-```
-
-> 💡 **Como funciona:** Ele não apaga a iniciativa imediatamente, mas ativa um aviso de confirmação ao definir a variável “visConfirmacao” como verdadeira e registra que a ação pretendida é a exclusão, por meio da variável “varNotificacao” com o valor "ExcluirIniciativa". Isso prepara a interface para exibir uma mensagem de confirmação antes de realizar a exclusão de fato. 
-
-
-
-
-
-<style>
-.flow-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.step {
-  background-color: #f8f9fa;
-  border-left: 4px solid #0078d4;
-  padding: 10px 15px;
-  border-radius: 0 5px 5px 0;
-}
-
-.step h3 {
-  margin-top: 0;
-  color: #0078d4;
-}
-
-.tips {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.tip {
-  background-color: #f0f7ff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.tip h3 {
-  margin-top: 0;
-  color: #0078d4;
-}
-
-/* Mermaid diagrams */
-.mermaid {
-  background-color: white;
-  padding: 1em;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin: 1.5em 0;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .tips {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+        <div style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eaeaea; text-align: center;">
+            <p><em>Sistema desenvolvido para otimizar o planejamento integrado e gestão de iniciativas organizacionais.</em></p>
+        </div>
+    </div>
+</body>
+</html>
