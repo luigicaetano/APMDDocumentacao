@@ -12,6 +12,8 @@ Neste guia, você aprenderá como configurar e gerenciar as permissões de usuá
 
 ## 📋 Tela Principal de Permissões
 
+![Tela Permissoes](../assets/images/permissoes.png)
+
 Esta é a tela central onde você visualiza todos os usuários e suas respectivas permissões. A partir daqui, você pode realizar todas as operações de gerenciamento.
 
 ### 🆕 Nova Permissão
@@ -40,15 +42,42 @@ Este botão executa três ações em sequência:
 
 Remove permanentemente o usuário selecionado da base de dados, desativando completamente seu acesso ao sistema.
 
-## ✏️ Tela de Edição de Permissões
+## ✏️ Tela de Edição de Permissões 
+
+![Tela Itens de Custo](../assets/images/permissoesEditar.png)
 
 Nesta tela, você pode modificar as permissões de um usuário já existente no sistema.
 
 ### 🔍 Localizar Usuários
 
 Este código é usado em um ComboBox para listar todas as opções do campo Usuario da fonte de dados `PlanejamentoIntegrado_Usuarios`, permitindo selecionar um usuário válido existente.
+## 💾 Função Principal: Salvar Permissões
+
+### 🔧 Como Funciona o Salvamento
+
+```powerapps
+If(Checkbox3_1.Value;
+  // Se for gestor
+  Patch(PlanejamentoIntegrado_Usuarios; currUsuario; {
+    Título: "Sim";
+    Gestor: true;
+    Programas: Blank();
+    Acoes: Blank()
+  });
+  // Se não for gestor  
+  Patch(PlanejamentoIntegrado_Usuarios; currUsuario; {
+    Título: "Sim";
+    Usuario: ComboBox1_2.Selected;
+    Programas: Concat(Distinct(Filter(Gallery1_1.AllItems; Checkbox1_1.Value = true); Programa); Value; "; ");
+    Acoes: Concat(Filter(Gallery1_1.AllItems; Checkbox1_1.Value = true); Left(Acao; 4); "; ")
+  })
+);
+Navigate(Screen_Permissoes_Gestao)
+```
 
 ## ➕ Tela de Adição de Permissões
+
+![Tela Itens de Custo](../assets/images/permissoesAdicionar.png)
 
 Interface dedicada para cadastrar novos usuários no sistema e definir suas permissões iniciais.
 
