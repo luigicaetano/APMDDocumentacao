@@ -51,7 +51,8 @@ Nesta tela, você pode modificar as permissões de um usuário já existente no 
 ### 🔍 Localizar Usuários
 
 Este código é usado em um ComboBox para listar todas as opções do campo Usuario da fonte de dados `PlanejamentoIntegrado_Usuarios`, permitindo selecionar um usuário válido existente.
-## 💾 Função Principal: Salvar Permissões
+
+### 💾 Salvar Permissões
 
 ### 🔧 Como Funciona o Salvamento
 
@@ -74,6 +75,35 @@ If(Checkbox3_1.Value;
 );
 Navigate(Screen_Permissoes_Gestao)
 ```
+### 🎯 Como o Sistema Funciona: 
+1. Verificação de Tipo de Usuário
+O sistema primeiro verifica se o Checkbox3_1 está marcado para determinar se o usuário será um gestor ou um usuário comum.
+2. Configuração para Gestores 👑
+Se for um gestor, o sistema define:
+
+Título: "Sim" (usuário ativo)
+Gestor: true (permissão de gestor)
+Programas e Ações: Blank() (gestores têm acesso total)
+
+3. Configuração para Usuários Comuns 👤
+Para usuários comuns, o sistema:
+
+Define o usuário selecionado no ComboBox
+Coleta os Programas marcados na galeria, removendo duplicatas com Distinct()
+Coleta as Ações marcadas, usando apenas os 4 primeiros caracteres com Left(Acao; 4)
+Separa os itens com ponto e vírgula usando Concat()
+
+4. Detalhamento das Funções Utilizadas
+
+Concat() - Concatena (junta) valores em uma string separada por delimitador
+Distinct() - Remove valores duplicados de uma lista
+Filter() - Filtra itens com base em uma condição (checkbox marcado)
+Left(Acao; 4) - Extrai apenas os 4 primeiros caracteres do campo Acao
+Gallery1_1.AllItems - Referência a todos os itens da galeria
+Checkbox1_1.Value = true - Condição para filtrar apenas itens marcados
+
+5. Finalização 🔄
+Após salvar as configurações, o sistema retorna automaticamente para a tela principal de gestão de permissões com Navigate(Screen_Permissoes_Gestao).
 
 ## ➕ Tela de Adição de Permissões
 
@@ -105,26 +135,36 @@ If(Checkbox3_1.Value;
 Navigate(Screen_Permissoes_Gestao)
 ```
 
-### 🎯 Como o Sistema Funciona
-
-**1. Verificação de Tipo de Usuário**
-O sistema primeiro verifica se o `Checkbox3_1` está marcado para determinar se o usuário será um gestor ou um usuário comum.
-
-**2. Configuração para Gestores** 👑
+### 🎯 Como o Sistema Funciona:
+ 
+1. Verificação de Tipo de Usuário
+O sistema primeiro verifica se o Checkbox3_1 está marcado para determinar se o usuário será um gestor ou um usuário comum.
+2. Configuração para Gestores 👑
 Se for um gestor, o sistema define:
-- **Título:** "Sim" (usuário ativo)
-- **Gestor:** true (permissão de gestor)
-- **Programas e Ações:** Blank() (gestores têm acesso total)
 
-**3. Configuração para Usuários Comuns** 👤
+Título: "Sim" (usuário ativo)
+Gestor: true (permissão de gestor)
+Programas e Ações: Blank() (gestores têm acesso total)
+
+3. Configuração para Usuários Comuns 👤
 Para usuários comuns, o sistema:
-- Define o usuário selecionado no ComboBox
-- Coleta os **Programas** marcados na galeria, removendo duplicatas
-- Coleta as **Ações** marcadas, usando apenas os 4 primeiros caracteres
-- Separa os itens com ponto e vírgula
 
-**4. Finalização** 🔄
-Após salvar as configurações, o sistema retorna automaticamente para a tela principal de gestão de permissões.
+Define o usuário selecionado no ComboBox
+Coleta os Programas marcados na galeria, removendo duplicatas com Distinct()
+Coleta as Ações marcadas, usando apenas os 4 primeiros caracteres com Left(Acao; 4)
+Separa os itens com ponto e vírgula usando Concat()
+
+4. Detalhamento das Funções Utilizadas
+
+Concat() - Concatena (junta) valores em uma string separada por delimitador
+Distinct() - Remove valores duplicados de uma lista
+Filter() - Filtra itens com base em uma condição (checkbox marcado)
+Left(Acao; 4) - Extrai apenas os 4 primeiros caracteres do campo Acao
+Gallery1_1.AllItems - Referência a todos os itens da galeria
+Checkbox1_1.Value = true - Condição para filtrar apenas itens marcados
+
+5. Finalização 🔄
+Após salvar as configurações, o sistema retorna automaticamente para a tela principal de gestão de permissões com Navigate(Screen_Permissoes_Gestao).
 
 ## 💡 Dicas Importantes
 
