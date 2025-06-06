@@ -44,7 +44,7 @@ Remove permanentemente o usuário selecionado da base de dados, desativando comp
 
 ## ✏️ Tela de Edição de Permissões 
 
-![Editar Permissoes](../assets/images/permissoesEditar.png)
+![Permissoes Editar](../assets/images/permissoesEditar.png)
 
 Nesta tela, você pode modificar as permissões de um usuário já existente no sistema.
 
@@ -107,7 +107,7 @@ Após salvar as configurações, o sistema retorna automaticamente para a tela p
 
 ## ➕ Tela de Adição de Permissões
 
-![Adicionar permissoes](../assets/images/permissoesAdicionar.png)
+![Permissoes Adicionar](../assets/images/permissoesAdicionar.png)
 
 Interface dedicada para cadastrar novos usuários no sistema e definir suas permissões iniciais.
 
