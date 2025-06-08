@@ -571,18 +571,12 @@ Agora que você domina todas as funcionalidades do aplicativo, está pronto para
 <style>
 /* Estilos Gerais */
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: #2d3748;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 h1 {
