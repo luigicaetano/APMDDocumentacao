@@ -577,6 +577,8 @@ body {
   line-height: 1.6;
   color: #2d3748;
   max-width: 1200px;
+  margin: 0 auto;
+  
 }
 
 h1 {
