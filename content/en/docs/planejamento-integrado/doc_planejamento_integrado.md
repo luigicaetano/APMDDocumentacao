@@ -1,5 +1,6 @@
-# 🚀 Tutorial Completo - Aplicativo de Planejamento Integrado
-
+---
+ title: 🚀 Tutorial Completo - Aplicativo de Planejamento Integrado
+---
 Este guia completo apresenta todas as funcionalidades do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos. Siga este tutorial para dominar completamente o sistema.
 
 ## O Que Você Vai Aprender
