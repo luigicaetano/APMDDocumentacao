@@ -79,7 +79,6 @@ graph TD
   <div class="step">
     <h4>🔄 Seletor de Programa</h4>
     <p><strong>Funcionalidade:</strong> Filtro baseado no perfil do usuário</p>
-    
     <div class="code-sample">
       <p><strong>💡 Como funciona:</strong></p>
       <p>O sistema verifica automaticamente se você é um gestor. Se for, você vê todos os programas disponíveis. Caso contrário, apenas os programas autorizados para seu perfil são exibidos, garantindo segurança e organização.</p>
@@ -89,7 +88,6 @@ graph TD
   <div class="step">
     <h4>🔄 Seletor de Ação</h4>
     <p><strong>Funcionalidade:</strong> Filtragem de ações baseada no programa selecionado</p>
-    
     <div class="code-sample">
       <p><strong>💡 Como funciona:</strong></p>
       <p>Após selecionar um programa, o sistema filtra automaticamente as ações disponíveis, mostrando apenas aquelas relacionadas ao programa escolhido. Isso mantém a interface limpa e focada.</p>
@@ -103,7 +101,6 @@ graph TD
   <div class="step">
     <h4>➕ Adicionar Nova Iniciativa</h4>
     <p><strong>O que faz:</strong> Cria uma nova iniciativa vinculada ao programa e ação selecionados</p>
-    
     <div class="code-sample">
       <p><strong>🔧 Processo:</strong></p>
       <ul>
@@ -117,7 +114,6 @@ graph TD
   <div class="step">
     <h4>📊 Propor Programa</h4>
     <p><strong>O que faz:</strong> Permite sugerir novos programas quando não encontra o que precisa</p>
-    
     <div class="code-sample">
       <p><strong>🔧 Processo:</strong></p>
       <ul>
@@ -131,7 +127,6 @@ graph TD
   <div class="step">
     <h4>📝 Propor Ação</h4>
     <p><strong>O que faz:</strong> Sugere novas ações para programas existentes ou cria propostas completas</p>
-    
     <div class="code-sample">
       <p><strong>🔧 Processo:</strong></p>
       <ul>
