@@ -26,13 +26,13 @@ O Aplicativo de Planejamento Integrado é uma solução completa que conecta Pow
 ```mermaid
 graph TD
     A[Tela Inicial] --> B[Iniciativas]
-    B --> C[Itens de Custo]
-    C --> D[Cenários]
-    D --> E[Relatórios]
-    E --> F[Power BI Dataset]
-    F --> G[Excel + SharePoint]
-    G --> H[Notificação Teams]
-    I --> A[Tela Inicial]
+    B[Iniciativas] --> C[Itens de Custo]
+    C[Itens de Custo] --> D[Cenários]
+    D[Cenários] --> E[Relatórios]
+    E[Relatórios] --> F[Power BI Dataset]
+    F[Power BI Dataset] --> G[Excel + SharePoint]
+    G[Excel + SharePoint] --> H[Notificação Teams]
+    I[Notificação Teams] --> A[Tela Inicial]
 ```
 
 
