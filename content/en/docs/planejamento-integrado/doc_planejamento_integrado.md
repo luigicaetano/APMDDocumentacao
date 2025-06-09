@@ -531,20 +531,6 @@ graph TD
 | **Permissões** | Controle de acesso | Gerenciamento completo de usuários e suas permissões |
 | **Automação** | Relatórios inteligentes | Geração e distribuição automatizada de relatórios via Teams |
 
-## 🎉 Conclusão
-
-<div class="success-message">
-  <h3>🚀 Próximos Passos</h3>
-  <p>Agora que você domina todas as funcionalidades do aplicativo, está pronto para:</p>
-  <ul>
-    <li><strong>Criar suas primeiras iniciativas</strong> usando os controles inteligentes</li>
-    <li><strong>Gerenciar custos detalhadamente</strong> com cálculos automáticos</li>
-    <li><strong>Desenvolver cenários estratégicos</strong> para melhor tomada de decisão</li>
-    <li><strong>Gerar relatórios automatizados</strong> para acompanhamento e análise</li>
-    <li><strong>Administrar permissões</strong> para controlar o acesso ao sistema</li>
-  </ul>
-</div>
-
 ## 🚀 Próximos Passos
 
 Agora que você domina todas as funcionalidades do aplicativo, está pronto para:
@@ -553,6 +539,8 @@ Agora que você domina todas as funcionalidades do aplicativo, está pronto para
 2. **Gerenciar custos detalhadamente** com cálculos automáticos
 3. **Desenvolver cenários estratégicos** para melhor tomada de decisão
 4. **Gerar relatórios automatizados** para acompanhamento e análise
+
+## 🎉 Conclusão
 
 <div class="success-message">
   <h3>🎉 Parabéns!</h3>
