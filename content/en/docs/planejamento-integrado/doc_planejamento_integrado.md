@@ -32,7 +32,7 @@ graph TD
     E --> F[Power BI Dataset]
     F --> G[Excel + SharePoint]
     G --> H[Notificação Teams]
-    I --> A
+    I --> A[Tela Inicial]
 ```
 
 
