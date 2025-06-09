@@ -50,7 +50,6 @@ graph TD
   <div class="step">
     <h3>✏️ Passo 2: Editando Permissões Existentes</h3>
     <p>Para modificar as permissões de um usuário já cadastrado, utilize o botão "Editar" que executa uma sequência de ações para garantir a integridade dos dados.</p>
-    
     <div class="code-sample">
       {{< highlight powerapps >}}
       Select(Parent);
@@ -58,48 +57,41 @@ graph TD
       Navigate(Screen_Permissoes_Editar)
       {{< /highlight >}}
     </div>
-    
     <p><strong>Este código executa três ações em sequência:</strong></p>
     <ul>
       <li><code>Select(Parent)</code> - Seleciona o item pai da galeria para garantir o foco correto</li>
       <li><code>Set(currUsuario; ThisItem)</code> - Define o usuário atual como variável global para uso na tela de edição</li>
       <li><code>Navigate(Screen_Permissoes_Editar)</code> - Navega para a tela de edição de permissões</li>
     </ul>
-    
     {{< figure src="../assets/images/permissoesEditar.png" alt="Tela de edição de permissões de usuário" >}}
   </div>
 
   <div class="step">
     <h3>🚫 Passo 3: Desativando Usuários</h3>
     <p>Quando necessário remover completamente o acesso de um usuário ao sistema, utilize a função de desativação com cuidado, pois esta ação é permanente.</p>
-    
     <div class="code-sample">
       {{< highlight csharp>}}
       Remove(PlanejamentoIntegrado_Usuarios; ThisItem)
       {{< /highlight >}}
     </div>
-    
     <p><strong>⚠️ Atenção:</strong> Esta função remove permanentemente o usuário da base de dados, desativando completamente seu acesso ao sistema. Esta ação não pode ser facilmente desfeita.</p>
   </div>
 
   <div class="step">
     <h3>🔍 Passo 4: Localizando Usuários no Sistema</h3>
     <p>O sistema oferece uma funcionalidade de busca que permite localizar usuários existentes na base de dados através de um ComboBox inteligente.</p>
-    
     <div class="code-sample">
       {{< highlight powerapps >}}
       // Código usado no ComboBox para listar usuários
       PlanejamentoIntegrado_Usuarios.Usuario
       {{< /highlight >}}
     </div>
-    
     <p>Este código lista todas as opções do campo Usuario da fonte de dados, permitindo selecionar um usuário válido existente para edição.</p>
   </div>
 
   <div class="step">
     <h3>💾 Passo 5: Salvando Configurações de Permissões</h3>
     <p>O sistema de salvamento é inteligente e diferencia automaticamente entre gestores e usuários comuns, aplicando as configurações apropriadas para cada tipo.</p>
-    
     <div class="code-sample">
       {{< highlight powerapps >}}
       If(Checkbox3_1.Value;
@@ -126,10 +118,8 @@ graph TD
   <div class="step">
     <h3>🎯 Passo 6: Como o Sistema Funciona Internamente</h3>
     <p>O processo de salvamento segue uma lógica estruturada que garante a integridade e consistência dos dados.</p>
-    
     <p><strong>1. Verificação de Tipo de Usuário</strong></p>
     <p>O sistema verifica se o Checkbox3_1 está marcado para determinar se o usuário será um gestor ou usuário comum.</p>
-    
     <p><strong>2. Configuração para Gestores 👑</strong></p>
     <p>Se for um gestor, o sistema define:</p>
     <ul>
@@ -137,7 +127,6 @@ graph TD
       <li><strong>Gestor:</strong> true (permissão de gestor)</li>
       <li><strong>Programas e Ações:</strong> Blank() (gestores têm acesso total)</li>
     </ul>
-    
     <p><strong>3. Configuração para Usuários Comuns 👤</strong></p>
     <p>Para usuários comuns, o sistema:</p>
     <ul>
@@ -151,33 +140,24 @@ graph TD
   <div class="step">
     <h3>🔧 Passo 7: Detalhamento das Funções Utilizadas</h3>
     <p>Compreenda as funções principais que tornam o sistema de permissões robusto e confiável:</p>
-    
     <p><strong>Concat()</strong> - Concatena (junta) valores em uma string separada por delimitador</p>
-    
     <p><strong>Distinct()</strong> - Remove valores duplicados de uma lista</p>
-    
     <p><strong>Filter()</strong> - Filtra itens com base em uma condição (checkbox marcado)</p>
-    
     <p><strong>Left(Acao; 4)</strong> - Extrai apenas os 4 primeiros caracteres do campo Acao</p>
-    
     <p><strong>Gallery1_1.AllItems</strong> - Referência a todos os itens da galeria</p>
-    
     <p><strong>Checkbox1_1.Value = true</strong> - Condição para filtrar apenas itens marcados</p>
   </div>
 
   <div class="step">
     <h3>➕ Passo 8: Adicionando Novas Permissões</h3>
     <p>A tela de adição oferece uma interface limpa e intuitiva para cadastrar novos usuários no sistema e definir suas permissões iniciais.</p>
-    
     {{< figure src="../assets/images/permissoesAdicionar .png" alt="Interface para adicionar novas permissões de usuário" >}}
-    
     <p>Esta interface utiliza a mesma lógica de salvamento explicada anteriormente, mas para criação de novos registros ao invés de edição de existentes.</p>
   </div>
 
   <div class="step">
     <h3>🔄 Passo 9: Finalização e Navegação</h3>
     <p>Após salvar as configurações, o sistema retorna automaticamente para a tela principal de gestão de permissões, permitindo verificar imediatamente se as alterações foram aplicadas corretamente.</p>
-    
     <div class="code-sample">
       {{< highlight csharp >}}
       Navigate(Screen_Permissoes_Gestao)
