@@ -42,17 +42,9 @@ graph TD
   <div class="step">
     <h3>📋 Passo 1: Tela Principal de Permissões</h3>
     <p>Esta é a tela central onde você visualiza todos os usuários e suas respectivas permissões. A partir daqui, você pode realizar todas as operações de gerenciamento de forma centralizada e organizada.</p>
-    {{< figure src="../assets/images/permissoes.png" alt="Tela principal de gerenciamento de permissões" >}}
-    
-    <div class="functionality-box">
-      <h4>🆕 Nova Permissão</h4>
-      <div class="code-sample">
-        {{< highlight powerapps >}}
-        Navigate(Screen_Permissoes_Adicionar)
-        {{< /highlight >}}
-      </div>
-      <p>Direciona o usuário para a tela onde poderá adicionar uma nova permissão ao sistema, configurando um novo usuário com seus respectivos acessos.</p>
-    </div>
+    <p><strong>🆕 Nova Permissão</strong></p>
+    <p><code>Navigate(Screen_Permissoes_Adicionar)</code></p>
+    <p>Direciona o usuário para a tela onde poderá adicionar uma nova permissão ao sistema, configurando um novo usuário com seus respectivos acessos.</p>
   </div>
 
   <div class="step">
@@ -67,14 +59,12 @@ graph TD
       {{< /highlight >}}
     </div>
     
-    <div class="action-breakdown">
-      <p><strong>Este código executa três ações em sequência:</strong></p>
-      <ul>
-        <li><code>Select(Parent)</code> - Seleciona o item pai da galeria para garantir o foco correto</li>
-        <li><code>Set(currUsuario; ThisItem)</code> - Define o usuário atual como variável global para uso na tela de edição</li>
-        <li><code>Navigate(Screen_Permissoes_Editar)</code> - Navega para a tela de edição de permissões</li>
-      </ul>
-    </div>
+    <p><strong>Este código executa três ações em sequência:</strong></p>
+    <ul>
+      <li><code>Select(Parent)</code> - Seleciona o item pai da galeria para garantir o foco correto</li>
+      <li><code>Set(currUsuario; ThisItem)</code> - Define o usuário atual como variável global para uso na tela de edição</li>
+      <li><code>Navigate(Screen_Permissoes_Editar)</code> - Navega para a tela de edição de permissões</li>
+    </ul>
     
     {{< figure src="../assets/images/permissoesEditar.png" alt="Tela de edição de permissões de usuário" >}}
   </div>
@@ -89,9 +79,7 @@ graph TD
       {{< /highlight >}}
     </div>
     
-    <div class="warning-box">
-      <p><strong>⚠️ Atenção:</strong> Esta função remove permanentemente o usuário da base de dados, desativando completamente seu acesso ao sistema. Esta ação não pode ser facilmente desfeita.</p>
-    </div>
+    <p><strong>⚠️ Atenção:</strong> Esta função remove permanentemente o usuário da base de dados, desativando completamente seu acesso ao sistema. Esta ação não pode ser facilmente desfeita.</p>
   </div>
 
   <div class="step">
@@ -139,70 +127,42 @@ graph TD
     <h3>🎯 Passo 6: Como o Sistema Funciona Internamente</h3>
     <p>O processo de salvamento segue uma lógica estruturada que garante a integridade e consistência dos dados.</p>
     
-    <div class="process-flow">
-      <div class="process-item">
-        <h4>1. Verificação de Tipo de Usuário</h4>
-        <p>O sistema verifica se o Checkbox3_1 está marcado para determinar se o usuário será um gestor ou usuário comum.</p>
-      </div>
-      
-      <div class="process-item">
-        <h4>2. Configuração para Gestores 👑</h4>
-        <p>Se for um gestor, o sistema define:</p>
-        <ul>
-          <li><strong>Título:</strong> "Sim" (usuário ativo)</li>
-          <li><strong>Gestor:</strong> true (permissão de gestor)</li>
-          <li><strong>Programas e Ações:</strong> Blank() (gestores têm acesso total)</li>
-        </ul>
-      </div>
-      
-      <div class="process-item">
-        <h4>3. Configuração para Usuários Comuns 👤</h4>
-        <p>Para usuários comuns, o sistema:</p>
-        <ul>
-          <li>Define o usuário selecionado no ComboBox</li>
-          <li>Coleta os Programas marcados na galeria, removendo duplicatas com Distinct()</li>
-          <li>Coleta as Ações marcadas, usando apenas os 4 primeiros caracteres</li>
-          <li>Separa os itens com ponto e vírgula usando Concat()</li>
-        </ul>
-      </div>
-    </div>
+    <p><strong>1. Verificação de Tipo de Usuário</strong></p>
+    <p>O sistema verifica se o Checkbox3_1 está marcado para determinar se o usuário será um gestor ou usuário comum.</p>
+    
+    <p><strong>2. Configuração para Gestores 👑</strong></p>
+    <p>Se for um gestor, o sistema define:</p>
+    <ul>
+      <li><strong>Título:</strong> "Sim" (usuário ativo)</li>
+      <li><strong>Gestor:</strong> true (permissão de gestor)</li>
+      <li><strong>Programas e Ações:</strong> Blank() (gestores têm acesso total)</li>
+    </ul>
+    
+    <p><strong>3. Configuração para Usuários Comuns 👤</strong></p>
+    <p>Para usuários comuns, o sistema:</p>
+    <ul>
+      <li>Define o usuário selecionado no ComboBox</li>
+      <li>Coleta os Programas marcados na galeria, removendo duplicatas com Distinct()</li>
+      <li>Coleta as Ações marcadas, usando apenas os 4 primeiros caracteres</li>
+      <li>Separa os itens com ponto e vírgula usando Concat()</li>
+    </ul>
   </div>
 
   <div class="step">
     <h3>🔧 Passo 7: Detalhamento das Funções Utilizadas</h3>
-    <p>Compreenda as funções principais que tornam o sistema de permissões robusto e confiável.</p>
+    <p>Compreenda as funções principais que tornam o sistema de permissões robusto e confiável:</p>
     
-    <div class="functions-grid">
-      <div class="function-item">
-        <h4>Concat()</h4>
-        <p>Concatena (junta) valores em uma string separada por delimitador</p>
-      </div>
-      
-      <div class="function-item">
-        <h4>Distinct()</h4>
-        <p>Remove valores duplicados de uma lista</p>
-      </div>
-      
-      <div class="function-item">
-        <h4>Filter()</h4>
-        <p>Filtra itens com base em uma condição (checkbox marcado)</p>
-      </div>
-      
-      <div class="function-item">
-        <h4>Left(Acao; 4)</h4>
-        <p>Extrai apenas os 4 primeiros caracteres do campo Acao</p>
-      </div>
-      
-      <div class="function-item">
-        <h4>Gallery1_1.AllItems</h4>
-        <p>Referência a todos os itens da galeria</p>
-      </div>
-      
-      <div class="function-item">
-        <h4>Checkbox1_1.Value = true</h4>
-        <p>Condição para filtrar apenas itens marcados</p>
-      </div>
-    </div>
+    <p><strong>Concat()</strong> - Concatena (junta) valores em uma string separada por delimitador</p>
+    
+    <p><strong>Distinct()</strong> - Remove valores duplicados de uma lista</p>
+    
+    <p><strong>Filter()</strong> - Filtra itens com base em uma condição (checkbox marcado)</p>
+    
+    <p><strong>Left(Acao; 4)</strong> - Extrai apenas os 4 primeiros caracteres do campo Acao</p>
+    
+    <p><strong>Gallery1_1.AllItems</strong> - Referência a todos os itens da galeria</p>
+    
+    <p><strong>Checkbox1_1.Value = true</strong> - Condição para filtrar apenas itens marcados</p>
   </div>
 
   <div class="step">
@@ -257,43 +217,13 @@ graph TD
 
 ## 📊 Resumo das Funcionalidades
 
-<div class="functionality-table">
-  <div class="table-header">
-    <div>Funcionalidade</div>
-    <div>Tela</div>
-    <div>Descrição</div>
-  </div>
-  
-  <div class="table-row">
-    <div><strong>Nova Permissão</strong></div>
-    <div>Principal</div>
-    <div>Adiciona novo usuário ao sistema com permissões personalizadas</div>
-  </div>
-  
-  <div class="table-row">
-    <div><strong>Editar</strong></div>
-    <div>Principal → Edição</div>
-    <div>Modifica permissões de usuário existente mantendo histórico</div>
-  </div>
-  
-  <div class="table-row">
-    <div><strong>Desativar</strong></div>
-    <div>Principal</div>
-    <div>Remove usuário permanentemente do sistema</div>
-  </div>
-  
-  <div class="table-row">
-    <div><strong>Localizar</strong></div>
-    <div>Edição</div>
-    <div>Busca usuários na base de dados para edição</div>
-  </div>
-  
-  <div class="table-row">
-    <div><strong>Salvar</strong></div>
-    <div>Edição/Adição</div>
-    <div>Confirma alterações nas permissões com validação</div>
-  </div>
-</div>
+| Funcionalidade | Tela | Descrição |
+|---|---|---|
+| **Nova Permissão** | Principal | Adiciona novo usuário ao sistema com permissões personalizadas |
+| **Editar** | Principal → Edição | Modifica permissões de usuário existente mantendo histórico |
+| **Desativar** | Principal | Remove usuário permanentemente do sistema |
+| **Localizar** | Edição | Busca usuários na base de dados para edição |
+| **Salvar** | Edição/Adição | Confirma alterações nas permissões com validação |
 
 ## O Que Vem a Seguir?
 
