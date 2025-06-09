@@ -74,7 +74,7 @@ graph TD
     <p>Quando necessário remover completamente o acesso de um usuário ao sistema, utilize a função de desativação com cuidado, pois esta ação é permanente.</p>
     
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp>}}
       Remove(PlanejamentoIntegrado_Usuarios; ThisItem)
       {{< /highlight >}}
     </div>
