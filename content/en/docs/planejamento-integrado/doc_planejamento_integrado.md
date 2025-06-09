@@ -673,5 +673,4 @@ h1 {
   text-align: center;
 }
 
-
-/* Caixa de cálculo */
+</style>
