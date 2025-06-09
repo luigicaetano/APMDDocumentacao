@@ -179,7 +179,7 @@ graph TD
     <p>Após salvar as configurações, o sistema retorna automaticamente para a tela principal de gestão de permissões, permitindo verificar imediatamente se as alterações foram aplicadas corretamente.</p>
     
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Navigate(Screen_Permissoes_Gestao)
       {{< /highlight >}}
     </div>
