@@ -545,16 +545,19 @@ graph TD
   </ul>
 </div>
 
-<div class="final-note">
-  <h3>📚 Referência Contínua</h3>
-  <p>Use este tutorial como referência sempre que precisar relembrar alguma funcionalidade. O Aplicativo de Planejamento Integrado foi desenvolvido para ser intuitivo, mas este guia está aqui para apoiá-lo em todas as suas necessidades de planejamento organizacional.</p>
-</div>
+## 🚀 Próximos Passos
 
-<div class="navigation-links">
-  <a href="../configuracaopowerapps/" class="prev-link">← Configuração do PowerApps</a>
-  <a href="../conectandodados/" class="next-link">Próximo: Conectando Dados →</a>
-</div>
+Agora que você domina todas as funcionalidades do aplicativo, está pronto para:
 
+1. **Criar suas primeiras iniciativas** usando os controles inteligentes
+2. **Gerenciar custos detalhadamente** com cálculos automáticos
+3. **Desenvolver cenários estratégicos** para melhor tomada de decisão
+4. **Gerar relatórios automatizados** para acompanhamento e análise
+
+<div class="success-message">
+  <h3>🎉 Parabéns!</h3>
+  <p>Você agora possui conhecimento completo para utilizar eficientemente o Aplicativo de Planejamento Integrado. Use este tutorial como referência sempre que precisar relembrar alguma funcionalidade.</p>
+</div>
 <style>
 /* Estilo geral da página */
 body {
