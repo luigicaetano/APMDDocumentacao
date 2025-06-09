@@ -27,8 +27,8 @@ O Aplicativo de Planejamento Integrado é uma solução completa que conecta Pow
 graph TD
     A[Tela Inicial] --> B[Iniciativas]
     B --> C[Itens de Custo]
-    B --> D[Cenários]
-    B --> E[Relatórios]
+    C --> D[Cenários]
+    D --> E[Relatórios]
     E --> F[Power BI Dataset]
     F --> G[Excel + SharePoint]
     G --> H[Notificação Teams]
