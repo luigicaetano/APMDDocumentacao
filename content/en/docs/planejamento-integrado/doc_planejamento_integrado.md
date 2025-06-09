@@ -25,14 +25,16 @@ O Aplicativo de Planejamento Integrado é uma solução completa que conecta Pow
 
 ```mermaid
 graph TD
-    A[Tela Inicial] --> B[Iniciativas]
-    B[Iniciativas] --> C[Itens de Custo]
-    C[Itens de Custo] --> D[Cenários]
-    D[Cenários] --> E[Relatórios]
-    E[Relatórios] --> F[Power BI Dataset]
-    F[Power BI Dataset] --> G[Excel + SharePoint]
-    G[Excel + SharePoint] --> H[Notificação Teams]
-    I[Notificação Teams] --> A[Tela Inicial]
+    A[Tela Principal de Permissões] --> B[Nova Permissão]
+    A --> C[Editar Permissão]
+    A --> D[Desativar Usuário]
+    B --> E[Configurar Tipo: Gestor ou Usuário]
+    C --> F[Modificar Permissões Existentes]
+    E --> G[Selecionar Programas e Ações]
+    F --> H[Atualizar Configurações]
+    G --> I[Salvar no Sistema]
+    H --> I
+    I --> A
 ```
 
 
