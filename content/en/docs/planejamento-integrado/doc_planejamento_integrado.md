@@ -35,7 +35,6 @@ graph TD
     I[Gestão de Permissões] --> A
 ```
 
----
 
 ## 🏠 Tela Inicial
 
