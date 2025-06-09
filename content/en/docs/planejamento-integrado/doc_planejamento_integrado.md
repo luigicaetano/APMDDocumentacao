@@ -542,8 +542,11 @@ Agora que você domina todas as funcionalidades do aplicativo, está pronto para
   <h3>🎉 Parabéns!</h3>
   <p>Você agora possui conhecimento completo para utilizar eficientemente o Aplicativo de Planejamento Integrado. Use este tutorial como referência sempre que precisar relembrar alguma funcionalidade.</p>
 </div>
+
+
 <style>
 /* Estilo geral da página */
+
 body {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
