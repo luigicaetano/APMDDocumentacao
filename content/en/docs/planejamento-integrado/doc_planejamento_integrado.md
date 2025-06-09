@@ -25,7 +25,7 @@ O Aplicativo de Planejamento Integrado é uma solução completa que conecta Pow
 
 ```mermaid
 graph TD
-    A--> B[Iniciativas]
+    A[Tela Inicial]--> B[Iniciativas]
     B--> C[Itens de Custo]
     C --> D[Cenários]
     D--> E[Relatórios]
