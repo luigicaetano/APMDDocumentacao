@@ -131,6 +131,14 @@ graph TD
   </div>
 </div>
 
+
+<div class="step">
+    <h3>📌 Passo 12: Conexões usadas</h3>
+    <p> Essa etapa integra diferentes serviços da Microsoft (Power BI, SharePoint, Teams, Excel, Office 365 e OneDrive). Algumas conexões já estão prontas e são compartilhadas pelo dono do fluxo (Power BI, SharePoint e Teams).Outras conexões exigem que o usuário que for executar o fluxo insira suas próprias credenciais (Excel, Office 365 e OneDrive).</p>
+    {{< figure src="../assets/images/Fluxo.Power.png" alt="Envio de notificação no Teams" >}}
+  </div>
+</div>
+
 ## 💡 Dicas Úteis
 
 <div class="tips">
