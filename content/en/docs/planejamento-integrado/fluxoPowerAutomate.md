@@ -47,8 +47,8 @@ graph TD
 
   <div class="step">
     <h3>📌 Passo 2: Consultando dados no Power BI</h3>
-    <p>O fluxo executa uma consulta DAX no conjunto de dados "TesteOBZ" do Power BI. Esta consulta filtra as informações com base nas ações selecionadas pelo usuário no PowerApps. Para personalizar o relatório, veja a sessão <a href="../conectandodados/" class="prev-link">Extraindo dados do Power BI para o Power Automate</a>.</p>
-    {{< figure src="../assets/images/datasetPowerBI.png" alt="Consulta ao dataset do Power BI" >}}
+    <p>O fluxo executa uma consulta DAX no conjunto de dados "PlanejamentoIntegrado2026" do Power BI. Esta consulta filtra as informações com base nas ações selecionadas pelo usuário no PowerApps. Para personalizar o relatório, veja a sessão <a href="../conectandodados/" class="prev-link">Extraindo dados do Power BI para o Power Automate</a>.</p>
+    {{< figure src="../assets/images/dataset.PowerBI.png" alt="Consulta ao dataset do Power BI" >}}
   </div>
 
   <div class="step">
