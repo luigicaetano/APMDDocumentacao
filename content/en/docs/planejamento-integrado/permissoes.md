@@ -209,7 +209,7 @@ graph TD
     <h3>➕ Passo 8: Adicionando Novas Permissões</h3>
     <p>A tela de adição oferece uma interface limpa e intuitiva para cadastrar novos usuários no sistema e definir suas permissões iniciais.</p>
     
-    {{< figure src="../assets/images/permissoesAdicionar.png" alt="Interface para adicionar novas permissões de usuário" >}}
+    {{< figure src="../assets/images/permissoesAdicionar .png" alt="Interface para adicionar novas permissões de usuário" >}}
     
     <p>Esta interface utiliza a mesma lógica de salvamento explicada anteriormente, mas para criação de novos registros ao invés de edição de existentes.</p>
   </div>
