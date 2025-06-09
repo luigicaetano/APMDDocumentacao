@@ -663,4 +663,15 @@ h1 {
   color: #2d3748;
 }
 
+/* Mermaid diagrams */
+.mermaid {
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 2em 0;
+  text-align: center;
+}
+
+
 /* Caixa de cálculo */
