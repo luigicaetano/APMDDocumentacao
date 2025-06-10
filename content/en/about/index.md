@@ -160,6 +160,6 @@ Este site nasceu com o propósito de **centralizar e democratizar o acesso** a d
   <small>
     📅 Última atualização: Junho 2025 | 
     🏷️ Versão do site: 2.0 | 
-    📧 Contato: equipe@apmd.dev
+    📧 Contato: 
   </small>
 </div>

@@ -14,11 +14,8 @@ description: Centro de documentação técnica para automações e desenvolvimen
 
 ### 🎯 **Áreas Principais**
 
-#### 📋 [Planejamento Integrado](../planejamento-integrado/_index.do/)
+#### 📋 [Planejamento Integrado](../planejamento-integrado/_index.md/)
 Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
-
-#### 🔧 [Automação MGS](../docs/mgs.md/)
-Documentação técnica específica, tutoriais e referências para implementação de soluções.
 
 ---
 
