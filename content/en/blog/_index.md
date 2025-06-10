@@ -3,6 +3,8 @@ title: Blog
 menu: {main: {weight: 30}}
 ---
 
-This is the **blog** section. It has two categories: News and Releases.
+Bem-vindo à seção de **blog** do site! 
 
-Files in these directories will be listed in reverse chronological order.
+Aqui você encontra atualizações organizadas em duas categorias principais: **
+
+As publicações são exibidas em ordem cronológica reversa — ou seja, os conteúdos mais recentes aparecem primeiro. Fique à vontade para explorar novidades, registros de atualizações e comunicados importantes sobre o projeto.
