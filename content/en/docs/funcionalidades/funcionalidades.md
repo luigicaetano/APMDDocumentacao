@@ -57,6 +57,8 @@ weight: 1
 <div class="step-section">
   <h3>📈 Preparação da Tabela de Dados</h3>
   <p>No Power BI, os dados devem ser organizados em formato de tabela para facilitar as consultas automatizadas.</p>
+  {{< figure src="../assets/images/PowerBI_tabela.png" alt="Configuração da tabela no PowerBi" >}}
+</div>
 </div>
 
 ### 🏗️ Estruturação da Tabela
@@ -96,6 +98,7 @@ weight: 1
 <div class="step-section">
   <h3>⚡ Extração de Consultas Otimizadas</h3>
   <p>O Performance Analyzer é a ferramenta chave para capturar as consultas DAX que serão utilizadas no fluxo.</p>
+  {{< figure src="../assets/images/performance_analyzer.png" alt="Performance Analyzer" >}}
 </div>
 
 ### 📊 Processo no Performance Analyzer
@@ -139,6 +142,7 @@ weight: 1
 <div class="step-section">
   <h3>🔗 Integração da Consulta DAX</h3>
   <p>Agora configuramos o Power Automate para usar a consulta capturada, personalizando-a com nossas variáveis.</p>
+   {{< figure src="../assets/images/dataset.PowerBI.png" alt="Consulta ao dataset do Power BI" >}}
 </div>
 
 ### ⚙️ Configuração do Query Text
@@ -178,6 +182,7 @@ weight: 1
 <div class="step-section">
   <h3>🔄 Estruturação dos Dados Recebidos</h3>
   <p>O Parse JSON é essencial para converter os dados do Power BI em um formato estruturado que o Power Automate pode processar.</p>
+  {{< figure src="../assets/images/Estruturação.png" alt="Estruturação via Parse JSON" >}}
 </div>
 
 ### 📊 Definição do Schema
@@ -230,6 +235,8 @@ weight: 1
 <div class="step-section">
   <h3>🎯 Seleção e Mapeamento de Dados</h3>
   <p>O componente Select permite mapear e transformar os dados recebidos do Parse JSON.</p>
+  {{< figure src="../assets/images/Personalizar.png" alt="Personalização do formato de dados" >}}
+  </div>
 </div>
 
 ### 📋 Configuração das Colunas
@@ -275,6 +282,7 @@ weight: 1
 <div class="step-section">
   <h3>🏗️ Estruturação Final da Tabela</h3>
   <p>O último passo é definir a estrutura final da tabela que será criada no Excel no SharePoint.</p>
+  {{< figure src="../assets/images/Excel_Tabela.png" alt="Criação da tabela no Excel" >}}
 </div>
 
 ### 📋 Definição das Colunas
