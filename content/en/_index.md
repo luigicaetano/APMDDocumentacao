@@ -8,15 +8,7 @@ title: APMDDocs
   Documentações <i class="fa-solid fa-file-invoice"></i>
 </a>
 <p class="lead mt-5">Site em construção, para suporte de todos os aplicativos desenvolvidos pela APMD/SEDESE</p>
-{{< blocks/link-down color="info" >}}
-{{< /blocks/cover >}}
 
-
-{{% blocks/lead color="primary" %}}
-Código Aberto & Colaborativo
-
-Canais disponíveis:
-{{% /blocks/lead %}}
 
 
 {{% blocks/section color="dark" type="row" %}}
