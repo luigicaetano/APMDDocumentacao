@@ -214,17 +214,14 @@ weight: 1
       <h4>📝 String</h4>
       <p>Para textos, nomes, descrições</p>
     </div>
-    
     <div class="type-card">
       <h4>🔢 Number</h4>
       <p>Para valores numéricos, quantidades</p>
     </div>
-    
     <div class="type-card">
       <h4>📅 Date</h4>
       <p>Para datas e timestamps</p>
     </div>
-    
     <div class="type-card">
       <h4>✅ Boolean</h4>
       <p>Para valores verdadeiro/falso</p>
@@ -314,12 +311,10 @@ weight: 1
       <h4>📊 Cabeçalhos</h4>
       <p>Defina cabeçalhos claros e informativos</p>
     </div>
-    
     <div class="format-card">
       <h4>🎯 Ordenação</h4>
       <p>Organize colunas por importância</p>
     </div>
-    
     <div class="format-card">
       <h4>💫 Estilo</h4>
       <p>Aplique formatação consistente</p>
@@ -411,17 +406,14 @@ weight: 1
       <h4>🔄 Testar o Fluxo</h4>
       <p>Execute testes com diferentes cenários de dados</p>
     </div>
-    
     <div class="next-step-card">
       <h4>📊 Monitorar Performance</h4>
       <p>Acompanhe tempo de execução e otimize se necessário</p>
     </div>
-    
     <div class="next-step-card">
       <h4>🛠️ Ajustar Configurações</h4>
       <p>Refine o fluxo baseado no feedback dos usuários</p>
     </div>
-    
     <div class="next-step-card">
       <h4>📈 Expandir Funcionalidades</h4>
       <p>Adicione novos recursos conforme necessário</p>
