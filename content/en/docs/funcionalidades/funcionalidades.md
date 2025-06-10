@@ -57,7 +57,7 @@ weight: 1
 <div class="step-section">
   <h3>📈 Preparação da Tabela de Dados</h3>
   <p>No Power BI, os dados devem ser organizados em formato de tabela para facilitar as consultas automatizadas.</p>
-  {{< figure src="../assets/images/PowerBI_tabela.png" alt="Configuração da tabela no PowerBi" >}}
+  {{< figure src="../assets/images/PowerBI_tabelas.png" alt="Configuração da tabela no PowerBi" >}}
 </div>
 </div>
 
