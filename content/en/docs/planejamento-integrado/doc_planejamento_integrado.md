@@ -21,7 +21,7 @@ Este guia completo apresenta todas as funcionalidades do aplicativo de planejame
 
 ## Visão Geral do Sistema
 
-O Aplicativo de Planejamento Integrado é uma solução completa que conecta PowerApps, SharePoint, Power BI e Teams para oferecer um ambiente integrado de planejamento organizacional. Este sistema permite desde o cadastro de iniciativas até a geração automatizada de relatórios analíticos.
+O Aplicativo de Planejamento Integrado é uma solução completa que conecta PowerApps, SharePoint, Power BI e Teams para oferecer um ambiente integrado de planejamento orçamentário. Este sistema permite desde o cadastro de iniciativas até a geração automatizada de relatórios analíticos.
 
 ```mermaid
 graph TD
@@ -110,7 +110,7 @@ graph TD
 
   <div class="step">
     <h4>📊 Propor Programa</h4>
-    <p><strong>O que faz:</strong> Permite sugerir novos programas quando não encontra o que precisa</p>
+    <p><strong>O que faz:</strong> Permite sugerir novos programas para compor a revisão do PPAG</p>
     <div class="code-sample">
       <p><strong>🔧 Processo:</strong></p>
       <ul>
@@ -145,7 +145,7 @@ graph TD
 
   <div class="element-card">
     <h4>💰 Itens de Custo</h4>
-    <p>Navega para a tela especializada em gerenciamento de custos da iniciativa, onde você pode detalhar todos os aspectos financeiros.</p>
+    <p>Navega para a tela especializada em gerenciamento de custos da iniciativa, onde você pode detalhar todos os aspectos orçamentários.</p>
   </div>
 
   <div class="element-card">
@@ -165,7 +165,7 @@ graph TD
 
 <div class="screen-overview">
   <h3>💼 Gestão Financeira Detalhada</h3>
-  <p>Aqui você controla todos os aspectos financeiros da sua iniciativa, desde custos unitários até premissas de cálculo.</p>
+  <p>Aqui você controla todos os aspectos orçamentários da sua iniciativa, desde custos unitários até premissas de cálculo.</p>
 </div>
 
 ### 🎯 Funcionalidades Principais
@@ -231,7 +231,7 @@ graph TD
     <div class="code-sample">
       <p><strong>Sistema inteligente de numeração:</strong></p>
       <ul>
-        <li>Identifica o maior número de cenário existente</li>
+        <li>Identifica o maior número de cenários existentes</li>
         <li>Adiciona automaticamente o próximo número na sequência</li>
         <li>Vincula o cenário à iniciativa atual</li>
       </ul>

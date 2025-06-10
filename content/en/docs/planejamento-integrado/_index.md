@@ -37,12 +37,11 @@ tags: [Planejamento Integrado, Monitoramento, Gestão Pública]
 
 ## 🔍 O Que é o Aplicativo de Planejamento Integrado?
 
-O Aplicativo de Planejamento Integrado 2026 é uma solução digital que permite à SEDESE transformar o processo tradicional de planejamento em uma experiência mais colaborativa, transparente e eficiente. Com ele, você pode:
+O Aplicativo de Planejamento Integrado 2026 é uma solução digital desenvolvida para modernizar o processo de elaboração da proposta orçamentária anual da SEDESE. Alinhado à metodologia do Orçamento Base Zero, atualmente adotada pelo Estado de Minas Gerais, o aplicativo permite o detalhamento de objetos, a priorização de cenários, além do planejamento de fontes de arrecadação próprias e vinculadas, com base tanto na expectativa de receita quanto nos saldos financeiros. Sua estrutura flexível também possibilita a adaptação a outras metodologias de planejamento orçamentário, promovendo uma experiência mais colaborativa, transparente e eficiente.
 
-* **Alinhar iniciativas estratégicas** com programas e ações institucionais
-* **Planejar e controlar orçamentos** de forma detalhada e estruturada
-* **Simular diferentes cenários** para tomada de decisão informada
-* **Gerar relatórios automatizados** para análise e apresentação
+* **Alinhar iniciativas estratégicas com programas e ações orçamentárias**
+* **Planejar o orçamento de forma detalhada e estruturada**
+* **Gerar relatórios automatizados para análise e apresentação**
 
 <div class="features-grid">
   <div class="feature-card">
@@ -93,7 +92,7 @@ O Aplicativo de Planejamento Integrado 2026 é uma solução digital que permite
     <div class="benefit-icon">🤝</div>
     <div class="benefit-text">
       <h3>Facilite a Colaboração</h3>
-      <p>Permita que múltiplos departamentos trabalhem simultaneamente no mesmo planejamento.</p>
+      <p>Permita que múltiplos setores trabalhem simultaneamente no mesmo planejamento.</p>
     </div>
   </div>
   
@@ -122,7 +121,7 @@ Interessado em saber como desenvolvemos esta solução, ou quer desenvolver para
   </a>
 </div>
 
-Caso queira somente os arquivos, você está pronto! Mas se precisar do passo a passo, siga por este tutorial!
+Caso queira somente os arquivos, já está tudo certo! Mas se precisar do passo a passo, siga por este tutorial!
 
 <div class="start-section">
   <h2>Pronto para começar?</h2>
