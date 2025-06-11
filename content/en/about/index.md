@@ -1,6 +1,6 @@
 ---
 title: Sobre o Site
-about: Este site foi criado com o objetivo de reunir e organizar documentações, anotações e materiais de referência produzidos ao longo de projetos, estudos e atividades acadêmicas. Aqui, você encontrará conteúdos estruturados de forma clara e acessível, voltados especialmente para quem busca compreender e aplicar conceitos de forma prática. A proposta é facilitar o acesso ao conhecimento, promovendo o compartilhamento aberto e colaborativo de informações. O site está em constante construção, refletindo um processo contínuo de aprendizado e atualização.
+about: Este site foi desenvolvido para centralizar e disponibilizar, de forma clara e acessível, as documentações, materiais de apoio e registros produzidos pela equipe da secretaria. O objetivo é facilitar a consulta, preservar o histórico das ações e incentivar o uso qualificado das informações. Trata-se de um ambiente em constante evolução, que reflete nosso compromisso com a transparência, a organização e a colaboração.
 menu:
   main:
     weight: 10
@@ -10,12 +10,12 @@ menu:
 
 <div class="mx-auto text-center">
   <p class="lead mt-4 mb-4">
-    Um espaço dedicado ao compartilhamento de documentações, recursos e conhecimento técnico de forma acessível e organizada.
+    Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria.
   </p>
   <div class="mt-5 d-flex justify-content-center">
-    <span class="badge badge-light mx-2 p-2">📚 Documentações</span>
-    <span class="badge badge-light mx-2 p-2">🔧 Recursos Práticos</span>
-    <span class="badge badge-light mx-2 p-2">🌐 Acesso Aberto</span>
+    <span class="badge badge-light mx-2 p-2">📄 Documentação Oficial</span>
+    <span class="badge badge-light mx-2 p-2">📌 Materiais Internos</span>
+    <span class="badge badge-light mx-2 p-2">🤝 Acesso Colaborativo</span>
   </div>
 </div>
 
@@ -23,11 +23,11 @@ menu:
 
 {{% blocks/lead color="light" %}}
 
-## Nossa Missão
+## Propósito
 
-Este site nasceu com o propósito de **centralizar e democratizar o acesso** a documentações técnicas, guias práticos e recursos educacionais. Criamos um ambiente onde estudantes, pesquisadores, desenvolvedores e entusiastas possam encontrar conteúdo de qualidade, estruturado de forma clara e sempre atualizado.
+Nosso objetivo é tornar as informações técnicas e institucionais mais acessíveis e organizadas. Este espaço foi criado para ser um ponto de referência confiável para servidores, colaboradores, estudantes e demais interessados.
 
-**Nossa abordagem:** Transformar conhecimento complexo em conteúdo acessível, promovendo o aprendizado colaborativo e o crescimento contínuo da comunidade.
+**Diretrizes:** Comunicação clara, conteúdo útil e atualização contínua. Queremos transformar o modo como a informação circula e é utilizada no cotidiano do trabalho público.
 
 {{% /blocks/lead %}}
 
@@ -36,41 +36,41 @@ Este site nasceu com o propósito de **centralizar e democratizar o acesso** a d
 <div class="row align-items-center">
   <div class="col-lg-6">
     <h2 class="display-5 fw-bold text-primary mb-4">
-      🎯 Por que Existimos?
+      🎯 Nossa Motivação
     </h2>
     <p class="lead mb-4">
-      Identificamos uma lacuna: informações valiosas frequentemente ficam dispersas, mal documentadas ou de difícil acesso. Nossa solução é criar um hub centralizado que reúne:
+      Percebemos a necessidade de reunir conteúdos que estavam dispersos em diferentes canais e formatos. Por isso, criamos um espaço unificado com:
     </p>
     <ul class="list-unstyled">
       <li class="mb-3">
-        <span class="text-primary fw-bold">✨ Clareza:</span> Conteúdo explicado de forma simples e direta
+        <span class="text-primary fw-bold">📌 Centralização:</span> Tudo em um só lugar
       </li>
       <li class="mb-3">
-        <span class="text-primary fw-bold">🗂️ Organização:</span> Estrutura lógica e navegação intuitiva
+        <span class="text-primary fw-bold">🧭 Organização:</span> Navegação intuitiva e por temas
       </li>
       <li class="mb-3">
-        <span class="text-primary fw-bold">🔄 Atualização:</span> Conteúdo sempre revisado e melhorado
+        <span class="text-primary fw-bold">📆 Atualização:</span> Informações mantidas em dia
       </li>
       <li class="mb-3">
-        <span class="text-primary fw-bold">🤝 Colaboração:</span> Espaço aberto para contribuições
+        <span class="text-primary fw-bold">🤲 Compartilhamento:</span> Incentivo à troca de saberes
       </li>
     </ul>
   </div>
   <div class="col-lg-6 text-center">
     <div class="p-4 bg-light rounded-3">
-      <h4 class="text-primary mb-3">Nossos Números</h4>
+      <h4 class="text-primary mb-3">Destaques do site</h4>
       <div class="row text-center">
         <div class="col-4">
-          <div class="h2 text-primary">📖</div>
-          <small class="text-muted">Guias Práticos</small>
+          <div class="h2 text-primary">📚</div>
+          <small class="text-muted">Conteúdo Útil</small>
         </div>
         <div class="col-4">
-          <div class="h2 text-primary">🔍</div>
-          <small class="text-muted">Pesquisa Rápida</small>
+          <div class="h2 text-primary">⚙️</div>
+          <small class="text-muted">Ferramentas Internas</small>
         </div>
         <div class="col-4">
-          <div class="h2 text-primary">🌱</div>
-          <small class="text-muted">Em Crescimento</small>
+          <div class="h2 text-primary">🔄</div>
+          <small class="text-muted">Manutenção Contínua</small>
         </div>
       </div>
     </div>
@@ -83,32 +83,32 @@ Este site nasceu com o propósito de **centralizar e democratizar o acesso** a d
 
 <div class="text-center text-white">
   <h2 class="display-5 fw-bold mb-4">
-    👥 Quem Somos
+    👥 Equipe Envolvida
   </h2>
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <p class="lead mb-4">
-        Somos a **equipe APMD** - um grupo dedicado à democratização do conhecimento técnico e científico. Acreditamos que o aprendizado deve ser acessível, colaborativo e transformador.
+        Esta iniciativa é conduzida pela equipe da <strong> APMD</strong>, com o compromisso de fortalecer a cultura organizacional e tornar o conhecimento mais acessível a todos.
       </p>
       <div class="bg-white bg-opacity-10 rounded-3 p-4 mb-4">
-        <h4 class="mb-3">Nossos Valores</h4>
+        <h4 class="mb-3">Nossos Princípios</h4>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <h5>🌟 Excelência</h5>
-            <small>Qualidade em cada conteúdo</small>
+            <h5>🔍 Transparência</h5>
+            <small>Informação clara e aberta</small>
           </div>
           <div class="col-md-4 mb-3">
-            <h5>🤝 Colaboração</h5>
-            <small>Construção coletiva</small>
+            <h5>📘 Organização</h5>
+            <small>Sistema lógico e acessível</small>
           </div>
           <div class="col-md-4 mb-3">
-            <h5>🔓 Abertura</h5>
-            <small>Conhecimento livre</small>
+            <h5>🧩 Colaboração</h5>
+            <small>Produção coletiva e participativa</small>
           </div>
         </div>
       </div>
       <p class="mb-4">
-        <strong>Compromisso com o Código Aberto:</strong> Todo nosso conteúdo pode ser utilizado, referenciado ou adaptado livremente, desde que a fonte seja devidamente citada.
+        <strong>Licença e Uso:</strong> O conteúdo deste repositório pode ser compartilhado e reutilizado, desde que sejam atribuídos os devidos créditos.
       </p>
     </div>
   </div>
@@ -120,29 +120,29 @@ Este site nasceu com o propósito de **centralizar e democratizar o acesso** a d
 
 <div class="text-center">
   <h2 class="display-6 fw-bold text-primary mb-4">
-    🚀 Junte-se à Nossa Jornada
+    🚀 Participe Também
   </h2>
   <p class="lead mb-4">
-    Este é um projeto em constante evolução. Cada visita, cada feedback e cada contribuição nos ajuda a crescer e melhorar.
+    Este é um projeto vivo, que se fortalece com a participação ativa da comunidade. Sua colaboração é essencial para que possamos crescer e evoluir.
   </p>
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="card border-primary">
         <div class="card-body">
-          <h5 class="card-title text-primary">Como Você Pode Contribuir</h5>
+          <h5 class="card-title text-primary">Como Contribuir</h5>
           <div class="row text-start">
             <div class="col-md-6">
               <ul class="list-unstyled">
-                <li class="mb-2">💡 Sugerindo melhorias</li>
-                <li class="mb-2">📝 Compartilhando experiências</li>
-                <li class="mb-2">🔗 Divulgando o projeto</li>
+                <li class="mb-2">📥 Enviando sugestões</li>
+                <li class="mb-2">🧾 Compartilhando materiais</li>
+                <li class="mb-2">📢 Divulgando entre colegas</li>
               </ul>
             </div>
             <div class="col-md-6">
               <ul class="list-unstyled">
-                <li class="mb-2">🐛 Reportando problemas</li>
-                <li class="mb-2">📚 Contribuindo com conteúdo</li>
-                <li class="mb-2">❤️ Apoiando a iniciativa</li>
+                <li class="mb-2">🔧 Reportando erros</li>
+                <li class="mb-2">🖊️ Escrevendo conteúdos</li>
+                <li class="mb-2">✨ Fortalecendo a rede</li>
               </ul>
             </div>
           </div>
@@ -160,6 +160,6 @@ Este site nasceu com o propósito de **centralizar e democratizar o acesso** a d
   <small>
     📅 Última atualização: Junho 2025 | 
     🏷️ Versão do site: 2.0 | 
-    📧 Contato: 
+    📧 Contato: luigi.silva@social.mg.gov.br ou marcela.alves@social.mg.gov.br
   </small>
 </div>
