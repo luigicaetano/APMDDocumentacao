@@ -3,7 +3,7 @@ title: Funcionalidades do Aplicativo
 date: 2025-05-05
 description: >
   Nessa etapa, demonstramos como fizemos toda a interface do aplicativo e como o mesmo funciona.
-weight: 3
+weight: 2
 ---
 
 # 🚀 Funcionalidades do Aplicativo
