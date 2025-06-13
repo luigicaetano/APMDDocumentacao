@@ -1,78 +1,44 @@
 ---
 title: Funcionalidades dos Apps
+description: Tutoriais e exemplos de funcionalidades reutilizáveis aplicadas em diferentes sistemas e aplicativos da secretaria.
 menu:
   main:
     weight: 20
 ---
 
-{{% blocks/cover title="Funcionalidades dos Aplicativos" image_anchor="center" height="auto" color="primary" %}}
+## Funcionalidades dos Apps
 
-<div class="mx-auto text-center">
-  <p class="lead mt-4 mb-4">
-    Uma central de tutoriais e orientações sobre funcionalidades comuns utilizadas em diversos aplicativos e sistemas da secretaria.
-  </p>
-  <div class="mt-5 d-flex justify-content-center">
-    <span class="badge badge-light mx-2 p-2">🧰 Dicas Técnicas</span>
-    <span class="badge badge-light mx-2 p-2">📲 Funcionalidades Reutilizáveis</span>
-    <span class="badge badge-light mx-2 p-2">🚀 Aplicações Práticas</span>
-  </div>
-</div>
+Esta seção reúne tutoriais curtos e objetivos sobre funcionalidades que são amplamente utilizadas nos aplicativos desenvolvidos pela secretaria. O objetivo é fornecer um repositório prático de soluções reutilizáveis para problemas comuns.
 
-{{% /blocks/cover %}}
+### O que você vai encontrar aqui
 
-{{% blocks/lead color="light" %}}
+- Componentes e ações que se repetem em diferentes apps
+- Exemplos prontos de uso de funções e expressões
+- Boas práticas e padrões que facilitam o reuso de código
 
-## Sobre esta seção
+### Exemplos de funcionalidades documentadas
 
-Aqui você encontrará tutoriais que mostram **como implementar funcionalidades recorrentes** em diferentes aplicativos desenvolvidos pela secretaria. Esses recursos podem ser reutilizados, adaptados e combinados conforme a necessidade de cada projeto.
+- **Filtros por campos específicos** (ex: nome, data, status)
+- **Botões com múltiplas ações**
+- **Resetar múltiplos campos de uma vez**
+- **Controle de visibilidade por condição**
+- **Uso do Patch para atualização de dados**
+- **Navegação entre telas com parâmetros**
+- **Integração com Power Automate**
 
-Nosso objetivo é oferecer uma base sólida de exemplos práticos que otimizem o desenvolvimento e promovam boas práticas.
+### Como usar
 
-{{% /blocks/lead %}}
+Cada funcionalidade é apresentada com:
 
-{{% blocks/section color="white" %}}
-
-## 📚 Conteúdo Disponível
-
-Aqui estão alguns exemplos do que você pode encontrar nesta seção:
-
-- **Navegação entre telas**
-  - Como criar e usar botões de navegação
-  - Transições com animação
-- **Filtros e pesquisas**
-  - Aplicar filtros em listas e tabelas
-  - Buscar dados com palavras-chave
-- **Envio de dados**
-  - Envio de formulários e uso do SubmitForm
-  - Confirmações e mensagens de sucesso
-- **Integrações**
-  - Conectar-se ao SharePoint, Excel, ou Dataverse
-  - Usar fluxos do Power Automate
-- **Interface do usuário**
-  - Mostrar ou ocultar elementos
-  - Componentes reutilizáveis (gabaritos)
-- **Funções úteis**
-  - Uso de `If()`, `Switch()`, `Patch()`, `Collect()`, `Reset()`
-  - Expressões condicionais e cálculos em tempo real
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="primary" %}}
-
-<div class="text-center text-white">
-  <h2 class="display-5 fw-bold mb-4">🔍 Navegue pelos tutoriais</h2>
-  <p class="lead">
-    Os conteúdos estão organizados por tema e tipo de funcionalidade. Explore, adapte e aplique!
-  </p>
-</div>
-
-{{% /blocks/section %}}
+- Explicação do contexto
+- Código ou configuração necessária
+- Dicas de adaptação para outros apps
 
 ---
 
-<div class="text-center mt-5 text-muted">
-  <small>
-    📅 Última atualização: Junho 2025 |
-    💡 Sugestões? Envie pelo formulário de contato ou pelo e-mail da equipe.
-  </small>
-</div>
+> 💡 **Dica:** Use a busca ou o menu lateral para encontrar a funcionalidade que você precisa.
+
+---
+
+📅 _Última atualização: Junho de 2025_  
+📌 _Manutenção: Equipe APMD_
