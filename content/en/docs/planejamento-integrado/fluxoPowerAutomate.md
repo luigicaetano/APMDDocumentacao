@@ -285,6 +285,29 @@ img:hover {
   color: white;
 }
 
+/* Links de navegação */
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: #0078d4;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  transition: all 0.2s ease;
+}
+
+.navigation-links a:hover {
+  background-color: #0078d4;
+  color: white;
+}
+
 /* Mermaid diagrams */
 .mermaid {
   background-color: white;
