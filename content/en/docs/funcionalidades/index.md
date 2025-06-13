@@ -7,108 +7,677 @@ categories: [Tecnologia, Power Platform]
 tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 ---
 
-<div class="app-intro">
-  <div class="app-card">
-    <div class="card-header">Informações Técnicas</div>
-    <div class="card-content">
-      <div class="info-item">
+<div class="hero-banner">
+  <div class="hero-content">
+    <h1 class="hero-title">⚙️ Funcionalidades dos Apps</h1>
+    <p class="hero-subtitle">Acelere seu desenvolvimento com componentes reutilizáveis e tutoriais práticos</p>
+    <div class="hero-badges">
+      <span class="badge badge-primary">Power Platform</span>
+      <span class="badge badge-secondary">Componentes</span>
+      <span class="badge badge-accent">Reutilizáveis</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card">
+      <div class="card-mini">
+        <div class="pulse-dot"></div>
+        <span>Atualizado</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="info-dashboard">
+  <div class="dashboard-grid">
+    <div class="info-card gradient-blue">
+      <div class="info-header">
         <div class="info-icon">👩‍💻</div>
-        <div class="info-label">Colaboradores:</div>
-        <div class="info-value">Equipe APMD</div>
+        <h3>Colaboradores</h3>
       </div>
-      <div class="info-item">
+      <p class="info-value">Equipe APMD</p>
+    </div>
+    
+    <div class="info-card gradient-purple">
+      <div class="info-header">
         <div class="info-icon">🧰</div>
-        <div class="info-label">Ferramentas:</div>
-        <div class="info-value">PowerApps, Power Automate, SharePoint</div>
+        <h3>Ferramentas</h3>
       </div>
-      <div class="info-item">
+      <p class="info-value">PowerApps • Power Automate • SharePoint</p>
+    </div>
+    
+    <div class="info-card gradient-green">
+      <div class="info-header">
         <div class="info-icon">📁</div>
-        <div class="info-label">Tipo:</div>
-        <div class="info-value">Componentes e Funcionalidades</div>
+        <h3>Categoria</h3>
       </div>
-      <div class="info-item">
+      <p class="info-value">Componentes e Funcionalidades</p>
+    </div>
+    
+    <div class="info-card gradient-orange">
+      <div class="info-header">
         <div class="info-icon">🗓️</div>
-        <div class="info-label">Atualização:</div>
-        <div class="info-value">11/06/2025</div>
+        <h3>Última Atualização</h3>
+      </div>
+      <p class="info-value">11 de Junho, 2025</p>
+    </div>
+  </div>
+</div>
+
+## 💡 Sobre Esta Seção
+
+<div class="about-container">
+  <div class="about-content">
+    <p class="lead-text">Esta seção é seu <strong>arsenal de desenvolvimento</strong> para Power Platform na SEDESE. Aqui você encontra funcionalidades modulares, testadas e prontas para implementação.</p>
+    
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🚀</div>
+        <div class="benefit-text">
+          <h4>Desenvolvimento Acelerado</h4>
+          <p>Ações comuns que se repetem entre aplicativos</p>
+        </div>
+      </div>
+      
+      <div class="benefit-item">
+        <div class="benefit-icon">💎</div>
+        <div class="benefit-text">
+          <h4>Código Reutilizável</h4>
+          <p>Expressões úteis de PowerApps e Power Automate</p>
+        </div>
+      </div>
+      
+      <div class="benefit-item">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-text">
+          <h4>Padrões Consistentes</h4>
+          <p>Garantia de qualidade e uniformidade entre projetos</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-## 🔧 O Que é esta Página?
+## 🔥 Funcionalidades em Destaque
 
-Esta seção do site é dedicada a documentar funcionalidades que podem ser usadas em diversos aplicativos da secretaria. São tutoriais focados, modulares e reutilizáveis, ideais para acelerar o desenvolvimento de soluções no Power Platform.
-
-- **Ações comuns que se repetem entre apps**
-- **Expressões úteis de PowerApps e Power Automate**
-- **Padrões reutilizáveis para garantir consistência**
-
-<div class="features-grid">
-  <div class="feature-card">
-    <div class="feature-icon">🔄</div>
+<div class="features-showcase">
+  <div class="feature-card featured">
+    <div class="feature-header">
+      <div class="feature-icon primary">🔄</div>
+      <div class="feature-status">Essencial</div>
+    </div>
     <h3>Reset Múltiplo</h3>
-    <p>Função para limpar vários campos com um único botão.</p>
+    <p>Função inteligente para limpar vários campos simultaneamente com performance otimizada.</p>
+    <div class="feature-tags">
+      <span class="tag">Formulários</span>
+      <span class="tag">UX</span>
+    </div>
   </div>
 
   <div class="feature-card">
-    <div class="feature-icon">🧠</div>
+    <div class="feature-header">
+      <div class="feature-icon secondary">🧠</div>
+      <div class="feature-status">Popular</div>
+    </div>
     <h3>Condicional de Visibilidade</h3>
-    <p>Exibir ou ocultar elementos com base em valores de campos.</p>
+    <p>Controle dinâmico de elementos da interface baseado em regras de negócio complexas.</p>
+    <div class="feature-tags">
+      <span class="tag">UI/UX</span>
+      <span class="tag">Lógica</span>
+    </div>
   </div>
 
   <div class="feature-card">
-    <div class="feature-icon">🔍</div>
+    <div class="feature-header">
+      <div class="feature-icon accent">🔍</div>
+      <div class="feature-status">Avançado</div>
+    </div>
     <h3>Filtro por Texto</h3>
-    <p>Implementação de busca com filtros encadeados por campo.</p>
+    <p>Sistema de busca avançada com filtros encadeados e resultados em tempo real.</p>
+    <div class="feature-tags">
+      <span class="tag">Pesquisa</span>
+      <span class="tag">Performance</span>
+    </div>
   </div>
 
   <div class="feature-card">
-    <div class="feature-icon">📤</div>
-    <h3>Envio de Dados com Patch</h3>
-    <p>Atualização eficiente de registros sem necessidade de formulários nativos.</p>
+    <div class="feature-header">
+      <div class="feature-icon success">📤</div>
+      <div class="feature-status">Técnico</div>
+    </div>
+    <h3>Envio com Patch</h3>
+    <p>Atualização eficiente de registros sem dependência de formulários nativos do Power Platform.</p>
+    <div class="feature-tags">
+      <span class="tag">Dados</span>
+      <span class="tag">API</span>
+    </div>
   </div>
 </div>
 
-## 📚 Como Utilizar
+## 📖 Estrutura dos Tutoriais
 
-Cada funcionalidade possui:
-
-- ✅ Explicação do objetivo
-- 💡 Trechos de código prontos
-- 🧩 Recomendações de uso
-- 🔁 Adaptação para outros apps
-
-Acesse cada uma pelo menu lateral ou navegue abaixo por algumas sugestões:
-
-<div class="steps-overview">
-  <a href="./reset-multiplos-campos/" class="step-link">
-    <div class="step-number">1</div>
-    <div class="step-content">
-      <h3>Resetar Múltiplos Campos</h3>
-      <p>Como usar a função Reset para vários controles de uma só vez.</p>
+<div class="tutorial-structure">
+  <div class="structure-item">
+    <div class="structure-number">1</div>
+    <div class="structure-content">
+      <h4>✅ Objetivo Claro</h4>
+      <p>Explicação detalhada do problema que a funcionalidade resolve</p>
     </div>
-    <div class="step-arrow">→</div>
-  </a>
-  <a href="./condicional-visibilidade/" class="step-link">
-    <div class="step-number">2</div>
-    <div class="step-content">
-      <h3>Controle de Visibilidade</h3>
-      <p>Ocultar ou mostrar elementos com base em condições específicas.</p>
+  </div>
+  
+  <div class="structure-item">
+    <div class="structure-number">2</div>
+    <div class="structure-content">
+      <h4>💡 Código Pronto</h4>
+      <p>Trechos de código testados e otimizados para copy-paste</p>
     </div>
-    <div class="step-arrow">→</div>
-  </a>
-  <a href="./filtro-busca-texto/" class="step-link">
-    <div class="step-number">3</div>
-    <div class="step-content">
-      <h3>Filtro com Texto</h3>
-      <p>Aplicar filtros dinâmicos por nome, status ou outro campo.</p>
+  </div>
+  
+  <div class="structure-item">
+    <div class="structure-number">3</div>
+    <div class="structure-content">
+      <h4>🧩 Boas Práticas</h4>
+      <p>Recomendações de implementação e casos de uso ideais</p>
     </div>
-    <div class="step-arrow">→</div>
-  </a>
+  </div>
+  
+  <div class="structure-item">
+    <div class="structure-number">4</div>
+    <div class="structure-content">
+      <h4>🔁 Adaptabilidade</h4>
+      <p>Guias para customização em diferentes contextos de aplicação</p>
+    </div>
+  </div>
 </div>
 
-<div class="start-section">
-  <h2>Quer aprender na prática?</h2>
-  <p>Escolha uma funcionalidade e implemente no seu app em minutos.</p>
-  <a href="./reset-multiplos-campos/" class="start-button">Comece pelo Reset Múltiplo →</a>
+<div class="cta-section">
+  <div class="cta-content">
+    <div class="cta-text">
+      <h2>🚀 Pronto para acelerar seu desenvolvimento?</h2>
+      <p>Escolha uma funcionalidade e implemente no seu app em questão de minutos. Cada tutorial foi criado para máxima eficiência e resultados práticos.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="./reset-multiplos-campos/" class="btn btn-primary">
+        <span class="btn-icon">⚡</span>
+        Começar com Reset Múltiplo
+      </a>
+      <a href="#" class="btn btn-secondary">
+        <span class="btn-icon">📚</span>
+        Ver Todas as Funcionalidades
+      </a>
+    </div>
+  </div>
 </div>
+
+<style>
+/* Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.badge-primary { background: rgba(255,255,255,0.2); }
+.badge-secondary { background: rgba(255,255,255,0.15); }
+.badge-accent { background: rgba(255,255,255,0.1); }
+
+/* Info Dashboard */
+.info-dashboard {
+  margin: 3rem 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  padding: 2rem;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+.gradient-blue { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.gradient-purple { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.gradient-green { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.gradient-orange { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* About Section */
+.about-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #2d3748;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.benefit-icon {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.benefit-text h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.benefit-text p {
+  margin: 0;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Features Showcase */
+.features-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  border-color: #667eea;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+}
+
+.feature-card.featured {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.feature-icon.primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.feature-icon.secondary { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.feature-icon.accent { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.feature-icon.success { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+.feature-status {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.feature-card:not(.featured) .feature-status {
+  background: #667eea;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.feature-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.feature-card:not(.featured) .tag {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+/* Tutorial Structure */
+.tutorial-structure {
+  background: #f7fafc;
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+.structure-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.structure-number {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.structure-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.structure-content p {
+  margin: 0;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #48bb78;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.floating-card {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  opacity: 0.7;
+}
+
+.card-mini {
+  background: rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .floating-card {
+    display: none;
+  }
+}
+</style>
