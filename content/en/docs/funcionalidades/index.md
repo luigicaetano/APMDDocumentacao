@@ -36,7 +36,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
       </div>
       <p class="info-value">Equipe APMD</p>
     </div>
-    
     <div class="info-card gradient-purple">
       <div class="info-header">
         <div class="info-icon">🧰</div>
@@ -44,7 +43,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
       </div>
       <p class="info-value">PowerApps • Power Automate • SharePoint</p>
     </div>
-    
     <div class="info-card gradient-green">
       <div class="info-header">
         <div class="info-icon">📁</div>
@@ -52,7 +50,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
       </div>
       <p class="info-value">Componentes e Funcionalidades</p>
     </div>
-    
     <div class="info-card gradient-orange">
       <div class="info-header">
         <div class="info-icon">🗓️</div>
@@ -68,7 +65,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 <div class="about-container">
   <div class="about-content">
     <p class="lead-text">Esta seção é seu <strong>arsenal de desenvolvimento</strong> para Power Platform na SEDESE. Aqui você encontra funcionalidades modulares, testadas e prontas para implementação.</p>
-    
     <div class="benefits-grid">
       <div class="benefit-item">
         <div class="benefit-icon">🚀</div>
@@ -77,7 +73,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
           <p>Ações comuns que se repetem entre aplicativos</p>
         </div>
       </div>
-      
       <div class="benefit-item">
         <div class="benefit-icon">💎</div>
         <div class="benefit-text">
@@ -85,7 +80,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
           <p>Expressões úteis de PowerApps e Power Automate</p>
         </div>
       </div>
-      
       <div class="benefit-item">
         <div class="benefit-icon">🎯</div>
         <div class="benefit-text">
