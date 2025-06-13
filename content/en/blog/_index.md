@@ -1,10 +1,14 @@
 ---
 title: Blog
-menu: {main: {weight: 30}}
+menu: 
+  main: 
+    weight: 30
 ---
 
-Bem-vindo à seção de **blog** do site! 
+# 🛠️ Blog em Construção
 
-Aqui você encontra atualizações organizadas em duas categorias principais: **
+Em breve, esta seção reunirá publicações organizadas em duas categorias principais: **Novidades** e **Atualizações**.
 
-As publicações são exibidas em ordem cronológica reversa — ou seja, os conteúdos mais recentes aparecem primeiro. Fique à vontade para explorar novidades, registros de atualizações e comunicados importantes sobre o projeto.
+As postagens serão exibidas em ordem cronológica reversa — ou seja, os conteúdos mais recentes aparecerão primeiro. Aqui você poderá acompanhar registros de melhorias, comunicados importantes e novidades relacionadas ao projeto.
+
+Aguarde, estamos preparando conteúdos relevantes para você! 🚀
