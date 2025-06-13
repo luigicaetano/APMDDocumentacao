@@ -211,7 +211,7 @@ Com o sistema de permissões configurado corretamente, você possui controle tot
 
 <div class="navigation-links">
   <a href="../permissoes/" class="prev-link">← Passo anterior: Gerenciando permissões do aplicativo</a>
-  <a href="../fluxoPowerAutomate/" class="next-link">Próximo passo: Criar fluxos no POwer Automate →</a>
+  <a href="../fluxoPowerAutomate/" class="next-link">Próximo passo: Criar fluxos no Power Automate →</a>
 </div>
 
 <style>
