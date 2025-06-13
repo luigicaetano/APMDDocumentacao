@@ -4,7 +4,7 @@ date: 2025-06-10
 description: >
   Este guia detalhado apresenta o processo completo de configuração do fluxo Power Automate para integração entre PowerApps, Power BI e SharePoint. Siga este tutorial para configurar corretamente a automação de relatórios do seu sistema de Planejamento Integrado.
 
-weight: 2
+weight: 1
 --- 
 
 
