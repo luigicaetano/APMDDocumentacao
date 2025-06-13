@@ -210,7 +210,7 @@ graph TD
 Com o sistema de permissões configurado corretamente, você possui controle total sobre o acesso dos usuários às diferentes funcionalidades do sistema. Esta base sólida de segurança permite que você expanda o sistema com confiança, sabendo que as informações estão protegidas adequadamente.
 
 <div class="navigation-links">
-  <a href="../permissoes/" class="prev-link">← Passo anterior: Gerenciando permissões do aplicativo</a>
+  <a href="../funcionalidadesdoAPP/" class="prev-link">← Passo anterior: Funcionalidades do aplicativo</a>
   <a href="../fluxoPowerAutomate/" class="next-link">Próximo passo: Criar fluxos no Power Automate →</a>
 </div>
 
