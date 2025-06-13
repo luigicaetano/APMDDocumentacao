@@ -93,58 +93,7 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 
 ## 🔥 Funcionalidades em Destaque
 
-<div class="features-showcase">
-  <div class="feature-card featured">
-    <div class="feature-header">
-      <div class="feature-icon primary">🔄</div>
-      <div class="feature-status">Essencial</div>
-    </div>
-    <h3>Reset Múltiplo</h3>
-    <p>Função inteligente para limpar vários campos simultaneamente com performance otimizada.</p>
-    <div class="feature-tags">
-      <span class="tag">Formulários</span>
-      <span class="tag">UX</span>
-    </div>
-  </div>
 
-  <div class="feature-card">
-    <div class="feature-header">
-      <div class="feature-icon secondary">🧠</div>
-      <div class="feature-status">Popular</div>
-    </div>
-    <h3>Condicional de Visibilidade</h3>
-    <p>Controle dinâmico de elementos da interface baseado em regras de negócio complexas.</p>
-    <div class="feature-tags">
-      <span class="tag">UI/UX</span>
-      <span class="tag">Lógica</span>
-    </div>
-  </div>
-
-  <div class="feature-card">
-    <div class="feature-header">
-      <div class="feature-icon accent">🔍</div>
-      <div class="feature-status">Avançado</div>
-    </div>
-    <h3>Filtro por Texto</h3>
-    <p>Sistema de busca avançada com filtros encadeados e resultados em tempo real.</p>
-    <div class="feature-tags">
-      <span class="tag">Pesquisa</span>
-      <span class="tag">Performance</span>
-    </div>
-  </div>
-
-  <div class="feature-card">
-    <div class="feature-header">
-      <div class="feature-icon success">📤</div>
-      <div class="feature-status">Técnico</div>
-    </div>
-    <h3>Envio com Patch</h3>
-    <p>Atualização eficiente de registros sem dependência de formulários nativos do Power Platform.</p>
-    <div class="feature-tags">
-      <span class="tag">Dados</span>
-      <span class="tag">API</span>
-    </div>
-  </div>
 </div>
 
 ## 📖 Estrutura dos Tutoriais
