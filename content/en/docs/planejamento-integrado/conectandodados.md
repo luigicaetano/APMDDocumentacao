@@ -76,7 +76,7 @@ Agora que você conectou com sucesso seus dados, está pronto para começar a us
 
 <div class="navigation-links">
   <a href="../../planejamento-integrado/" class="prev-link">← Passo anterior: Introdução</a>
-  <a href="../fluxopowerautomate/" class="next-link">Próximo passo: Criando os fluxos necessários no Power Automate →</a>
+  <a href="../funcionalidadesdoAPP/" class="next-link">Próximo passo: Funcionalidades do Aplicativo →</a>
 </div>
 
 <style>
