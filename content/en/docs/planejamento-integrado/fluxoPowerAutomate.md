@@ -3,7 +3,7 @@ title: Criando Fluxos no Power Automate
 date: 2025-05-14
 description: >
   Guia detalhado sobre como configurar o fluxo de automação para enviar relatórios para o Teams
-weight: 3
+weight: 4
 ---
 
 # 🔄 Criando Fluxos no Power Automate

@@ -2,7 +2,7 @@
 title: Configurando e Gerenciando Permissões de Usuários
 date: 2025-06-06
 description: Guia completo para configurar e gerenciar permissões de usuários no sistema de Planejamento Integrado
-weight: 4
+weight: 3
 ---
 
 # 🔐 Configurando e Gerenciando Permissões de Usuários
