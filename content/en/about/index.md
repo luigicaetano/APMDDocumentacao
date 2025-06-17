@@ -5,13 +5,12 @@ menu:
   main:
     weight: 10
 ---
-
-{{% blocks/cover title="Sobre Nosso Repositório de Conhecimento" image_anchor="center" height="auto" color="primary" %}}
+{{% blocks/lead color="light" %}}
+{{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="primary" %}}
 
 <div class="mx-auto text-center">
   <p class="lead mt-4 mb-4">
-    Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria.
-  </p>
+    Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
   <div class="mt-5 d-flex justify-content-center">
     <span class="badge badge-light mx-2 p-2">📄 Documentação Oficial</span>
     <span class="badge badge-light mx-2 p-2">📌 Materiais Internos</span>
