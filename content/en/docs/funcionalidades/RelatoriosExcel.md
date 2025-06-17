@@ -160,7 +160,7 @@ weight: 1
         <li>Cole o código copiado do Performance Analyzer no campo "query text"</li>
         <li>Localize a função TREATAS() na consulta</li>
         <li>Substitua o valor fixo pela variável "Ações" criada anteriormente</li>
-        <li>Modifique o valor TOPN() para 5000 para garantir todos os registros</li>
+        <li>Modifique o valor TOPN() para 100000 para garantir todos os registros</li>
       </ul>
     </div>
   </div>
@@ -175,7 +175,7 @@ weight: 1
     <p><strong>Depois:</strong> TREATAS({@{variables('Acoes')}}, Tabela[Coluna])</p>
     <br>
     <p><strong>Antes:</strong> TOPN(100, ...)</p>
-    <p><strong>Depois:</strong> TOPN(5000, ...)</p>
+    <p><strong>Depois:</strong> TOPN(100000, ...)</p>
   </div>
 </div>
 
@@ -347,7 +347,7 @@ weight: 1
     <ul class="task-list">
       <li>✅ Query DAX capturada corretamente</li>
       <li>✅ Variável inserida na TREATAS()</li>
-      <li>✅ TOPN() ajustado para 5000</li>
+      <li>✅ TOPN() ajustado para 100000</li>
       <li>✅ Parse JSON com schema completo</li>
     </ul>
   </div>

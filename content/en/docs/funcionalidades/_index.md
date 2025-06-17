@@ -9,7 +9,7 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 
 <div class="hero-banner">
   <div class="hero-content">
-    <h1 class="hero-title">⚙️ Funcionalidades dos Apps</h1>
+    <h1 class="hero-title"> Funcionalidades dos Apps</h1>
     <p class="hero-subtitle">Acelere seu desenvolvimento com componentes reutilizáveis e tutoriais práticos</p>
     <div class="hero-badges">
       <span class="badge badge-primary">Power Platform</span>
@@ -36,21 +36,21 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
       </div>
       <p class="info-value">Equipe APMD</p>
     </div>
-    <div class="info-card gradient-purple">
+    <div class="info-card gradient-blue">
       <div class="info-header">
         <div class="info-icon">🧰</div>
         <h3>Ferramentas</h3>
       </div>
       <p class="info-value">PowerApps • Power Automate • SharePoint</p>
     </div>
-    <div class="info-card gradient-green">
+    <div class="info-card gradient-blue">
       <div class="info-header">
         <div class="info-icon">📁</div>
         <h3>Categoria</h3>
       </div>
       <p class="info-value">Componentes e Funcionalidades</p>
     </div>
-    <div class="info-card gradient-orange">
+    <div class="info-card gradient-blue">
       <div class="info-header">
         <div class="info-icon">🗓️</div>
         <h3>Última Atualização</h3>
@@ -64,34 +64,30 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 
 <div class="about-container">
   <div class="about-content">
-    <p class="lead-text">Esta seção é seu <strong>arsenal de desenvolvimento</strong> para Power Platform na SEDESE. Aqui você encontra funcionalidades modulares, testadas e prontas para implementação.</p>
+    <p class="lead-text">Esta seção é seu arsenal de desenvolvimento para o Power Apps. Aqui você encontra funcionalidades modulares, testadas e prontas para implementação.</p>
     <div class="benefits-grid">
       <div class="benefit-item">
-        <div class="benefit-icon">🚀</div>
         <div class="benefit-text">
           <h4>Desenvolvimento Acelerado</h4>
           <p>Ações comuns que se repetem entre aplicativos</p>
         </div>
       </div>
       <div class="benefit-item">
-        <div class="benefit-icon">💎</div>
         <div class="benefit-text">
           <h4>Código Reutilizável</h4>
           <p>Expressões úteis de PowerApps e Power Automate</p>
         </div>
       </div>
       <div class="benefit-item">
-        <div class="benefit-icon">🎯</div>
         <div class="benefit-text">
           <h4>Padrões Consistentes</h4>
-          <p>Garantia de qualidade e uniformidade entre projetos</p>
+          <p>Garantia de uniformidade entre projetos</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-## 🔥 Funcionalidades em Destaque
 
 
 </div>
@@ -103,7 +99,7 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
     <div class="structure-number">1</div>
     <div class="structure-content">
       <h4>✅ Objetivo Claro</h4>
-      <p>Explicação detalhada do problema que a funcionalidade resolve</p>
+      <p>Explicação detalhada sobre a ação da funcionalidade</p>
     </div>
   </div>
   
@@ -111,7 +107,7 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
     <div class="structure-number">2</div>
     <div class="structure-content">
       <h4>💡 Código Pronto</h4>
-      <p>Trechos de código testados e otimizados para copy-paste</p>
+      <p>Trechos de código testados para copy-paste</p>
     </div>
   </div>
   
@@ -123,33 +119,9 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
     </div>
   </div>
   
-  <div class="structure-item">
-    <div class="structure-number">4</div>
-    <div class="structure-content">
-      <h4>🔁 Adaptabilidade</h4>
-      <p>Guias para customização em diferentes contextos de aplicação</p>
-    </div>
-  </div>
-</div>
 
-<div class="cta-section">
-  <div class="cta-content">
-    <div class="cta-text">
-      <h2>🚀 Pronto para acelerar seu desenvolvimento?</h2>
-      <p>Escolha uma funcionalidade e implemente no seu app em questão de minutos. Cada tutorial foi criado para máxima eficiência e resultados práticos.</p>
-    </div>
-    <div class="cta-actions">
-      <a href="./reset-multiplos-campos/" class="btn btn-primary">
-        <span class="btn-icon">⚡</span>
-        Começar com Reset Múltiplo
-      </a>
-      <a href="#" class="btn btn-secondary">
-        <span class="btn-icon">📚</span>
-        Ver Todas as Funcionalidades
-      </a>
-    </div>
-  </div>
-</div>
+
+
 
 <style>
 /* Hero Section */
