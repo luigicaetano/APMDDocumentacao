@@ -6,14 +6,16 @@ menu:
     weight: 10
 ---
 {{% blocks/lead color="light" %}}
-{{% blocks/section color="white" %}}
 
-{{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="primary" %}}
+{{% blocks/section color="light" %}}
+
+{{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="light" %}}
 
 <div class="mx-auto text-center">
-  <p class="lead mt-4 mb-4">
+  <div class="col-lg-6">
   <h2 class="display-5 fw-bold text-primary mb-4">
     Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
+  </h2>
   <div class="mt-5 d-flex justify-content-center">
     <span class="badge badge-light mx-2 p-2">📄 Documentação Oficial</span>
     <span class="badge badge-light mx-2 p-2">📌 Materiais Internos</span>
@@ -33,7 +35,8 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
 
 {{% /blocks/lead %}}
 
-{{% blocks/section color="white" %}}
+{{% blocks/section color="light" %}}
+
 
 <div class="row align-items-center">
   <div class="col-lg-6">
