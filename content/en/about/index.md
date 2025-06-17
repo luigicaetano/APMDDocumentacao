@@ -48,13 +48,10 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
         <span class="text-primary fw-bold">📌 Centralização:</span> Tudo em um só lugar
       </li>
       <li class="mb-3">
-        <span class="text-primary fw-bold">🧭 Organização:</span> Navegação intuitiva e por temas
+        <span class="text-primary fw-bold">🧭 Organização:</span> Navegação intuitiva 
       </li>
       <li class="mb-3">
         <span class="text-primary fw-bold">📆 Atualização:</span> Informações mantidas em dia
-      </li>
-      <li class="mb-3">
-        <span class="text-primary fw-bold">🤲 Compartilhamento:</span> Incentivo à troca de saberes
       </li>
     </ul>
   </div>
