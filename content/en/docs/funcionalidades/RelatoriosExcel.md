@@ -423,34 +423,6 @@ weight: 1
 
 ---
 
-## 💡 Dicas Finais
-
-<div class="final-tips">
-  <div class="tip-card">
-    <h4>⚡ Performance</h4>
-    <p>Mantenha as consultas otimizadas e limite a quantidade de dados processados quando possível</p>
-  </div>
-  
-  <div class="tip-card">
-    <h4>🔒 Segurança</h4>
-    <p>Certifique-se de que apenas usuários autorizados têm acesso ao fluxo e aos dados</p>
-  </div>
-  
-  <div class="tip-card">
-    <h4>📝 Documentação</h4>
-    <p>Mantenha registros das configurações para facilitar manutenções futuras</p>
-  </div>
-  
-  <div class="tip-card">
-    <h4>🔄 Versionamento</h4>
-    <p>Crie backups das configurações antes de fazer alterações significativas</p>
-  </div>
-</div>
-
-<div class="success-message">
-  <h3>🎉 Configuração Concluída!</h3>
-  <p>Você agora possui um fluxo Power Automate completamente configurado e otimizado para gerar relatórios automatizados do seu sistema de Planejamento Integrado.</p>
-</div>
 
 <style>
 /* Estilos Gerais */
