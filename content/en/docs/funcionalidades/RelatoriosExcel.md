@@ -21,7 +21,7 @@ weight: 1
 ## 🎯 Visão Geral do Processo
 
 <div class="overview-section">
-  <h3>📋 Fluxo de Configuração Completo</h3>
+  <h3> Fluxo de Configuração Completo</h3>
   <p>Este processo integra PowerApps, Power BI e SharePoint através de um fluxo automatizado que extrai dados, processa informações e gera relatórios estruturados.</p>
 </div>
 
@@ -30,7 +30,7 @@ weight: 1
 ## 🔧 Passo 1: Criação de Variáveis
 
 <div class="step-section">
-  <h3>📝 Configuração Inicial de Variáveis</h3>
+  <h3> Configuração Inicial de Variáveis</h3>
   <p>O primeiro passo é criar uma variável que será utilizada posteriormente no fluxo para filtrar e processar os dados.</p>
   {{< figure src="../assets/images/acionamentoFluxo.png" alt="Configuração do gatilho no PowerApps" >}}
 </div>
@@ -39,7 +39,7 @@ weight: 1
 ### 🎛️ Processo de Criação
 
 <div class="process-card">
-  <h4>🔄 Definição da Variável</h4>
+  <h4> Definição da Variável</h4>
   <div class="process-details">
     <p><strong>Objetivo:</strong> Criar uma variável que armazenará os dados de ações selecionadas pelo usuário</p>
     <ul>
@@ -55,7 +55,7 @@ weight: 1
 ## 📊 Passo 2: Configuração no Power BI
 
 <div class="step-section">
-  <h3>📈 Preparação da Tabela de Dados</h3>
+  <h3> Preparação da Tabela de Dados</h3>
   <p>No Power BI, os dados devem ser organizados em formato de tabela para facilitar as consultas automatizadas.</p>
   <p>
   <img src="/assets/images/visualizações.png" alt="Visualizações" width="25%" />
@@ -69,7 +69,7 @@ weight: 1
 
 <div class="bi-config">
   <div class="config-item">
-    <h4>📋 Configuração como Tabela</h4>
+    <h4> Configuração como Tabela</h4>
     <div class="config-details">
       <p><strong>Processo:</strong></p>
       <ul>
@@ -82,7 +82,7 @@ weight: 1
   </div>
 
   <div class="config-item">
-    <h4>🎯 Seleção de Colunas</h4>
+    <h4> Seleção de Colunas</h4>
     <div class="config-details">
       <p><strong>Critérios de Seleção:</strong></p>
       <ul>
@@ -100,7 +100,7 @@ weight: 1
 ## 🔍 Passo 3: Performance Analyzer
 
 <div class="step-section">
-  <h3>⚡ Extração de Consultas Otimizadas</h3>
+  <h3> Extração de Consultas Otimizadas</h3>
   <p>O Performance Analyzer é a ferramenta chave para capturar as consultas DAX que serão utilizadas no fluxo.</p>
   {{< figure src="../assets/images/performance_analyzer.png" alt="Performance Analyzer" >}}
 </div>
@@ -144,7 +144,7 @@ weight: 1
 ## 🔧 Passo 4: Configuração da Consulta no Power Automate
 
 <div class="step-section">
-  <h3>🔗 Integração da Consulta DAX</h3>
+  <h3> Integração da Consulta DAX</h3>
   <p>Agora configuramos o Power Automate para usar a consulta capturada, personalizando-a com nossas variáveis.</p>
    {{< figure src="../assets/images/dataset.PowerBI.png" alt="Consulta ao dataset do Power BI" >}}
 </div>
@@ -153,7 +153,7 @@ weight: 1
 
 <div class="query-config">
   <div class="config-step">
-    <h4>📝 Inserção do Código DAX</h4>
+    <h4> Inserção do Código DAX</h4>
     <div class="config-details">
       <p><strong>Processo de Configuração:</strong></p>
       <ul>
@@ -169,7 +169,7 @@ weight: 1
 ### 🔧 Exemplo de Modificação
 
 <div class="code-example">
-  <h4>💻 Estrutura da Consulta</h4>
+  <h4> Estrutura da Consulta</h4>
   <div class="code-block">
     <p><strong>Antes:</strong> TREATAS({"valor_fixo"}, Tabela[Coluna])</p>
     <p><strong>Depois:</strong> TREATAS({@{variables('Acoes')}}, Tabela[Coluna])</p>
@@ -184,7 +184,7 @@ weight: 1
 ## 📋 Passo 5: Configuração do Parse JSON
 
 <div class="step-section">
-  <h3>🔄 Estruturação dos Dados Recebidos</h3>
+  <h3> Estruturação dos Dados Recebidos</h3>
   <p>O Parse JSON é essencial para converter os dados do Power BI em um formato estruturado que o Power Automate pode processar.</p>
   {{< figure src="../assets/images/Estruturação.png" alt="Estruturação via Parse JSON" >}}
 </div>
@@ -193,7 +193,7 @@ weight: 1
 
 <div class="json-config">
   <div class="schema-section">
-    <h4>🏗️ Estrutura do Schema</h4>
+    <h4> Estrutura do Schema</h4>
     <div class="schema-details">
       <p><strong>Componentes Essenciais:</strong></p>
       <ul>
@@ -211,19 +211,19 @@ weight: 1
 <div class="data-types">
   <div class="type-grid">
     <div class="type-card">
-      <h4>📝 String</h4>
+      <h4> String</h4>
       <p>Para textos, nomes, descrições</p>
     </div>
     <div class="type-card">
-      <h4>🔢 Number</h4>
+      <h4> Number</h4>
       <p>Para valores numéricos, quantidades</p>
     </div>
     <div class="type-card">
-      <h4>📅 Date</h4>
+      <h4> Date</h4>
       <p>Para datas e timestamps</p>
     </div>
     <div class="type-card">
-      <h4>✅ Boolean</h4>
+      <h4> Boolean</h4>
       <p>Para valores verdadeiro/falso</p>
     </div>
   </div>
@@ -234,7 +234,7 @@ weight: 1
 ## 🔄 Passo 6: Configuração do Select
 
 <div class="step-section">
-  <h3>🎯 Seleção e Mapeamento de Dados</h3>
+  <h3> Seleção e Mapeamento de Dados</h3>
   <p>O componente Select permite mapear e transformar os dados recebidos do Parse JSON.</p>
   {{< figure src="../assets/images/Personalizar.png" alt="Personalização do formato de dados" >}}
   </div>
@@ -244,7 +244,7 @@ weight: 1
 
 <div class="select-config">
   <div class="mapping-section">
-    <h4>🔗 Mapeamento de Campos</h4>
+    <h4> Mapeamento de Campos</h4>
     <div class="mapping-details">
       <p><strong>Processo de Mapeamento:</strong></p>
       <ul>
@@ -261,17 +261,17 @@ weight: 1
 
 <div class="best-practices-select">
   <div class="practice-item">
-    <h4>🏷️ Nomenclatura</h4>
+    <h4> Nomenclatura</h4>
     <p>Use nomes claros e consistentes para as colunas de saída</p>
   </div>
   
   <div class="practice-item">
-    <h4>🎯 Seletividade</h4>
+    <h4> Seletividade</h4>
     <p>Inclua apenas os campos necessários para otimizar performance</p>
   </div>
   
   <div class="practice-item">
-    <h4>🔄 Transformações</h4>
+    <h4> Transformações</h4>
     <p>Aplique formatações e cálculos simples quando apropriado</p>
   </div>
 </div>
@@ -281,7 +281,7 @@ weight: 1
 ## 📊 Passo 7: Create Table (Criar Tabela)
 
 <div class="step-section">
-  <h3>🏗️ Estruturação Final da Tabela</h3>
+  <h3> Estruturação Final da Tabela</h3>
   <p>O último passo é definir a estrutura final da tabela que será criada no Excel no SharePoint.</p>
   {{< figure src="../assets/images/Excel_Tabela.png" alt="Criação da tabela no Excel" >}}
 </div>
@@ -290,7 +290,7 @@ weight: 1
 
 <div class="table-config">
   <div class="column-section">
-    <h4>📝 Especificação de Colunas</h4>
+    <h4> Especificação de Colunas</h4>
     <div class="column-details">
       <p><strong>Elementos a Definir:</strong></p>
       <ul>
@@ -308,15 +308,15 @@ weight: 1
 <div class="formatting-options">
   <div class="format-grid">
     <div class="format-card">
-      <h4>📊 Cabeçalhos</h4>
+      <h4> Cabeçalhos</h4>
       <p>Defina cabeçalhos claros e informativos</p>
     </div>
     <div class="format-card">
-      <h4>🎯 Ordenação</h4>
+      <h4> Ordenação</h4>
       <p>Organize colunas por importância</p>
     </div>
     <div class="format-card">
-      <h4>💫 Estilo</h4>
+      <h4> Estilo</h4>
       <p>Aplique formatação consistente</p>
     </div>
   </div>
@@ -327,13 +327,13 @@ weight: 1
 ## ✅ Checklist de Configuração
 
 <div class="checklist-section">
-  <h3>📋 Verificação Final</h3>
+  <h3> Verificação Final</h3>
   <p>Use este checklist para garantir que todos os componentes estão configurados corretamente.</p>
 </div>
 
 <div class="checklist">
   <div class="check-category">
-    <h4>🔧 Configurações Básicas</h4>
+    <h4> Configurações Básicas</h4>
     <ul class="task-list">
       <li>✅ Variável criada e nomeada corretamente</li>
       <li>✅ Tabela do Power BI estruturada</li>
@@ -343,7 +343,7 @@ weight: 1
   </div>
 
   <div class="check-category">
-    <h4>📊 Consultas e Dados</h4>
+    <h4> Consultas e Dados</h4>
     <ul class="task-list">
       <li>✅ Query DAX capturada corretamente</li>
       <li>✅ Variável inserida na TREATAS()</li>
@@ -353,7 +353,7 @@ weight: 1
   </div>
 
   <div class="check-category">
-    <h4>🔄 Processamento</h4>
+    <h4> Processamento</h4>
     <ul class="task-list">
       <li>✅ Select configurado com todas as colunas</li>
       <li>✅ Mapeamento de campos correto</li>
@@ -398,24 +398,24 @@ weight: 1
 ## 🎯 Próximos Passos
 
 <div class="next-steps">
-  <h3>🚀 Depois da Configuração</h3>
+  <h3> Depois da Configuração</h3>
   <p>Com o fluxo configurado, você poderá:</p>
   
   <div class="steps-grid">
     <div class="next-step-card">
-      <h4>🔄 Testar o Fluxo</h4>
+      <h4> Testar o Fluxo</h4>
       <p>Execute testes com diferentes cenários de dados</p>
     </div>
     <div class="next-step-card">
-      <h4>📊 Monitorar Performance</h4>
+      <h4> Monitorar Performance</h4>
       <p>Acompanhe tempo de execução e otimize se necessário</p>
     </div>
     <div class="next-step-card">
-      <h4>🛠️ Ajustar Configurações</h4>
+      <h4> Ajustar Configurações</h4>
       <p>Refine o fluxo baseado no feedback dos usuários</p>
     </div>
     <div class="next-step-card">
-      <h4>📈 Expandir Funcionalidades</h4>
+      <h4> Expandir Funcionalidades</h4>
       <p>Adicione novos recursos conforme necessário</p>
     </div>
   </div>
