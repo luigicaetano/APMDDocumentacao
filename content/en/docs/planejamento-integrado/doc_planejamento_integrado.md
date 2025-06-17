@@ -1,5 +1,5 @@
 ---
-title: Tutorial Completo - Aplicativo de Planejamento Integrado
+title: Tutorial Completo 
 date: 2025-06-09
 description: >
   Guia completo apresentando todas as funcionalidades do aplicativo de planejamento integrado, incluindo fluxos de uso, funcionalidades principais e detalhamento dos planejamentos
