@@ -6,6 +6,8 @@ menu:
     weight: 10
 ---
 {{% blocks/lead color="light" %}}
+{{% blocks/section color="white" %}}
+
 {{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="primary" %}}
 
 <div class="mx-auto text-center">
