@@ -2,6 +2,125 @@
 title: Documentações APMD
 description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
 ---
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">APMD Docs</a>
+                <div class="update-badge">Atualizado</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Bem-vindo à Documentação da APMD</h1>
+                <p class="hero-subtitle">Seu hub central de conhecimento técnico</p>
+                <p class="hero-description">
+                    Aqui você encontrará documentações completas de todos os nossos processos de automação, 
+                    guias de desenvolvimento de aplicativos e melhores práticas da nossa equipe.
+                </p>
+            </div>
+        </section>
+        <div class="container">
+            <div class="main-content">
+                <section class="section">
+                    <h2 class="section-title">Navegue pela Documentação</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">📋</div>
+                                <h3 class="card-title">Planejamento Integrado</h3>
+                            </div>
+                            <p class="card-description">
+                                Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
+                            </p>
+                            <a href="../docs/planejamento-integrado/_index.md/" class="card-link">
+                                Acessar documentação →
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <h2 class="section-title">O que você encontrará aqui?</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">📖</div>
+                            <div class="feature-content">
+                                <h4>Documentações Técnicas</h4>
+                                <p>Guias detalhados para implementação</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔄</div>
+                            <div class="feature-content">
+                                <h4>Processos de Automação</h4>
+                                <p>Fluxos e metodologias testadas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-content">
+                                <h4>Desenvolvimento de Apps</h4>
+                                <p>Do conceito à publicação</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💡</div>
+                            <div class="feature-content">
+                                <h4>Melhores Práticas</h4>
+                                <p>Padrões e convenções da equipe</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛠️</div>
+                            <div class="feature-content">
+                                <h4>Ferramentas e Recursos</h4>
+                                <p>Stack tecnológico e utilitários</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="collaboration">
+                        <div class="collaboration-content">
+                            <h3>Colaboração Ativa</h3>
+                            <p>Nossa equipe trabalha colaborativamente para manter a documentação sempre atualizada e útil.</p>
+                            <div class="benefits">
+                                <div class="benefit">
+                                    <h4>Conhecimento compartilhado</h4>
+                                </div>
+                                <div class="benefit">
+                                    <h4>Atualizações constantes</h4>
+                                </div>
+                                <div class="benefit">
+                                    <h4>Suporte técnico</h4>
+                                </div>
+                                <div class="benefit">
+                                    <h4>Comunidade ativa</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <strong>💡 Dica:</strong> Esta documentação é mantida atualizada pela nossa equipe. 
+                    Para sugestões ou correções, <a href="../contribuir/" style="color: var(--accent);">abra uma issue</a>.
+                </p>
+                <p class="footer-text">Mantido por: Equipe APMD</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<style>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -363,121 +482,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             }
         }
     </style>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">APMD Docs</a>
-                <div class="update-badge">Atualizado</div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero-title">Bem-vindo à Documentação da APMD</h1>
-                <p class="hero-subtitle">Seu hub central de conhecimento técnico</p>
-                <p class="hero-description">
-                    Aqui você encontrará documentações completas de todos os nossos processos de automação, 
-                    guias de desenvolvimento de aplicativos e melhores práticas da nossa equipe.
-                </p>
-            </div>
-        </section>
-        <div class="container">
-            <div class="main-content">
-                <section class="section">
-                    <h2 class="section-title">Navegue pela Documentação</h2>
-                    <div class="cards-grid">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-icon">📋</div>
-                                <h3 class="card-title">Planejamento Integrado</h3>
-                            </div>
-                            <p class="card-description">
-                                Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
-                            </p>
-                            <a href="../docs/planejamento-integrado/_index.md/" class="card-link">
-                                Acessar documentação →
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <h2 class="section-title">O que você encontrará aqui?</h2>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">📖</div>
-                            <div class="feature-content">
-                                <h4>Documentações Técnicas</h4>
-                                <p>Guias detalhados para implementação</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🔄</div>
-                            <div class="feature-content">
-                                <h4>Processos de Automação</h4>
-                                <p>Fluxos e metodologias testadas</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">📱</div>
-                            <div class="feature-content">
-                                <h4>Desenvolvimento de Apps</h4>
-                                <p>Do conceito à publicação</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">💡</div>
-                            <div class="feature-content">
-                                <h4>Melhores Práticas</h4>
-                                <p>Padrões e convenções da equipe</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🛠️</div>
-                            <div class="feature-content">
-                                <h4>Ferramentas e Recursos</h4>
-                                <p>Stack tecnológico e utilitários</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section">
-                    <div class="collaboration">
-                        <div class="collaboration-content">
-                            <h3>Colaboração Ativa</h3>
-                            <p>Nossa equipe trabalha colaborativamente para manter a documentação sempre atualizada e útil.</p>
-                            <div class="benefits">
-                                <div class="benefit">
-                                    <h4>Conhecimento compartilhado</h4>
-                                </div>
-                                <div class="benefit">
-                                    <h4>Atualizações constantes</h4>
-                                </div>
-                                <div class="benefit">
-                                    <h4>Suporte técnico</h4>
-                                </div>
-                                <div class="benefit">
-                                    <h4>Comunidade ativa</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">
-                    <strong>💡 Dica:</strong> Esta documentação é mantida atualizada pela nossa equipe. 
-                    Para sugestões ou correções, <a href="../contribuir/" style="color: var(--accent);">abra uma issue</a>.
-                </p>
-                <p class="footer-text">Mantido por: Equipe APMD</p>
-            </div>
-        </div>
-    </footer>
-</body>
+
+
 </html>
