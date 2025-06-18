@@ -121,8 +121,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
 </body>
 
 <style>
-<!DOCTYPE html>
-<html lang="pt-BR">
+/* Estilo geral da página */
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
