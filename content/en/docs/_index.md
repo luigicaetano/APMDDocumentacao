@@ -15,7 +15,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -30,7 +29,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             --border: #475569;
             --gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
-
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--gradient);
@@ -39,13 +37,11 @@ description: Centro de documentação técnica para automações e desenvolvimen
             min-height: 100vh;
             overflow-x: hidden;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         /* Header */
         .header {
             background: rgba(15, 23, 42, 0.9);
@@ -55,14 +51,12 @@ description: Centro de documentação técnica para automações e desenvolvimen
             top: 0;
             z-index: 100;
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -70,7 +64,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             text-decoration: none;
             position: relative;
         }
-
         .logo::after {
             content: '';
             position: absolute;
@@ -82,18 +75,15 @@ description: Centro de documentação técnica para automações e desenvolvimen
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
-
         .logo:hover::after {
             transform: scaleX(1);
         }
-
         /* Hero Section */
         .hero {
             padding: 4rem 0;
             text-align: center;
             position: relative;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -106,12 +96,10 @@ description: Centro de documentação técnica para automações e desenvolvimen
             opacity: 0.3;
             animation: pulse 4s ease-in-out infinite;
         }
-
         @keyframes pulse {
             0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
             50% { transform: translateX(-50%) scale(1.2); opacity: 0.1; }
         }
-
         .hero-title {
             font-size: 3rem;
             font-weight: 800;
@@ -121,30 +109,25 @@ description: Centro de documentação técnica para automações e desenvolvimen
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
             margin-bottom: 1rem;
             font-weight: 500;
         }
-
         .hero-description {
             font-size: 1.1rem;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
         }
-
         /* Main Content */
         .main-content {
             padding: 4rem 0;
         }
-
         .section {
             margin-bottom: 4rem;
         }
-
         .section-title {
             font-size: 2rem;
             font-weight: 700;
@@ -154,7 +137,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             align-items: center;
             gap: 0.5rem;
         }
-
         .section-title::before {
             content: '';
             width: 4px;
@@ -162,7 +144,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border-radius: 2px;
         }
-
         /* Cards Grid */
         .cards-grid {
             display: grid;
@@ -170,7 +151,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             gap: 2rem;
             margin-bottom: 3rem;
         }
-
         .card {
             background: rgba(51, 65, 85, 0.5);
             border: 1px solid var(--border);
@@ -181,7 +161,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             position: relative;
             overflow: hidden;
         }
-
         .card::before {
             content: '';
             position: absolute;
@@ -193,24 +172,20 @@ description: Centro de documentação técnica para automações e desenvolvimen
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
         .card:hover::before {
             opacity: 1;
         }
-
         .card-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
-
         .card-icon {
             width: 3rem;
             height: 3rem;
@@ -221,18 +196,15 @@ description: Centro de documentação técnica para automações e desenvolvimen
             justify-content: center;
             font-size: 1.5rem;
         }
-
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
         }
-
         .card-description {
             color: var(--text-secondary);
             line-height: 1.6;
         }
-
         .card-link {
             display: inline-flex;
             align-items: center;
@@ -243,11 +215,9 @@ description: Centro de documentação técnica para automações e desenvolvimen
             margin-top: 1rem;
             transition: color 0.3s ease;
         }
-
         .card-link:hover {
             color: var(--text-primary);
         }
-
         /* Features List */
         .features-list {
             display: grid;
@@ -255,7 +225,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .feature-item {
             display: flex;
             align-items: flex-start;
@@ -266,12 +235,10 @@ description: Centro de documentação técnica para automações e desenvolvimen
             border: 1px solid rgba(71, 85, 105, 0.5);
             transition: all 0.3s ease;
         }
-
         .feature-item:hover {
             background: rgba(51, 65, 85, 0.5);
             border-color: var(--border);
         }
-
         .feature-icon {
             width: 2.5rem;
             height: 2.5rem;
@@ -283,19 +250,16 @@ description: Centro de documentação técnica para automações e desenvolvimen
             flex-shrink: 0;
             font-size: 1.2rem;
         }
-
         .feature-content h4 {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
-
         .feature-content p {
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
-
         /* Collaboration Section */
         .collaboration {
             background: rgba(51, 65, 85, 0.3);
@@ -305,7 +269,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             position: relative;
             overflow: hidden;
         }
-
         .collaboration::before {
             content: '';
             position: absolute;
@@ -316,49 +279,41 @@ description: Centro de documentação técnica para automações e desenvolvimen
             background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
             animation: rotate 20s linear infinite;
         }
-
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
         .collaboration-content {
             position: relative;
             z-index: 1;
         }
-
         .collaboration h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 1rem;
         }
-
         .collaboration p {
             color: var(--text-secondary);
             margin-bottom: 2rem;
         }
-
         .benefits {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-top: 2rem;
         }
-
         .benefit {
             padding: 1rem;
             background: rgba(15, 23, 42, 0.5);
             border-radius: 8px;
             border: 1px solid rgba(71, 85, 105, 0.3);
         }
-
         .benefit h4 {
             color: var(--accent);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-
         /* Footer */
         .footer {
             padding: 3rem 0;
@@ -366,7 +321,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             background: rgba(15, 23, 42, 0.8);
             text-align: center;
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -374,7 +328,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             flex-wrap: wrap;
             gap: 1rem;
         }
-
         .update-badge {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
@@ -383,34 +336,27 @@ description: Centro de documentação técnica para automações e desenvolvimen
             font-size: 0.9rem;
             font-weight: 500;
         }
-
         .footer-text {
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
             }
-            
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
             .container {
                 padding: 0 1rem;
             }
-            
             .cards-grid {
                 grid-template-columns: 1fr;
             }
-            
             .collaboration {
                 padding: 2rem;
             }
-            
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -427,7 +373,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             </div>
         </div>
     </header>
-
     <main>
         <section class="hero">
             <div class="container">
@@ -439,12 +384,10 @@ description: Centro de documentação técnica para automações e desenvolvimen
                 </p>
             </div>
         </section>
-
         <div class="container">
             <div class="main-content">
                 <section class="section">
                     <h2 class="section-title">Navegue pela Documentação</h2>
-                    
                     <div class="cards-grid">
                         <div class="card">
                             <div class="card-header">
@@ -460,10 +403,8 @@ description: Centro de documentação técnica para automações e desenvolvimen
                         </div>
                     </div>
                 </section>
-
                 <section class="section">
                     <h2 class="section-title">O que você encontrará aqui?</h2>
-                    
                     <div class="features-list">
                         <div class="feature-item">
                             <div class="feature-icon">📖</div>
@@ -472,7 +413,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
                                 <p>Guias detalhados para implementação</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item">
                             <div class="feature-icon">🔄</div>
                             <div class="feature-content">
@@ -480,7 +420,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
                                 <p>Fluxos e metodologias testadas</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item">
                             <div class="feature-icon">📱</div>
                             <div class="feature-content">
@@ -488,7 +427,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
                                 <p>Do conceito à publicação</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item">
                             <div class="feature-icon">💡</div>
                             <div class="feature-content">
@@ -496,7 +434,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
                                 <p>Padrões e convenções da equipe</p>
                             </div>
                         </div>
-                        
                         <div class="feature-item">
                             <div class="feature-icon">🛠️</div>
                             <div class="feature-content">
@@ -506,13 +443,11 @@ description: Centro de documentação técnica para automações e desenvolvimen
                         </div>
                     </div>
                 </section>
-
                 <section class="section">
                     <div class="collaboration">
                         <div class="collaboration-content">
                             <h3>Colaboração Ativa</h3>
                             <p>Nossa equipe trabalha colaborativamente para manter a documentação sempre atualizada e útil.</p>
-                            
                             <div class="benefits">
                                 <div class="benefit">
                                     <h4>Conhecimento compartilhado</h4>
@@ -533,7 +468,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
             </div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
