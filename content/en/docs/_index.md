@@ -13,11 +13,8 @@ description: Centro de documentação técnica para automações e desenvolvimen
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <a href="#" class="logo">APMD Docs</a>
-        <div class="update-badge">Atualizado</div>
-      </div>
+    <div class="header-content">
+      <div class="update-badge">Atualizado</div>
     </div>
   </header>
 
@@ -93,14 +90,20 @@ description: Centro de documentação técnica para automações e desenvolvimen
 
   <style>
     :root {
-      --primary: #2563eb;
-      --accent: #0ea5e9;
+      --primary: #6b7280;
+      --accent: #9ca3af;
       --bg: #f8fafc;
       --text: #1a1a1a;
       --text-secondary: #4a5568;
       --border: #e2e8f0;
       --card-bg: #ffffff;
       --header-bg: #ffffff;
+      --gray-light: #f3f4f6;
+      --gray-medium: #9ca3af;
+      --gray-dark: #4b5563;
+      --beige: #f5f5dc;
+      --cream: #faf9f6;
+      --warm-gray: #a8a29e;
     }
 
     * {
@@ -111,9 +114,18 @@ description: Centro de documentação técnica para automações e desenvolvimen
 
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #f3f4f6 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -131,11 +143,12 @@ description: Centro de documentação técnica para automações e desenvolvimen
       top: 0;
       z-index: 10;
       backdrop-filter: blur(10px);
+      padding: 0 2rem;
     }
 
     .header-content {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 1rem 0;
     }
@@ -165,12 +178,20 @@ description: Centro de documentação técnica para automações e desenvolvimen
     }
 
     .update-badge {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--gray-medium), var(--gray-dark));
       color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(107, 114, 128, 0.2);
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
 
     .hero {
@@ -181,10 +202,17 @@ description: Centro de documentação técnica para automações e desenvolvimen
     .hero-title {
       font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--text), var(--primary));
+      background: linear-gradient(135deg, var(--text), var(--gray-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 1rem;
+      animation: titleGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from { filter: drop-shadow(0 0 5px rgba(75, 85, 99, 0.3)); }
+      to { filter: drop-shadow(0 0 10px rgba(107, 114, 128, 0.4)); }
     }
 
     .hero-subtitle {
@@ -216,17 +244,39 @@ description: Centro de documentação técnica para automações e desenvolvimen
 
     .card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
+      border: 2px solid transparent;
+      background-clip: padding-box;
       border-radius: 12px;
       padding: 2rem;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: var(--gradient-3);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(75, 172, 254, 0.2);
     }
 
     .card-title {
@@ -261,15 +311,40 @@ description: Centro de documentação técnica para automações e desenvolvimen
 
     .feature-item {
       background: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 1.5rem;
       border: 1px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-item:nth-child(1) { border-left: 4px solid var(--gray-dark); }
+    .feature-item:nth-child(2) { border-left: 4px solid var(--gray-medium); }
+    .feature-item:nth-child(3) { border-left: 4px solid var(--warm-gray); }
+    .feature-item:nth-child(4) { border-left: 4px solid var(--primary); }
+    .feature-item:nth-child(5) { border-left: 4px solid var(--accent); }
+
+    .feature-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .feature-item:hover::before {
+      transform: translateX(100%);
     }
 
     .feature-item:hover {
-      transform: translateY(-2px);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .feature-item h4 {
@@ -293,20 +368,46 @@ description: Centro de documentação técnica para automações e desenvolvimen
       margin-top: 4rem;
       padding: 3rem;
       text-align: center;
-      background: var(--card-bg);
-      border-radius: 16px;
+      background: linear-gradient(135deg, var(--cream), var(--beige));
+      border-radius: 20px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 30px rgba(168, 162, 158, 0.15);
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .collaboration::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      animation: rotate 25s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .collaboration h3, .collaboration p {
+      position: relative;
+      z-index: 1;
     }
 
     .collaboration h3 {
       color: var(--text);
       margin-bottom: 1rem;
       font-size: 1.5rem;
+      text-shadow: none;
     }
 
     .collaboration p {
       color: var(--text-secondary);
+      text-shadow: none;
     }
 
     .footer {
