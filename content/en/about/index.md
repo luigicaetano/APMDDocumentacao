@@ -5,6 +5,7 @@ menu:
   main:
     weight: 10
 ---
+
 {{% blocks/lead color="light" %}}
 
 {{% blocks/section color="light" %}}
@@ -13,17 +14,22 @@ menu:
 
 <div class="mx-auto text-center">
   <div class="col-lg-6">
-  <h2 class="display-5 fw-bold text-primary mb-4">
-    Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
-  </h2>
-  <div class="mt-5 d-flex justify-content-center">
-    <span class="badge badge-light mx-2 p-2">📄 Documentação Oficial</span>
-    <span class="badge badge-light mx-2 p-2">📌 Materiais Internos</span>
-    <span class="badge badge-light mx-2 p-2">🤝 Acesso Colaborativo</span>
+    <h2 class="display-5 fw-bold text-primary mb-4">
+      Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
+    </h2>
+    <div class="mt-5 d-flex justify-content-center">
+      <span class="badge badge-light mx-2 p-2">📄 Documentação Oficial</span>
+      <span class="badge badge-light mx-2 p-2">📌 Materiais Internos</span>
+      <span class="badge badge-light mx-2 p-2">🤝 Acesso Colaborativo</span>
+    </div>
   </div>
 </div>
 
 {{% /blocks/cover %}}
+
+{{% /blocks/section %}}
+
+{{% /blocks/lead %}}
 
 {{% blocks/section color="light" %}}
 
@@ -37,9 +43,9 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
 
 {{% /blocks/lead %}}
 
+{{% /blocks/section %}}
+
 {{% blocks/section color="light" %}}
-
-
 
 <div class="row align-items-center">
   <div class="col-lg-6">
@@ -93,7 +99,7 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <p class="lead mb-4">
-        Esta iniciativa é conduzida pela equipe da <strong> APMD</strong>, com o compromisso de fortalecer a cultura organizacional e tornar o conhecimento mais acessível a todos.
+        Esta iniciativa é conduzida pela equipe da <strong>APMD</strong>, com o compromisso de fortalecer a cultura organizacional e tornar o conhecimento mais acessível a todos.
       </p>
       <div class="bg-white bg-opacity-10 rounded-3 p-4 mb-4">
         <h4 class="mb-3">Nossos Princípios</h4>
@@ -158,8 +164,6 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
 </div>
 
 {{% /blocks/section %}}
-
----
 
 <div class="text-center mt-5 text-muted">
   <small>
