@@ -25,6 +25,8 @@ menu:
 
 {{% /blocks/cover %}}
 
+{{% blocks/section color="light" %}}
+
 {{% blocks/lead color="light" %}}
 
 ## Propósito
