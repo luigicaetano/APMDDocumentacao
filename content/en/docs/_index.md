@@ -12,7 +12,6 @@ description: Centro de documentação técnica para automações e desenvolvimen
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body>
-  
   <main>
     <section class="hero">
       <div class="container">
@@ -32,7 +31,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
           <p class="card-description">
             Processos de planejamento para projetos de automação e desenvolvimento.
           </p>
-          <a href="../docs/planejamento-integrado/_index.md/" class="card-link">Acessar documentação →</a>
+          <a href="../docs/planejamento-integrado/" class="card-link">Acessar documentação →</a>
         </div>
       </div>
     </section>
@@ -195,15 +194,12 @@ description: Centro de documentação técnica para automações e desenvolvimen
     }
 
     .hero-title {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--text), var(--gray-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-      animation: titleGlow 4s ease-in-out infinite alternate;
-    }
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1f2937;
+  background: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
 
     @keyframes titleGlow {
       from { filter: drop-shadow(0 0 5px rgba(75, 85, 99, 0.3)); }
