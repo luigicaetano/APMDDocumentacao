@@ -21,7 +21,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
     <div class="floating-card">
       <div class="card-mini">
         <div class="pulse-dot"></div>
-        <span>Atualizado</span>
       </div>
     </div>
   </div>
