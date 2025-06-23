@@ -26,7 +26,6 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
     </div>
   </div>
 </div>
-
 <div class="info-dashboard">
   <div class="dashboard-grid">
     <div class="info-card gradient-blue">
@@ -201,7 +200,7 @@ tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 .info-card {
   padding: 2rem;
   border-radius: 16px;
-  color: white;
+  color: inherit;
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
