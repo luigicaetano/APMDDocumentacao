@@ -115,10 +115,10 @@ description: Centro de documentação técnica para automações e desenvolvimen
     }
 
     .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem;
-    }
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  border-radius: 12px;
+  padding: 2rem;
+}
 
     .header {
       background: rgba(15, 23, 42, 0.95);
