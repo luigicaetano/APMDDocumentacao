@@ -12,12 +12,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <div class="update-badge">Atualizado</div>
-    </div>
-  </header>
-
+  
   <main>
     <section class="hero">
       <div class="container">
