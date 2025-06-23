@@ -30,7 +30,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
         <div class="card">
           <h3 class="card-title">Planejamento Integrado</h3>
           <p class="card-description">
-            Metodologias, frameworks e processos de planejamento para projetos de automação e desenvolvimento.
+            Processos de planejamento para projetos de automação e desenvolvimento.
           </p>
           <a href="../docs/planejamento-integrado/_index.md/" class="card-link">Acessar documentação →</a>
         </div>
@@ -62,7 +62,7 @@ description: Centro de documentação técnica para automações e desenvolvimen
         <div class="feature-item">
           <div data-lucide="tools" class="feature-icon"></div>
           <h4>Ferramentas e Recursos</h4>
-          <p>Stack tecnológico e utilitários</p>
+          <p> </p>
         </div>
       </div>
     </section>
