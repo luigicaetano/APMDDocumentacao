@@ -87,181 +87,171 @@ A Documentação da APMD centraliza os principais conteúdos relacionados ao des
 
   
 <style>
-:root {
-  --primary: #2563eb;
-  --accent: #3b82f6;
-  --bg: #f9fafb;
-  --text: #111827;
-  --text-secondary: #6b7280;
-  --border: #e5e7eb;
-  --card-bg: #ffffff;
-  --light-blue: #eff6ff;
-  --gray: #f3f4f6;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #333;
   line-height: 1.6;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0 1rem;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem;
+h1, h2, h3 {
+  color: #1e293b;
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #dbeafe, #ffffff);
-  border-bottom: 1px solid var(--border);
+.app-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--primary);
+.app-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  background-color: #fff;
+  overflow: hidden;
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  margin-top: 1rem;
+.card-header {
+  background-color: #2563eb;
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.hero-description {
-  max-width: 600px;
-  margin: 1.5rem auto 0;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+.card-content {
+  padding: 20px;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-align: center;
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.info-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
-.card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-  font-size: 1.4rem;
+.info-label {
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
+  margin-right: 8px;
+  min-width: 100px;
 }
 
-.card-description {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.card-link {
-  color: var(--accent);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.card-link:hover {
-  text-decoration: underline;
-}
-
-.features-list {
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 2rem 0;
 }
 
-.feature-item {
-  background: var(--light-blue);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  text-align: center;
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
+.feature-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #2563eb;
+  transition: 0.3s ease;
 }
 
-.feature-item:hover {
-  background: #dbeafe;
-  transform: scale(1.02);
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 
 .feature-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0 auto 1rem;
-  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
 }
 
-.feature-item h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.feature-item p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.collaboration {
+.download-resources {
+  background-color: #e0f2fe;
+  border: 1px dashed #2563eb;
+  border-radius: 10px;
+  padding: 25px;
   text-align: center;
-  margin: 4rem auto;
-  padding: 3rem;
-  background: #fef3c7;
-  border-radius: 1rem;
-  border: 1px solid var(--border);
-  font-size: 1rem;
-  color: #78350f;
+  margin: 2rem 0;
 }
 
-.footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-top: 4rem;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
-}
-
-.footer a {
-  color: var(--accent);
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
   text-decoration: none;
+  max-width: 400px;
+  margin: 20px auto 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.download-button:hover {
+  background-color: #1e40af;
+  transform: translateY(-3px);
 }
 
-.footer strong {
-  color: var(--text);
+.download-icon {
+  font-size: 1.8rem;
+  margin-right: 12px;
 }
-<style>
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.start-section {
+  background: #f0f9ff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+
+.start-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #1e3a8a;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .app-intro {
+    flex-direction: column;
+  }
+
+  .download-button {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .download-icon {
+    margin: 0 0 10px 0;
+  }
+
+  .download-text {
+    text-align: center;
+  }
+}
+</style>
