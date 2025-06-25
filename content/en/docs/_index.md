@@ -2,82 +2,90 @@
 title: Documentações APMD
 description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
 ---
-</style>
-</head>
-<body>
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="hero-title">Bem-vindo à Documentação da APMD</h1>
-        <p class="hero-subtitle">Seu hub central de conhecimento técnico</p>
-        <p class="hero-description">
-          Aqui você encontrará documentações completas de todos os nossos processos de automação, 
-          guias de desenvolvimento de aplicativos e melhores práticas da nossa equipe.
-        </p>
-      </div>
-    </section>
-    <section class="container">
-      <h2 class="section-title">Navegue pela Documentação</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <h3 class="card-title">Planejamento Integrado</h3>
-          <p class="card-description">
-            Processos de planejamento para projetos de automação e desenvolvimento.
-          </p>
-          <a href="../docs/planejamento-integrado/" class="card-link">Acessar documentação →</a>
-        </div>
-      </div>
-    </section>
-    <section class="container">
-      <h2 class="section-title">O que você encontrará aqui</h2>
-      <div class="features-list">
-        <div class="feature-item">
-          <div data-lucide="book-open" class="feature-icon"></div>
-          <h4>Documentações Técnicas</h4>
-          <p>Guias detalhados para implementação</p>
-        </div>
-        <div class="feature-item">
-          <div data-lucide="refresh-cw" class="feature-icon"></div>
-          <h4>Processos de Automação</h4>
-          <p>Fluxos e metodologias testadas</p>
-        </div>
-        <div class="feature-item">
-          <div data-lucide="smartphone" class="feature-icon"></div>
-          <h4>Desenvolvimento de Apps</h4>
-          <p>Do conceito à publicação</p>
-        </div>
-        <div class="feature-item">
-          <div data-lucide="lightbulb" class="feature-icon"></div>
-          <h4>Melhores Práticas</h4>
-          <p>Padrões e convenções da equipe</p>
-        </div>
-        <div class="feature-item">
-          <div data-lucide="tools" class="feature-icon"></div>
-          <h4>Ferramentas e Recursos</h4>
-          <p>Utilitários que facilitam o trabalho diário</p>
-        </div>
-      </div>
-    </section>
-    <section class="container collaboration">
-      <h3>Colaboração Ativa</h3>
-      <p>Nossa equipe trabalha colaborativamente para manter a documentação sempre atualizada e útil.</p>
-    </section>
-  </main>
+---
+title: ✨ Documentações APMD
+description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
+---
 
-  <footer class="footer">
-    <div class="container">
-      <p><strong>Dica:</strong> Esta documentação é mantida pela equipe APMD. Para sugestões ou correções, <a href="../contribuir/">abra uma issue</a>.</p>
-      <p>Mantido por: Equipe APMD</p>
+<div class="app-intro">
+  <div class="app-card">
+    <div class="card-header">Informações Técnicas</div>
+    <div class="card-content">
+      <div class="info-item">
+        <div class="info-icon">👨‍💻</div>
+        <div class="info-label">Equipe:</div>
+        <div class="info-value">APMD</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">⚙️</div>
+        <div class="info-label">Ferramentas:</div>
+        <div class="info-value">PowerApps, Power Automate, SharePoint</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📅</div>
+        <div class="info-label">Última Atualização:</div>
+        <div class="info-value">25/06/2025</div>
+      </div>
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script>
-    lucide.createIcons();
-  </script>
-</body>
-</html>
+## 📘 Sobre a Documentação APMD
 
-   
+A Documentação da APMD centraliza os principais conteúdos relacionados ao desenvolvimento de soluções em Power Platform, desde aplicativos personalizados até automações e boas práticas da equipe.
+
+* 📌 Consolidar o conhecimento institucional
+* ⚙️ Aumentar a eficiência do trabalho técnico
+* 🚀 Facilitar a colaboração entre as áreas
+
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="feature-icon">📂</div>
+    <h3>Planejamento Integrado</h3>
+    <p>Documentação do processo de planejamento, incluindo estruturação de dados e etapas do ciclo orçamentário.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🔄</div>
+    <h3>Fluxos de Automação</h3>
+    <p>Modelos e exemplos de fluxos no Power Automate para ganho de produtividade e controle.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📱</div>
+    <h3>Desenvolvimento de Aplicativos</h3>
+    <p>Criação de apps com PowerApps: componentes reutilizáveis, conexões e design centrado no usuário.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">💡</div>
+    <h3>Boas Práticas</h3>
+    <p>Guia com orientações de versionamento, padronização visual e segurança da informação.</p>
+  </div>
+</div>
+
+## 📎 Recursos e Tutoriais
+
+<div class="download-resources">
+  <h3>📥 Recursos disponíveis</h3>
+  <p>Baixe os modelos e arquivos que usamos como referência:</p>
+  <a href="../assets/downloads/recursos-apmd.zip" class="download-button">
+    <span class="download-icon">📦</span>
+    <span class="download-text">
+      <span class="download-title">Baixar Pacote de Recursos</span>
+      <span class="download-desc">Modelos de apps, flows, conectores e documentos</span>
+    </span>
+  </a>
+</div>
+
+<div class="start-section">
+  <h2>Pronto para explorar?</h2>
+  <p>Navegue pelo menu lateral ou escolha um dos tópicos acima para começar a usar a documentação APMD.</p>
+  <a href="../docs/planejamento-integrado/" class="start-button">Começar pelo Planejamento →</a>
+</div>
+
+
+  
 <style>
 :root {
   --primary: #2563eb;
