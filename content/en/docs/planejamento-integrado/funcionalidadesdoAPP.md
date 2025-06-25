@@ -510,7 +510,7 @@ O aplicativo oferece um fluxo completo de gestão de iniciativas organizacionais
 - **Interface intuitiva** com confirmações de segurança para ações críticas
 
 <div class="navigation-links">
-  <a href="../../conectandodados/" class="prev-link">← Passo anterior: Conectando os dados no aplicativo</a>
+  <a href="../conectandodados/" class="prev-link">← Passo anterior: Conectando os dados no aplicativo</a>
   <a href="../permissoes/" class="next-link">Próximo passo: Gerenciar permissões no aplicativo →</a>
 </div>
 
