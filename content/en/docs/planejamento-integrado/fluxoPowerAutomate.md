@@ -47,7 +47,7 @@ graph TD
 
   <div class="step">
     <h3>📌 Passo 2: Consultando dados no Power BI</h3>
-    <p>O fluxo executa uma consulta DAX no conjunto de dados "PlanejamentoIntegrado2026" do Power BI. Esta consulta filtra as informações com base nas ações selecionadas pelo usuário no PowerApps. Para personalizar o relatório, veja a sessão <a href="./funcionalidades/RelatoriosExcel/" class="prev-link">Relatórios excel a partir do Power BI e Power Automate</a>.</p>
+    <p>O fluxo executa uma consulta DAX no conjunto de dados "PlanejamentoIntegrado2026" do Power BI. Esta consulta filtra as informações com base nas ações selecionadas pelo usuário no PowerApps. Para personalizar o relatório, veja a sessão <a href=".../../funcionalidades/RelatoriosExcel/" class="prev-link">Relatórios excel a partir do Power BI e Power Automate</a>.</p>
     {{< figure src="../assets/images/dataset.PowerBI.png" alt="Consulta ao dataset do Power BI" >}}
   </div>
 
