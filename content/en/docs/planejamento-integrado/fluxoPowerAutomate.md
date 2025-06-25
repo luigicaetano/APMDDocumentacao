@@ -168,7 +168,7 @@ graph TD
 Agora que você configurou com sucesso o fluxo de automação no Power Automate, está pronto para implementar soluções completas de relatórios automatizados! No próximo tutorial, você aprenderá como personalizar ainda mais os relatórios e adicionar visualizações avançadas.
 
 <div class="navigation-links">
-  <a href="../permissoes/" class="prev-link">← Passo anterior: Configurando os fluxos do aplicativo</a>
+  <a href="../permissoes/" class="prev-link">← Passo anterior: Configurando as permissões</a>
   <a href="../doc_planejamento_integrado/" class="next-link">Próximo passo: Tutorial Completo →</a>
 </div>
 
