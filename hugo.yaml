@@ -175,7 +175,7 @@ params:
         url: https://teams.microsoft.com/l/chat/0/0?users="&"luigi.silva@social.mg.gov.br
         icon: fa-solid fa-message
         desc: Chat with other project developers
-      - name: Outlook
+      - name: Email
         url: "mailto:apmd@social.mg.gov.br"
         icon: fa fa-envelope
         desc: Discuss development issues around the project
