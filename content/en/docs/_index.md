@@ -1,6 +1,9 @@
 ---
-title: ✨ Documentações APMD
+title: Documentações
 description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
+menu:
+  main:
+    weight: 1
 ---
 
 ## 📘 Sobre a Documentação APMD

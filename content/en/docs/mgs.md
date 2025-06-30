@@ -6,6 +6,7 @@ description: >
 categories: [Processos, Automação]
 tags: [MGS, Power Automate, Excel, Orçamento]
 menu: false
+toc_hide: true
 
 ---
 
