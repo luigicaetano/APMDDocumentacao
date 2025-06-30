@@ -8,19 +8,66 @@ menu:
 
 {{% blocks/section color="light" %}}
 
-<div class="container-fluid bg-light py-5">
-  <div class="container text-center">
-    <h1 class="display-4 fw-bold text-primary mb-4">Sobre nosso repositório</h1>
-    <p class="lead mb-4">
-      Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
-    </p>
-    <div class="mt-4 d-flex justify-content-center flex-wrap">
-      <span class="badge bg-primary text-white mx-2 mb-2 p-3">📄 Documentação Oficial</span>
-      <span class="badge bg-primary text-white mx-2 mb-2 p-3">📌 Materiais Internos</span>
-      <span class="badge bg-primary text-white mx-2 mb-2 p-3">🤝 Acesso Colaborativo</span>
+<div class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 0;">
+  <div class="container text-center text-white">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="display-3 fw-bold mb-4" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+          📚 Repositório SEDESE
+        </h1>
+        <p class="lead mb-5 fs-4" style="opacity: 0.95;">
+          Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <div class="badge-custom bg-white text-primary px-4 py-3 rounded-pill shadow-sm">
+            <i class="me-2">📄</i> Documentação Oficial
+          </div>
+          <div class="badge-custom bg-white text-primary px-4 py-3 rounded-pill shadow-sm">
+            <i class="me-2">📌</i> Materiais Internos
+          </div>
+          <div class="badge-custom bg-white text-primary px-4 py-3 rounded-pill shadow-sm">
+            <i class="me-2">🤝</i> Acesso Colaborativo
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  
+  <!-- Decorative elements -->
+  <div style="position: absolute; top: 20%; left: 10%; opacity: 0.1; font-size: 6rem;">📋</div>
+  <div style="position: absolute; bottom: 20%; right: 10%; opacity: 0.1; font-size: 5rem;">⚙️</div>
+  <div style="position: absolute; top: 60%; left: 5%; opacity: 0.1; font-size: 4rem;">📊</div>
 </div>
+
+<style>
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-custom {
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.badge-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.03"/><circle cx="20" cy="80" r="0.5" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+</style>
 
 {{% /blocks/section %}}
 
