@@ -3,43 +3,17 @@ title: ✨ Documentações APMD
 description: Centro de documentação técnica para automações e desenvolvimento de aplicativos
 ---
 
-<div class="app-intro">
-  <div class="app-card">
-    <div class="card-header">Informações Técnicas</div>
-    <div class="card-content">
-      <div class="info-item">
-        <div class="info-icon">👨‍💻</div>
-        <div class="info-label">Equipe:</div>
-        <div class="info-value">APMD</div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">⚙️</div>
-        <div class="info-label">Ferramentas:</div>
-        <div class="info-value">PowerApps, Power Automate, SharePoint</div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">📅</div>
-        <div class="info-label">Última Atualização:</div>
-        <div class="info-value">25/06/2025</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 ## 📘 Sobre a Documentação APMD
 
-A Documentação da APMD centraliza os principais conteúdos relacionados ao desenvolvimento de soluções em Power Platform, desde aplicativos personalizados até automações e boas práticas da equipe.
+A Documentação da APMD centraliza os principais conteúdos relacionados ao desenvolvimento de soluções em Power Platform da Assessoria de Planejamento, Modernização e Dados da SEDESE, desde aplicativos personalizados até automações e boas práticas da equipe.
+
+Nossos objetivos com essa ferramenta são:
 
 * 📌 Consolidar o conhecimento institucional
 * ⚙️ Aumentar a eficiência do trabalho técnico
 * 🚀 Facilitar a colaboração entre as áreas
 
 <div class="features-grid">
-  <div class="feature-card">
-    <div class="feature-icon">📂</div>
-    <h3>Planejamento Integrado</h3>
-    <p>Documentação do processo de planejamento, incluindo estruturação de dados e etapas do ciclo orçamentário.</p>
-  </div>
 
   <div class="feature-card">
     <div class="feature-icon">🔄</div>
@@ -50,7 +24,7 @@ A Documentação da APMD centraliza os principais conteúdos relacionados ao des
   <div class="feature-card">
     <div class="feature-icon">📱</div>
     <h3>Desenvolvimento de Aplicativos</h3>
-    <p>Criação de apps com PowerApps: componentes reutilizáveis, conexões e design centrado no usuário.</p>
+    <p>Criação de apps com PowerApps: componentes reutilizáveis, conexões e conteúdo pensando para o Estado.</p>
   </div>
 
   <div class="feature-card">
@@ -62,22 +36,10 @@ A Documentação da APMD centraliza os principais conteúdos relacionados ao des
 
 ## 📎 Recursos e Tutoriais
 
-<div class="download-resources">
-  <h3>📥 Recursos disponíveis</h3>
-  <p>Baixe os modelos e arquivos que usamos como referência:</p>
-  <a href="../assets/downloads/recursos-apmd.zip" class="download-button">
-    <span class="download-icon">📦</span>
-    <span class="download-text">
-      <span class="download-title">Baixar Pacote de Recursos</span>
-      <span class="download-desc">Modelos de apps, flows, conectores e documentos</span>
-    </span>
-  </a>
-</div>
-
 <div class="start-section">
   <h2>Pronto para explorar?</h2>
   <p>Navegue pelo menu lateral ou escolha um dos tópicos acima para começar a usar a documentação APMD.</p>
-  <a href="../docs/planejamento-integrado/" class="start-button">Começar pelo Planejamento →</a>
+  <a href="../docs/planejamento-integrado/" class="start-button">Começar pelo Planejamento Integrado →</a>
 </div>
 
 
