@@ -172,7 +172,7 @@ params:
         desc: Development takes place here!
       - name: Teams
         url: https://teams.microsoft.com/l/chat/0/0?users="&"luigi.silva@social.mg.gov.br
-        icon: fab fa-teams
+        icon: assets/icons/logo-microsoft-teams-256.svg
         desc: Chat with other project developers
       - name: Outlook
         url: https://outlook.office.com/mail/
