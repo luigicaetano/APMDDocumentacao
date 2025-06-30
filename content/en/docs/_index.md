@@ -34,8 +34,6 @@ Nossos objetivos com essa ferramenta são:
   </div>
 </div>
 
-## 📎 Recursos e Tutoriais
-
 <div class="start-section">
   <h2>Pronto para explorar?</h2>
   <p>Navegue pelo menu lateral ou escolha um dos tópicos acima para começar a usar a documentação APMD.</p>
