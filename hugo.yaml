@@ -175,8 +175,8 @@ params:
         icon: fab fa-teams
         desc: Chat with other project developers
       - name: Outlook
-        url: https://outlook.office.com/mail/deeplink/compose?to=apmd@social.mg.gov.br
-        icon: fa fa-outlook
+        url: https://outlook.office.com/mail/
+        icon: fa fa-envelope
         desc: Discuss development issues around the project
 
 module:
