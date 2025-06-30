@@ -161,7 +161,7 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
 <div class="text-center mt-5 text-muted">
   <small>
     📅 Última atualização: Junho 2025 | 
-    🏷️ Versão do site: 2.0 | 
+    🏷️ Versão do site: 1.0 | 
     📧 Contato: luigi.silva@social.mg.gov.br ou marcela.alves@social.mg.gov.br
   </small>
 </div>
