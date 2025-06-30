@@ -8,21 +8,17 @@ menu:
 
 {{% blocks/section color="light" %}}
 
-{{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="light" %}}
-
-Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
-
-{{% /blocks/cover %}}
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="light" %}}
-
-<div class="mx-auto text-center mb-5">
-  <div class="mt-5 d-flex justify-content-center flex-wrap">
-    <span class="badge bg-light text-dark mx-2 mb-2 p-2">📄 Documentação Oficial</span>
-    <span class="badge bg-light text-dark mx-2 mb-2 p-2">📌 Materiais Internos</span>
-    <span class="badge bg-light text-dark mx-2 mb-2 p-2">🤝 Acesso Colaborativo</span>
+<div class="container-fluid bg-light py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold text-primary mb-4">Sobre nosso repositório</h1>
+    <p class="lead mb-4">
+      Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
+    </p>
+    <div class="mt-4 d-flex justify-content-center flex-wrap">
+      <span class="badge bg-primary text-white mx-2 mb-2 p-3">📄 Documentação Oficial</span>
+      <span class="badge bg-primary text-white mx-2 mb-2 p-3">📌 Materiais Internos</span>
+      <span class="badge bg-primary text-white mx-2 mb-2 p-3">🤝 Acesso Colaborativo</span>
+    </div>
   </div>
 </div>
 
@@ -161,7 +157,7 @@ Nosso objetivo é tornar as informações técnicas e institucionais mais acess�
 <div class="text-center mt-5 text-muted">
   <small>
     📅 Última atualização: Junho 2025 | 
-    🏷️ Versão do site: 1.0 | 
+    🏷️ Versão do site: 2.0 | 
     📧 Contato: luigi.silva@social.mg.gov.br ou marcela.alves@social.mg.gov.br
   </small>
 </div>
