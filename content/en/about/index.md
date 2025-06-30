@@ -10,20 +10,21 @@ menu:
 
 {{% blocks/cover title="Sobre nosso repositório" image_anchor="center" height="auto" color="light" %}}
 
-<div class="mx-auto text-center">
-  <div class="col-lg-6">
-    <h2 class="display-5 fw-bold text-primary mb-4">
-      Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
-    </h2>
-    <div class="mt-5 d-flex justify-content-center">
-      <span class="badge bg-light text-dark mx-2 p-2">📄 Documentação Oficial</span>
-      <span class="badge bg-light text-dark mx-2 p-2">📌 Materiais Internos</span>
-      <span class="badge bg-light text-dark mx-2 p-2">🤝 Acesso Colaborativo</span>
-    </div>
-  </div>
-</div>
+Um repositório digital pensado para reunir, organizar e facilitar o acesso a conteúdos produzidos no âmbito da secretaria SEDESE.
 
 {{% /blocks/cover %}}
+
+{{% /blocks/section %}}
+
+{{% blocks/section color="light" %}}
+
+<div class="mx-auto text-center mb-5">
+  <div class="mt-5 d-flex justify-content-center flex-wrap">
+    <span class="badge bg-light text-dark mx-2 mb-2 p-2">📄 Documentação Oficial</span>
+    <span class="badge bg-light text-dark mx-2 mb-2 p-2">📌 Materiais Internos</span>
+    <span class="badge bg-light text-dark mx-2 mb-2 p-2">🤝 Acesso Colaborativo</span>
+  </div>
+</div>
 
 {{% /blocks/section %}}
 
