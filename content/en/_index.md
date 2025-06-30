@@ -28,7 +28,7 @@ Utilizamos um repositório no **GitHub**, [Pull Requests](https://github.com/lui
 
 {{% blocks/feature icon="fa-regular fa-message" title="Mande uma mensagem para os criadores!" url="" %}}
 Dúvidas, sugestões, ou só para bater papo. 
-[Mensagem] url="https://teams.microsoft.com/l/chat/0/0?users="&"luigi.silva@social.mg.gov.br
+[Mensagem] url="https://teams.microsoft.com/l/chat/0/0?users="&"luigi.silva@social.mg.gov.br"
 {{% /blocks/feature %}}
 
 
