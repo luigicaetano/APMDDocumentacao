@@ -175,7 +175,7 @@ params:
         icon: fa-solid fa-message
         desc: Chat with other project developers
       - name: Outlook
-        url: https://outlook.office.com/mail/
+        url: "mailto:apmd@social.mg.gov.br"
         icon: fa fa-envelope
         desc: Discuss development issues around the project
 
