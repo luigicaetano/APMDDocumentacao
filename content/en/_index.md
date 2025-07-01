@@ -27,7 +27,7 @@ Siga para acompanhar nossas atualizações!
     url="" 
 %}}
 Utilizamos um repositório no **GitHub**.  
-[🌟 Repositório principal](https://github.com/luigicaetano/APMDDocumentacaodocsy-example)  
+[🌟 Repositório principal](https://github.com/luigicaetano/APMDDocumentacao)  
 [📥 Pull Requests abertos](https://github.com/luigicaetano/APMDDocumentacao/pulls)  
 Novos membros são bem-vindos!
 {{% /blocks/feature %}}
