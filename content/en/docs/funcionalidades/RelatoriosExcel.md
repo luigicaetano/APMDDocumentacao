@@ -11,7 +11,6 @@ weight: 1
 ## O Que Você Vai Aprender
 
 - Como criar variáveis para o fluxo Power Automate
-- Como configurar tabelas no Power BI para consultas
 - Como usar o Performance Analyzer para extrair queries
 - Como configurar Parse JSON com schema correto
 - Como estruturar dados com Select e Create Table
