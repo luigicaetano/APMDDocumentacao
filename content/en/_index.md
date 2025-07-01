@@ -31,9 +31,4 @@ Dúvidas, sugestões, ou só para bater papo.
 [💬 Enviar mensagem no Teams](https://teams.microsoft.com/l/chat/0/0?users=luigi.silva@social.mg.gov.br)
 {{% /blocks/feature %}}
 
-
-Dúvidas, sugestões, ou só para bater papo.  
-{{% /blocks/feature %}}
-
-
 {{% /blocks/section %}}
