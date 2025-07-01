@@ -1,5 +1,5 @@
 ---
-title: 🔄 Relatórios excel a partir do Power BI e Power Automate - Guia Completo
+title: Relatórios excel a partir do Power BI e Power Automate - Guia Completo
 date: 2025-06-10 
 description: >
   Este guia detalhado apresenta o processo completo de configuração do fluxo Power Automate para integração entre PowerApps, Power BI e SharePoint. Siga este tutorial para configurar corretamente a automação de relatórios do seu sistema de Planejamento Integrado.
@@ -8,7 +8,7 @@ weight: 1
 --- 
 
 
-## O Que Você Vai Aprender
+<h3> O Que Você Vai Aprender </h3>
 
 - Como criar variáveis para o fluxo Power Automate
 - Como usar o Performance Analyzer para extrair queries
@@ -17,7 +17,7 @@ weight: 1
 
 ---
 
-## 🎯 Visão Geral do Processo
+<h3> 🎯 Visão Geral do Processo </h3>
 
 <div class="overview-section">
   <h3> Fluxo de Configuração Completo</h3>
@@ -58,7 +58,7 @@ weight: 1
 
 </div>
 
-### 🏗️ Estruturação da Tabela
+<h3> 🏗️ Estruturação da Tabela </h3>
 
 <div class="bi-config">
   <div class="config-item">
@@ -195,7 +195,7 @@ weight: 1
   </div>
 </div>
 
-### 🎯 Tipos de Dados Comuns
+<h3> 🎯 Tipos de Dados Comuns </h3>
 
 <div class="data-types">
   <div class="type-grid">
@@ -229,7 +229,7 @@ weight: 1
   </div>
 </div>
 
-### 📋 Configuração das Colunas
+<h3> 📋 Configuração das Colunas </h3>
 
 <div class="select-config">
   <div class="mapping-section">
