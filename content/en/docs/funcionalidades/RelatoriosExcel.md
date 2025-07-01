@@ -35,14 +35,8 @@ weight: 1
   {{< figure src="../assets/images/acionamentoFluxo.png" alt="Configuração do gatilho no PowerApps" >}}
 </div>
 
-
-<h3> 🎛️ Processo de Criação </h3>
-
 <div class="process-card">
-  <h4> Definição da Variável</h4>
   <div class="process-details">
-    <p><strong>Objetivo:</strong> Criar uma variável que armazenará os dados de ações selecionadas pelo usuário</p>
-    <ul>
       <li>A variável será passada do PowerApps para o Power Automate</li>
       <li>Servirá como filtro para as consultas no Power BI</li>
       <li>Permitirá personalização dinâmica dos relatórios</li>
@@ -105,7 +99,7 @@ weight: 1
   {{< figure src="../assets/images/performance_analyzer.png" alt="Performance Analyzer" >}}
 </div>
 
-### 📊 Processo no Performance Analyzer
+<h3> 📊 Processo no Performance Analyzer </h3>
 
 <div class="analyzer-steps">
   <div class="analyzer-step">
@@ -133,7 +127,7 @@ weight: 1
   </div>
 </div>
 
-### 💡 Dica Importante
+<h3> 💡 Curiosidade </h3>
 
 <div class="tip-box">
   <p><strong>⚡ Performance:</strong> O Performance Analyzer captura a consulta DAX otimizada que o Power BI usa internamente, garantindo máxima eficiência na extração de dados.</p>
@@ -149,13 +143,11 @@ weight: 1
    {{< figure src="../assets/images/dataset.PowerBI.png" alt="Consulta ao dataset do Power BI" >}}
 </div>
 
-### ⚙️ Configuração do Query Text
+<h3> ⚙️ Configuração do Query Text </h3>
 
 <div class="query-config">
   <div class="config-step">
-    <h4> Inserção do Código DAX</h4>
     <div class="config-details">
-      <p><strong>Processo de Configuração:</strong></p>
       <ul>
         <li>Cole o código copiado do Performance Analyzer no campo "query text"</li>
         <li>Localize a função TREATAS() na consulta</li>
@@ -166,10 +158,9 @@ weight: 1
   </div>
 </div>
 
-### 🔧 Exemplo de Modificação
+<h3> 🔧 Exemplo de Modificação </h3>
 
 <div class="code-example">
-  <h4> Estrutura da Consulta</h4>
   <div class="code-block">
     <p><strong>Antes:</strong> TREATAS({"valor_fixo"}, Tabela[Coluna])</p>
     <p><strong>Depois:</strong> TREATAS({@{variables('Acoes')}}, Tabela[Coluna])</p>
@@ -189,7 +180,6 @@ weight: 1
   {{< figure src="../assets/images/Estruturação.png" alt="Estruturação via Parse JSON" >}}
 </div>
 
-### 📊 Definição do Schema
 
 <div class="json-config">
   <div class="schema-section">
@@ -244,12 +234,9 @@ weight: 1
 
 <div class="select-config">
   <div class="mapping-section">
-    <h4> Mapeamento de Campos</h4>
     <div class="mapping-details">
-      <p><strong>Processo de Mapeamento:</strong></p>
       <ul>
         <li>Liste todas as colunas que devem aparecer no relatório final</li>
-        <li>Mapeie cada campo do JSON para o nome desejado na saída</li>
         <li>Aplique transformações se necessário (formatação, cálculos)</li>
         <li>Mantenha consistência com o schema definido</li>
       </ul>
@@ -257,28 +244,9 @@ weight: 1
   </div>
 </div>
 
-### 💡 Boas Práticas para Select
-
-<div class="best-practices-select">
-  <div class="practice-item">
-    <h4> Nomenclatura</h4>
-    <p>Use nomes claros e consistentes para as colunas de saída</p>
-  </div>
-  
-  <div class="practice-item">
-    <h4> Seletividade</h4>
-    <p>Inclua apenas os campos necessários para otimizar performance</p>
-  </div>
-  
-  <div class="practice-item">
-    <h4> Transformações</h4>
-    <p>Aplique formatações e cálculos simples quando apropriado</p>
-  </div>
-</div>
-
 ---
 
-## 📊 Passo 7: Create Table (Criar Tabela)
+## 📊 Passo 7: Criar Tabela
 
 <div class="step-section">
   <h3> Estruturação Final da Tabela</h3>
@@ -286,38 +254,17 @@ weight: 1
   {{< figure src="../assets/images/Excel_Tabela.png" alt="Criação da tabela no Excel" >}}
 </div>
 
-### 📋 Definição das Colunas
+<h3> 📋 Definição das Colunas </h3>
 
 <div class="table-config">
   <div class="column-section">
-    <h4> Especificação de Colunas</h4>
     <div class="column-details">
       <p><strong>Elementos a Definir:</strong></p>
       <ul>
-        <li><strong>Nome das Colunas:</strong> Títulos que aparecerão no Excel</li>
-        <li><strong>Ordem das Colunas:</strong> Sequência lógica para o usuário</li>
-        <li><strong>Tipos de Dados:</strong> Formato adequado para cada coluna</li>
-        <li><strong>Largura das Colunas:</strong> Otimização visual (opcional)</li>
+        <li><strong>Nome das Colunas:</strong> Títulos que aparecerão no Excel, em ordem (separados por ",")</li>
+        <li><strong>Local de salvamento ("File"):</strong> Local onde foi salvo o arquivo no passo xx</li>
+        <li><strong>Table Range:</strong> Local do arquivo excel que será preenchido com a tabela (atente-se a colocar o número de colunas exato)</li>
       </ul>
-    </div>
-  </div>
-</div>
-
-### 🎨 Formatação da Tabela
-
-<div class="formatting-options">
-  <div class="format-grid">
-    <div class="format-card">
-      <h4> Cabeçalhos</h4>
-      <p>Defina cabeçalhos claros e informativos</p>
-    </div>
-    <div class="format-card">
-      <h4> Ordenação</h4>
-      <p>Organize colunas por importância</p>
-    </div>
-    <div class="format-card">
-      <h4> Estilo</h4>
-      <p>Aplique formatação consistente</p>
     </div>
   </div>
 </div>
@@ -412,11 +359,7 @@ weight: 1
     </div>
     <div class="next-step-card">
       <h4> Ajustar Configurações</h4>
-      <p>Refine o fluxo baseado no feedback dos usuários</p>
-    </div>
-    <div class="next-step-card">
-      <h4> Expandir Funcionalidades</h4>
-      <p>Adicione novos recursos conforme necessário</p>
+      <p>Refine o relatório baseado no feedback dos usuários</p>
     </div>
   </div>
 </div>
