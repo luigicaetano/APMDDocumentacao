@@ -44,9 +44,8 @@ A documentação está organizada nas seguintes seções:
 ## 🧑‍💻 Tecnologias Utilizadas
 
 - **Power Apps**
-- **SharePoint / Dataverse**
+- **SharePoint**
 - **Power Automate**
-- **Expressões lógicas com If, Filter, Patch e Lookup**
 - **Integração com Office 365 e SIGCON-MG**
 
 ## 🤝 Contribuições
