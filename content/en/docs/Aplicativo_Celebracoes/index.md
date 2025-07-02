@@ -2,7 +2,7 @@
 title: Aplicativo Celebrações
 date: 2025-07-02
 description: >
-  RDocumentação completa do aplicativo de gestão de celebrações e emendas da APMD.
+  Documentação completa do aplicativo de gestão de celebrações e emendas da APMD.
 categories: [Tecnologia, Power Platform]
 tags: [PowerApps, Funcionalidades, Componentes Reutilizáveis]
 ---
