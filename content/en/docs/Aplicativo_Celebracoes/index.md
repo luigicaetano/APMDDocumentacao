@@ -56,3 +56,53 @@ Contribuições são bem-vindas! Para sugerir melhorias ou relatar erros, acesse
 ---
 
 > 📌 *Esta documentação é mantida pelo time da APMD em parceria com a equipe técnica da SEDESE.*
+
+<style>
+/* Estilo da página inicial da documentação */
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #2b4b6f;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  color: #3d5a80;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #0069d9;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote {
+  background-color: #f1f5f9;
+  border-left: 4px solid #3d5a80;
+  padding: 1rem;
+  font-style: italic;
+  color: #444;
+  margin-top: 2rem;
+  border-radius: 4px;
+}
+</style>
+
