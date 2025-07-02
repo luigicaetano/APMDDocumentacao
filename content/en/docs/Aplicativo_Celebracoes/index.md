@@ -1,5 +1,5 @@
 ---
-title: Aplicativo Celebrações
+title: 📱 Celebrações
 date: 2025-07-02
 description: >
   Documentação completa do aplicativo de gestão de celebrações e emendas da APMD.
@@ -57,7 +57,6 @@ Contribuições são bem-vindas! Para sugerir melhorias ou relatar erros, acesse
 > 📌 *Esta documentação é mantida pelo time da APMD em parceria com a equipe técnica da SEDESE.*
 
 <style>
-/* Estilo da página inicial da documentação */
 
 .lead {
   font-size: 1.2rem;
