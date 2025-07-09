@@ -1,5 +1,5 @@
 ---
-title: 📱 Celebrações
+title: 📱 Celebrações - SEDESE
 date: 2025-07-02
 description: >
   Documentação completa do aplicativo de gestão de celebrações e emendas da APMD.
