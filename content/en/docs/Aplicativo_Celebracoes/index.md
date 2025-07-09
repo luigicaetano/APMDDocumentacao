@@ -34,12 +34,12 @@ A plataforma foi desenvolvida no **Power Apps** e integra recursos como:
 
 A documentação está organizada nas seguintes seções:
 
-- [📋 Tela Celebrações (Geral)](./celebracoes/)
-- [🧾 Emendas ](./emendas/)
-- [📚 Programas Celebrados](./programas/)
-- [🛠 Funcionalidades Técnicas](./tecnico/)
-- [📑 Geração de Minuta](./minuta/)
-- [📈 Painel de Gestão](./gestao/)
+- [📋 Tela Celebrações (Geral)]
+- [🧾 Emendas ]
+- [📚 Programas Celebrados]
+- [🛠 Funcionalidades Técnicas]
+- [📑 Geração de Minuta]
+- [📈 Painel de Gestão]
 
 ## 🧑‍💻 Tecnologias Utilizadas
 
