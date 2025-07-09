@@ -1,5 +1,5 @@
 ---
-title: Documentação Completa - App de Celebrações
+title: Documentação Completa - App de Celebrações SEDESE
 date: 2025-07-08
 description: Guia completo com todas as funcionalidades do App de Celebrações, incluindo fluxos, operações em PowerApps e integração com Power Automate
 weight: 5
