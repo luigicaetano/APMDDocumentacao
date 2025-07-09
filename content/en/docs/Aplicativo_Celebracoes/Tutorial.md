@@ -46,9 +46,9 @@ graph TD
     <p>A tela principal oferece acesso rápido às principais funcionalidades do sistema de celebrações.</p>
     <p><strong>🔗 Navegação para Emendas 2025</strong></p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Navigate(CelebraçõesEmendas_Celebração_1;ScreenTransition.Cover)
-      {{< /highlight >}}
+      ```
     </div>
     <p>Este comando navega para a tela de emendas 2025 com transição de cobertura, proporcionando uma experiência visual suave.</p>
   </div>
@@ -58,7 +58,7 @@ graph TD
     <p>Esta tela apresenta uma galeria complexa com múltiplos filtros para visualizar e gerenciar emendas.</p>
     <p><strong>🔍 Filtros e Buscas Inteligentes</strong></p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Sort(
         Search(
           Search(
@@ -94,7 +94,7 @@ graph TD
         NumeroIndicacao;
         SortOrder.Ascending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>Como Funciona:</strong></p>
     <ul>
@@ -108,7 +108,7 @@ graph TD
     <h3>🔧 Passo 3: Funcionalidade de Expansão</h3>
     <p>O sistema oferece uma funcionalidade de expansão/contração para melhor visualização dos dados.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Patch(
         variaveisMain;
         LookUp(
@@ -127,7 +127,7 @@ graph TD
           )
         }
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>⚙️ Lógica de Funcionamento:</strong></p>
     <ul>
@@ -141,15 +141,15 @@ graph TD
     <h3>💰 Passo 4: Gestão de Pagamentos</h3>
     <p>O sistema oferece uma interface dedicada para gerenciar informações de pagamento.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       // Botão para abrir modal de pagamento
       Select(Parent);
       UpdateContext({visPagamento:true})
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>💾 Salvamento de Dados de Pagamento:</strong></p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Patch(
         CelebracoesProgramas2025;
         galProgramas_10.Selected;
@@ -168,7 +168,7 @@ graph TD
       Reset(TextInputCanvas1_2);
       Reset(DropdownCanvas3);
       Reset(DatePickerCanvas2_1)
-      {{< /highlight >}}
+      ```
     </div>
     <p>Este processo atualiza as informações de pagamento do registro selecionado e limpa os campos para nova entrada.</p>
   </div>
@@ -177,7 +177,7 @@ graph TD
     <h3>➕ Passo 5: Adicionar Novas Emendas</h3>
     <p>A tela de adição permite criar novas emendas com todos os dados necessários.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Patch(
         CelebracoesProgramas2025;
         Defaults(CelebracoesProgramas2025);
@@ -206,7 +206,7 @@ graph TD
       );
       Navigate(CelebraçõesEmendas_Celebração_1;ScreenTransition.UnCover);
       Set(var2025;false)
-      {{< /highlight >}}
+      ```
     </div>
   </div>
 
@@ -214,7 +214,7 @@ graph TD
     <h3>📊 Passo 6: Emendas Celebradas</h3>
     <p>Esta tela mostra apenas as emendas que já foram celebradas e estão em processo de pagamento.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       SortByColumns(
         Search(
           Filter(
@@ -234,7 +234,7 @@ graph TD
         "NumeroIndicacao";
         SortOrder.Ascending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>🎯 Funcionalidade Específica:</strong> Filtra apenas emendas com status de pagamento ativo ou concluído.</p>
   </div>
@@ -244,7 +244,7 @@ graph TD
     <p>Telas especializadas para analistas trabalharem com programas e emendas específicas.</p>
     <p><strong>📋 Analistas - Programas:</strong></p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Sort(
         Search(
           Filter(
@@ -259,11 +259,11 @@ graph TD
         PrazoAtual;
         SortOrder.Ascending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>📋 Analistas - Emendas:</strong></p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Sort(
         Search(
           Filter(
@@ -283,7 +283,7 @@ graph TD
         NumeroIndicacao;
         SortOrder.Ascending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>🔐 Segurança:</strong> Filtra apenas os registros do técnico logado no sistema.</p>
   </div>
@@ -292,7 +292,7 @@ graph TD
     <h3>📝 Passo 8: Sistema de Observações</h3>
     <p>Cada emenda possui um sistema de observações para controle histórico.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       Sort(
         Filter(
           BaseObservacoesCelebracoes;
@@ -301,7 +301,7 @@ graph TD
         DataComentario;
         SortOrder.Descending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p>Este sistema permite acompanhar o histórico de alterações e comentários de cada emenda.</p>
   </div>
@@ -310,7 +310,7 @@ graph TD
     <h3>📄 Passo 9: Geração de Minuta</h3>
     <p>O sistema possui uma funcionalidade avançada para gerar minutas automáticas.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       UpdateContext({visMinuta: true});
       Set(currEmendaAnalista; ThisItem);
       Clear(COL_NUMERO_EXTENSO);
@@ -337,7 +337,7 @@ graph TD
       // Coleta valores por extenso
       Collect(COL_NUMERO_EXTENSO; {...})
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>🔢 Conversão Numérica:</strong> Converte valores monetários para formato por extenso automaticamente.</p>
   </div>
@@ -346,7 +346,7 @@ graph TD
     <h3>🏢 Passo 10: Gestão APMD</h3>
     <p>Tela especializada para gestão avançada de celebrações pela APMD.</p>
     <div class="code-sample">
-      {{< highlight csharp >}}
+      ```powerapps
       SortByColumns(
         Search(
           Filter(
@@ -372,7 +372,7 @@ graph TD
         "field_5";
         SortOrder.Ascending
       )
-      {{< /highlight >}}
+      ```
     </div>
     <p><strong>🎛️ Filtros Avançados:</strong> Remove processos em análise e mostra apenas os prontos para gestão.</p>
   </div>
