@@ -46,7 +46,7 @@ graph TD
     <p>A tela principal oferece acesso rápido às principais funcionalidades do sistema de celebrações.</p>
     <p><strong>🔗 Navegação para Emendas 2025</strong></p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Navigate(CelebraçõesEmendas_Celebração_1;ScreenTransition.Cover)
       {{< /highlight >}}
     </div>
@@ -58,7 +58,7 @@ graph TD
     <p>Esta tela apresenta uma galeria complexa com múltiplos filtros para visualizar e gerenciar emendas.</p>
     <p><strong>🔍 Filtros e Buscas Inteligentes</strong></p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Sort(
         Search(
           Search(
@@ -108,7 +108,7 @@ graph TD
     <h3>🔧 Passo 3: Funcionalidade de Expansão</h3>
     <p>O sistema oferece uma funcionalidade de expansão/contração para melhor visualização dos dados.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Patch(
         variaveisMain;
         LookUp(
@@ -141,7 +141,7 @@ graph TD
     <h3>💰 Passo 4: Gestão de Pagamentos</h3>
     <p>O sistema oferece uma interface dedicada para gerenciar informações de pagamento.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       // Botão para abrir modal de pagamento
       Select(Parent);
       UpdateContext({visPagamento:true})
@@ -149,7 +149,7 @@ graph TD
     </div>
     <p><strong>💾 Salvamento de Dados de Pagamento:</strong></p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Patch(
         CelebracoesProgramas2025;
         galProgramas_10.Selected;
@@ -177,7 +177,7 @@ graph TD
     <h3>➕ Passo 5: Adicionar Novas Emendas</h3>
     <p>A tela de adição permite criar novas emendas com todos os dados necessários.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Patch(
         CelebracoesProgramas2025;
         Defaults(CelebracoesProgramas2025);
@@ -214,7 +214,7 @@ graph TD
     <h3>📊 Passo 6: Emendas Celebradas</h3>
     <p>Esta tela mostra apenas as emendas que já foram celebradas e estão em processo de pagamento.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       SortByColumns(
         Search(
           Filter(
@@ -244,7 +244,7 @@ graph TD
     <p>Telas especializadas para analistas trabalharem com programas e emendas específicas.</p>
     <p><strong>📋 Analistas - Programas:</strong></p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Sort(
         Search(
           Filter(
@@ -263,7 +263,7 @@ graph TD
     </div>
     <p><strong>📋 Analistas - Emendas:</strong></p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Sort(
         Search(
           Filter(
@@ -292,7 +292,7 @@ graph TD
     <h3>📝 Passo 8: Sistema de Observações</h3>
     <p>Cada emenda possui um sistema de observações para controle histórico.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       Sort(
         Filter(
           BaseObservacoesCelebracoes;
@@ -310,7 +310,7 @@ graph TD
     <h3>📄 Passo 9: Geração de Minuta</h3>
     <p>O sistema possui uma funcionalidade avançada para gerar minutas automáticas.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       UpdateContext({visMinuta: true});
       Set(currEmendaAnalista; ThisItem);
       Clear(COL_NUMERO_EXTENSO);
@@ -346,7 +346,7 @@ graph TD
     <h3>🏢 Passo 10: Gestão APMD</h3>
     <p>Tela especializada para gestão avançada de celebrações pela APMD.</p>
     <div class="code-sample">
-      {{< highlight powerapps >}}
+      {{< highlight csharp >}}
       SortByColumns(
         Search(
           Filter(
@@ -458,7 +458,6 @@ Com o sistema de celebrações dominado, você terá controle total sobre o cicl
 </div>
 
 <style>
-/* Estilo geral da página */
 body {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
