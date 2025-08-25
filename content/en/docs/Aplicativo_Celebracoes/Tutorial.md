@@ -43,6 +43,7 @@ graph TD
 <div class="celebracoes-steps">
   <div class="step">
     <h3>🏠 Passo 1: Tela Principal de Celebrações</h3>
+    {{< figure src="/assets/images_celebracoes/Capa_Celebracoes.png" alt="Botão Adicionar Dados no PowerApps" >}}
     <p>A tela principal oferece acesso rápido às principais funcionalidades do sistema de celebrações.</p>
     <p><strong>🔗 Navegação para Emendas 2025</strong></p>
     <div class="code-sample">
