@@ -133,7 +133,7 @@ Navigate(Programacao_Solicitacoes)</code></pre>
   </div>
 </div>
 
-### 🎯 Gallery Principal - Gallery4_Programacao_Controle
+#### 🎯 Gallery Principal - Gallery4_Programacao_Controle
 
 <div class="gallery-info">
   <h4>📋 Estrutura da Gallery</h4>
@@ -197,7 +197,7 @@ UpdateContext({visTransformarDemanda: true})</code></pre>
 
 </div>
 
-### 🔍 Sistema de Filtros - searchBar_Programacao_Certo_3
+#### 🔍 Sistema de Filtros - searchBar_Programacao_Certo_3
 
 <div class="search-system">
   <h4>🎯 Filtros Disponíveis</h4>
@@ -232,7 +232,7 @@ UpdateContext({visTransformarDemanda: true})</code></pre>
   <p>Este padrão garante consistência e facilita manutenção futura.</p>
 </div>
 
-### 💼 Container: Empenhos Pendentes
+#### 💼 Container: Empenhos Pendentes
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -275,7 +275,7 @@ Refresh(BaseEmpenhos2025);
 Notify("Base de empenhos atualizada!", NotificationType.Success)
 ```
 
-### 📝 Container: Solicitações Pendentes (Empenhos_1)
+#### 📝 Container: Solicitações Pendentes (Empenhos_1)
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -303,7 +303,7 @@ Set(currObjetoSolicitacao, ThisItem);
 Navigate(Programação_Editar_1, ScreenTransition.Fade)
 ```
 
-### 🔄 Container: Transformar em Demanda (Transformar_DemandaOrcamentaria)
+#### 🔄 Container: Transformar em Demanda (Transformar_DemandaOrcamentaria)
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -369,7 +369,7 @@ Notify("Demanda criada com sucesso!", NotificationType.Success)</code></pre>
 
 </div>
 
-### 📜 Container: Histórico de Alterações (Alterações)
+#### 📜 Container: Histórico de Alterações (Alterações)
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -407,7 +407,7 @@ Navigate(Programação_Controle, ScreenTransition.None);
 UpdateContext({visAlteracoes: false})
 ```
 
-### 📊 Totalizadores (Container5_13)
+#### 📊 Totalizadores (Container5_13)
 
 <div class="totals-container">
   <div class="total-item">
@@ -451,7 +451,7 @@ UpdateContext({visAlteracoes: false})
   <p><strong>Modo:</strong> New</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -468,7 +468,7 @@ UpdateContext({visAlteracoes: false})
   </div>
 </div>
 
-### 📝 Form6 - Formulário Principal
+#### 📝 Form6 - Formulário Principal
 
 <div class="form-info">
   <h4>⚙️ Configurações do Form</h4>
@@ -502,7 +502,7 @@ UpdateContext({visAlteracoes: false})
 
 </div>
 
-### 🎬 Ação de Salvamento
+#### 🎬 Ação de Salvamento
 ```javascript
 // ButtonCanvas16.OnSelect
 If(
@@ -529,7 +529,7 @@ If(
 )
 ```
 
-### 🔙 Navegação
+#### 🔙 Navegação
 ```javascript
 // EmailPrevScreen_13.OnSelect
 ResetForm(Form6);
@@ -546,7 +546,7 @@ Back()
   <p><strong>Objeto Atual:</strong> currObjeto</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -563,7 +563,7 @@ Back()
   </div>
 </div>
 
-### ⚙️ Evento OnVisible
+#### ⚙️ Evento OnVisible
 ```javascript
 // Inicializa variáveis de controle
 Set(varReset, false);
@@ -578,7 +578,7 @@ UpdateContext({
 });
 ```
 
-### 📅 Planejamento Mensal - Campos Editáveis
+#### 📅 Planejamento Mensal - Campos Editáveis
 
 <div class="monthly-planning">
   <h4>💰 Estrutura de Valores Mensais</h4>
@@ -638,7 +638,7 @@ UpdateContext({
   <p><strong>Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro</strong></p>
 </div>
 
-### 🎯 Botões de Ação Principais
+#### 🎯 Botões de Ação Principais
 
 <div class="actions-grid">
   
