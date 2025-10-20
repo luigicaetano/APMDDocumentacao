@@ -2258,6 +2258,8 @@ Image: First(collectionImagens).Imagem
 
 // Diversos ComboBox de filtros (scEI, scFonte, scGrupo, etc.)
 // Usados para testar lógica de filtros antes de implementar nas telas principais
+```
+
 📊 Variáveis Globais do Módulo
 <div class="table-container">
 VariávelTipoEscopoFunçãocurrObjetoRecordGlobalItem de programação selecionadocurrObjetoSolicitacaoRecordGlobalItem de solicitação selecionadovarCurrentNav7RecordGlobalAba ativa do TabList (Geral/Solicitações)varSelecionarTodosEmpenhosBooleanGlobalSeleção em massa de empenhosmudancaBooleanGlobalIndica alterações não salvasvarResetBooleanGlobalFlag de reset de formuláriosvarSalvarBooleanGlobalFlag de salvamento bem-sucedidovarCarregandoErroBooleanGlobalControla spinner de loadingvarTesteBooleanGlobalControla timer de sincronizaçãovarChecksBooleanGlobalSeleção em massa de DDOsvarTarefasAPMDBooleanGlobalIndica existência de tarefas APMDvarTarefasAreaBooleanGlobalIndica existência de solicitações da áreavarExcluirBooleanGlobalFlag para confirmação de exclusãovarImagemTextGlobalImagem de loading selecionadataskIdTextGlobalID da tarefa criada no PlannervarOpcaoRemanejamentoTextGlobalTipo de remanejamento (Programação/Demanda)
