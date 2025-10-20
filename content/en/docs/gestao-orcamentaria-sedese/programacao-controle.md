@@ -2260,13 +2260,51 @@ Image: First(collectionImagens).Imagem
 // Usados para testar lógica de filtros antes de implementar nas telas principais
 ```
 
-📊 Variáveis Globais do Módulo
+## 📊 Variáveis Globais do Módulo
+
 <div class="table-container">
-VariávelTipoEscopoFunçãocurrObjetoRecordGlobalItem de programação selecionadocurrObjetoSolicitacaoRecordGlobalItem de solicitação selecionadovarCurrentNav7RecordGlobalAba ativa do TabList (Geral/Solicitações)varSelecionarTodosEmpenhosBooleanGlobalSeleção em massa de empenhosmudancaBooleanGlobalIndica alterações não salvasvarResetBooleanGlobalFlag de reset de formuláriosvarSalvarBooleanGlobalFlag de salvamento bem-sucedidovarCarregandoErroBooleanGlobalControla spinner de loadingvarTesteBooleanGlobalControla timer de sincronizaçãovarChecksBooleanGlobalSeleção em massa de DDOsvarTarefasAPMDBooleanGlobalIndica existência de tarefas APMDvarTarefasAreaBooleanGlobalIndica existência de solicitações da áreavarExcluirBooleanGlobalFlag para confirmação de exclusãovarImagemTextGlobalImagem de loading selecionadataskIdTextGlobalID da tarefa criada no PlannervarOpcaoRemanejamentoTextGlobalTipo de remanejamento (Programação/Demanda)
+
+| Variável | Tipo | Escopo | Função |
+|-----------|-------|---------|---------|
+| currObjeto | Record | Global | Item de programação selecionado |
+| currObjetoSolicitacao | Record | Global | Item de solicitação selecionado |
+| varCurrentNav7 | Record | Global | Aba ativa do TabList (Geral/Solicitações) |
+| varSelecionarTodosEmpenhos | Boolean | Global | Seleção em massa de empenhos |
+| mudanca | Boolean | Global | Indica alterações não salvas |
+| varReset | Boolean | Global | Flag de reset de formulários |
+| varSalvar | Boolean | Global | Flag de salvamento bem-sucedido |
+| varCarregandoErro | Boolean | Global | Controla spinner de loading |
+| varTeste | Boolean | Global | Controla timer de sincronização |
+| varChecks | Boolean | Global | Seleção em massa de DDOs |
+| varTarefasAPMD | Boolean | Global | Indica existência de tarefas APMD |
+| varTarefasArea | Boolean | Global | Indica existência de solicitações da área |
+| varExcluir | Boolean | Global | Flag para confirmação de exclusão |
+| varImagem | Text | Global | Imagem de loading selecionada |
+| taskId | Text | Global | ID da tarefa criada no Planner |
+| varOpcaoRemanejamento | Text | Global | Tipo de remanejamento (Programação/Demanda) |
+
 </div>
-Variáveis de Contexto (por tela)
+## 🧭 Variáveis de Contexto (por tela)
+
 <div class="table-container">
-VariávelTipoTelaFunçãovisEmpenhosPendentesBooleanProgramação_ControleMostra/oculta empenhosvisSolicitacoesBooleanProgramação_Controle, Editar_2Mostra/oculta solicitaçõesvisTransformarDemandaBooleanProgramação_ControleMostra/oculta modal de transformaçãovisAlteracoesBooleanProgramação_Controle, SolicitacoesMostra/oculta históricovisObservacoesBooleanProgramação_EditarMostra/oculta observaçõesvisMovimentacoesBooleanProgramação_EditarMostra/oculta movimentaçõesvisDetalharBooleanProgramação_EditarMostra/oculta campos detalhadosvisDetalhar2BooleanProgramação_Editar_1Mostra/oculta campos detalhadosvisEmpenhosBooleanDetalhamentoMostra/oculta gallery de empenhosvisExcluirProgramacaoBooleanDetalhamentoMostra/oculta modal de exclusãovisExcluirObservacaoBooleanProgramação_Editar_2Mostra/oculta modal de exclusão de obsvisLoadingBooleanTodasMostra/oculta tela de loadingvisCarregandoBooleanProgramação_EditarMostra/oculta spinner inlinecurrObservacaoRecordProgramação_Editar_2Observação a ser excluída
+
+| Variável | Tipo | Tela | Função |
+|-----------|-------|-------|---------|
+| visEmpenhosPendentes | Boolean | Programação_Controle | Mostra/oculta empenhos |
+| visSolicitacoes | Boolean | Programação_Controle, Editar_2 | Mostra/oculta solicitações |
+| visTransformarDemanda | Boolean | Programação_Controle | Mostra/oculta modal de transformação |
+| visAlteracoes | Boolean | Programação_Controle, Solicitacoes | Mostra/oculta histórico |
+| visObservacoes | Boolean | Programação_Editar | Mostra/oculta observações |
+| visMovimentacoes | Boolean | Programação_Editar | Mostra/oculta movimentações |
+| visDetalhar | Boolean | Programação_Editar | Mostra/oculta campos detalhados |
+| visDetalhar2 | Boolean | Programação_Editar_1 | Mostra/oculta campos detalhados |
+| visEmpenhos | Boolean | Detalhamento | Mostra/oculta gallery de empenhos |
+| visExcluirProgramacao | Boolean | Detalhamento | Mostra/oculta modal de exclusão |
+| visExcluirObservacao | Boolean | Programação_Editar_2 | Mostra/oculta modal de exclusão de observação |
+| visLoading | Boolean | Todas | Mostra/oculta tela de loading |
+| visCarregando | Boolean | Programação_Editar | Mostra/oculta spinner inline |
+| currObservacao | Record | Programação_Editar_2 | Observação a ser excluída |
+
 </div>
 Variáveis de Filtro (searchBar)
 <div class="info-box">
@@ -2282,11 +2320,32 @@ Variáveis de Filtro (searchBar)
 CollectionCriada emFunçãocolNavMenu7OnStart (App)Navegação entre Geral e SolicitaçõescolEmpenhosDetalhamentoArmazena empenhos selecionados temporariamentecolImagensLoadingOnStart (App)Imagens para telas de loadingcollectionImagensScreen3Testes de imagens
 </div>
 
-📚 Fontes de Dados Utilizadas
+## 📚 Fontes de Dados Utilizadas
+
 <div class="table-container">
-Fonte de DadosTipoFunção no MóduloPlanejamentoGeral2025SharePoint ListDados principais da programaçãoBaseEmpenhos2025SharePoint ListEmpenhos vinculadosBaseSolicitacoesPlanejamentoSharePoint ListSolicitações de alteraçãoBaseNotificacoesPlanejamentoSharePoint ListHistórico de alteraçõesBaseObservacoesPlanejamentoSharePoint ListObservações dos usuáriosBaseControleDDOSharePoint ListDDOs vinculados à programaçãoBaseControleDDO_PorObjetoSharePoint ListVista de DDOs por objetoPlanejamento2025TarefasSharePoint ListTarefas do Planner vinculadasBaseOrdenadoresSharePoint ListLista de ordenadores e UAsBaseProgramasAcoesSharePoint ListAções orçamentárias disponíveisAcompanhamentoClassificacaoSharePoint ListTipos de acompanhamento e classificaçãoElementosItemSharePoint ListElementos de Item disponíveisPermissoesSistemaAPMDSharePoint ListControle de permissõesUsuáriosdoOffice365Office 365 ConnectorInformações do usuário logadoPlannerMicrosoft PlannerCriação e gestão de tarefas
+
+| Fonte de Dados | Tipo | Função no Módulo |
+|----------------|------|------------------|
+| PlanejamentoGeral2025 | SharePoint List | Dados principais da programação |
+| BaseEmpenhos2025 | SharePoint List | Empenhos vinculados |
+| BaseSolicitacoesPlanejamento | SharePoint List | Solicitações de alteração |
+| BaseNotificacoesPlanejamento | SharePoint List | Histórico de alterações |
+| BaseObservacoesPlanejamento | SharePoint List | Observações dos usuários |
+| BaseControleDDO | SharePoint List | DDOs vinculados à programação |
+| BaseControleDDO_PorObjeto | SharePoint List | Vista de DDOs por objeto |
+| Planejamento2025Tarefas | SharePoint List | Tarefas do Planner vinculadas |
+| BaseOrdenadores | SharePoint List | Lista de ordenadores e UAs |
+| BaseProgramasAcoes | SharePoint List | Ações orçamentárias disponíveis |
+| AcompanhamentoClassificacao | SharePoint List | Tipos de acompanhamento e classificação |
+| ElementosItem | SharePoint List | Elementos de Item disponíveis |
+| PermissoesSistemaAPMD | SharePoint List | Controle de permissões |
+| UsuáriosdoOffice365 | Office 365 Connector | Informações do usuário logado |
+| Planner | Microsoft Planner | Criação e gestão de tarefas |
+
 </div>
+
 🔗 Fluxo de Navegação do Módulo
+```mermaid
 graph TD
     A[Capa_Nova] --> B[Programação_Controle]
     
@@ -2323,6 +2382,9 @@ graph TD
     style G fill:#fd7e14
     style H fill:#20c997
     style I fill:#6c757d
+```
+
+---
     💡 Dicas de Uso do Módulo
 <div class="tips-grid">
   <div class="tip-card">
