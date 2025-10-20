@@ -1,5 +1,5 @@
 ---
-title: ⚙️ Funcionalidades Gerais
+title: Funcionalidades Gerais
 date: 2025-06-11
 description: >
   Repositório de funcionalidades reutilizáveis implementadas nos aplicativos da SEDESE, com tutoriais práticos e exemplos de aplicação.
