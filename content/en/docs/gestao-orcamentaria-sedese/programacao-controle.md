@@ -72,7 +72,7 @@ weight: 2
   <p><strong>Acesso:</strong> APMD e Gestores</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -93,7 +93,7 @@ weight: 2
   </div>
 </div>
 
-### ⚙️ Evento OnVisible
+#### ⚙️ Evento OnVisible
 ```javascript
 // Inicializa sistema de navegação por abas
 Set(varCurrentNav7, First(colNavMenu7));
@@ -114,7 +114,7 @@ UpdateContext({
 });
 ```
 
-### 📑 Sistema de Abas (TabList_Programacao)
+#### 📑 Sistema de Abas (TabList_Programacao)
 
 <div class="tabs-container">
   <div class="tab-card active">
@@ -782,7 +782,7 @@ If(
 
 </div>
 
-### 📊 Gallery7 - Histórico de Alterações
+#### 📊 Gallery7 - Histórico de Alterações
 
 <div class="gallery-section">
   <p><strong>Template:</strong> galleryTemplate7</p>
@@ -813,7 +813,7 @@ ThisItem.Descrição
 // Ação específica do item (se necessário)
 ```
 
-### 📋 Gallery13 - DDOs Relacionados
+#### 📋 Gallery13 - DDOs Relacionados
 
 <div class="gallery-section">
   <p><strong>Template:</strong> galleryTemplate13</p>
@@ -853,7 +853,7 @@ OnUncheck:
 ThisItem.NumeroSEI & " - " & ThisItem.Objeto
 ```
 
-### 📊 Indicadores Visuais
+#### 📊 Indicadores Visuais
 
 <div class="indicators-grid">
   
@@ -880,7 +880,7 @@ ThisItem.NumeroSEI & " - " & ThisItem.Objeto
 
 </div>
 
-### ⏱️ Timers de Controle
+#### ⏱️ Timers de Controle
 ```javascript
 // Timer2_1 - Feedback de salvamento
 Duration: 2000
@@ -915,7 +915,7 @@ OnTimerEnd:
   <p><strong>Objeto Atual:</strong> currObjetoSolicitacao</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -932,7 +932,7 @@ OnTimerEnd:
   </div>
 </div>
 
-### 🎯 Diferenças em relação à Programação_Editar
+#### 🎯 Diferenças em relação à Programação_Editar
 
 <div class="info-box">
   <h4>🔄 Contexto Diferente</h4>
@@ -945,7 +945,7 @@ OnTimerEnd:
   </ul>
 </div>
 
-### 📅 Campos Mensais (Solicitação)
+#### 📅 Campos Mensais (Solicitação)
 
 <div class="monthly-fields">
   <h4>💰 Estrutura Similar</h4>
@@ -956,7 +956,7 @@ OnTimerEnd:
   </ul>
 </div>
 
-### 🎬 Ações Principais
+#### 🎬 Ações Principais
 
 <div class="actions-grid">
   
@@ -1051,7 +1051,7 @@ If(
 
 </div>
 
-### 📋 Campos Detalhados (Container visDetalhar2)
+#### 📋 Campos Detalhados (Container visDetalhar2)
 
 <div class="form-grid">
   
@@ -1080,7 +1080,7 @@ If(
   <p><strong>Objeto Atual:</strong> currObjeto</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -1101,7 +1101,7 @@ If(
   </div>
 </div>
 
-### ⚙️ Evento OnVisible
+#### ⚙️ Evento OnVisible
 ```javascript
 // Inicializa componentes
 Set(varReset, false);
@@ -1129,7 +1129,7 @@ Set(varTarefasArea,
 )
 ```
 
-### 📊 Container5_6 - Informações Gerais
+#### 📊 Container5_6 - Informações Gerais
 
 <div class="info-container">
   <h4>📋 Labels de Informação</h4>
@@ -1183,7 +1183,7 @@ Set(varTarefasArea,
 
 </div>
 
-### 📅 Planejamento Mensal Detalhado
+#### 📅 Planejamento Mensal Detalhado
 
 <div class="monthly-detailed">
   <h4>📊 galPlanejado1_3 - Gallery de Meses</h4>
@@ -1213,7 +1213,7 @@ Set(varTarefasArea,
 Set(mudanca, true)
 ```
 
-### 🎯 Container_Observacoes - Sistema de Observações
+#### 🎯 Container_Observacoes - Sistema de Observações
 
 <div class="container-section">
   <h4>📝 Componente: _observacoes_1</h4>
@@ -1307,7 +1307,7 @@ UpdateContext({visExcluirObservacao: false});
 Notify("Observação excluída", NotificationType.Information)
 ```
 
-### 📋 Container_Tarefas/Solicitacoes - Sistema de Tarefas
+#### 📋 Container_Tarefas/Solicitacoes - Sistema de Tarefas
 
 <div class="container-section">
   <h4>✅ Gerenciamento de Tarefas do Planner</h4>
@@ -1424,7 +1424,7 @@ ThisItem.Título & " - " & Text(ThisItem.'Data Criação', "dd/mm/yyyy")
 // Similar ao sistema de tarefas, mas para solicitações
 ```
 
-### 📊 Container6_2 - DDOs Vinculados
+#### 📊 Container6_2 - DDOs Vinculados
 
 <div class="container-section">
   <h4>📋 Gallery_DDOs</h4>
@@ -1457,7 +1457,7 @@ ThisItem.Título & " - " & Text(ThisItem.'Data Criação', "dd/mm/yyyy")
 // Navegar para detalhes do DDO ou abrir documento
 ```
 
-### 🎬 Ações Principais da Tela
+#### 🎬 Ações Principais da Tela
 
 <div class="actions-grid">
   
@@ -1620,7 +1620,7 @@ Set(varTarefasArea, !varTarefasArea)</code></pre>
 
 </div>
 
-### ⏱️ Timers
+#### ⏱️ Timers
 ```javascript
 // Timer2_2 - Feedback visual de salvamento
 Duration: 2000
@@ -1655,7 +1655,7 @@ OnTimerEnd:
   <p><strong>Acesso:</strong> Via TabList de Programação_Controle</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -1672,7 +1672,7 @@ OnTimerEnd:
   </div>
 </div>
 
-### ⚙️ Evento OnVisible
+#### ⚙️ Evento OnVisible
 ```javascript
 // Inicializa navegação
 Set(varCurrentNav7, 
@@ -1680,7 +1680,7 @@ Set(varCurrentNav7,
 )
 ```
 
-### 📑 TabList1_19 - Sistema de Abas
+#### 📑 TabList1_19 - Sistema de Abas
 
 <div class="tabs-container">
   <div class="tab-card">
@@ -1751,7 +1751,7 @@ Navigate(Detalhamento, ScreenTransition.Fade)</code></pre>
 
 </div>
 
-### 💼 Container: Empenhos_7 - Empenhos de Solicitações
+#### 💼 Container: Empenhos_7 - Empenhos de Solicitações
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -1792,7 +1792,7 @@ Export(galEmpenhosPendentes_4, "Empenhos_Solicitacoes_" &
 UpdateContext({visLoading: false})
 ```
 
-### 📜 Container: Alterações_1 - Histórico
+#### 📜 Container: Alterações_1 - Histórico
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -1824,7 +1824,7 @@ SortByColumns(Filter(...), "Created", Descending)</code></pre>
 UpdateContext({visAlteracoes: false})
 ```
 
-### 📊 Totalizadores
+#### 📊 Totalizadores
 
 <div class="totals-container">
   <div class="total-item">
@@ -1862,7 +1862,7 @@ UpdateContext({visAlteracoes: false})
   <p><strong>Objeto Atual:</strong> currObjeto</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -1879,7 +1879,7 @@ UpdateContext({visAlteracoes: false})
   </div>
 </div>
 
-### 📋 Container_Detalhamento - Campos Principais
+#### 📋 Container_Detalhamento - Campos Principais
 
 <div class="form-grid">
   
@@ -1950,7 +1950,7 @@ UpdateContext({visAlteracoes: false})
 
 </div>
 
-### 💼 Container1 - Gestão de Empenhos
+#### 💼 Container1 - Gestão de Empenhos
 
 <div class="container-section">
   <h4>📦 Visibilidade</h4>
@@ -2081,7 +2081,7 @@ Refresh(BaseEmpenhos2025)</code></pre>
 
 </div>
 
-### 🎬 Ações Principais da Tela
+#### 🎬 Ações Principais da Tela
 
 <div class="actions-grid">
   
@@ -2160,7 +2160,7 @@ Navigate(Programação_Editar, ScreenTransition.Fade)</code></pre>
 
 </div>
 
-### ⚠️ Confirmacao_1 - Modal de Exclusão
+#### ⚠️ Confirmacao_1 - Modal de Exclusão
 
 <div class="modal-section">
   <h4>📦 Component de Confirmação</h4>
@@ -2216,7 +2216,7 @@ If(
   <p><strong>Uso:</strong> Desenvolvimento e debug</p>
 </div>
 
-### 📊 Estatísticas da Tela
+#### 📊 Estatísticas da Tela
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -2241,7 +2241,7 @@ If(
   <p><strong>Não deve ser acessível em produção!</strong></p>
 </div>
 
-### 🛠️ Componentes Principais
+#### 🛠️ Componentes Principais
 ```javascript
 // navBar_1 - Barra de navegação de teste
 // ButtonCanvas18 - Botão de ação 1
@@ -2284,6 +2284,7 @@ Image: First(collectionImagens).Imagem
 | varOpcaoRemanejamento | Text | Global | Tipo de remanejamento (Programação/Demanda) |
 
 </div>
+
 ## 🧭 Variáveis de Contexto (por tela)
 
 <div class="table-container">
@@ -2306,7 +2307,9 @@ Image: First(collectionImagens).Imagem
 | currObservacao | Record | Programação_Editar_2 | Observação a ser excluída |
 
 </div>
-Variáveis de Filtro (searchBar)
+
+## Variáveis de Filtro (searchBar)
+
 <div class="info-box">
   <h4>🔍 Padrão de Filtros</h4>
   <p>Todas as variáveis de filtro seguem o mesmo padrão em todas as telas do módulo:</p>
@@ -2315,7 +2318,8 @@ Variáveis de Filtro (searchBar)
     <li><code>search[Campo]Selecionado</code> - Registro completo</li>
   </ul>
 </div>
-📊 Collections do Módulo
+
+## 📊 Collections do Módulo
 <div class="table-container">
 CollectionCriada emFunçãocolNavMenu7OnStart (App)Navegação entre Geral e SolicitaçõescolEmpenhosDetalhamentoArmazena empenhos selecionados temporariamentecolImagensLoadingOnStart (App)Imagens para telas de loadingcollectionImagensScreen3Testes de imagens
 </div>
