@@ -478,7 +478,7 @@ h1 {
   padding-bottom: 0.3em;
 }
 
-/* Estilo dos passos de celebrações */
+/* Estilo dos passos de celebrações */ 
 .celebracoes-steps {
   display: flex;
   flex-direction: column;
