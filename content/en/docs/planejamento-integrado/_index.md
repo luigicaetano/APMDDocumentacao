@@ -112,7 +112,7 @@ Interessado em saber como desenvolvemos esta solução, ou quer desenvolver para
 <div class="download-resources">
   <h3>📥 Recursos para download</h3>
   <p>Para facilitar o seu trabalho, disponibilizamos todos os arquivos necessários para seguir este tutorial:</p>
-  <a href="../assets/downloads/planejamento-integrado-recursos.zip" class="download-button">
+  <a href="../assets/PlanejamentoIntegradozip/PlanejamentoIntegrado2026_20251021135203.zip" class="download-button">
     <span class="download-icon">📦</span>
     <span class="download-text">
       <span class="download-title">Baixar Arquivos do Tutorial</span>
