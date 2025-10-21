@@ -56,10 +56,7 @@ weight: 2
     <h4>🔍 Detalhamento</h4>
     <p>Detalhes e empenhos</p>
   </div>
-  <div class="screen-card">
-    <h4>🧪 Screen3</h4>
-    <p>Tela de testes</p>
-  </div>
+
 </div>
 
 ---
