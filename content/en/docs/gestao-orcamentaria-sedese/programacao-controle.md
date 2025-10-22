@@ -36,6 +36,10 @@ weight: 2
     <h4>➕ Programação_Novo</h4>
     <p>Criação de nova programação</p>
   </div>
+  <div class="screen-card success">
+    <h4>➕ Programação_Editar_2</h4>
+    <p>Visualização da programação</p>
+  </div>
   <div class="screen-card warning">
     <h4>📝 Programacao_Solicitacoes</h4>
     <p>Gestão de solicitações</p>
